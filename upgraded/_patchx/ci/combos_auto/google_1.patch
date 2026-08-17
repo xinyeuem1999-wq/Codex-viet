@@ -1,0 +1,217 @@
+# Combo tự phát hiện: google_1 (4 patch)
+
+[MIN_ENGINE_VER]
+2
+
+[AUTHOR]
+VERGIL777
+
+[PACKAGE]
+ALL
+
+[MATCH_REPLACE]
+TARGET:
+    smali*/*.smali
+MATCH:
+    "com.google.analytics
+REGEX:
+    true
+REPLACE:
+    "disabled_com.google.analytics
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    smali*/*.smali
+MATCH:
+    "com.google.android.gms.analytics
+REGEX:
+    true
+REPLACE:
+    "disabled_com.google.android.gms.analytics
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    smali*/*.smali
+MATCH:
+    "com.google.firebase.analytics
+REGEX:
+    true
+REPLACE:
+    "disabled_com.google.firebase.analytics
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    smali*/*.smali
+MATCH:
+    "com.google.firebase.firebase_analytics
+REGEX:
+    true
+REPLACE:
+    "disabled_com.google.firebase.firebase_analytics
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    smali*/*.smali
+MATCH:
+    .method public static(.+)\(Landroid/content/Context;\)I\n.*registers .+[\s\S]*?Google Play services missing.+[\s\S]*?end method
+REGEX:
+    true
+REPLACE:
+    .method public static${GROUP1}(Landroid/content/Context;)I
+    .registers 1
+    const/4 v0, 0x0
+    return v0
+.end method
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    smali*/*.smali
+MATCH:
+    invoke-virtual \{([pv]\d+), ([pv]\d+)\}, Ljava/security/Signature;->verify\(\[B\)Z\n\n    move-result ([pv]\d+)
+REGEX:
+    true
+REPLACE:
+    invoke-virtual {${GROUP1}, ${GROUP2}}, Ljava/security/Signature;->verify([B)Z
+
+    const/4 ${GROUP3}, 0x1
+[/MATCH_REPLACE]
+
+[ADD_FILES]
+TARGET:
+    smali
+EXTRACT:
+    true
+SOURCE:
+    BiN.zip
+[/ADD_FILES]
+
+[MATCH_REPLACE]
+TARGET:
+    smali/cc/binmt/signature/PmsHookApplication.smali
+MATCH:
+    ### Installer ###
+REGEX:
+    true
+REPLACE:
+    com.android.vending
+[/MATCH_REPLACE]
+
+[MATCH_GOTO]
+TARGET:
+    AndroidManifest.xml
+MATCH:
+    <application(.+)android:name=
+REGEX:
+    true
+GOTO:
+    p2_app1
+[/MATCH_GOTO]
+
+[MATCH_REPLACE]
+TARGET:
+    AndroidManifest.xml
+MATCH:
+    <application(.+)>
+REGEX:
+    true
+REPLACE:
+    <application${GROUP1} android:name="cc.binmt.signature.PmsHookApplication">
+[/MATCH_REPLACE]
+
+[GOTO]
+GOTO:
+    p2_end
+[/GOTO]
+
+[MATCH_REPLACE]
+NAME:
+    p2_app1
+TARGET:
+    AndroidManifest.xml
+MATCH:
+    <application (.+) android:name="([^"]+)"(.+)
+REGEX:
+    true
+REPLACE:
+    <application ${GROUP1} android:name="cc.binmt.signature.PmsHookApplication"${GROUP3}
+[/MATCH_REPLACE]
+
+[MATCH_ASSIGN]
+TARGET:
+    [APPLICATION]
+MATCH:
+    \.class (.+?)L(.+);
+REGEX:
+    true
+ASSIGN:
+    LABEL_1=L${GROUP2};
+[/MATCH_ASSIGN]
+
+[MATCH_REPLACE]
+TARGET:
+    [APPLICATION]
+MATCH:
+    \.class public (|.+)L(.+);
+REGEX:
+    true
+REPLACE:
+    .class public L${GROUP2};
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    smali/cc/binmt/signature/PmsHookApplication.smali
+MATCH:
+    Landroid/app/Application;
+REGEX:
+    false
+REPLACE:
+    ${LABEL_1}
+[/MATCH_REPLACE]
+
+[EXECUTE_DEX]
+NAME:
+    p2_end
+SCRIPT:
+    sigfix.dex
+SMALI_NEEDED:
+    true
+MAIN_CLASS:
+    anymy.BinSignatureFix
+ENTRANCE:
+    BinSignatureFix
+PARAM:
+    smali
+[/EXECUTE_DEX]
+
+[DUMMY]
+NAME:
+    p2_end2
+[/DUMMY]
+
+[MATCH_REPLACE]
+TARGET:
+    smali*/*.smali
+MATCH:
+    const-string ([pv]\d+), "com.google.android.gms.auth.NO_IMPL"\s*(.*)\s*invoke-virtual \{([pv]\d+), ([pv]\d+)\}, Ljava/lang/String;->equals(.+)\s*(.*)\s*move-result ([pv]\d+)
+REGEX:
+    true
+REPLACE:
+    const/4 ${GROUP1}, 0x1
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    smali*/*.smali
+MATCH:
+    com.google.android.gms.auth.api.signin.service.START
+REGEX:
+    true
+REPLACE:
+    com.google.android.gms.auth.api.signin.service.STOP
+[/MATCH_REPLACE]

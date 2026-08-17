@@ -1,0 +1,26 @@
+{
+  "schema": "patchx.semantic-plan/v1",
+  "goal": "Ví dụ: tìm method không đối số, trả void để truy vết",
+  "targets": [
+    {
+      "name": "entry_void",
+      "conditions": {
+        "return_type": "V",
+        "parameters": []
+      },
+      "min_score": 100
+    }
+  ],
+  "operations": [
+    {
+      "type": "TRACE",
+      "note": "Chỉ là ý định. Người dùng duyệt rồi mới chuyển đổi sang patch tương thích."
+    }
+  ],
+  "verification": [
+    "preflight",
+    "validate",
+    "build",
+    "runtime"
+  ]
+}

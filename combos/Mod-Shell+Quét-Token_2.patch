@@ -1,0 +1,161 @@
+# Combo: Mod-Shell+Quét-Token (1 patch)
+
+[MIN_ENGINE_VER]
+2
+
+[AUTHOR]
+HTC 600 and angel
+
+[PACKAGE]
+ALL
+
+[ADD_FILES]
+SOURCE:
+    libfrida-gadget.so
+TARGET:
+    lib/arm64-v8a/libfrida-gadget.so
+[/ADD_FILES]
+
+[MATCH_GOTO]
+TARGET:
+    smali*/*.smali
+MATCH:
+    c3RhcnQgbWFnaWMh
+REGEX:
+    true
+GOTO:
+    end
+[/MATCH_GOTO]
+
+[ADD_FILES]
+SOURCE:
+    smali.zip
+TARGET:
+    smali
+EXTRACT:
+    true
+[/ADD_FILES]
+
+[SIGNATURE_REVISE]
+TARGET:
+    smali/com/frida/Fix.smali
+[/SIGNATURE_REVISE]
+
+[MATCH_GOTO]
+TARGET:
+    [APPLICATION]
+MATCH:
+    \.method (.+) onCreate\((.+|)\)V\n    \.(registers) ([0-9]+)
+REGEX:
+    true
+GOTO:
+    add_application1
+[/MATCH_GOTO]
+
+[MATCH_GOTO]
+TARGET:
+    smali*/*.smali
+MATCH:
+    invoke-super (.+), Landroid\/app\/Application;->onCreate(.+)
+REGEX:
+    true
+GOTO:
+    add_application2
+[/MATCH_GOTO]
+
+[MATCH_GOTO]
+TARGET:
+    smali/com/unity3d/player/UnityPlayerActivity.smali
+MATCH:
+    \.method (.+) onCreate\((.+|)\)V\n    \.(registers) ([0-9]+)
+REGEX:
+    true
+GOTO:
+    add_unity
+[/MATCH_GOTO]
+
+[MATCH_REPLACE]
+NAME:
+    add_activities
+TARGET:
+    [LAUNCHER_ACTIVITIES]
+MATCH:
+    \.method (.+) <init>\((.+|)\)V\n    \.(registers) (\d+)
+REGEX:
+    true
+REPLACE:
+    .method ${GROUP1} <init>(${GROUP2})V
+    .${GROUP3} ${GROUP4}
+
+    invoke-static {}, Lcom/frida/injector;->startE()V
+[/MATCH_REPLACE]
+
+[GOTO]
+GOTO:
+    final
+[/GOTO]
+
+[MATCH_REPLACE]
+NAME:
+    add_unity
+TARGET:
+    smali/com/unity3d/player/UnityPlayerActivity.smali
+MATCH:
+    \.method (.+) onCreate\((.+|)\)V\n    \.(registers) (\d+)
+REGEX:
+    true
+REPLACE:
+    .method ${GROUP1} onCreate(${GROUP2})V
+    .${GROUP3} ${GROUP4}
+
+    invoke-static {}, Lcom/frida/injector;->startE()V
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+NAME:
+    add_application1
+TARGET:
+    [APPLICATION]
+MATCH:
+    \.method (.+) onCreate\((.+|)\)V\n    \.(registers) (\d+)
+REGEX:
+    true
+REPLACE:
+    .method ${GROUP1} onCreate(${GROUP2})V
+    .${GROUP3} ${GROUP4}
+
+    invoke-static {}, Lcom/frida/injector;->startE()V
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+NAME:
+    add_application2
+TARGET:
+    smali*/*.smali
+MATCH:
+    invoke-super (.+), Landroid\/app\/Application;->onCreate(.+)
+REGEX:
+    true
+REPLACE:
+    invoke-static {}, Lcom/frida/injector;->startE()V
+	
+	invoke-super ${GROUP1}, Landroid/app/Application;->onCreate${GROUP2}
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+NAME:
+    final
+TARGET:
+    smali/com/frida/injector.smali
+MATCH:
+    "FRIDA_E_SCRIPT"
+REGEX:
+    true
+REPLACE:
+    "dmFyIExvZyA9IG51bGw7DQp2YXIgRml4ID0gbnVsbDsNCnZhciBJbmplY3RvciA9IG51bGw7DQp2YXIgZmRvbmUgPSBudWxsOw0KdmFyIEFQUF9QS0cgPSBudWxsOw0KDQp2YXIgVEFHX0wgPSAiW0ZSSURBX1NDUklQVF0iOw0KDQpmdW5jdGlvbiBwYXRjaCgpIHsNCg0KICAgIExvZyA9IEphdmEudXNlKCJhbmRyb2lkLnV0aWwuTG9nIik7DQogICAgRml4ID0gSmF2YS51c2UoImNvbS5mcmlkYS5GaXgiKTsNCiAgICBJbmplY3RvciA9IEphdmEudXNlKCJjb20uZnJpZGEuaW5qZWN0b3IiKTsNCiAgICBmZG9uZSA9IEluamVjdG9yLmdldEFwcEZpbGVzRGlyKCkgKyAiL2RvbmUiOw0KICAgIEFQUF9QS0cgPSBJbmplY3Rvci5nZXRBcHBQYWNrYWdlTmFtZSgpOw0KDQogICAgTG9nLnYoVEFHX0wsICJbKl0gU3RhcnQgcGF0Y2hpbmcuLi4iKTsNCg0KICAgIHZhciBQYWNrYWdlTWFuYWdlciA9IEphdmEudXNlKCJhbmRyb2lkLmFwcC5BcHBsaWNhdGlvblBhY2thZ2VNYW5hZ2VyIik7DQogICAgUGFja2FnZU1hbmFnZXIuZ2V0UGFja2FnZUluZm8uaW1wbGVtZW50YXRpb24gPSBmdW5jdGlvbiAocGFja2FnZV9uYW1lLCBmbGFncykgew0KICAgICAgICB2YXIgcmV0ID0gdGhpcy5nZXRQYWNrYWdlSW5mby5jYWxsKHRoaXMsIHBhY2thZ2VfbmFtZSwgZmxhZ3MpOw0KICAgICAgICBpZiAoQVBQX1BLRyA9PSBwYWNrYWdlX25hbWUpIHsNCiAgICAgICAgICAgIExvZy52KFRBR19MLCAiWypdIEdldCBwYWNrYWdlIGluZm8gZm9yICciICsgcGFja2FnZV9uYW1lICsgIicgc2lnbmF0dXJlcyByZXBsYWNlZCB0byBGaXhlZC4iKTsNCiAgICAgICAgICAgIHJldC5zaWduYXR1cmVzID0gRml4LmdldFNpZ25hdHVyZXMocmV0KTsNCiAgICAgICAgfSBlbHNlIHsNCiAgICAgICAgICAgIExvZy52KFRBR19MLCAiWypdIEdldCBwYWNrYWdlIGluZm8gZm9yICciICsgcGFja2FnZV9uYW1lICsgIicgc2lnbmF0dXJlcyBub3QgcmVwbGFjZWQuIik7DQogICAgICAgIH0NCg0KICAgICAgICByZXR1cm4gcmV0Ow0KICAgIH07DQoNCg0KICAgIHZhciBTaWduYXR1cmUgPSBKYXZhLnVzZSgiamF2YS5zZWN1cml0eS5TaWduYXR1cmUiKTsNCiAgICBTaWduYXR1cmUudmVyaWZ5Lm92ZXJsb2FkKCdbQicpLmltcGxlbWVudGF0aW9uID0gZnVuY3Rpb24gKHAxKSB7DQogICAgICAgIHZhciByZXQgPSB0aGlzLnZlcmlmeS5jYWxsKHRoaXMsIHAxKTsNCiAgICAgICAgTG9nLnYoVEFHX0wsICJbKl0gU2lnbmF0dXJlLnZlcmlmeSBpcyAiICsgcmV0ICsgIiByZXBsYWNlZCB0byB0cnVlLiIpOw0KICAgICAgICByZXR1cm4gdHJ1ZTsNCiAgICB9Ow0KDQogICAgTG9nLnYoVEFHX0wsICJbKl0gUGF0Y2hpbmcgZG9uZS4uLiIpOw0KDQogICAgY29udGludWVfcnVuKCk7DQp9Ow0KDQpmdW5jdGlvbiBjb250aW51ZV9ydW4oKSB7DQogICAgdmFyIGYgPSBuZXcgRmlsZShmZG9uZSwgInciKTsNCiAgICBmLndyaXRlKCIxIik7DQogICAgZi5mbHVzaCgpOw0KICAgIGYuY2xvc2UoKTsNCiAgICBzZXRUaW1lb3V0KGNvbnRpbnVlX3J1biwgMTAwMCk7DQp9Ow0KDQpmdW5jdGlvbiBydW4oKSB7DQogICAgY29uc29sZS5sb2coIldhaXRpbmcgZm9yIEphdmEuLiIpOw0KDQogICAgd2hpbGUgKCFKYXZhLmF2YWlsYWJsZSkgew0KICAgICAgICBjb25zb2xlLmVycm9yKCJKYXZhIG5vdCBhdmFpbGFibGUgeWV0Iik7DQogICAgfQ0KDQogICAgY29uc29sZS5sb2coIlsqXSBTdGFydGluZyBzY3JpcHQiKTsNCg0KICAgIEphdmEucGVyZm9ybShwYXRjaCk7DQoNCn07DQoNCnNldFRpbWVvdXQocnVuLCAyMCk7DQo="
+[/MATCH_REPLACE]
+
+[DUMMY]
+NAME:
+    end
+[/DUMMY]

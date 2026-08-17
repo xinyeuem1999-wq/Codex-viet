@@ -1,0 +1,32 @@
+# Combo: Gỡ-SSL-Pinning (1 patch)
+
+[MIN_ENGINE_VER]
+2
+
+[AUTHOR]
+Patchx Bypass Collection
+
+[PACKAGE]
+*
+
+[MATCH_REPLACE]
+TARGET:
+    smali*/*.smali
+MATCH:
+    (invoke-.*\{([pv]\d+), ([pv]\d+)\}, .*Ljavax/net/ssl/X509TrustManager;->checkServerTrusted\(\[Ljava/security/cert/X509Certificate;Ljava/lang/String;\)V)
+REGEX:
+    true
+REPLACE:
+    # ${GROUP1}
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    smali*/*.smali
+MATCH:
+    (invoke-.*\{([pv]\d+), ([pv]\d+)\}, .*Lokhttp3/CertificatePinner;->check\(Ljava/lang/String;Ljava/util/List;\)V)
+REGEX:
+    true
+REPLACE:
+    # ${GROUP1}
+[/MATCH_REPLACE]

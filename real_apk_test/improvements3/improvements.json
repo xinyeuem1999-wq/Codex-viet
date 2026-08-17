@@ -1,0 +1,16 @@
+{
+  "generated": "2026-08-14 16:34:34",
+  "tree": "/storage/emulated/0/patch/1. PATCH others/_patchx/real_apk_test/app_tree",
+  "patches": [
+    "real_apk_test/p1_test.patch.txt"
+  ],
+  "apply_returncode": 0,
+  "build_returncode": 1,
+  "exercises": [
+    {
+      "title": "Tên resource chứa ký tự `$` làm aapt2 từ chối",
+      "root_cause": "Cây APK giải mã cũ có tên resource bắt đầu bằng `$` ($avd_..., $feedback_...); aapt2 không chấp nhận tên này.",
+      "suggested_fix": "Chuẩn hoá tên file trong res/ bằng cách loại bỏ ký tự `$`, cập nhật tham chiếu trong public.xml/values nếu cần; nếu vẫn lỗi thì dùng apktool 2.x/aapt1 cho cây APK cũ."
+    }
+  ]
+}

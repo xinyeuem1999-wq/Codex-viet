@@ -1,0 +1,890 @@
+{
+  "tree": "/storage/emulated/0/patch/1. PATCH others/_patchx/real_apk_test/app_tree",
+  "changes": [
+    {
+      "old": "$feedback_ic_contact_ai_customer_service__1.xml",
+      "new": "feedback_ic_contact_ai_customer_service__1.xml",
+      "path": "res/drawable/$feedback_ic_contact_ai_customer_service__1.xml"
+    },
+    {
+      "old": "$ic_audio_record_cursor__2.xml",
+      "new": "ic_audio_record_cursor__2.xml",
+      "path": "res/drawable/$ic_audio_record_cursor__2.xml"
+    },
+    {
+      "old": "$avd_show_password__2.xml",
+      "new": "avd_show_password__2.xml",
+      "path": "res/drawable/$avd_show_password__2.xml"
+    },
+    {
+      "old": "$mtrl_checkbox_button_checked_unchecked__2.xml",
+      "new": "mtrl_checkbox_button_checked_unchecked__2.xml",
+      "path": "res/drawable/$mtrl_checkbox_button_checked_unchecked__2.xml"
+    },
+    {
+      "old": "$float_ic_menu_chat_select__1.xml",
+      "new": "float_ic_menu_chat_select__1.xml",
+      "path": "res/drawable/$float_ic_menu_chat_select__1.xml"
+    },
+    {
+      "old": "$feedback_ic_contact_ai_customer_service__6.xml",
+      "new": "feedback_ic_contact_ai_customer_service__6.xml",
+      "path": "res/drawable/$feedback_ic_contact_ai_customer_service__6.xml"
+    },
+    {
+      "old": "$mtrl_switch_thumb_checked_unchecked__1.xml",
+      "new": "mtrl_switch_thumb_checked_unchecked__1.xml",
+      "path": "res/drawable/$mtrl_switch_thumb_checked_unchecked__1.xml"
+    },
+    {
+      "old": "$os_check_drawable_checked_to_unchecked__6.xml",
+      "new": "os_check_drawable_checked_to_unchecked__6.xml",
+      "path": "res/drawable/$os_check_drawable_checked_to_unchecked__6.xml"
+    },
+    {
+      "old": "$os_check_drawable_unchecked_to_checked__0.xml",
+      "new": "os_check_drawable_unchecked_to_checked__0.xml",
+      "path": "res/drawable/$os_check_drawable_unchecked_to_checked__0.xml"
+    },
+    {
+      "old": "$os_progress_medium_material_anim__1.xml",
+      "new": "os_progress_medium_material_anim__1.xml",
+      "path": "res/drawable/$os_progress_medium_material_anim__1.xml"
+    },
+    {
+      "old": "$floating_ic_box_refresh__0.xml",
+      "new": "floating_ic_box_refresh__0.xml",
+      "path": "res/drawable/$floating_ic_box_refresh__0.xml"
+    },
+    {
+      "old": "$avd_show_password__0.xml",
+      "new": "avd_show_password__0.xml",
+      "path": "res/drawable/$avd_show_password__0.xml"
+    },
+    {
+      "old": "$ic_empty_record__1.xml",
+      "new": "ic_empty_record__1.xml",
+      "path": "res/drawable/$ic_empty_record__1.xml"
+    },
+    {
+      "old": "$os_check_drawable_checked_to_unchecked_white__1.xml",
+      "new": "os_check_drawable_checked_to_unchecked_white__1.xml",
+      "path": "res/drawable/$os_check_drawable_checked_to_unchecked_white__1.xml"
+    },
+    {
+      "old": "$os_check_drawable_checked_to_unchecked__3.xml",
+      "new": "os_check_drawable_checked_to_unchecked__3.xml",
+      "path": "res/drawable/$os_check_drawable_checked_to_unchecked__3.xml"
+    },
+    {
+      "old": "$ic_empty_record__3.xml",
+      "new": "ic_empty_record__3.xml",
+      "path": "res/drawable/$ic_empty_record__3.xml"
+    },
+    {
+      "old": "$ic_ai_ask_middle__4.xml",
+      "new": "ic_ai_ask_middle__4.xml",
+      "path": "res/drawable/$ic_ai_ask_middle__4.xml"
+    },
+    {
+      "old": "$avd_show_password__1.xml",
+      "new": "avd_show_password__1.xml",
+      "path": "res/drawable/$avd_show_password__1.xml"
+    },
+    {
+      "old": "$mtrl_checkbox_button_icon_checked_unchecked__1.xml",
+      "new": "mtrl_checkbox_button_icon_checked_unchecked__1.xml",
+      "path": "res/drawable/$mtrl_checkbox_button_icon_checked_unchecked__1.xml"
+    },
+    {
+      "old": "$feedback_ic_contact_ai_customer_service__0.xml",
+      "new": "feedback_ic_contact_ai_customer_service__0.xml",
+      "path": "res/drawable/$feedback_ic_contact_ai_customer_service__0.xml"
+    },
+    {
+      "old": "$avd_hide_password__2.xml",
+      "new": "avd_hide_password__2.xml",
+      "path": "res/drawable/$avd_hide_password__2.xml"
+    },
+    {
+      "old": "$ic_ai_ask_middle__5.xml",
+      "new": "ic_ai_ask_middle__5.xml",
+      "path": "res/drawable/$ic_ai_ask_middle__5.xml"
+    },
+    {
+      "old": "$feedback_ic_contact_ai_customer_service__4.xml",
+      "new": "feedback_ic_contact_ai_customer_service__4.xml",
+      "path": "res/drawable/$feedback_ic_contact_ai_customer_service__4.xml"
+    },
+    {
+      "old": "$ic_new_pro__0.xml",
+      "new": "ic_new_pro__0.xml",
+      "path": "res/drawable/$ic_new_pro__0.xml"
+    },
+    {
+      "old": "$float_ic_menu_lookup_select__0.xml",
+      "new": "float_ic_menu_lookup_select__0.xml",
+      "path": "res/drawable/$float_ic_menu_lookup_select__0.xml"
+    },
+    {
+      "old": "$ic_empty_record__6.xml",
+      "new": "ic_empty_record__6.xml",
+      "path": "res/drawable/$ic_empty_record__6.xml"
+    },
+    {
+      "old": "$feedback_ic_contact_ai_customer_service__5.xml",
+      "new": "feedback_ic_contact_ai_customer_service__5.xml",
+      "path": "res/drawable/$feedback_ic_contact_ai_customer_service__5.xml"
+    },
+    {
+      "old": "$ic_agent_stop__0.xml",
+      "new": "ic_agent_stop__0.xml",
+      "path": "res/drawable/$ic_agent_stop__0.xml"
+    },
+    {
+      "old": "$ft_ic_page_translate_ocr_pro__0.xml",
+      "new": "ft_ic_page_translate_ocr_pro__0.xml",
+      "path": "res/drawable/$ft_ic_page_translate_ocr_pro__0.xml"
+    },
+    {
+      "old": "$float_ic_menu_grammar_select__0.xml",
+      "new": "float_ic_menu_grammar_select__0.xml",
+      "path": "res/drawable/$float_ic_menu_grammar_select__0.xml"
+    },
+    {
+      "old": "$mtrl_checkbox_button_checked_unchecked__1.xml",
+      "new": "mtrl_checkbox_button_checked_unchecked__1.xml",
+      "path": "res/drawable/$mtrl_checkbox_button_checked_unchecked__1.xml"
+    },
+    {
+      "old": "$float_ic_menu_read_select__0.xml",
+      "new": "float_ic_menu_read_select__0.xml",
+      "path": "res/drawable/$float_ic_menu_read_select__0.xml"
+    },
+    {
+      "old": "$ic_empty_record__5.xml",
+      "new": "ic_empty_record__5.xml",
+      "path": "res/drawable/$ic_empty_record__5.xml"
+    },
+    {
+      "old": "$feedback_ic_contact_ai_customer_service__3.xml",
+      "new": "feedback_ic_contact_ai_customer_service__3.xml",
+      "path": "res/drawable/$feedback_ic_contact_ai_customer_service__3.xml"
+    },
+    {
+      "old": "$float_state_idle_left_gold__0.xml",
+      "new": "float_state_idle_left_gold__0.xml",
+      "path": "res/drawable/$float_state_idle_left_gold__0.xml"
+    },
+    {
+      "old": "$ic_ai_ask_middle__3.xml",
+      "new": "ic_ai_ask_middle__3.xml",
+      "path": "res/drawable/$ic_ai_ask_middle__3.xml"
+    },
+    {
+      "old": "$avd_hide_password__1.xml",
+      "new": "avd_hide_password__1.xml",
+      "path": "res/drawable/$avd_hide_password__1.xml"
+    },
+    {
+      "old": "$mtrl_checkbox_button_icon_unchecked_checked__2.xml",
+      "new": "mtrl_checkbox_button_icon_unchecked_checked__2.xml",
+      "path": "res/drawable/$mtrl_checkbox_button_icon_unchecked_checked__2.xml"
+    },
+    {
+      "old": "$avd_hide_password__0.xml",
+      "new": "avd_hide_password__0.xml",
+      "path": "res/drawable/$avd_hide_password__0.xml"
+    },
+    {
+      "old": "$os_check_drawable_checked_to_unchecked_white__4.xml",
+      "new": "os_check_drawable_checked_to_unchecked_white__4.xml",
+      "path": "res/drawable/$os_check_drawable_checked_to_unchecked_white__4.xml"
+    },
+    {
+      "old": "$os_svg_radio_on_to_off__2.xml",
+      "new": "os_svg_radio_on_to_off__2.xml",
+      "path": "res/drawable/$os_svg_radio_on_to_off__2.xml"
+    },
+    {
+      "old": "$m3_avd_hide_password__0.xml",
+      "new": "m3_avd_hide_password__0.xml",
+      "path": "res/drawable/$m3_avd_hide_password__0.xml"
+    },
+    {
+      "old": "$mtrl_switch_thumb_checked_pressed__0.xml",
+      "new": "mtrl_switch_thumb_checked_pressed__0.xml",
+      "path": "res/drawable/$mtrl_switch_thumb_checked_pressed__0.xml"
+    },
+    {
+      "old": "$mtrl_checkbox_button_unchecked_checked__2.xml",
+      "new": "mtrl_checkbox_button_unchecked_checked__2.xml",
+      "path": "res/drawable/$mtrl_checkbox_button_unchecked_checked__2.xml"
+    },
+    {
+      "old": "$mtrl_checkbox_button_checked_unchecked__0.xml",
+      "new": "mtrl_checkbox_button_checked_unchecked__0.xml",
+      "path": "res/drawable/$mtrl_checkbox_button_checked_unchecked__0.xml"
+    },
+    {
+      "old": "$os_radio_drawable_unchecked_to_checked__7.xml",
+      "new": "os_radio_drawable_unchecked_to_checked__7.xml",
+      "path": "res/drawable/$os_radio_drawable_unchecked_to_checked__7.xml"
+    },
+    {
+      "old": "$os_svg_radio_on_to_off__3.xml",
+      "new": "os_svg_radio_on_to_off__3.xml",
+      "path": "res/drawable/$os_svg_radio_on_to_off__3.xml"
+    },
+    {
+      "old": "$ic_empty_record__2.xml",
+      "new": "ic_empty_record__2.xml",
+      "path": "res/drawable/$ic_empty_record__2.xml"
+    },
+    {
+      "old": "$os_svg_radio_off_to_on__1.xml",
+      "new": "os_svg_radio_off_to_on__1.xml",
+      "path": "res/drawable/$os_svg_radio_off_to_on__1.xml"
+    },
+    {
+      "old": "$mtrl_checkbox_button_icon_unchecked_indeterminate__0.xml",
+      "new": "mtrl_checkbox_button_icon_unchecked_indeterminate__0.xml",
+      "path": "res/drawable/$mtrl_checkbox_button_icon_unchecked_indeterminate__0.xml"
+    },
+    {
+      "old": "$os_check_drawable_checked_to_unchecked__8.xml",
+      "new": "os_check_drawable_checked_to_unchecked__8.xml",
+      "path": "res/drawable/$os_check_drawable_checked_to_unchecked__8.xml"
+    },
+    {
+      "old": "$os_check_drawable_unchecked_to_checked__10.xml",
+      "new": "os_check_drawable_unchecked_to_checked__10.xml",
+      "path": "res/drawable/$os_check_drawable_unchecked_to_checked__10.xml"
+    },
+    {
+      "old": "$os_radio_drawable_checked_to_unchecked__3.xml",
+      "new": "os_radio_drawable_checked_to_unchecked__3.xml",
+      "path": "res/drawable/$os_radio_drawable_checked_to_unchecked__3.xml"
+    },
+    {
+      "old": "$os_svg_radio_off_to_on__0.xml",
+      "new": "os_svg_radio_off_to_on__0.xml",
+      "path": "res/drawable/$os_svg_radio_off_to_on__0.xml"
+    },
+    {
+      "old": "$os_check_drawable_checked_to_unchecked_white__6.xml",
+      "new": "os_check_drawable_checked_to_unchecked_white__6.xml",
+      "path": "res/drawable/$os_check_drawable_checked_to_unchecked_white__6.xml"
+    },
+    {
+      "old": "$os_check_drawable_checked_to_unchecked_white__3.xml",
+      "new": "os_check_drawable_checked_to_unchecked_white__3.xml",
+      "path": "res/drawable/$os_check_drawable_checked_to_unchecked_white__3.xml"
+    },
+    {
+      "old": "$os_check_drawable_unchecked_to_checked__5.xml",
+      "new": "os_check_drawable_unchecked_to_checked__5.xml",
+      "path": "res/drawable/$os_check_drawable_unchecked_to_checked__5.xml"
+    },
+    {
+      "old": "$mtrl_checkbox_button_icon_checked_unchecked__0.xml",
+      "new": "mtrl_checkbox_button_icon_checked_unchecked__0.xml",
+      "path": "res/drawable/$mtrl_checkbox_button_icon_checked_unchecked__0.xml"
+    },
+    {
+      "old": "$mtrl_switch_thumb_checked_unchecked__0.xml",
+      "new": "mtrl_switch_thumb_checked_unchecked__0.xml",
+      "path": "res/drawable/$mtrl_switch_thumb_checked_unchecked__0.xml"
+    },
+    {
+      "old": "$security_policy_upgra_to_pro_logo__2.xml",
+      "new": "security_policy_upgra_to_pro_logo__2.xml",
+      "path": "res/drawable/$security_policy_upgra_to_pro_logo__2.xml"
+    },
+    {
+      "old": "$os_radio_drawable_unchecked_to_checked__3.xml",
+      "new": "os_radio_drawable_unchecked_to_checked__3.xml",
+      "path": "res/drawable/$os_radio_drawable_unchecked_to_checked__3.xml"
+    },
+    {
+      "old": "$os_radio_drawable_unchecked_to_checked__12.xml",
+      "new": "os_radio_drawable_unchecked_to_checked__12.xml",
+      "path": "res/drawable/$os_radio_drawable_unchecked_to_checked__12.xml"
+    },
+    {
+      "old": "$ic_summary_icon__1.xml",
+      "new": "ic_summary_icon__1.xml",
+      "path": "res/drawable/$ic_summary_icon__1.xml"
+    },
+    {
+      "old": "$m3_avd_show_password__2.xml",
+      "new": "m3_avd_show_password__2.xml",
+      "path": "res/drawable/$m3_avd_show_password__2.xml"
+    },
+    {
+      "old": "$os_radio_drawable_checked_to_unchecked__6.xml",
+      "new": "os_radio_drawable_checked_to_unchecked__6.xml",
+      "path": "res/drawable/$os_radio_drawable_checked_to_unchecked__6.xml"
+    },
+    {
+      "old": "$os_check_drawable_checked_to_unchecked__11.xml",
+      "new": "os_check_drawable_checked_to_unchecked__11.xml",
+      "path": "res/drawable/$os_check_drawable_checked_to_unchecked__11.xml"
+    },
+    {
+      "old": "$os_check_drawable_unchecked_to_checked__11.xml",
+      "new": "os_check_drawable_unchecked_to_checked__11.xml",
+      "path": "res/drawable/$os_check_drawable_unchecked_to_checked__11.xml"
+    },
+    {
+      "old": "$os_radio_drawable_unchecked_to_checked__4.xml",
+      "new": "os_radio_drawable_unchecked_to_checked__4.xml",
+      "path": "res/drawable/$os_radio_drawable_unchecked_to_checked__4.xml"
+    },
+    {
+      "old": "$os_radio_drawable_unchecked_to_checked__0.xml",
+      "new": "os_radio_drawable_unchecked_to_checked__0.xml",
+      "path": "res/drawable/$os_radio_drawable_unchecked_to_checked__0.xml"
+    },
+    {
+      "old": "$mtrl_checkbox_button_icon_unchecked_checked__0.xml",
+      "new": "mtrl_checkbox_button_icon_unchecked_checked__0.xml",
+      "path": "res/drawable/$mtrl_checkbox_button_icon_unchecked_checked__0.xml"
+    },
+    {
+      "old": "$os_radio_drawable_checked_to_unchecked__11.xml",
+      "new": "os_radio_drawable_checked_to_unchecked__11.xml",
+      "path": "res/drawable/$os_radio_drawable_checked_to_unchecked__11.xml"
+    },
+    {
+      "old": "$float_ic_menu_work_select__0.xml",
+      "new": "float_ic_menu_work_select__0.xml",
+      "path": "res/drawable/$float_ic_menu_work_select__0.xml"
+    },
+    {
+      "old": "$feedback_ic_contact_ai_customer_service__2.xml",
+      "new": "feedback_ic_contact_ai_customer_service__2.xml",
+      "path": "res/drawable/$feedback_ic_contact_ai_customer_service__2.xml"
+    },
+    {
+      "old": "$m3_avd_hide_password__1.xml",
+      "new": "m3_avd_hide_password__1.xml",
+      "path": "res/drawable/$m3_avd_hide_password__1.xml"
+    },
+    {
+      "old": "$os_radio_drawable_checked_to_unchecked__4.xml",
+      "new": "os_radio_drawable_checked_to_unchecked__4.xml",
+      "path": "res/drawable/$os_radio_drawable_checked_to_unchecked__4.xml"
+    },
+    {
+      "old": "$os_check_drawable_unchecked_to_checked__1.xml",
+      "new": "os_check_drawable_unchecked_to_checked__1.xml",
+      "path": "res/drawable/$os_check_drawable_unchecked_to_checked__1.xml"
+    },
+    {
+      "old": "$os_check_drawable_checked_to_unchecked_white__5.xml",
+      "new": "os_check_drawable_checked_to_unchecked_white__5.xml",
+      "path": "res/drawable/$os_check_drawable_checked_to_unchecked_white__5.xml"
+    },
+    {
+      "old": "$mtrl_checkbox_button_icon_indeterminate_unchecked__2.xml",
+      "new": "mtrl_checkbox_button_icon_indeterminate_unchecked__2.xml",
+      "path": "res/drawable/$mtrl_checkbox_button_icon_indeterminate_unchecked__2.xml"
+    },
+    {
+      "old": "$ic_empty_record__0.xml",
+      "new": "ic_empty_record__0.xml",
+      "path": "res/drawable/$ic_empty_record__0.xml"
+    },
+    {
+      "old": "$os_check_drawable_checked_to_unchecked_white__9.xml",
+      "new": "os_check_drawable_checked_to_unchecked_white__9.xml",
+      "path": "res/drawable/$os_check_drawable_checked_to_unchecked_white__9.xml"
+    },
+    {
+      "old": "$mtrl_checkbox_button_icon_unchecked_indeterminate__2.xml",
+      "new": "mtrl_checkbox_button_icon_unchecked_indeterminate__2.xml",
+      "path": "res/drawable/$mtrl_checkbox_button_icon_unchecked_indeterminate__2.xml"
+    },
+    {
+      "old": "$svg_input_gpt__1.xml",
+      "new": "svg_input_gpt__1.xml",
+      "path": "res/drawable/$svg_input_gpt__1.xml"
+    },
+    {
+      "old": "$progress_medium_material_anim__0.xml",
+      "new": "progress_medium_material_anim__0.xml",
+      "path": "res/drawable/$progress_medium_material_anim__0.xml"
+    },
+    {
+      "old": "$security_policy_upgra_to_pro_logo__4.xml",
+      "new": "security_policy_upgra_to_pro_logo__4.xml",
+      "path": "res/drawable/$security_policy_upgra_to_pro_logo__4.xml"
+    },
+    {
+      "old": "$mtrl_checkbox_button_icon_unchecked_indeterminate__1.xml",
+      "new": "mtrl_checkbox_button_icon_unchecked_indeterminate__1.xml",
+      "path": "res/drawable/$mtrl_checkbox_button_icon_unchecked_indeterminate__1.xml"
+    },
+    {
+      "old": "$os_check_drawable_checked_to_unchecked__5.xml",
+      "new": "os_check_drawable_checked_to_unchecked__5.xml",
+      "path": "res/drawable/$os_check_drawable_checked_to_unchecked__5.xml"
+    },
+    {
+      "old": "$mtrl_checkbox_button_icon_checked_indeterminate__0.xml",
+      "new": "mtrl_checkbox_button_icon_checked_indeterminate__0.xml",
+      "path": "res/drawable/$mtrl_checkbox_button_icon_checked_indeterminate__0.xml"
+    },
+    {
+      "old": "$os_radio_drawable_unchecked_to_checked__5.xml",
+      "new": "os_radio_drawable_unchecked_to_checked__5.xml",
+      "path": "res/drawable/$os_radio_drawable_unchecked_to_checked__5.xml"
+    },
+    {
+      "old": "$mtrl_checkbox_button_icon_checked_unchecked__2.xml",
+      "new": "mtrl_checkbox_button_icon_checked_unchecked__2.xml",
+      "path": "res/drawable/$mtrl_checkbox_button_icon_checked_unchecked__2.xml"
+    },
+    {
+      "old": "$os_check_drawable_checked_to_unchecked_white__0.xml",
+      "new": "os_check_drawable_checked_to_unchecked_white__0.xml",
+      "path": "res/drawable/$os_check_drawable_checked_to_unchecked_white__0.xml"
+    },
+    {
+      "old": "$os_check_drawable_unchecked_to_checked__4.xml",
+      "new": "os_check_drawable_unchecked_to_checked__4.xml",
+      "path": "res/drawable/$os_check_drawable_unchecked_to_checked__4.xml"
+    },
+    {
+      "old": "$security_policy_upgra_to_pro_btn__0.xml",
+      "new": "security_policy_upgra_to_pro_btn__0.xml",
+      "path": "res/drawable/$security_policy_upgra_to_pro_btn__0.xml"
+    },
+    {
+      "old": "$os_radio_drawable_checked_to_unchecked__10.xml",
+      "new": "os_radio_drawable_checked_to_unchecked__10.xml",
+      "path": "res/drawable/$os_radio_drawable_checked_to_unchecked__10.xml"
+    },
+    {
+      "old": "$os_radio_drawable_checked_to_unchecked__9.xml",
+      "new": "os_radio_drawable_checked_to_unchecked__9.xml",
+      "path": "res/drawable/$os_radio_drawable_checked_to_unchecked__9.xml"
+    },
+    {
+      "old": "$os_radio_drawable_checked_to_unchecked__8.xml",
+      "new": "os_radio_drawable_checked_to_unchecked__8.xml",
+      "path": "res/drawable/$os_radio_drawable_checked_to_unchecked__8.xml"
+    },
+    {
+      "old": "$svg_input_gpt__0.xml",
+      "new": "svg_input_gpt__0.xml",
+      "path": "res/drawable/$svg_input_gpt__0.xml"
+    },
+    {
+      "old": "$os_check_drawable_checked_to_unchecked_white__14.xml",
+      "new": "os_check_drawable_checked_to_unchecked_white__14.xml",
+      "path": "res/drawable/$os_check_drawable_checked_to_unchecked_white__14.xml"
+    },
+    {
+      "old": "$os_check_drawable_unchecked_to_checked__8.xml",
+      "new": "os_check_drawable_unchecked_to_checked__8.xml",
+      "path": "res/drawable/$os_check_drawable_unchecked_to_checked__8.xml"
+    },
+    {
+      "old": "$mtrl_checkbox_button_icon_unchecked_checked__1.xml",
+      "new": "mtrl_checkbox_button_icon_unchecked_checked__1.xml",
+      "path": "res/drawable/$mtrl_checkbox_button_icon_unchecked_checked__1.xml"
+    },
+    {
+      "old": "$mtrl_switch_thumb_pressed_unchecked__0.xml",
+      "new": "mtrl_switch_thumb_pressed_unchecked__0.xml",
+      "path": "res/drawable/$mtrl_switch_thumb_pressed_unchecked__0.xml"
+    },
+    {
+      "old": "$os_radio_drawable_checked_to_unchecked__1.xml",
+      "new": "os_radio_drawable_checked_to_unchecked__1.xml",
+      "path": "res/drawable/$os_radio_drawable_checked_to_unchecked__1.xml"
+    },
+    {
+      "old": "$os_check_drawable_checked_to_unchecked_white__7.xml",
+      "new": "os_check_drawable_checked_to_unchecked_white__7.xml",
+      "path": "res/drawable/$os_check_drawable_checked_to_unchecked_white__7.xml"
+    },
+    {
+      "old": "$ic_ai_ask_middle__1.xml",
+      "new": "ic_ai_ask_middle__1.xml",
+      "path": "res/drawable/$ic_ai_ask_middle__1.xml"
+    },
+    {
+      "old": "$m3_avd_show_password__1.xml",
+      "new": "m3_avd_show_password__1.xml",
+      "path": "res/drawable/$m3_avd_show_password__1.xml"
+    },
+    {
+      "old": "$m3_avd_show_password__0.xml",
+      "new": "m3_avd_show_password__0.xml",
+      "path": "res/drawable/$m3_avd_show_password__0.xml"
+    },
+    {
+      "old": "$os_check_drawable_unchecked_to_checked__9.xml",
+      "new": "os_check_drawable_unchecked_to_checked__9.xml",
+      "path": "res/drawable/$os_check_drawable_unchecked_to_checked__9.xml"
+    },
+    {
+      "old": "$float_state_idle_right_gold__0.xml",
+      "new": "float_state_idle_right_gold__0.xml",
+      "path": "res/drawable/$float_state_idle_right_gold__0.xml"
+    },
+    {
+      "old": "$os_check_drawable_checked_to_unchecked_white__10.xml",
+      "new": "os_check_drawable_checked_to_unchecked_white__10.xml",
+      "path": "res/drawable/$os_check_drawable_checked_to_unchecked_white__10.xml"
+    },
+    {
+      "old": "$earphone_mode_record_recording_stroke__0.xml",
+      "new": "earphone_mode_record_recording_stroke__0.xml",
+      "path": "res/drawable/$earphone_mode_record_recording_stroke__0.xml"
+    },
+    {
+      "old": "$os_check_drawable_checked_to_unchecked__0.xml",
+      "new": "os_check_drawable_checked_to_unchecked__0.xml",
+      "path": "res/drawable/$os_check_drawable_checked_to_unchecked__0.xml"
+    },
+    {
+      "old": "$ic_summary_icon__0.xml",
+      "new": "ic_summary_icon__0.xml",
+      "path": "res/drawable/$ic_summary_icon__0.xml"
+    },
+    {
+      "old": "$mtrl_switch_thumb_unchecked_checked__1.xml",
+      "new": "mtrl_switch_thumb_unchecked_checked__1.xml",
+      "path": "res/drawable/$mtrl_switch_thumb_unchecked_checked__1.xml"
+    },
+    {
+      "old": "$os_svg_radio_on_to_off__1.xml",
+      "new": "os_svg_radio_on_to_off__1.xml",
+      "path": "res/drawable/$os_svg_radio_on_to_off__1.xml"
+    },
+    {
+      "old": "$os_radio_drawable_checked_to_unchecked__12.xml",
+      "new": "os_radio_drawable_checked_to_unchecked__12.xml",
+      "path": "res/drawable/$os_radio_drawable_checked_to_unchecked__12.xml"
+    },
+    {
+      "old": "$os_check_drawable_checked_to_unchecked__7.xml",
+      "new": "os_check_drawable_checked_to_unchecked__7.xml",
+      "path": "res/drawable/$os_check_drawable_checked_to_unchecked__7.xml"
+    },
+    {
+      "old": "$security_policy_upgra_to_pro_logo__0.xml",
+      "new": "security_policy_upgra_to_pro_logo__0.xml",
+      "path": "res/drawable/$security_policy_upgra_to_pro_logo__0.xml"
+    },
+    {
+      "old": "$os_svg_radio_off_to_on__3.xml",
+      "new": "os_svg_radio_off_to_on__3.xml",
+      "path": "res/drawable/$os_svg_radio_off_to_on__3.xml"
+    },
+    {
+      "old": "$ic_ai_ask_middle__2.xml",
+      "new": "ic_ai_ask_middle__2.xml",
+      "path": "res/drawable/$ic_ai_ask_middle__2.xml"
+    },
+    {
+      "old": "$os_check_drawable_unchecked_to_checked__6.xml",
+      "new": "os_check_drawable_unchecked_to_checked__6.xml",
+      "path": "res/drawable/$os_check_drawable_unchecked_to_checked__6.xml"
+    },
+    {
+      "old": "$security_policy_upgra_to_pro_logo__3.xml",
+      "new": "security_policy_upgra_to_pro_logo__3.xml",
+      "path": "res/drawable/$security_policy_upgra_to_pro_logo__3.xml"
+    },
+    {
+      "old": "$os_radio_drawable_checked_to_unchecked__0.xml",
+      "new": "os_radio_drawable_checked_to_unchecked__0.xml",
+      "path": "res/drawable/$os_radio_drawable_checked_to_unchecked__0.xml"
+    },
+    {
+      "old": "$os_radio_drawable_checked_to_unchecked__5.xml",
+      "new": "os_radio_drawable_checked_to_unchecked__5.xml",
+      "path": "res/drawable/$os_radio_drawable_checked_to_unchecked__5.xml"
+    },
+    {
+      "old": "$os_check_drawable_unchecked_to_checked__2.xml",
+      "new": "os_check_drawable_unchecked_to_checked__2.xml",
+      "path": "res/drawable/$os_check_drawable_unchecked_to_checked__2.xml"
+    },
+    {
+      "old": "$os_check_drawable_unchecked_to_checked__3.xml",
+      "new": "os_check_drawable_unchecked_to_checked__3.xml",
+      "path": "res/drawable/$os_check_drawable_unchecked_to_checked__3.xml"
+    },
+    {
+      "old": "$ic_camera_text_vip_btn__0.xml",
+      "new": "ic_camera_text_vip_btn__0.xml",
+      "path": "res/drawable/$ic_camera_text_vip_btn__0.xml"
+    },
+    {
+      "old": "$os_check_drawable_checked_to_unchecked__1.xml",
+      "new": "os_check_drawable_checked_to_unchecked__1.xml",
+      "path": "res/drawable/$os_check_drawable_checked_to_unchecked__1.xml"
+    },
+    {
+      "old": "$ic_ai_ask_middle__6.xml",
+      "new": "ic_ai_ask_middle__6.xml",
+      "path": "res/drawable/$ic_ai_ask_middle__6.xml"
+    },
+    {
+      "old": "$mtrl_checkbox_button_icon_indeterminate_unchecked__1.xml",
+      "new": "mtrl_checkbox_button_icon_indeterminate_unchecked__1.xml",
+      "path": "res/drawable/$mtrl_checkbox_button_icon_indeterminate_unchecked__1.xml"
+    },
+    {
+      "old": "$os_radio_drawable_unchecked_to_checked__11.xml",
+      "new": "os_radio_drawable_unchecked_to_checked__11.xml",
+      "path": "res/drawable/$os_radio_drawable_unchecked_to_checked__11.xml"
+    },
+    {
+      "old": "$os_check_drawable_checked_to_unchecked_white__8.xml",
+      "new": "os_check_drawable_checked_to_unchecked_white__8.xml",
+      "path": "res/drawable/$os_check_drawable_checked_to_unchecked_white__8.xml"
+    },
+    {
+      "old": "$os_radio_drawable_unchecked_to_checked__10.xml",
+      "new": "os_radio_drawable_unchecked_to_checked__10.xml",
+      "path": "res/drawable/$os_radio_drawable_unchecked_to_checked__10.xml"
+    },
+    {
+      "old": "$ic_ai_ask_middle__0.xml",
+      "new": "ic_ai_ask_middle__0.xml",
+      "path": "res/drawable/$ic_ai_ask_middle__0.xml"
+    },
+    {
+      "old": "$os_radio_drawable_unchecked_to_checked__2.xml",
+      "new": "os_radio_drawable_unchecked_to_checked__2.xml",
+      "path": "res/drawable/$os_radio_drawable_unchecked_to_checked__2.xml"
+    },
+    {
+      "old": "$os_check_drawable_checked_to_unchecked_white__2.xml",
+      "new": "os_check_drawable_checked_to_unchecked_white__2.xml",
+      "path": "res/drawable/$os_check_drawable_checked_to_unchecked_white__2.xml"
+    },
+    {
+      "old": "$ic_empty_record__4.xml",
+      "new": "ic_empty_record__4.xml",
+      "path": "res/drawable/$ic_empty_record__4.xml"
+    },
+    {
+      "old": "$os_check_drawable_checked_to_unchecked_white__12.xml",
+      "new": "os_check_drawable_checked_to_unchecked_white__12.xml",
+      "path": "res/drawable/$os_check_drawable_checked_to_unchecked_white__12.xml"
+    },
+    {
+      "old": "$os_radio_drawable_unchecked_to_checked__9.xml",
+      "new": "os_radio_drawable_unchecked_to_checked__9.xml",
+      "path": "res/drawable/$os_radio_drawable_unchecked_to_checked__9.xml"
+    },
+    {
+      "old": "$os_radio_drawable_unchecked_to_checked__6.xml",
+      "new": "os_radio_drawable_unchecked_to_checked__6.xml",
+      "path": "res/drawable/$os_radio_drawable_unchecked_to_checked__6.xml"
+    },
+    {
+      "old": "$float_ic_menu_chat_select__0.xml",
+      "new": "float_ic_menu_chat_select__0.xml",
+      "path": "res/drawable/$float_ic_menu_chat_select__0.xml"
+    },
+    {
+      "old": "$float_ic_menu_grammar_select__1.xml",
+      "new": "float_ic_menu_grammar_select__1.xml",
+      "path": "res/drawable/$float_ic_menu_grammar_select__1.xml"
+    },
+    {
+      "old": "$mtrl_checkbox_button_icon_indeterminate_unchecked__0.xml",
+      "new": "mtrl_checkbox_button_icon_indeterminate_unchecked__0.xml",
+      "path": "res/drawable/$mtrl_checkbox_button_icon_indeterminate_unchecked__0.xml"
+    },
+    {
+      "old": "$ic_audio_record_cursor__1.xml",
+      "new": "ic_audio_record_cursor__1.xml",
+      "path": "res/drawable/$ic_audio_record_cursor__1.xml"
+    },
+    {
+      "old": "$mtrl_switch_thumb_unchecked_pressed__0.xml",
+      "new": "mtrl_switch_thumb_unchecked_pressed__0.xml",
+      "path": "res/drawable/$mtrl_switch_thumb_unchecked_pressed__0.xml"
+    },
+    {
+      "old": "$os_svg_radio_off_to_on__2.xml",
+      "new": "os_svg_radio_off_to_on__2.xml",
+      "path": "res/drawable/$os_svg_radio_off_to_on__2.xml"
+    },
+    {
+      "old": "$mtrl_checkbox_button_unchecked_checked__0.xml",
+      "new": "mtrl_checkbox_button_unchecked_checked__0.xml",
+      "path": "res/drawable/$mtrl_checkbox_button_unchecked_checked__0.xml"
+    },
+    {
+      "old": "$float_ic_menu_lookup_select__1.xml",
+      "new": "float_ic_menu_lookup_select__1.xml",
+      "path": "res/drawable/$float_ic_menu_lookup_select__1.xml"
+    },
+    {
+      "old": "$os_check_drawable_checked_to_unchecked_white__13.xml",
+      "new": "os_check_drawable_checked_to_unchecked_white__13.xml",
+      "path": "res/drawable/$os_check_drawable_checked_to_unchecked_white__13.xml"
+    },
+    {
+      "old": "$os_radio_drawable_checked_to_unchecked__2.xml",
+      "new": "os_radio_drawable_checked_to_unchecked__2.xml",
+      "path": "res/drawable/$os_radio_drawable_checked_to_unchecked__2.xml"
+    },
+    {
+      "old": "$os_check_drawable_checked_to_unchecked__2.xml",
+      "new": "os_check_drawable_checked_to_unchecked__2.xml",
+      "path": "res/drawable/$os_check_drawable_checked_to_unchecked__2.xml"
+    },
+    {
+      "old": "$ic_camera_live_circle__0.xml",
+      "new": "ic_camera_live_circle__0.xml",
+      "path": "res/drawable/$ic_camera_live_circle__0.xml"
+    },
+    {
+      "old": "$os_radio_drawable_unchecked_to_checked__1.xml",
+      "new": "os_radio_drawable_unchecked_to_checked__1.xml",
+      "path": "res/drawable/$os_radio_drawable_unchecked_to_checked__1.xml"
+    },
+    {
+      "old": "$mtrl_checkbox_button_unchecked_checked__1.xml",
+      "new": "mtrl_checkbox_button_unchecked_checked__1.xml",
+      "path": "res/drawable/$mtrl_checkbox_button_unchecked_checked__1.xml"
+    },
+    {
+      "old": "$os_check_drawable_checked_to_unchecked__9.xml",
+      "new": "os_check_drawable_checked_to_unchecked__9.xml",
+      "path": "res/drawable/$os_check_drawable_checked_to_unchecked__9.xml"
+    },
+    {
+      "old": "$os_check_drawable_unchecked_to_checked__7.xml",
+      "new": "os_check_drawable_unchecked_to_checked__7.xml",
+      "path": "res/drawable/$os_check_drawable_unchecked_to_checked__7.xml"
+    },
+    {
+      "old": "$os_check_drawable_checked_to_unchecked_white__11.xml",
+      "new": "os_check_drawable_checked_to_unchecked_white__11.xml",
+      "path": "res/drawable/$os_check_drawable_checked_to_unchecked_white__11.xml"
+    },
+    {
+      "old": "$os_progress_medium_material_anim__0.xml",
+      "new": "os_progress_medium_material_anim__0.xml",
+      "path": "res/drawable/$os_progress_medium_material_anim__0.xml"
+    },
+    {
+      "old": "$ic_audio_record_cursor__0.xml",
+      "new": "ic_audio_record_cursor__0.xml",
+      "path": "res/drawable/$ic_audio_record_cursor__0.xml"
+    },
+    {
+      "old": "$os_check_drawable_checked_to_unchecked_white__15.xml",
+      "new": "os_check_drawable_checked_to_unchecked_white__15.xml",
+      "path": "res/drawable/$os_check_drawable_checked_to_unchecked_white__15.xml"
+    },
+    {
+      "old": "$os_svg_radio_on_to_off__0.xml",
+      "new": "os_svg_radio_on_to_off__0.xml",
+      "path": "res/drawable/$os_svg_radio_on_to_off__0.xml"
+    },
+    {
+      "old": "$os_radio_drawable_unchecked_to_checked__8.xml",
+      "new": "os_radio_drawable_unchecked_to_checked__8.xml",
+      "path": "res/drawable/$os_radio_drawable_unchecked_to_checked__8.xml"
+    },
+    {
+      "old": "$os_check_drawable_checked_to_unchecked__4.xml",
+      "new": "os_check_drawable_checked_to_unchecked__4.xml",
+      "path": "res/drawable/$os_check_drawable_checked_to_unchecked__4.xml"
+    },
+    {
+      "old": "$os_radio_drawable_checked_to_unchecked__7.xml",
+      "new": "os_radio_drawable_checked_to_unchecked__7.xml",
+      "path": "res/drawable/$os_radio_drawable_checked_to_unchecked__7.xml"
+    },
+    {
+      "old": "$security_policy_upgra_to_pro_logo__1.xml",
+      "new": "security_policy_upgra_to_pro_logo__1.xml",
+      "path": "res/drawable/$security_policy_upgra_to_pro_logo__1.xml"
+    },
+    {
+      "old": "$os_check_drawable_checked_to_unchecked_white__16.xml",
+      "new": "os_check_drawable_checked_to_unchecked_white__16.xml",
+      "path": "res/drawable/$os_check_drawable_checked_to_unchecked_white__16.xml"
+    },
+    {
+      "old": "$m3_avd_hide_password__2.xml",
+      "new": "m3_avd_hide_password__2.xml",
+      "path": "res/drawable/$m3_avd_hide_password__2.xml"
+    },
+    {
+      "old": "$mtrl_switch_thumb_pressed_checked__0.xml",
+      "new": "mtrl_switch_thumb_pressed_checked__0.xml",
+      "path": "res/drawable/$mtrl_switch_thumb_pressed_checked__0.xml"
+    },
+    {
+      "old": "$mtrl_switch_thumb_unchecked_checked__0.xml",
+      "new": "mtrl_switch_thumb_unchecked_checked__0.xml",
+      "path": "res/drawable/$mtrl_switch_thumb_unchecked_checked__0.xml"
+    },
+    {
+      "old": "$os_check_drawable_checked_to_unchecked__10.xml",
+      "new": "os_check_drawable_checked_to_unchecked__10.xml",
+      "path": "res/drawable/$os_check_drawable_checked_to_unchecked__10.xml"
+    },
+    {
+      "old": "$mtrl_checkbox_button_icon_indeterminate_checked__0.xml",
+      "new": "mtrl_checkbox_button_icon_indeterminate_checked__0.xml",
+      "path": "res/drawable/$mtrl_checkbox_button_icon_indeterminate_checked__0.xml"
+    },
+    {
+      "old": "$progress_medium_material_anim__1.xml",
+      "new": "progress_medium_material_anim__1.xml",
+      "path": "res/drawable/$progress_medium_material_anim__1.xml"
+    },
+    {
+      "old": "$ic_empty_record__2.xml",
+      "new": "ic_empty_record__2.xml",
+      "path": "res/drawable-night/$ic_empty_record__2.xml"
+    },
+    {
+      "old": "$ic_empty_record__3.xml",
+      "new": "ic_empty_record__3.xml",
+      "path": "res/drawable-night/$ic_empty_record__3.xml"
+    },
+    {
+      "old": "$ic_empty_record__4.xml",
+      "new": "ic_empty_record__4.xml",
+      "path": "res/drawable-night/$ic_empty_record__4.xml"
+    },
+    {
+      "old": "$ic_empty_record__5.xml",
+      "new": "ic_empty_record__5.xml",
+      "path": "res/drawable-night/$ic_empty_record__5.xml"
+    },
+    {
+      "old": "$ic_empty_record__6.xml",
+      "new": "ic_empty_record__6.xml",
+      "path": "res/drawable-night/$ic_empty_record__6.xml"
+    },
+    {
+      "old": "$ic_empty_record__0.xml",
+      "new": "ic_empty_record__0.xml",
+      "path": "res/drawable-night/$ic_empty_record__0.xml"
+    },
+    {
+      "old": "$ic_empty_record__1.xml",
+      "new": "ic_empty_record__1.xml",
+      "path": "res/drawable-night/$ic_empty_record__1.xml"
+    }
+  ]
+}

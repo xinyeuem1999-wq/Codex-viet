@@ -1,0 +1,92 @@
+# Combo: Bypass-VIP/License+Mod-Shell+Check-Toàn-Vẹn (2 patch)
+
+[MIN_ENGINE_VER]
+2
+
+[AUTHOR]
+Anymy
+
+[PACKAGE]
+ALL
+
+[MATCH_REPLACE]
+TARGET:
+    smali*/*
+MATCH:
+    invoke-virtual \{([vp]\d+), ([vp]\d+), ([vp]\d+)\}, Ljava\/lang\/reflect\/Method;->invoke\(Ljava\/lang\/Object;\[Ljava\/lang\/Object;\)Ljava\/lang\/Object;
+REGEX:
+    true
+REPLACE:
+    invoke-static {${GROUP1}, ${GROUP2}, ${GROUP3}}, Lcom/anymy/ref;->invoke(Ljava/lang/Object;Ljava/lang/Object;[Ljava/lang/Object;)V
+
+invoke-virtual {${GROUP1}, ${GROUP2}, ${GROUP3}}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+[/MATCH_REPLACE]
+
+[ADD_FILES]
+SOURCE:
+    smali.zip
+TARGET:
+    smali
+EXTRACT:
+    true
+[/ADD_FILES]
+
+[DUMMY]
+NAME:
+    p0_end
+[/DUMMY]
+
+[MATCH_REPLACE]
+TARGET:
+    smali*/*.smali
+MATCH:
+    (\(Landroid/content/Context;\)I|\(Landroid/content/Context;I\)I)\n    \.registers (\d+)\n    \.annotation runtime Ljava/lang/Deprecated;\n    \.end annotation
+REGEX:
+    true
+REPLACE:
+    ${GROUP1}
+    .registers ${GROUP2}
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+
+    const/4 v0, 0x0
+
+#htc600
+
+    return v0
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    smali*/*.smali
+MATCH:
+    \(Landroid/content/Context;\)I\n    \.registers (\d+)\n    .param ([pv]\d+), "context"    # Landroid/content/Context;\n    \.annotation runtime Ljava/lang/Deprecated;\n    \.end annotation
+REGEX:
+    true
+REPLACE:
+    (Landroid/content/Context;)I
+    .registers ${GROUP1}
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+
+    const/4 v0, 0x0
+
+#htc600
+
+    return v0
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    smali*/*.smali
+MATCH:
+    invoke-virtual \{([pv]\d+), ([pv]\d+)\}, Ljava/security/Signature;->verify\(\[B\)Z\n\n    move-result ([pv]\d+)
+REGEX:
+    true
+REPLACE:
+    invoke-virtual {${GROUP1}, ${GROUP2}}, Ljava/security/Signature;->verify([B)Z
+
+#htc600
+
+    const/4 ${GROUP3}, 0x1
+[/MATCH_REPLACE]

@@ -1,0 +1,173 @@
+[
+  {
+    "target": "smali*/*.smali",
+    "patches": [
+      "3. GooglePlayServices by Edik1d",
+      "GooglePlayServices",
+      "License_hack",
+      "License_hack&htc v2",
+      "License_hack(Amazon)"
+    ],
+    "variants": 2
+  },
+  {
+    "target": "smali*/*.smali",
+    "patches": [
+      "Anonymous[Auto_Generate]",
+      "FakeIP"
+    ],
+    "variants": 2
+  },
+  {
+    "target": "ADD_FILES",
+    "patches": [
+      "BinSignatureHack_with_htc",
+      "SignatureHack_arm64",
+      "SignatureHack_armv7"
+    ],
+    "variants": 2
+  },
+  {
+    "target": "res/values-uk/strings.xml",
+    "patches": [
+      "Commenting on untranslated lines",
+      "Wrap non-translated strings"
+    ],
+    "variants": 2
+  },
+  {
+    "target": "res/values-ru/strings.xml",
+    "patches": [
+      "Commenting on untranslated lines",
+      "Wrap non-translated strings"
+    ],
+    "variants": 2
+  },
+  {
+    "target": "res/values-ru/strings.xml",
+    "patches": [
+      "Dictionary+ru+uk+2",
+      "Wrap non-translated strings"
+    ],
+    "variants": 2
+  },
+  {
+    "target": "res/values-uk/strings.xml",
+    "patches": [
+      "Dictionary+ru+uk+2",
+      "Wrap non-translated strings"
+    ],
+    "variants": 2
+  },
+  {
+    "target": "smali*/*.smali",
+    "patches": [
+      "FakeGPS",
+      "FakeGpsAutoGenerate"
+    ],
+    "variants": 2
+  },
+  {
+    "target": "smali*/*.smali",
+    "patches": [
+      "FakeGPS",
+      "FakeGpsAutoGenerate"
+    ],
+    "variants": 2
+  },
+  {
+    "target": "[LAUNCHER_ACTIVITIES]",
+    "patches": [
+      "IsPremium",
+      "Permission_calendar",
+      "Permission_location",
+      "Permission_phone",
+      "Permission_readContact",
+      "Permission_readSMS"
+    ],
+    "variants": 6
+  },
+  {
+    "target": "AndroidManifest.xml",
+    "patches": [
+      "Password_login_english"
+    ],
+    "variants": 2
+  },
+  {
+    "target": "AndroidManifest.xml",
+    "patches": [
+      "Permission_calendar",
+      "Permission_location",
+      "Permission_phone",
+      "Permission_readContact",
+      "Permission_readSMS"
+    ],
+    "variants": 5
+  },
+  {
+    "target": "[LAUNCHER_ACTIVITIES]",
+    "patches": [
+      "Permission_calendar",
+      "Permission_location",
+      "Permission_phone",
+      "Permission_readContact",
+      "Permission_readSMS"
+    ],
+    "variants": 5
+  },
+  {
+    "target": "res/values/public.xml",
+    "patches": [
+      "RES-ID"
+    ],
+    "variants": 2
+  },
+  {
+    "target": "res/values/public.xml",
+    "patches": [
+      "RES-ID"
+    ],
+    "variants": 51
+  },
+  {
+    "target": "res/values/public.xml",
+    "patches": [
+      "RES-ID"
+    ],
+    "variants": 50
+  },
+  {
+    "target": "[LAUNCHER_ACTIVITIES]",
+    "patches": [
+      "AddSave Debug_Information Toast"
+    ],
+    "variants": 2
+  },
+  {
+    "target": "ADD_FILES",
+    "patches": [
+      "Bin_sig&installer_fix[Amazon]",
+      "Bin_sig&installer_fix[Google]",
+      "DexExtractor",
+      "patch_bypass_sigcheck_with_reflection"
+    ],
+    "variants": 3
+  },
+  {
+    "target": "smali/cc/binmt/signature/PmsHookApplication.smali",
+    "patches": [
+      "Bin_sig&installer_fix[Amazon]",
+      "Bin_sig&installer_fix[Google]"
+    ],
+    "variants": 2
+  },
+  {
+    "target": "smali*/*",
+    "patches": [
+      "DexExtractor",
+      "patch_bypass_sigcheck_with_reflection"
+    ],
+    "variants": 2
+  }
+]

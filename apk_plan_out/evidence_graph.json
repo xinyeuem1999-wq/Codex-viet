@@ -1,0 +1,727 @@
+{
+  "nodes": [
+    {
+      "id": "patch:DexExtractor",
+      "kind": "patch",
+      "label": "DexExtractor",
+      "score": 0.91
+    },
+    {
+      "id": "file:smali_classes2/androidx/versionedparcelable/class.smali",
+      "kind": "file",
+      "label": "smali_classes2/androidx/versionedparcelable/class.smali"
+    },
+    {
+      "id": "file:smali/org/アレヌ.smali",
+      "kind": "file",
+      "label": "smali/org/アレヌ.smali"
+    },
+    {
+      "id": "file:smali/androidx/appcompat/widget/const.smali",
+      "kind": "file",
+      "label": "smali/androidx/appcompat/widget/const.smali"
+    },
+    {
+      "id": "file:smali/org/メィ.smali",
+      "kind": "file",
+      "label": "smali/org/メィ.smali"
+    },
+    {
+      "id": "file:smali/androidx/appcompat/widget/SearchView$if.smali",
+      "kind": "file",
+      "label": "smali/androidx/appcompat/widget/SearchView$if.smali"
+    },
+    {
+      "id": "patch:patch_bypass_sigcheck_with_reflection",
+      "kind": "patch",
+      "label": "patch_bypass_sigcheck_with_reflection",
+      "score": 0.75
+    },
+    {
+      "id": "patch:Unicode text",
+      "kind": "patch",
+      "label": "Unicode text",
+      "score": 0.715
+    },
+    {
+      "id": "file:smali/org/ヱベ.smali",
+      "kind": "file",
+      "label": "smali/org/ヱベ.smali"
+    },
+    {
+      "id": "file:smali/org/ゼメ.smali",
+      "kind": "file",
+      "label": "smali/org/ゼメ.smali"
+    },
+    {
+      "id": "file:smali/org/アザレ.smali",
+      "kind": "file",
+      "label": "smali/org/アザレ.smali"
+    },
+    {
+      "id": "file:smali/org/サプ.smali",
+      "kind": "file",
+      "label": "smali/org/サプ.smali"
+    },
+    {
+      "id": "file:smali/org/ゲワ.smali",
+      "kind": "file",
+      "label": "smali/org/ゲワ.smali"
+    },
+    {
+      "id": "patch:License_hack",
+      "kind": "patch",
+      "label": "License_hack",
+      "score": 0.64
+    },
+    {
+      "id": "file:smali_classes2/org/ィジリ.smali",
+      "kind": "file",
+      "label": "smali_classes2/org/ィジリ.smali"
+    },
+    {
+      "id": "file:smali_classes2/org/アオロ.smali",
+      "kind": "file",
+      "label": "smali_classes2/org/アオロ.smali"
+    },
+    {
+      "id": "file:smali/org/ィゾケ.smali",
+      "kind": "file",
+      "label": "smali/org/ィゾケ.smali"
+    },
+    {
+      "id": "file:smali/org/ウィ.smali",
+      "kind": "file",
+      "label": "smali/org/ウィ.smali"
+    },
+    {
+      "id": "file:smali_classes2/org/イヵ.smali",
+      "kind": "file",
+      "label": "smali_classes2/org/イヵ.smali"
+    },
+    {
+      "id": "patch:New. Removing the analytic tag, etc.. Inok_ZP 12.04.18",
+      "kind": "patch",
+      "label": "New. Removing the analytic tag, etc.. Inok_ZP 12.04.18",
+      "score": 0.6367
+    },
+    {
+      "id": "file:smali/androidx/fragment/app/final$private.smali",
+      "kind": "file",
+      "label": "smali/androidx/fragment/app/final$private.smali"
+    },
+    {
+      "id": "file:smali/android/support/design/widget/continue$catch.smali",
+      "kind": "file",
+      "label": "smali/android/support/design/widget/continue$catch.smali"
+    },
+    {
+      "id": "file:smali/androidx/appcompat/app/break$abstract$class.smali",
+      "kind": "file",
+      "label": "smali/androidx/appcompat/app/break$abstract$class.smali"
+    },
+    {
+      "id": "file:smali/androidx/appcompat/app/break$abstract.smali",
+      "kind": "file",
+      "label": "smali/androidx/appcompat/app/break$abstract.smali"
+    },
+    {
+      "id": "file:smali/androidx/appcompat/widget/SearchView$package.smali",
+      "kind": "file",
+      "label": "smali/androidx/appcompat/widget/SearchView$package.smali"
+    },
+    {
+      "id": "patch:License_hack(Amazon)",
+      "kind": "patch",
+      "label": "License_hack(Amazon)",
+      "score": 0.63
+    },
+    {
+      "id": "patch:translate_obfuscation",
+      "kind": "patch",
+      "label": "translate_obfuscation",
+      "score": 0.615
+    },
+    {
+      "id": "file:res/values-ru/strings.xml",
+      "kind": "file",
+      "label": "res/values-ru/strings.xml"
+    },
+    {
+      "id": "file:res/values/strings.xml",
+      "kind": "file",
+      "label": "res/values/strings.xml"
+    },
+    {
+      "id": "file:res/values/public.xml",
+      "kind": "file",
+      "label": "res/values/public.xml"
+    },
+    {
+      "id": "file:res/layout/activity_external_card.xml",
+      "kind": "file",
+      "label": "res/layout/activity_external_card.xml"
+    },
+    {
+      "id": "file:res/layout/activity_text_viewer.xml",
+      "kind": "file",
+      "label": "res/layout/activity_text_viewer.xml"
+    },
+    {
+      "id": "patch:3. GooglePlayServices by Edik1d",
+      "kind": "patch",
+      "label": "3. GooglePlayServices by Edik1d",
+      "score": 0.615
+    },
+    {
+      "id": "patch:Debug_information_and_hack_signature",
+      "kind": "patch",
+      "label": "Debug_information_and_hack_signature",
+      "score": 0.56
+    },
+    {
+      "id": "file:smali_classes2/org/アヅハ.smali",
+      "kind": "file",
+      "label": "smali_classes2/org/アヅハ.smali"
+    },
+    {
+      "id": "patch:patch_bypass_sigcheck",
+      "kind": "patch",
+      "label": "patch_bypass_sigcheck",
+      "score": 0.56
+    },
+    {
+      "id": "patch:Password_login_english",
+      "kind": "patch",
+      "label": "Password_login_english",
+      "score": 0.535
+    },
+    {
+      "id": "patch:GooglePlayServices",
+      "kind": "patch",
+      "label": "GooglePlayServices",
+      "score": 0.5317
+    },
+    {
+      "id": "patch:Permission_location",
+      "kind": "patch",
+      "label": "Permission_location",
+      "score": 0.51
+    },
+    {
+      "id": "file:smali/apk/tool/patcher/ui/modules/main/MainActivity.smali",
+      "kind": "file",
+      "label": "smali/apk/tool/patcher/ui/modules/main/MainActivity.smali"
+    },
+    {
+      "id": "file:AndroidManifest.xml",
+      "kind": "file",
+      "label": "AndroidManifest.xml"
+    },
+    {
+      "id": "patch:Language substitution",
+      "kind": "patch",
+      "label": "Language substitution",
+      "score": 0.5007
+    },
+    {
+      "id": "patch:Only Ru",
+      "kind": "patch",
+      "label": "Only Ru",
+      "score": 0.5007
+    },
+    {
+      "id": "patch:License_hack&htc v2",
+      "kind": "patch",
+      "label": "License_hack&htc v2",
+      "score": 0.4938
+    },
+    {
+      "id": "patch:BinSignatureHack_with_htc",
+      "kind": "patch",
+      "label": "BinSignatureHack_with_htc",
+      "score": 0.4867
+    },
+    {
+      "id": "patch:Permission_readSMS",
+      "kind": "patch",
+      "label": "Permission_readSMS",
+      "score": 0.48
+    },
+    {
+      "id": "patch:Bin_sig&installer_fix[Amazon]",
+      "kind": "patch",
+      "label": "Bin_sig&installer_fix[Amazon]",
+      "score": 0.4479
+    },
+    {
+      "id": "patch:Bin_sig&installer_fix[Google]",
+      "kind": "patch",
+      "label": "Bin_sig&installer_fix[Google]",
+      "score": 0.4479
+    },
+    {
+      "id": "patch:Permission_calendar",
+      "kind": "patch",
+      "label": "Permission_calendar",
+      "score": 0.435
+    },
+    {
+      "id": "patch:Permission_camera",
+      "kind": "patch",
+      "label": "Permission_camera",
+      "score": 0.435
+    },
+    {
+      "id": "patch:Permission_phone",
+      "kind": "patch",
+      "label": "Permission_phone",
+      "score": 0.435
+    },
+    {
+      "id": "patch:Permission_readContact",
+      "kind": "patch",
+      "label": "Permission_readContact",
+      "score": 0.435
+    },
+    {
+      "id": "patch:SignatureHack_arm64",
+      "kind": "patch",
+      "label": "SignatureHack_arm64",
+      "score": 0.4311
+    },
+    {
+      "id": "file:smali_classes2/ru/leymoy/StubApp.smali",
+      "kind": "file",
+      "label": "smali_classes2/ru/leymoy/StubApp.smali"
+    },
+    {
+      "id": "patch:SignatureHack_armv7",
+      "kind": "patch",
+      "label": "SignatureHack_armv7",
+      "score": 0.4311
+    },
+    {
+      "id": "patch:Dictionary+ru+uk+2",
+      "kind": "patch",
+      "label": "Dictionary+ru+uk+2",
+      "score": 0.3088
+    },
+    {
+      "id": "patch:4. DisableBillingService by VERGIL777",
+      "kind": "patch",
+      "label": "4. DisableBillingService by VERGIL777",
+      "score": 0.3
+    },
+    {
+      "id": "patch:AUTH_VK_AND_FB",
+      "kind": "patch",
+      "label": "AUTH_VK_AND_FB",
+      "score": 0.3
+    },
+    {
+      "id": "patch:Activator",
+      "kind": "patch",
+      "label": "Activator",
+      "score": 0.3
+    }
+  ],
+  "edges": [
+    {
+      "from": "patch:DexExtractor",
+      "to": "file:smali_classes2/androidx/versionedparcelable/class.smali",
+      "matches": 71
+    },
+    {
+      "from": "patch:DexExtractor",
+      "to": "file:smali/org/アレヌ.smali",
+      "matches": 71
+    },
+    {
+      "from": "patch:DexExtractor",
+      "to": "file:smali/androidx/appcompat/widget/const.smali",
+      "matches": 71
+    },
+    {
+      "from": "patch:DexExtractor",
+      "to": "file:smali/org/メィ.smali",
+      "matches": 71
+    },
+    {
+      "from": "patch:DexExtractor",
+      "to": "file:smali/androidx/appcompat/widget/SearchView$if.smali",
+      "matches": 71
+    },
+    {
+      "from": "patch:patch_bypass_sigcheck_with_reflection",
+      "to": "file:smali_classes2/androidx/versionedparcelable/class.smali",
+      "matches": 71
+    },
+    {
+      "from": "patch:patch_bypass_sigcheck_with_reflection",
+      "to": "file:smali/org/アレヌ.smali",
+      "matches": 71
+    },
+    {
+      "from": "patch:patch_bypass_sigcheck_with_reflection",
+      "to": "file:smali/androidx/appcompat/widget/const.smali",
+      "matches": 71
+    },
+    {
+      "from": "patch:patch_bypass_sigcheck_with_reflection",
+      "to": "file:smali/org/メィ.smali",
+      "matches": 71
+    },
+    {
+      "from": "patch:patch_bypass_sigcheck_with_reflection",
+      "to": "file:smali/androidx/appcompat/widget/SearchView$if.smali",
+      "matches": 71
+    },
+    {
+      "from": "patch:Unicode text",
+      "to": "file:smali/org/ヱベ.smali",
+      "matches": 934
+    },
+    {
+      "from": "patch:Unicode text",
+      "to": "file:smali/org/ゼメ.smali",
+      "matches": 934
+    },
+    {
+      "from": "patch:Unicode text",
+      "to": "file:smali/org/アザレ.smali",
+      "matches": 934
+    },
+    {
+      "from": "patch:Unicode text",
+      "to": "file:smali/org/サプ.smali",
+      "matches": 934
+    },
+    {
+      "from": "patch:Unicode text",
+      "to": "file:smali/org/ゲワ.smali",
+      "matches": 934
+    },
+    {
+      "from": "patch:License_hack",
+      "to": "file:smali_classes2/org/ィジリ.smali",
+      "matches": 8
+    },
+    {
+      "from": "patch:License_hack",
+      "to": "file:smali_classes2/org/アオロ.smali",
+      "matches": 8
+    },
+    {
+      "from": "patch:License_hack",
+      "to": "file:smali/org/ィゾケ.smali",
+      "matches": 8
+    },
+    {
+      "from": "patch:License_hack",
+      "to": "file:smali/org/ウィ.smali",
+      "matches": 8
+    },
+    {
+      "from": "patch:License_hack",
+      "to": "file:smali_classes2/org/イヵ.smali",
+      "matches": 8
+    },
+    {
+      "from": "patch:New. Removing the analytic tag, etc.. Inok_ZP 12.04.18",
+      "to": "file:smali/androidx/fragment/app/final$private.smali",
+      "matches": 2723982
+    },
+    {
+      "from": "patch:New. Removing the analytic tag, etc.. Inok_ZP 12.04.18",
+      "to": "file:smali/android/support/design/widget/continue$catch.smali",
+      "matches": 2723982
+    },
+    {
+      "from": "patch:New. Removing the analytic tag, etc.. Inok_ZP 12.04.18",
+      "to": "file:smali/androidx/appcompat/app/break$abstract$class.smali",
+      "matches": 2723982
+    },
+    {
+      "from": "patch:New. Removing the analytic tag, etc.. Inok_ZP 12.04.18",
+      "to": "file:smali/androidx/appcompat/app/break$abstract.smali",
+      "matches": 2723982
+    },
+    {
+      "from": "patch:New. Removing the analytic tag, etc.. Inok_ZP 12.04.18",
+      "to": "file:smali/androidx/appcompat/widget/SearchView$package.smali",
+      "matches": 2723982
+    },
+    {
+      "from": "patch:License_hack(Amazon)",
+      "to": "file:smali_classes2/org/ィジリ.smali",
+      "matches": 8
+    },
+    {
+      "from": "patch:License_hack(Amazon)",
+      "to": "file:smali_classes2/org/アオロ.smali",
+      "matches": 8
+    },
+    {
+      "from": "patch:License_hack(Amazon)",
+      "to": "file:smali/org/ィゾケ.smali",
+      "matches": 8
+    },
+    {
+      "from": "patch:License_hack(Amazon)",
+      "to": "file:smali/org/ウィ.smali",
+      "matches": 8
+    },
+    {
+      "from": "patch:License_hack(Amazon)",
+      "to": "file:smali_classes2/org/イヵ.smali",
+      "matches": 8
+    },
+    {
+      "from": "patch:translate_obfuscation",
+      "to": "file:res/values-ru/strings.xml",
+      "matches": 681
+    },
+    {
+      "from": "patch:translate_obfuscation",
+      "to": "file:res/values/strings.xml",
+      "matches": 681
+    },
+    {
+      "from": "patch:translate_obfuscation",
+      "to": "file:res/values/public.xml",
+      "matches": 370
+    },
+    {
+      "from": "patch:translate_obfuscation",
+      "to": "file:res/layout/activity_external_card.xml",
+      "matches": 190
+    },
+    {
+      "from": "patch:translate_obfuscation",
+      "to": "file:res/layout/activity_text_viewer.xml",
+      "matches": 190
+    },
+    {
+      "from": "patch:3. GooglePlayServices by Edik1d",
+      "to": "file:smali_classes2/org/ィジリ.smali",
+      "matches": 8
+    },
+    {
+      "from": "patch:3. GooglePlayServices by Edik1d",
+      "to": "file:smali_classes2/org/アオロ.smali",
+      "matches": 8
+    },
+    {
+      "from": "patch:3. GooglePlayServices by Edik1d",
+      "to": "file:smali/org/ィゾケ.smali",
+      "matches": 8
+    },
+    {
+      "from": "patch:3. GooglePlayServices by Edik1d",
+      "to": "file:smali/org/ウィ.smali",
+      "matches": 8
+    },
+    {
+      "from": "patch:3. GooglePlayServices by Edik1d",
+      "to": "file:smali_classes2/org/イヵ.smali",
+      "matches": 8
+    },
+    {
+      "from": "patch:Debug_information_and_hack_signature",
+      "to": "file:smali_classes2/org/アヅハ.smali",
+      "matches": 1
+    },
+    {
+      "from": "patch:patch_bypass_sigcheck",
+      "to": "file:smali_classes2/org/アヅハ.smali",
+      "matches": 1
+    },
+    {
+      "from": "patch:Password_login_english",
+      "to": "file:smali/androidx/fragment/app/final$private.smali",
+      "matches": 2613301
+    },
+    {
+      "from": "patch:Password_login_english",
+      "to": "file:smali/android/support/design/widget/continue$catch.smali",
+      "matches": 2613301
+    },
+    {
+      "from": "patch:Password_login_english",
+      "to": "file:smali/androidx/appcompat/app/break$abstract$class.smali",
+      "matches": 2613301
+    },
+    {
+      "from": "patch:Password_login_english",
+      "to": "file:smali/androidx/appcompat/app/break$abstract.smali",
+      "matches": 2613301
+    },
+    {
+      "from": "patch:Password_login_english",
+      "to": "file:smali/androidx/appcompat/widget/SearchView$package.smali",
+      "matches": 2613301
+    },
+    {
+      "from": "patch:GooglePlayServices",
+      "to": "file:smali_classes2/org/ィジリ.smali",
+      "matches": 8
+    },
+    {
+      "from": "patch:GooglePlayServices",
+      "to": "file:smali_classes2/org/アオロ.smali",
+      "matches": 8
+    },
+    {
+      "from": "patch:GooglePlayServices",
+      "to": "file:smali/org/ィゾケ.smali",
+      "matches": 8
+    },
+    {
+      "from": "patch:GooglePlayServices",
+      "to": "file:smali/org/ウィ.smali",
+      "matches": 8
+    },
+    {
+      "from": "patch:GooglePlayServices",
+      "to": "file:smali_classes2/org/イヵ.smali",
+      "matches": 8
+    },
+    {
+      "from": "patch:Permission_location",
+      "to": "file:smali/apk/tool/patcher/ui/modules/main/MainActivity.smali",
+      "matches": 2
+    },
+    {
+      "from": "patch:Permission_location",
+      "to": "file:AndroidManifest.xml",
+      "matches": 1
+    },
+    {
+      "from": "patch:Language substitution",
+      "to": "file:res/values/strings.xml",
+      "matches": 434
+    },
+    {
+      "from": "patch:Language substitution",
+      "to": "file:res/values-ru/strings.xml",
+      "matches": 329
+    },
+    {
+      "from": "patch:Only Ru",
+      "to": "file:res/values/strings.xml",
+      "matches": 434
+    },
+    {
+      "from": "patch:Only Ru",
+      "to": "file:res/values-ru/strings.xml",
+      "matches": 329
+    },
+    {
+      "from": "patch:License_hack&htc v2",
+      "to": "file:smali_classes2/org/ィジリ.smali",
+      "matches": 8
+    },
+    {
+      "from": "patch:License_hack&htc v2",
+      "to": "file:smali_classes2/org/アオロ.smali",
+      "matches": 8
+    },
+    {
+      "from": "patch:License_hack&htc v2",
+      "to": "file:smali/org/ィゾケ.smali",
+      "matches": 8
+    },
+    {
+      "from": "patch:License_hack&htc v2",
+      "to": "file:smali/org/ウィ.smali",
+      "matches": 8
+    },
+    {
+      "from": "patch:License_hack&htc v2",
+      "to": "file:smali_classes2/org/イヵ.smali",
+      "matches": 8
+    },
+    {
+      "from": "patch:BinSignatureHack_with_htc",
+      "to": "file:AndroidManifest.xml",
+      "matches": 2
+    },
+    {
+      "from": "patch:Permission_readSMS",
+      "to": "file:smali/apk/tool/patcher/ui/modules/main/MainActivity.smali",
+      "matches": 2
+    },
+    {
+      "from": "patch:Permission_readSMS",
+      "to": "file:AndroidManifest.xml",
+      "matches": 1
+    },
+    {
+      "from": "patch:Bin_sig&installer_fix[Amazon]",
+      "to": "file:AndroidManifest.xml",
+      "matches": 2
+    },
+    {
+      "from": "patch:Bin_sig&installer_fix[Google]",
+      "to": "file:AndroidManifest.xml",
+      "matches": 2
+    },
+    {
+      "from": "patch:Permission_calendar",
+      "to": "file:smali/apk/tool/patcher/ui/modules/main/MainActivity.smali",
+      "matches": 2
+    },
+    {
+      "from": "patch:Permission_calendar",
+      "to": "file:AndroidManifest.xml",
+      "matches": 1
+    },
+    {
+      "from": "patch:Permission_camera",
+      "to": "file:smali/apk/tool/patcher/ui/modules/main/MainActivity.smali",
+      "matches": 2
+    },
+    {
+      "from": "patch:Permission_camera",
+      "to": "file:AndroidManifest.xml",
+      "matches": 1
+    },
+    {
+      "from": "patch:Permission_phone",
+      "to": "file:smali/apk/tool/patcher/ui/modules/main/MainActivity.smali",
+      "matches": 2
+    },
+    {
+      "from": "patch:Permission_phone",
+      "to": "file:AndroidManifest.xml",
+      "matches": 1
+    },
+    {
+      "from": "patch:Permission_readContact",
+      "to": "file:smali/apk/tool/patcher/ui/modules/main/MainActivity.smali",
+      "matches": 2
+    },
+    {
+      "from": "patch:Permission_readContact",
+      "to": "file:AndroidManifest.xml",
+      "matches": 1
+    },
+    {
+      "from": "patch:SignatureHack_arm64",
+      "to": "file:smali_classes2/ru/leymoy/StubApp.smali",
+      "matches": 2
+    },
+    {
+      "from": "patch:SignatureHack_armv7",
+      "to": "file:smali_classes2/ru/leymoy/StubApp.smali",
+      "matches": 2
+    },
+    {
+      "from": "patch:Dictionary+ru+uk+2",
+      "to": "file:res/values-ru/strings.xml",
+      "matches": 313
+    }
+  ],
+  "generated": "2026-08-17 16:06:33"
+}

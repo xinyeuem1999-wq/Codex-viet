@@ -1,0 +1,147 @@
+{
+  "generated": "2026-08-17 21:20:15",
+  "apk": "/storage/emulated/0/Patch/patch1/_patchx/real_apk_test/app_bypass_signed.apk",
+  "package": "com.zaz.translate",
+  "activity": "com.zaz.translate.WelcomeActivity",
+  "devices": [
+    "100.64.170.99:5555"
+  ],
+  "device": "100.64.170.99:5555",
+  "install_returncode": 0,
+  "install_method": "install",
+  "install_output": "Serving...\nPerforming Incremental Install\nFailure [INSTALL_FAILED_MEDIA_UNAVAILABLE: Failed to prepare image.]\nPerforming Streamed Install\nSuccess",
+  "launch_returncode": 0,
+  "launch_output": "Starting: Intent { cmp=com.zaz.translate/.WelcomeActivity }",
+  "network_new_connections": [
+    {
+      "local": "0:0:0:0:65535:0:51924:1057:33160",
+      "remote": "0:0:0:0:65535:0:30621:64398:443",
+      "state": "ESTABLISHED"
+    },
+    {
+      "local": "0:0:0:0:65535:0:51924:1057:34488",
+      "remote": "0:0:0:0:65535:0:1138:55724:443",
+      "state": "ESTABLISHED"
+    },
+    {
+      "local": "0:0:0:0:65535:0:51924:1057:38456",
+      "remote": "0:0:0:0:65535:0:33561:55724:443",
+      "state": "ESTABLISHED"
+    },
+    {
+      "local": "0:0:0:0:65535:0:51924:1057:38458",
+      "remote": "0:0:0:0:65535:0:33561:55724:443",
+      "state": "ESTABLISHED"
+    },
+    {
+      "local": "0:0:0:0:65535:0:51924:1057:43536",
+      "remote": "0:0:0:0:65535:0:3532:38841:443",
+      "state": "ESTABLISHED"
+    },
+    {
+      "local": "0:0:0:0:65535:0:51924:1057:48194",
+      "remote": "0:0:0:0:65535:0:32870:53512:443",
+      "state": "ESTABLISHED"
+    },
+    {
+      "local": "0:0:0:0:65535:0:51924:1057:48204",
+      "remote": "0:0:0:0:65535:0:32870:53512:443",
+      "state": "ESTABLISHED"
+    },
+    {
+      "local": "0:0:0:0:65535:0:51924:1057:50664",
+      "remote": "0:0:0:0:65535:0:32829:3705:443",
+      "state": "ESTABLISHED"
+    },
+    {
+      "local": "0:0:0:0:65535:0:51924:1057:51930",
+      "remote": "0:0:0:0:65535:0:14727:16658:443",
+      "state": "ESTABLISHED"
+    },
+    {
+      "local": "0:0:0:0:65535:0:51924:1057:52822",
+      "remote": "0:0:0:0:65535:0:38771:43456:80",
+      "state": "ESTABLISHED"
+    },
+    {
+      "local": "0:0:0:0:65535:0:51924:1057:55704",
+      "remote": "0:0:0:0:65535:0:56193:62767:443",
+      "state": "ESTABLISHED"
+    },
+    {
+      "local": "0:0:0:0:65535:0:51924:1057:55706",
+      "remote": "0:0:0:0:65535:0:56193:62767:443",
+      "state": "ESTABLISHED"
+    },
+    {
+      "local": "0:0:0:0:65535:0:51924:1057:55746",
+      "remote": "0:0:0:0:65535:0:56193:62767:443",
+      "state": "ESTABLISHED"
+    },
+    {
+      "local": "0:0:0:0:65535:0:51924:1057:55782",
+      "remote": "0:0:0:0:65535:0:1139:55724:443",
+      "state": "ESTABLISHED"
+    },
+    {
+      "local": "0:0:0:0:65535:0:51924:1057:55802",
+      "remote": "0:0:0:0:65535:0:1139:55724:443",
+      "state": "ESTABLISHED"
+    },
+    {
+      "local": "0:0:0:0:65535:0:51924:1057:56430",
+      "remote": "0:0:0:0:65535:0:25897:49837:443",
+      "state": "ESTABLISHED"
+    },
+    {
+      "local": "0:0:0:0:65535:0:51924:1057:58106",
+      "remote": "0:0:0:0:65535:0:10501:54024:443",
+      "state": "ESTABLISHED"
+    },
+    {
+      "local": "33.4.212.202:36124",
+      "remote": "173.194.41.113:443",
+      "state": "ESTABLISHED"
+    },
+    {
+      "local": "33.4.212.202:36126",
+      "remote": "173.194.41.113:443",
+      "state": "ESTABLISHED"
+    },
+    {
+      "local": "33.4.212.202:36128",
+      "remote": "173.194.41.113:443",
+      "state": "ESTABLISHED"
+    },
+    {
+      "local": "33.4.212.202:50234",
+      "remote": "35.199.128.3:443",
+      "state": "ESTABLISHED"
+    }
+  ],
+  "network_note": "Phát hiện 21 kết nối mạng mới sau khi mở app — kiểm tra nếu là hành vi 'âm thầm' gửi dữ liệu của patch.",
+  "signature_ok": true,
+  "signature_schemes": [
+    "v1",
+    "v2",
+    "v3",
+    "v3.1",
+    "v4"
+  ],
+  "signature_note": "Play Integrity / hardware attestation cần thiết bị thật — máy ảo cloud không xác minh được (giới hạn T3).",
+  "pid": "31589",
+  "resumed_activity": true,
+  "logcat_tail": "e.android.gms.providerinstaller.dynamite\n08-17 22:21:30.706 26049 31586 I GmsDebugLogger: [20] [MlkitOcrDevanagari.optional:251333100000]\n08-17 22:21:30.736 23440 23501 E PackageSettings: Failed to set packages.list SELinux context\n08-17 22:21:30.737 23440 23464 I DropBoxManagerService: add tag=system_server_wtf isTagEnabled=true flags=0x2\n08-17 22:21:30.747 23440 23464 I DropBoxManagerService: add tag=system_server_wtf isTagEnabled=true flags=0x2\n08-17 22:21:30.779 26049 31586 I ChimeraConfigurator: Update complete: success\n08-17 22:21:30.798 26049 31586 I GmsModuleFndr: Beginning GMS chimera module scan\n08-17 22:21:30.819 26049 31586 I ModuleSetResolution: Computing pending module set with APKs: [[Appsearch.optional:251333100400], [MapsCoreDynamite.integ:250625400100400], [MlkitOcrChinese.optional:251333100000], [MlkitOcrCommon.optional:251333100400], [MlkitOcrDevanagari.optional:251333100000], [MlkitOcrJapanese.optional:251333100000], [MlkitOcrKorean.optional:251333100000], [TfliteDynamiteDynamite.integ:260580502100400], [TfliteDynamiteDynamite.integ:262730502100400], [VisionCustomIca.optional:251333100400], [VisionIca.optional:251333100400], [VisionOcr.optional:251333100000], [Wasmlibs.optional:251333100400], [AdsFdrDynamite.integ:250505301100000], [Cronetdynamite:251333190400], [Dynamiteloader:251333190000], [Dynamitemodulesa:251333190000], [Dynamitemodulesc:251333190000], [Googlecertificates:251333190000], [Mapsdynamite:251333190000], [Measurementdynamite:251333190000]]",
+  "crash_lines": [],
+  "subprocess_crashes": [],
+  "anr_lines": [],
+  "m2": true,
+  "m2_status": "M2_PASS",
+  "m3_status": "M3_SKIP",
+  "m3": null,
+  "m3_reasons": [
+    "Chưa cung cấp kịch bản xác minh hành vi (--scenario hoặc --expect/--forbid)."
+  ],
+  "verdict": "SKIP",
+  "ghi_chú": "M2 = cài + mở + process sống + không FATAL EXCEPTION/ANR. M3 = kịch bản hành vi theo app."
+}

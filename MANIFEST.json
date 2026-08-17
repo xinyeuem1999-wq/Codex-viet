@@ -1,0 +1,48 @@
+{
+  "generated": "2026-08-14 12:10:01",
+  "root": "/storage/emulated/0/Patch/1. PATCH others",
+  "total_files": 59,
+  "total_size": 13300596,
+  "folders": {},
+  "empty_folders": [
+    "_patchx"
+  ],
+  "dupe_groups": [
+    {
+      "nhóm": 1,
+      "bản_chuẩn": "Anti_analytics2.zip",
+      "bản_trùng": [
+        "Anti_analytics2_22-41-11.zip"
+      ],
+      "sha256": "03ce42a2d36aaedf72f868ba073b4ff851aec4d24717cf53260340e1b7be868d",
+      "số_file": 2
+    },
+    {
+      "nhóm": 2,
+      "bản_chuẩn": "UnicodeToUTF.zip",
+      "bản_trùng": [
+        "Decoder_ID_Resource.zip"
+      ],
+      "sha256": "c89bcf46b2fcf7475a1df4da80eacd55cf4576e319ad8e0f47ab09dba6826774",
+      "số_file": 2
+    },
+    {
+      "nhóm": 3,
+      "bản_chuẩn": "Language substitution.zip",
+      "bản_trùng": [
+        "Only Ru.zip"
+      ],
+      "sha256": "a94a29f586aea8ef37154dbc51ea0b8e54141ed79549d6fd04541145a2179d8a",
+      "số_file": 2
+    },
+    {
+      "nhóm": 4,
+      "bản_chuẩn": "Yandex_Metrica 1.zip",
+      "bản_trùng": [
+        "Yandex_Metrica.zip"
+      ],
+      "sha256": "70b1866bfc4df5317c79c91c1a55bc6e72776c7cf852b8e68da45fa0208274bd",
+      "số_file": 2
+    }
+  ]
+}

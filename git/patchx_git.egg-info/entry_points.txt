@@ -1,0 +1,2 @@
+[console_scripts]
+patchx-git = patchx_git.cli:main

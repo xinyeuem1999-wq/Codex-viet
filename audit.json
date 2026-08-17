@@ -1,0 +1,1384 @@
+{
+  "generated": "2026-08-17 14:30:08",
+  "total": 60,
+  "errors": 0,
+  "warnings": 18,
+  "fixable": 17,
+  "patches": [
+    {
+      "patch": "1. New.  Metrics, analytics, statistics collection, Deletion.  from Inok_ZP 12.04.18g",
+      "source": "upgraded/1. New.  Metrics, analytics, statistics collection, Deletion.  from Inok_ZP 12.04.18g.zip",
+      "findings": [
+        {
+          "code": "A01",
+          "level": "cảnh-báo",
+          "message": "Thiếu [MIN_ENGINE_VER] — thêm mặc định 2",
+          "fixable": true
+        },
+        {
+          "code": "A01",
+          "level": "cảnh-báo",
+          "message": "Thiếu [PACKAGE] — thêm mặc định *",
+          "fixable": true
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 2) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 3) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        }
+      ]
+    },
+    {
+      "patch": "2. disable_google_analytics by VERGIL777",
+      "source": "upgraded/2. disable_google_analytics by VERGIL777.zip",
+      "findings": [
+        {
+          "code": "A01",
+          "level": "cảnh-báo",
+          "message": "Thiếu [MIN_ENGINE_VER] — thêm mặc định 2",
+          "fixable": true
+        },
+        {
+          "code": "A01",
+          "level": "cảnh-báo",
+          "message": "Thiếu [PACKAGE] — thêm mặc định *",
+          "fixable": true
+        }
+      ]
+    },
+    {
+      "patch": "3. GooglePlayServices by Edik1d",
+      "source": "upgraded/3. GooglePlayServices by Edik1d.zip",
+      "findings": [
+        {
+          "code": "A01",
+          "level": "cảnh-báo",
+          "message": "Thiếu [MIN_ENGINE_VER] — thêm mặc định 2",
+          "fixable": true
+        },
+        {
+          "code": "A01",
+          "level": "cảnh-báo",
+          "message": "Thiếu [AUTHOR] — thêm mặc định patchx",
+          "fixable": true
+        },
+        {
+          "code": "A01",
+          "level": "cảnh-báo",
+          "message": "Thiếu [PACKAGE] — thêm mặc định *",
+          "fixable": true
+        }
+      ]
+    },
+    {
+      "patch": "4. DisableBillingService by VERGIL777",
+      "source": "upgraded/4. DisableBillingService by VERGIL777.zip",
+      "findings": [
+        {
+          "code": "A01",
+          "level": "cảnh-báo",
+          "message": "Thiếu [MIN_ENGINE_VER] — thêm mặc định 2",
+          "fixable": true
+        },
+        {
+          "code": "A01",
+          "level": "cảnh-báo",
+          "message": "Thiếu [PACKAGE] — thêm mặc định *",
+          "fixable": true
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 2) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        }
+      ]
+    },
+    {
+      "patch": "AUTH_VK_AND_FB",
+      "source": "upgraded/AUTH_VK_AND_FB.zip",
+      "findings": []
+    },
+    {
+      "patch": "Activator",
+      "source": "upgraded/Activator.zip",
+      "findings": []
+    },
+    {
+      "patch": "AddSave Debug_Information Toast",
+      "source": "upgraded/AddSave Debug_Information Toast.zip",
+      "findings": [
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 3) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        }
+      ]
+    },
+    {
+      "patch": "Anonymous[Auto_Generate]",
+      "source": "upgraded/Anonymous[Auto_Generate].zip",
+      "findings": []
+    },
+    {
+      "patch": "Anti_analytics2",
+      "source": "upgraded/Anti_analytics2.zip",
+      "findings": [
+        {
+          "code": "A01",
+          "level": "cảnh-báo",
+          "message": "Thiếu [MIN_ENGINE_VER] — thêm mặc định 2",
+          "fixable": true
+        },
+        {
+          "code": "A01",
+          "level": "cảnh-báo",
+          "message": "Thiếu [PACKAGE] — thêm mặc định *",
+          "fixable": true
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 2) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 3) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        }
+      ]
+    },
+    {
+      "patch": "Anti_analytics2_22-41-11",
+      "source": "upgraded/Anti_analytics2_22-41-11.zip",
+      "findings": [
+        {
+          "code": "A01",
+          "level": "cảnh-báo",
+          "message": "Thiếu [MIN_ENGINE_VER] — thêm mặc định 2",
+          "fixable": true
+        },
+        {
+          "code": "A01",
+          "level": "cảnh-báo",
+          "message": "Thiếu [PACKAGE] — thêm mặc định *",
+          "fixable": true
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 2) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 3) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        }
+      ]
+    },
+    {
+      "patch": "BinSignatureHack_with_htc",
+      "source": "upgraded/BinSignatureHack_with_htc.zip",
+      "findings": []
+    },
+    {
+      "patch": "Bin_sig&installer_fix[Amazon]",
+      "source": "upgraded/Bin_sig&installer_fix[Amazon].zip",
+      "findings": []
+    },
+    {
+      "patch": "Bin_sig&installer_fix[Google]",
+      "source": "upgraded/Bin_sig&installer_fix[Google].zip",
+      "findings": []
+    },
+    {
+      "patch": "Commenting on untranslated lines",
+      "source": "upgraded/Commenting on untranslated lines.zip",
+      "findings": [
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 8) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 14) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        }
+      ]
+    },
+    {
+      "patch": "Debug_information",
+      "source": "upgraded/Debug_information.zip",
+      "findings": [
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 3) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        }
+      ]
+    },
+    {
+      "patch": "Debug_information_and_hack_signature",
+      "source": "upgraded/Debug_information_and_hack_signature.zip",
+      "findings": [
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 6) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        }
+      ]
+    },
+    {
+      "patch": "Decoder_ID_Resource",
+      "source": "upgraded/Decoder_ID_Resource.zip",
+      "findings": []
+    },
+    {
+      "patch": "DexExtractor",
+      "source": "upgraded/DexExtractor.zip",
+      "findings": []
+    },
+    {
+      "patch": "Dictionary+ru+uk+2",
+      "source": "upgraded/Dictionary+ru+uk+2.zip",
+      "findings": [
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 10) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 18) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        }
+      ]
+    },
+    {
+      "patch": "FakeGPS",
+      "source": "upgraded/FakeGPS.zip",
+      "findings": []
+    },
+    {
+      "patch": "FakeGpsAutoGenerate",
+      "source": "upgraded/FakeGpsAutoGenerate.zip",
+      "findings": []
+    },
+    {
+      "patch": "FakeIP",
+      "source": "upgraded/FakeIP.zip",
+      "findings": []
+    },
+    {
+      "patch": "GooglePlayServices",
+      "source": "upgraded/GooglePlayServices.zip",
+      "findings": []
+    },
+    {
+      "patch": "Inject_Hook_Remote_Data_Control",
+      "source": "upgraded/Inject_Hook_Remote_Data_Control.zip",
+      "findings": [
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 5) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 6) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 7) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 8) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 9) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 10) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 11) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        }
+      ]
+    },
+    {
+      "patch": "IsPremium",
+      "source": "upgraded/IsPremium.zip",
+      "findings": []
+    },
+    {
+      "patch": "Language substitution",
+      "source": "upgraded/Language substitution.zip",
+      "findings": [
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 7) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 8) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 9) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        }
+      ]
+    },
+    {
+      "patch": "License_hack&htc v2",
+      "source": "upgraded/License_hack&htc v2.zip",
+      "findings": []
+    },
+    {
+      "patch": "License_hack(Amazon)",
+      "source": "upgraded/License_hack(Amazon).zip",
+      "findings": []
+    },
+    {
+      "patch": "License_hack",
+      "source": "upgraded/License_hack.zip",
+      "findings": []
+    },
+    {
+      "patch": "MockLocation",
+      "source": "upgraded/MockLocation.zip",
+      "findings": []
+    },
+    {
+      "patch": "New. Removing the analytic tag, etc.. Inok_ZP 12.04.18",
+      "source": "upgraded/New. Removing the analytic tag, etc.. Inok_ZP 12.04.18.zip",
+      "findings": [
+        {
+          "code": "A01",
+          "level": "cảnh-báo",
+          "message": "Thiếu [MIN_ENGINE_VER] — thêm mặc định 2",
+          "fixable": true
+        },
+        {
+          "code": "A01",
+          "level": "cảnh-báo",
+          "message": "Thiếu [PACKAGE] — thêm mặc định *",
+          "fixable": true
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 2) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 3) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        }
+      ]
+    },
+    {
+      "patch": "NoLocation",
+      "source": "upgraded/NoLocation.zip",
+      "findings": [
+        {
+          "code": "A14",
+          "level": "thông-tin",
+          "message": "MIN_ENGINE_VER=1 cũ hơn khuyến nghị 2",
+          "fixable": false
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 3) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 4) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 5) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        }
+      ]
+    },
+    {
+      "patch": "NoPlayGames",
+      "source": "upgraded/NoPlayGames.zip",
+      "findings": []
+    },
+    {
+      "patch": "Only Ru",
+      "source": "upgraded/Only Ru.zip",
+      "findings": [
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 7) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 8) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 9) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        }
+      ]
+    },
+    {
+      "patch": "Password_login_english",
+      "source": "upgraded/Password_login_english.zip",
+      "findings": [
+        {
+          "code": "A13",
+          "level": "cảnh-báo",
+          "message": "[ADD_FILES] TARGET ngoài vùng chuẩn: / (khối 4)",
+          "fixable": false
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 10) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        },
+        {
+          "code": "A08",
+          "level": "thông-tin",
+          "message": "Biến ${ALIASES} được gán nhưng không dùng tới",
+          "fixable": false
+        }
+      ]
+    },
+    {
+      "patch": "Permission_calendar",
+      "source": "upgraded/Permission_calendar.zip",
+      "findings": [
+        {
+          "code": "A14",
+          "level": "thông-tin",
+          "message": "MIN_ENGINE_VER=1 cũ hơn khuyến nghị 2",
+          "fixable": false
+        }
+      ]
+    },
+    {
+      "patch": "Permission_camera",
+      "source": "upgraded/Permission_camera.zip",
+      "findings": [
+        {
+          "code": "A14",
+          "level": "thông-tin",
+          "message": "MIN_ENGINE_VER=1 cũ hơn khuyến nghị 2",
+          "fixable": false
+        }
+      ]
+    },
+    {
+      "patch": "Permission_location",
+      "source": "upgraded/Permission_location.zip",
+      "findings": [
+        {
+          "code": "A14",
+          "level": "thông-tin",
+          "message": "MIN_ENGINE_VER=1 cũ hơn khuyến nghị 2",
+          "fixable": false
+        }
+      ]
+    },
+    {
+      "patch": "Permission_phone",
+      "source": "upgraded/Permission_phone.zip",
+      "findings": [
+        {
+          "code": "A14",
+          "level": "thông-tin",
+          "message": "MIN_ENGINE_VER=1 cũ hơn khuyến nghị 2",
+          "fixable": false
+        }
+      ]
+    },
+    {
+      "patch": "Permission_readContact",
+      "source": "upgraded/Permission_readContact.zip",
+      "findings": [
+        {
+          "code": "A14",
+          "level": "thông-tin",
+          "message": "MIN_ENGINE_VER=1 cũ hơn khuyến nghị 2",
+          "fixable": false
+        }
+      ]
+    },
+    {
+      "patch": "Permission_readSMS",
+      "source": "upgraded/Permission_readSMS.zip",
+      "findings": [
+        {
+          "code": "A14",
+          "level": "thông-tin",
+          "message": "MIN_ENGINE_VER=1 cũ hơn khuyến nghị 2",
+          "fixable": false
+        }
+      ]
+    },
+    {
+      "patch": "RES-ID",
+      "source": "upgraded/RES-ID.zip",
+      "findings": [
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 8) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 11) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 276) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 278) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 549) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 551) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 822) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 824) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 1095) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 1097) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 1368) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 1370) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 1641) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 1643) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 1914) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 1916) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 2187) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 2189) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 2460) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 2462) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 2733) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 2735) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 3006) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 3008) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 3279) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 3281) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 3552) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 3554) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 3825) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 3827) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 4098) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 4100) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 4371) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 4373) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 4644) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 4646) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 4917) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 4919) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 5190) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 5192) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 5463) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 5465) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 5736) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 5738) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 6009) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 6011) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 6282) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 6284) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 6555) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 6557) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 6828) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 6830) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 7101) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 7103) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 7374) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 7376) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 7647) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 7649) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 7920) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 7922) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 8193) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 8195) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 8466) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 8468) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 8739) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 8741) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 9012) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 9014) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 9285) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 9287) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 9558) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 9560) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 9831) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 9833) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 10104) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 10106) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 10377) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 10379) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 10650) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 10652) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 10923) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 10925) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 11196) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 11198) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 11469) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 11471) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 11742) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 11744) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 12015) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 12017) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 12288) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 12290) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 12561) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 12563) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 12834) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 12836) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 13107) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 13109) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 13380) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 13382) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 13653) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 13655) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        }
+      ]
+    },
+    {
+      "patch": "SignatureHack_arm64",
+      "source": "upgraded/SignatureHack_arm64.zip",
+      "findings": []
+    },
+    {
+      "patch": "SignatureHack_armv7",
+      "source": "upgraded/SignatureHack_armv7.zip",
+      "findings": []
+    },
+    {
+      "patch": "Unicode text",
+      "source": "upgraded/Unicode text.zip",
+      "findings": []
+    },
+    {
+      "patch": "UnicodeToUTF",
+      "source": "upgraded/UnicodeToUTF.zip",
+      "findings": []
+    },
+    {
+      "patch": "Wrap non-translated strings",
+      "source": "upgraded/Wrap non-translated strings.zip",
+      "findings": [
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 10) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 13) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 15) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 23) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 26) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 28) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        }
+      ]
+    },
+    {
+      "patch": "Yandex_Metrica 1",
+      "source": "upgraded/Yandex_Metrica 1.zip",
+      "findings": [
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 3) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 4) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        }
+      ]
+    },
+    {
+      "patch": "Yandex_Metrica",
+      "source": "upgraded/Yandex_Metrica.zip",
+      "findings": [
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 3) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        },
+        {
+          "code": "A15",
+          "level": "thông-tin",
+          "message": "[MATCH_REPLACE] REPLACE rỗng (khối 4) — có thể là thao tác xóa có chủ đích",
+          "fixable": false
+        }
+      ]
+    },
+    {
+      "patch": "accounts_hack",
+      "source": "upgraded/accounts_hack.zip",
+      "findings": []
+    },
+    {
+      "patch": "delete_languages",
+      "source": "upgraded/delete_languages.zip",
+      "findings": []
+    },
+    {
+      "patch": "patch_bypass_sigcheck",
+      "source": "upgraded/patch_bypass_sigcheck.zip",
+      "findings": []
+    },
+    {
+      "patch": "patch_bypass_sigcheck_with_reflection",
+      "source": "upgraded/patch_bypass_sigcheck_with_reflection.zip",
+      "findings": []
+    },
+    {
+      "patch": "patch_delete_translation_raw-values_xxx",
+      "source": "upgraded/patch_delete_translation_raw-values_xxx.zip",
+      "findings": [
+        {
+          "code": "A14",
+          "level": "thông-tin",
+          "message": "MIN_ENGINE_VER=1 cũ hơn khuyến nghị 2",
+          "fixable": false
+        }
+      ]
+    },
+    {
+      "patch": "patch_remove_translation",
+      "source": "upgraded/patch_remove_translation.zip",
+      "findings": [
+        {
+          "code": "A14",
+          "level": "thông-tin",
+          "message": "MIN_ENGINE_VER=1 cũ hơn khuyến nghị 2",
+          "fixable": false
+        }
+      ]
+    },
+    {
+      "patch": "permission_memory",
+      "source": "upgraded/permission_memory.zip",
+      "findings": []
+    },
+    {
+      "patch": "res_raw_TRANSLATIONxx",
+      "source": "upgraded/res_raw_TRANSLATIONxx.zip",
+      "findings": [
+        {
+          "code": "A14",
+          "level": "thông-tin",
+          "message": "MIN_ENGINE_VER=1 cũ hơn khuyến nghị 2",
+          "fixable": false
+        }
+      ]
+    },
+    {
+      "patch": "translate_debugger",
+      "source": "upgraded/translate_debugger.zip",
+      "findings": []
+    },
+    {
+      "patch": "translate_obfuscation",
+      "source": "upgraded/translate_obfuscation.zip",
+      "findings": []
+    },
+    {
+      "patch": "yandex_metrica by Vergil777",
+      "source": "upgraded/yandex_metrica by Vergil777.zip",
+      "findings": [
+        {
+          "code": "A01",
+          "level": "cảnh-báo",
+          "message": "Thiếu [MIN_ENGINE_VER] — thêm mặc định 2",
+          "fixable": true
+        },
+        {
+          "code": "A01",
+          "level": "cảnh-báo",
+          "message": "Thiếu [PACKAGE] — thêm mặc định *",
+          "fixable": true
+        }
+      ]
+    }
+  ]
+}

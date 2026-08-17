@@ -1,0 +1,134 @@
+# Combo: Ẩn-Root/Giả-Lập+Gỡ-SSL-Pinning+Chống-Debug+Ẩn-Frida+Bỏ-Kiểm-Tra-Máy-Ảo+Giả-Lập-Mua-Hàng (6 patch)
+
+[MIN_ENGINE_VER]
+2
+
+[AUTHOR]
+Patchx Bypass Collection
+
+[PACKAGE]
+*
+
+[MATCH_REPLACE]
+TARGET:
+    smali*/*.smali
+MATCH:
+    (invoke-.*->(isRooted|isDeviceRooted|checkForRoot|isRootAvailable|checkRooted|RootBeer)\(.*\)Z)\n\n    (move-result ([pv]\d+))
+REGEX:
+    true
+REPLACE:
+    # ${GROUP1}
+    const/4 ${GROUP4}, 0x0
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    smali*/*.smali
+MATCH:
+    (invoke-.*\{([pv]\d+), ([pv]\d+)\}, .*Ljavax/net/ssl/X509TrustManager;->checkServerTrusted\(\[Ljava/security/cert/X509Certificate;Ljava/lang/String;\)V)
+REGEX:
+    true
+REPLACE:
+    # ${GROUP1}
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    smali*/*.smali
+MATCH:
+    (invoke-.*\{([pv]\d+), ([pv]\d+)\}, .*Lokhttp3/CertificatePinner;->check\(Ljava/lang/String;Ljava/util/List;\)V)
+REGEX:
+    true
+REPLACE:
+    # ${GROUP1}
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    smali*/*.smali
+MATCH:
+    (invoke-.*\{([pv]\d+)\}, Landroid/os/Debug;->isDebuggerConnected\(\)Z)\n\n    (move-result ([pv]\d+))
+REGEX:
+    true
+REPLACE:
+    # ${GROUP1}
+    const/4 ${GROUP4}, 0x0
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    smali*/*.smali
+MATCH:
+    (const-string ([pv]\d+), "/proc/self/status")
+REGEX:
+    true
+REPLACE:
+    const-string ${GROUP1}, "/proc/self/nonexistent"
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    smali*/*.smali
+MATCH:
+    (const-string ([pv]\d+), "frida")
+REGEX:
+    true
+REPLACE:
+    const-string ${GROUP1}, "fr1da"
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    smali*/*.smali
+MATCH:
+    (const-string ([pv]\d+), "/data/local/tmp/frida-server")
+REGEX:
+    true
+REPLACE:
+    const-string ${GROUP1}, "/data/local/tmp/nonexistent"
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    smali*/*.smali
+MATCH:
+    (invoke-.*->(findFrida|checkFrida|fridaDetect|isFridaRunning)\(.*\)Z)\n\n    (move-result ([pv]\d+))
+REGEX:
+    true
+REPLACE:
+    # ${GROUP1}
+    const/4 ${GROUP4}, 0x0
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    smali*/*.smali
+MATCH:
+    (invoke-.*->(isEmulator|checkEmulator|isRunningOnEmulator|emulatorDetector|isEmulatorFile)\(.*\)Z)\n\n    (move-result ([pv]\d+))
+REGEX:
+    true
+REPLACE:
+    # ${GROUP1}
+    const/4 ${GROUP4}, 0x0
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    smali*/*.smali
+MATCH:
+    (invoke-.*->(queryPurchases|queryPurchaseHistoryAsync|querySkuDetailsAsync|launchBillingFlow|getBuyIntent)\(.*\))
+REGEX:
+    true
+REPLACE:
+    # ${GROUP1}
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    AndroidManifest.xml
+MATCH:
+    <uses-permission android:name="com.android.vending.BILLING" />
+REGEX:
+    true
+REPLACE:
+[/MATCH_REPLACE]

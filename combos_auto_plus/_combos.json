@@ -1,0 +1,24 @@
+{
+  "patches": 11,
+  "combos": [
+    {
+      "label": "Ẩn-Root/Giả-Lập+Gỡ-SSL-Pinning+Chống-Debug+Ẩn-Frida+Bỏ-Kiểm-Tra-Máy-Ảo+Giả-Lập-Mua-Hàng+Check-Toàn-Vẹn",
+      "file": "Ẩn-Root-Giả-Lập+Gỡ-SSL-Pinning+Chống-Debug+Ẩn-Frida+Bỏ-Kiểm-Tra-Máy-Ảo+Giả-Lập-Mua-Hàng+Check-Toàn-Vẹn.patch",
+      "patches": [
+        "root_check_off",
+        "root_su_binary_off",
+        "ssl_pinning_off",
+        "anti_debug_off",
+        "frida_detect_off",
+        "emulator_check_off",
+        "emulator_fingerprint_off",
+        "iap_fake",
+        "iap_purchase_state",
+        "anti_tamper_signature_off",
+        "integrity_verdict_off"
+      ],
+      "sections": 18,
+      "conflicts": 0
+    }
+  ]
+}

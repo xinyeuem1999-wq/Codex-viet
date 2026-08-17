@@ -1,0 +1,53 @@
+Metadata-Version: 2.4
+Name: patchx-git
+Version: 0.2.0
+Summary: Python CLI dashboard for managing a Git toolkit repository.
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+Requires-Dist: rich>=13.7
+
+# PATCHX Git CLI
+
+Toolkit Python điều khiển Git bằng giao diện CLI tương tác.
+
+## Cài đặt
+
+```bash
+python -m pip install -e .
+```
+
+Sau đó chạy:
+
+```bash
+patchx-git
+```
+
+## Giao diện
+
+```text
+PATCHX Git
+Repository: /path/to/toolkit
+Branch: main
+Status: CLEAN
+
+[1] Trạng thái
+[2] Xem khác biệt
+[3] Chọn file đưa vào staging
+[4] Tạo commit
+[5] Push
+[6] Pull
+[7] Lịch sử
+[8] Remote
+[9] Kiểm tra môi trường
+[0] Thoát
+```
+
+Có thể dùng lệnh trực tiếp:
+
+```bash
+patchx-git status
+patchx-git push
+patchx-git commit -m "update"
+```
+
+CLI không tự động commit/push; người dùng luôn xác nhận các thao tác thay đổi repository.

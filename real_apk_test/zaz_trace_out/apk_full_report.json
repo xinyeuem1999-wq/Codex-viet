@@ -1,0 +1,86 @@
+{
+  "generated": "2026-08-16 14:21:14",
+  "tree": "/storage/emulated/0/Patch/patch1/_patchx/real_apk_test/zaz_trace_tree",
+  "input": "/storage/emulated/0/Patch/patch1/_patchx/real_apk_test/hook_input",
+  "dry_run": false,
+  "plan_seconds": 36.9,
+  "patches_selected": [
+    "hook_remote_data_control",
+    "zaz_force",
+    "pro_unlock_vip"
+  ],
+  "apply_returncode": 0,
+  "apply_seconds": 534.0,
+  "resource_fixes": 177,
+  "build_seconds": 162.0,
+  "build_returncode": 0,
+  "output_apk": "zaz_trace_tree_patched_20260816-143511.apk",
+  "zipalign_returncode": 0,
+  "signed": true,
+  "sign_returncode": 0,
+  "verify_returncode": 0,
+  "verify_schemes": [
+    "Verified using v2 scheme (APK Signature Scheme v2): true",
+    "Verified using v3 scheme (APK Signature Scheme v3): true"
+  ],
+  "size_bytes": 71585096,
+  "runtime": {
+    "generated": "2026-08-16 14:35:15",
+    "apk": "/storage/emulated/0/Patch/patch1/_patchx/real_apk_test/zaz_trace_out/zaz_trace_tree_patched_20260816-143511.apk",
+    "package": "com.zaz.translate",
+    "activity": "com.zaz.translate.WelcomeActivity",
+    "devices": [
+      "100.64.170.99:5555"
+    ],
+    "device": "100.64.170.99:5555",
+    "install_returncode": 0,
+    "install_output": "Serving...\nPerforming Incremental Install\nFailure [INSTALL_FAILED_MEDIA_UNAVAILABLE: Failed to prepare image.]\nPerforming Streamed Install\nSuccess",
+    "launch_returncode": 0,
+    "launch_output": "Starting: Intent { cmp=com.zaz.translate/.WelcomeActivity }",
+    "network_new_connections": [
+      {
+        "local": "0:0:0:0:65535:0:51924:1057:36256",
+        "remote": "0:0:0:0:65535:0:49946:55724:443",
+        "state": "ESTABLISHED"
+      },
+      {
+        "local": "0:0:0:0:65535:0:51924:1057:36258",
+        "remote": "0:0:0:0:65535:0:49946:55724:443",
+        "state": "ESTABLISHED"
+      },
+      {
+        "local": "0:0:0:0:65535:0:51924:1057:36286",
+        "remote": "0:0:0:0:65535:0:49946:55724:443",
+        "state": "ESTABLISHED"
+      }
+    ],
+    "network_note": "Phát hiện 3 kết nối mạng mới sau khi mở app — kiểm tra nếu là hành vi 'âm thầm' gửi dữ liệu của patch.",
+    "signature_ok": true,
+    "signature_schemes": [
+      "v1",
+      "v2",
+      "v3",
+      "v3.1",
+      "v4"
+    ],
+    "signature_note": "Play Integrity / hardware attestation cần thiết bị thật — máy ảo cloud không xác minh được (giới hạn T3).",
+    "pid": null,
+    "crash_lines": [
+      "08-16 15:36:10.058 30754 30754 E AndroidRuntime: Process: com.zaz.translate, PID: 30754"
+    ],
+    "subprocess_crashes": [],
+    "m2": false,
+    "m3": false,
+    "m3_reasons": [
+      "logcat không chứa mẫu --expect"
+    ],
+    "ghi_chú": "M2 = cài + mở + process sống + không FATAL EXCEPTION. M3 = kịch bản hành vi theo app."
+  },
+  "exercises": [
+    {
+      "title": "Rebuild thành công — cần kiểm tra động tiếp",
+      "root_cause": "APK đã build lại nhưng chưa chứng minh hành vi mod đúng.",
+      "suggested_fix": "Ký APK, cài lên emulator/device, chạy logcat/mạng để đạt M2/M3."
+    }
+  ]
+}

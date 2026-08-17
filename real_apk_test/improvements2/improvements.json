@@ -1,0 +1,16 @@
+{
+  "generated": "2026-08-14 16:31:46",
+  "tree": "/storage/emulated/0/patch/1. PATCH others/_patchx/real_apk_test/app_tree",
+  "patches": [
+    "real_apk_test/p1_test.patch.txt"
+  ],
+  "apply_returncode": 0,
+  "build_returncode": 1,
+  "exercises": [
+    {
+      "title": "apktool 3.x không còn cờ --use-aapt1",
+      "root_cause": "Phiên bản apktool hiện tại chỉ hỗ trợ `--aapt <file>`, không có cờ chuyển aapt1 như các bản cũ.",
+      "suggested_fix": "Dùng `apktool b --aapt /path/to/aapt2` hoặc cài apktool 2.x nếu thật sự cần aapt1; đồng thời bỏ tuỳ chọn `--use-aapt1` khỏi toolkit khi chạy apktool 3.x."
+    }
+  ]
+}

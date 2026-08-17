@@ -1,0 +1,24 @@
+{
+  "generated": "2026-08-15 23:47:04",
+  "tree": "/storage/emulated/0/Patch/patch1/_patchx/apk_trees/KISS launcher_3.26.0",
+  "input": "/storage/emulated/0/Patch/patch1/_patchx/upgraded",
+  "dry_run": false,
+  "plan_seconds": 230.5,
+  "patches_selected": [
+    "Debug_information_and_hack_signature",
+    "patch_bypass_sigcheck_with_reflection",
+    "Debug_information"
+  ],
+  "apply_returncode": 0,
+  "apply_seconds": 48.8,
+  "resource_fixes": 0,
+  "build_seconds": 11.9,
+  "build_returncode": 1,
+  "exercises": [
+    {
+      "title": "Smali do patch sinh ra không hợp lệ",
+      "root_cause": "Chèn thiếu register, invoke sai kiểu, hoặc method không tồn tại.",
+      "suggested_fix": "Dùng smali_lib.alloc_temps và find_method_block trước khi chèn; bổ sung kiểm tra type và test rebuild tự động."
+    }
+  ]
+}

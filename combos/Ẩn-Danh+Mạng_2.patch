@@ -1,0 +1,68 @@
+# Combo: Ẩn-Danh+Mạng (2 patch)
+
+[MIN_ENGINE_VER]
+2
+
+[AUTHOR]
+HTC 600
+
+[PACKAGE]
+*
+
+[MATCH_REPLACE]
+TARGET:
+    smali*/*.smali
+MATCH:
+    invoke-virtual \{([pv]\d+)\}, Landroid/location/Location;->getLatitude\(\)D\n\n    move-result-wide ([pv]\d+)
+REGEX:
+    true
+REPLACE:
+    invoke-static {}, Lcom/htc/htc600/htc600for4pda/generatE;->MaccID()D
+
+    move-result-wide ${GROUP2}
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    smali*/*.smali
+MATCH:
+    invoke-virtual \{([pv]\d+)\}, Landroid/location/Location;->getLongitude\(\)D\n\n    move-result-wide ([pv]\d+)
+REGEX:
+    true
+REPLACE:
+    invoke-static {}, Lcom/htc/htc600/htc600for4pda/generatE;->MaccID()D
+
+    move-result-wide ${GROUP2}
+[/MATCH_REPLACE]
+
+[ADD_FILES]
+TARGET:
+    smali/com/htc/htc600/htc600for4pda/AndroidID.smali
+SOURCE:
+    AndroidID.smali
+[/ADD_FILES]
+
+[ADD_FILES]
+TARGET:
+    smali/com/htc/htc600/htc600for4pda/AndroidID2.smali
+SOURCE:
+    AndroidID2.smali
+[/ADD_FILES]
+
+[ADD_FILES]
+TARGET:
+    smali/com/htc/htc600/htc600for4pda/generatE.smali
+SOURCE:
+    generatE.smali
+[/ADD_FILES]
+
+[MATCH_REPLACE]
+TARGET:
+    smali*/*.smali
+MATCH:
+    iget-object ([pv]\d+), ([pv]\d+), L(\S+);->ip:Ljava/lang/String;
+REGEX:
+    true
+REPLACE:
+    const-string ${GROUP1}, "255.255.255.255"
+[/MATCH_REPLACE]

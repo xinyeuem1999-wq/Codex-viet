@@ -1,0 +1,2351 @@
+{
+  "generated": "2026-08-14 03:08:47",
+  "items": [
+    {
+      "patch": "Hide_Icon",
+      "nhóm": "Chống-phát-hiện",
+      "tỷ_lệ": 1.0,
+      "quy_tắc_khớp": 1,
+      "quy_tắc": 1,
+      "lần_khớp": 1,
+      "rủi_ro": [],
+      "chi_tiết": [
+        {
+          "khối": 3,
+          "loại": "MATCH_REPLACE",
+          "target": "AndroidManifest.xml",
+          "khớp": 1,
+          "tệp_trúng": [
+            "AndroidManifest.xml"
+          ],
+          "tệp_trượt": [],
+          "biến_thể": [],
+          "ngoài_target": []
+        }
+      ]
+    },
+    {
+      "patch": "z",
+      "nhóm": "Khác",
+      "tỷ_lệ": 1.0,
+      "quy_tắc_khớp": 1,
+      "quy_tắc": 1,
+      "lần_khớp": 1,
+      "rủi_ro": [],
+      "chi_tiết": [
+        {
+          "khối": 3,
+          "loại": "MATCH_REPLACE",
+          "target": "[LAUNCHER_ACTIVITIES]",
+          "khớp": 1,
+          "tệp_trúng": [
+            "smali/com/demo/MainActivity.smali"
+          ],
+          "tệp_trượt": [],
+          "biến_thể": [],
+          "ngoài_target": []
+        }
+      ]
+    },
+    {
+      "patch": "AddSave",
+      "nhóm": "Lưu-trữ",
+      "tỷ_lệ": 1.0,
+      "quy_tắc_khớp": 1,
+      "quy_tắc": 1,
+      "lần_khớp": 1,
+      "rủi_ro": [],
+      "chi_tiết": [
+        {
+          "khối": 4,
+          "loại": "MATCH_REPLACE",
+          "target": "[LAUNCHER_ACTIVITIES]",
+          "khớp": 1,
+          "tệp_trúng": [
+            "smali/com/demo/MainActivity.smali"
+          ],
+          "tệp_trượt": [],
+          "biến_thể": [],
+          "ngoài_target": []
+        }
+      ]
+    },
+    {
+      "patch": "Add_Save",
+      "nhóm": "Lưu-trữ",
+      "tỷ_lệ": 1.0,
+      "quy_tắc_khớp": 1,
+      "quy_tắc": 1,
+      "lần_khớp": 1,
+      "rủi_ro": [],
+      "chi_tiết": [
+        {
+          "khối": 4,
+          "loại": "MATCH_REPLACE",
+          "target": "[LAUNCHER_ACTIVITIES]",
+          "khớp": 1,
+          "tệp_trúng": [
+            "smali/com/demo/MainActivity.smali"
+          ],
+          "tệp_trượt": [],
+          "biến_thể": [],
+          "ngoài_target": []
+        }
+      ]
+    },
+    {
+      "patch": "Add_Save_New",
+      "nhóm": "Lưu-trữ",
+      "tỷ_lệ": 1.0,
+      "quy_tắc_khớp": 1,
+      "quy_tắc": 1,
+      "lần_khớp": 1,
+      "rủi_ro": [],
+      "chi_tiết": [
+        {
+          "khối": 4,
+          "loại": "MATCH_REPLACE",
+          "target": "[LAUNCHER_ACTIVITIES]",
+          "khớp": 1,
+          "tệp_trúng": [
+            "smali/com/demo/MainActivity.smali"
+          ],
+          "tệp_trượt": [],
+          "biến_thể": [],
+          "ngoài_target": []
+        }
+      ]
+    },
+    {
+      "patch": "GenerateAndroidID",
+      "nhóm": "Spoof-ID",
+      "tỷ_lệ": 1.0,
+      "quy_tắc_khớp": 1,
+      "quy_tắc": 1,
+      "lần_khớp": 1,
+      "rủi_ro": [],
+      "chi_tiết": [
+        {
+          "khối": 3,
+          "loại": "MATCH_REPLACE",
+          "target": "smali*/*.smali",
+          "khớp": 1,
+          "tệp_trúng": [
+            "smali/com/demo/MainActivity.smali"
+          ],
+          "tệp_trượt": [
+            "smali/com/demo/Util.smali"
+          ],
+          "biến_thể": [],
+          "ngoài_target": []
+        }
+      ]
+    },
+    {
+      "patch": "dppp",
+      "nhóm": "Tiện-ích",
+      "tỷ_lệ": 1.0,
+      "quy_tắc_khớp": 1,
+      "quy_tắc": 1,
+      "lần_khớp": 1,
+      "rủi_ro": [
+        "MERGE cần public.xml để tái cấu trúc ID"
+      ],
+      "chi_tiết": [
+        {
+          "khối": 3,
+          "loại": "MATCH_REPLACE",
+          "target": "AndroidManifest.xml",
+          "khớp": 1,
+          "tệp_trúng": [
+            "AndroidManifest.xml"
+          ],
+          "tệp_trượt": [],
+          "biến_thể": [],
+          "ngoài_target": []
+        }
+      ]
+    },
+    {
+      "patch": "patch_mem_editor",
+      "nhóm": "Tiện-ích",
+      "tỷ_lệ": 1.0,
+      "quy_tắc_khớp": 2,
+      "quy_tắc": 2,
+      "lần_khớp": 2,
+      "rủi_ro": [
+        "MERGE cần public.xml để tái cấu trúc ID"
+      ],
+      "chi_tiết": [
+        {
+          "khối": 5,
+          "loại": "MATCH_REPLACE",
+          "target": "AndroidManifest.xml",
+          "khớp": 1,
+          "tệp_trúng": [
+            "AndroidManifest.xml"
+          ],
+          "tệp_trượt": [],
+          "biến_thể": [],
+          "ngoài_target": []
+        },
+        {
+          "khối": 6,
+          "loại": "MATCH_REPLACE",
+          "target": "AndroidManifest.xml",
+          "khớp": 1,
+          "tệp_trúng": [
+            "AndroidManifest.xml"
+          ],
+          "tệp_trượt": [],
+          "biến_thể": [],
+          "ngoài_target": []
+        }
+      ]
+    },
+    {
+      "patch": "patch_my_font",
+      "nhóm": "Tiện-ích",
+      "tỷ_lệ": 0.75,
+      "quy_tắc_khớp": 3,
+      "quy_tắc": 4,
+      "lần_khớp": 3,
+      "rủi_ro": [
+        "MERGE cần public.xml để tái cấu trúc ID"
+      ],
+      "chi_tiết": [
+        {
+          "khối": 5,
+          "loại": "MATCH_GOTO",
+          "target": "AndroidManifest.xml",
+          "khớp": 1,
+          "tệp_trúng": [
+            "AndroidManifest.xml"
+          ],
+          "tệp_trượt": [],
+          "biến_thể": [],
+          "ngoài_target": []
+        },
+        {
+          "khối": 6,
+          "loại": "MATCH_REPLACE",
+          "target": "AndroidManifest.xml",
+          "khớp": 1,
+          "tệp_trúng": [
+            "AndroidManifest.xml"
+          ],
+          "tệp_trượt": [],
+          "biến_thể": [],
+          "ngoài_target": []
+        },
+        {
+          "khối": 8,
+          "loại": "MATCH_REPLACE",
+          "target": "[APPLICATION]",
+          "khớp": 0,
+          "tệp_trúng": [],
+          "tệp_trượt": [
+            "AndroidManifest.xml"
+          ],
+          "biến_thể": [],
+          "ngoài_target": []
+        },
+        {
+          "khối": 9,
+          "loại": "MATCH_REPLACE",
+          "target": "[ACTIVITIES]",
+          "khớp": 1,
+          "tệp_trúng": [
+            "smali/com/demo/MainActivity.smali"
+          ],
+          "tệp_trượt": [],
+          "biến_thể": [],
+          "ngoài_target": []
+        }
+      ]
+    },
+    {
+      "patch": "Android_ID",
+      "nhóm": "Spoof-ID",
+      "tỷ_lệ": 0.5,
+      "quy_tắc_khớp": 1,
+      "quy_tắc": 2,
+      "lần_khớp": 1,
+      "rủi_ro": [],
+      "chi_tiết": [
+        {
+          "khối": 3,
+          "loại": "MATCH_REPLACE",
+          "target": "smali*/*.smali",
+          "khớp": 1,
+          "tệp_trúng": [
+            "smali/com/demo/MainActivity.smali"
+          ],
+          "tệp_trượt": [
+            "smali/com/demo/Util.smali"
+          ],
+          "biến_thể": [],
+          "ngoài_target": []
+        },
+        {
+          "khối": 4,
+          "loại": "MATCH_REPLACE",
+          "target": "smali*/*.smali",
+          "khớp": 0,
+          "tệp_trúng": [],
+          "tệp_trượt": [
+            "smali/com/demo/MainActivity.smali",
+            "smali/com/demo/Util.smali"
+          ],
+          "biến_thể": [],
+          "ngoài_target": []
+        }
+      ]
+    },
+    {
+      "patch": "IMEI_Locker",
+      "nhóm": "Spoof-ID",
+      "tỷ_lệ": 0.5,
+      "quy_tắc_khớp": 1,
+      "quy_tắc": 2,
+      "lần_khớp": 1,
+      "rủi_ro": [],
+      "chi_tiết": [
+        {
+          "khối": 3,
+          "loại": "MATCH_REPLACE",
+          "target": "[LAUNCHER_ACTIVITIES]",
+          "khớp": 1,
+          "tệp_trúng": [
+            "smali/com/demo/MainActivity.smali"
+          ],
+          "tệp_trượt": [],
+          "biến_thể": [],
+          "ngoài_target": []
+        },
+        {
+          "khối": 4,
+          "loại": "MATCH_REPLACE",
+          "target": "AndroidManifest.xml",
+          "khớp": 0,
+          "tệp_trúng": [],
+          "tệp_trượt": [
+            "AndroidManifest.xml"
+          ],
+          "biến_thể": [],
+          "ngoài_target": []
+        }
+      ]
+    },
+    {
+      "patch": "patch_data_editor",
+      "nhóm": "Tiện-ích",
+      "tỷ_lệ": 0.5,
+      "quy_tắc_khớp": 1,
+      "quy_tắc": 2,
+      "lần_khớp": 1,
+      "rủi_ro": [
+        "xóa tệp (có sao lưu)",
+        "MERGE cần public.xml để tái cấu trúc ID"
+      ],
+      "chi_tiết": [
+        {
+          "khối": 4,
+          "loại": "MATCH_REPLACE",
+          "target": "AndroidManifest.xml",
+          "khớp": 0,
+          "tệp_trúng": [],
+          "tệp_trượt": [
+            "AndroidManifest.xml"
+          ],
+          "biến_thể": [],
+          "ngoài_target": []
+        },
+        {
+          "khối": 5,
+          "loại": "MATCH_REPLACE",
+          "target": "AndroidManifest.xml",
+          "khớp": 1,
+          "tệp_trúng": [
+            "AndroidManifest.xml"
+          ],
+          "tệp_trượt": [],
+          "biến_thể": [],
+          "ngoài_target": []
+        }
+      ]
+    },
+    {
+      "patch": "patch_new_entrance",
+      "nhóm": "Tiện-ích",
+      "tỷ_lệ": 0.5,
+      "quy_tắc_khớp": 1,
+      "quy_tắc": 2,
+      "lần_khớp": 1,
+      "rủi_ro": [
+        "MERGE cần public.xml để tái cấu trúc ID"
+      ],
+      "chi_tiết": [
+        {
+          "khối": 3,
+          "loại": "MATCH_REPLACE",
+          "target": "AndroidManifest.xml",
+          "khớp": 0,
+          "tệp_trúng": [],
+          "tệp_trượt": [
+            "AndroidManifest.xml"
+          ],
+          "biến_thể": [],
+          "ngoài_target": []
+        },
+        {
+          "khối": 4,
+          "loại": "MATCH_REPLACE",
+          "target": "AndroidManifest.xml",
+          "khớp": 1,
+          "tệp_trúng": [
+            "AndroidManifest.xml"
+          ],
+          "tệp_trượt": [],
+          "biến_thể": [],
+          "ngoài_target": []
+        }
+      ]
+    },
+    {
+      "patch": "LogCat",
+      "nhóm": "Tiện-ích",
+      "tỷ_lệ": 0.36363636363636365,
+      "quy_tắc_khớp": 4,
+      "quy_tắc": 11,
+      "lần_khớp": 4,
+      "rủi_ro": [
+        "cần --dex-runner"
+      ],
+      "chi_tiết": [
+        {
+          "khối": 4,
+          "loại": "MATCH_GOTO",
+          "target": "AndroidManifest.xml",
+          "khớp": 0,
+          "tệp_trúng": [],
+          "tệp_trượt": [
+            "AndroidManifest.xml"
+          ],
+          "biến_thể": [],
+          "ngoài_target": []
+        },
+        {
+          "khối": 8,
+          "loại": "MATCH_REPLACE",
+          "target": "AndroidManifest.xml",
+          "khớp": 1,
+          "tệp_trúng": [
+            "AndroidManifest.xml"
+          ],
+          "tệp_trượt": [],
+          "biến_thể": [],
+          "ngoài_target": []
+        },
+        {
+          "khối": 9,
+          "loại": "MATCH_ASSIGN",
+          "target": "AndroidManifest.xml",
+          "khớp": 1,
+          "tệp_trúng": [
+            "AndroidManifest.xml"
+          ],
+          "tệp_trượt": [],
+          "biến_thể": [],
+          "ngoài_target": []
+        },
+        {
+          "khối": 10,
+          "loại": "MATCH_REPLACE",
+          "target": "AndroidManifest.xml",
+          "khớp": 0,
+          "tệp_trúng": [],
+          "tệp_trượt": [
+            "AndroidManifest.xml"
+          ],
+          "biến_thể": [],
+          "ngoài_target": []
+        },
+        {
+          "khối": 11,
+          "loại": "MATCH_GOTO",
+          "target": "AndroidManifest.xml",
+          "khớp": 1,
+          "tệp_trúng": [
+            "AndroidManifest.xml"
+          ],
+          "tệp_trượt": [],
+          "biến_thể": [],
+          "ngoài_target": []
+        },
+        {
+          "khối": 12,
+          "loại": "MATCH_REPLACE",
+          "target": "AndroidManifest.xml",
+          "khớp": 1,
+          "tệp_trúng": [
+            "AndroidManifest.xml"
+          ],
+          "tệp_trượt": [],
+          "biến_thể": [],
+          "ngoài_target": []
+        },
+        {
+          "khối": 13,
+          "loại": "MATCH_REPLACE",
+          "target": "smali/apk/tool/patcher/App.smali",
+          "khớp": 0,
+          "tệp_trúng": [],
+          "tệp_trượt": [],
+          "biến_thể": [],
+          "ngoài_target": []
+        },
+        {
+          "khối": 15,
+          "loại": "MATCH_REPLACE",
+          "target": "AndroidManifest.xml",
+          "khớp": 0,
+          "tệp_trúng": [],
+          "tệp_trượt": [
+            "AndroidManifest.xml"
+          ],
+          "biến_thể": [],
+          "ngoài_target": []
+        },
+        {
+          "khối": 16,
+          "loại": "MATCH_ASSIGN",
+          "target": "[APPLICATION]",
+          "khớp": 0,
+          "tệp_trúng": [],
+          "tệp_trượt": [
+            "AndroidManifest.xml"
+          ],
+          "biến_thể": [],
+          "ngoài_target": [
+            [
+              "smali/com/demo/MainActivity.smali",
+              1
+            ],
+            [
+              "smali/com/demo/Util.smali",
+              1
+            ]
+          ]
+        },
+        {
+          "khối": 17,
+          "loại": "MATCH_REPLACE",
+          "target": "[APPLICATION]",
+          "khớp": 0,
+          "tệp_trúng": [],
+          "tệp_trượt": [
+            "AndroidManifest.xml"
+          ],
+          "biến_thể": [],
+          "ngoài_target": [
+            [
+              "smali/com/demo/MainActivity.smali",
+              1
+            ],
+            [
+              "smali/com/demo/Util.smali",
+              1
+            ]
+          ]
+        },
+        {
+          "khối": 18,
+          "loại": "MATCH_REPLACE",
+          "target": "smali/apk/tool/patcher/App.smali",
+          "khớp": 0,
+          "tệp_trúng": [],
+          "tệp_trượt": [],
+          "biến_thể": [],
+          "ngoài_target": []
+        }
+      ]
+    },
+    {
+      "patch": "UnPacker",
+      "nhóm": "Tiện-ích",
+      "tỷ_lệ": 0.2857142857142857,
+      "quy_tắc_khớp": 2,
+      "quy_tắc": 7,
+      "lần_khớp": 2,
+      "rủi_ro": [],
+      "chi_tiết": [
+        {
+          "khối": 3,
+          "loại": "MATCH_REPLACE",
+          "target": "[LAUNCHER_ACTIVITIES]",
+          "khớp": 1,
+          "tệp_trúng": [
+            "smali/com/demo/MainActivity.smali"
+          ],
+          "tệp_trượt": [],
+          "biến_thể": [],
+          "ngoài_target": []
+        },
+        {
+          "khối": 4,
+          "loại": "MATCH_REPLACE",
+          "target": "[LAUNCHER_ACTIVITIES]",
+          "khớp": 0,
+          "tệp_trúng": [],
+          "tệp_trượt": [
+            "smali/com/demo/MainActivity.smali"
+          ],
+          "biến_thể": [],
+          "ngoài_target": []
+        },
+        {
+          "khối": 5,
+          "loại": "MATCH_REPLACE",
+          "target": "[LAUNCHER_ACTIVITIES]",
+          "khớp": 0,
+          "tệp_trúng": [],
+          "tệp_trượt": [
+            "smali/com/demo/MainActivity.smali"
+          ],
+          "biến_thể": [],
+          "ngoài_target": []
+        },
+        {
+          "khối": 6,
+          "loại": "MATCH_REPLACE",
+          "target": "[LAUNCHER_ACTIVITIES]",
+          "khớp": 0,
+          "tệp_trúng": [],
+          "tệp_trượt": [
+            "smali/com/demo/MainActivity.smali"
+          ],
+          "biến_thể": [],
+          "ngoài_target": []
+        },
+        {
+          "khối": 8,
+          "loại": "MATCH_REPLACE",
+          "target": "AndroidManifest.xml",
+          "khớp": 0,
+          "tệp_trúng": [],
+          "tệp_trượt": [
+            "AndroidManifest.xml"
+          ],
+          "biến_thể": [],
+          "ngoài_target": []
+        },
+        {
+          "khối": 9,
+          "loại": "MATCH_ASSIGN",
+          "target": "[LAUNCHER_ACTIVITIES]",
+          "khớp": 1,
+          "tệp_trúng": [
+            "smali/com/demo/MainActivity.smali"
+          ],
+          "tệp_trượt": [],
+          "biến_thể": [],
+          "ngoài_target": [
+            [
+              "smali/com/demo/Util.smali",
+              1
+            ]
+          ]
+        },
+        {
+          "khối": 10,
+          "loại": "MATCH_REPLACE",
+          "target": "[LAUNCHER_ACTIVITIES]",
+          "khớp": 0,
+          "tệp_trúng": [],
+          "tệp_trượt": [
+            "smali/com/demo/MainActivity.smali"
+          ],
+          "biến_thể": [],
+          "ngoài_target": []
+        }
+      ]
+    },
+    {
+      "patch": "Anti-Adaptive_Icon_b2",
+      "nhóm": "Chống-phát-hiện",
+      "tỷ_lệ": 0.0,
+      "quy_tắc_khớp": 0,
+      "quy_tắc": 1,
+      "lần_khớp": 0,
+      "rủi_ro": [
+        "xóa tệp (có sao lưu)"
+      ],
+      "chi_tiết": [
+        {
+          "khối": 3,
+          "loại": "MATCH_REPLACE",
+          "target": "AndroidManifest.xml",
+          "khớp": 0,
+          "tệp_trúng": [],
+          "tệp_trượt": [
+            "AndroidManifest.xml"
+          ],
+          "biến_thể": [],
+          "ngoài_target": []
+        }
+      ]
+    },
+    {
+      "patch": "Anti-ModGuard(hide)",
+      "nhóm": "Chống-phát-hiện",
+      "tỷ_lệ": 0.0,
+      "quy_tắc_khớp": 0,
+      "quy_tắc": 1,
+      "lần_khớp": 0,
+      "rủi_ro": [],
+      "chi_tiết": [
+        {
+          "khối": 0,
+          "loại": "MATCH_REPLACE",
+          "target": "smali*/*.smali",
+          "khớp": 0,
+          "tệp_trúng": [],
+          "tệp_trượt": [
+            "smali/com/demo/MainActivity.smali",
+            "smali/com/demo/Util.smali"
+          ],
+          "biến_thể": [],
+          "ngoài_target": []
+        }
+      ]
+    },
+    {
+      "patch": "Hide[ModGuard]",
+      "nhóm": "Chống-phát-hiện",
+      "tỷ_lệ": 0.0,
+      "quy_tắc_khớp": 0,
+      "quy_tắc": 1,
+      "lần_khớp": 0,
+      "rủi_ro": [
+        "cần --dex-runner"
+      ],
+      "chi_tiết": [
+        {
+          "khối": 5,
+          "loại": "MATCH_REPLACE",
+          "target": "smali/RemoveAds1.smali",
+          "khớp": 0,
+          "tệp_trúng": [],
+          "tệp_trượt": [],
+          "biến_thể": [],
+          "ngoài_target": []
+        }
+      ]
+    },
+    {
+      "patch": "ModGuard",
+      "nhóm": "Chống-phát-hiện",
+      "tỷ_lệ": 0.0,
+      "quy_tắc_khớp": 0,
+      "quy_tắc": 2,
+      "lần_khớp": 0,
+      "rủi_ro": [],
+      "chi_tiết": [
+        {
+          "khối": 3,
+          "loại": "MATCH_REPLACE",
+          "target": "smali*/*.smali",
+          "khớp": 0,
+          "tệp_trúng": [],
+          "tệp_trượt": [
+            "smali/com/demo/MainActivity.smali",
+            "smali/com/demo/Util.smali"
+          ],
+          "biến_thể": [],
+          "ngoài_target": []
+        },
+        {
+          "khối": 4,
+          "loại": "MATCH_REPLACE",
+          "target": "smali*/*.smali",
+          "khớp": 0,
+          "tệp_trúng": [],
+          "tệp_trượt": [
+            "smali/com/demo/MainActivity.smali",
+            "smali/com/demo/Util.smali"
+          ],
+          "biến_thể": [],
+          "ngoài_target": []
+        }
+      ]
+    },
+    {
+      "patch": "ref_logging",
+      "nhóm": "Chống-phát-hiện",
+      "tỷ_lệ": 0.0,
+      "quy_tắc_khớp": 0,
+      "quy_tắc": 1,
+      "lần_khớp": 0,
+      "rủi_ro": [],
+      "chi_tiết": [
+        {
+          "khối": 3,
+          "loại": "MATCH_REPLACE",
+          "target": "smali*/*",
+          "khớp": 0,
+          "tệp_trúng": [],
+          "tệp_trượt": [
+            "smali/com/demo/MainActivity.smali",
+            "smali/com/demo/Util.smali"
+          ],
+          "biến_thể": [],
+          "ngoài_target": []
+        }
+      ]
+    },
+    {
+      "patch": "root",
+      "nhóm": "Chống-phát-hiện",
+      "tỷ_lệ": 0.0,
+      "quy_tắc_khớp": 0,
+      "quy_tắc": 3,
+      "lần_khớp": 0,
+      "rủi_ro": [],
+      "chi_tiết": [
+        {
+          "khối": 2,
+          "loại": "MATCH_REPLACE",
+          "target": "smali*/*.smali",
+          "khớp": 0,
+          "tệp_trúng": [],
+          "tệp_trượt": [
+            "smali/com/demo/MainActivity.smali",
+            "smali/com/demo/Util.smali"
+          ],
+          "biến_thể": [],
+          "ngoài_target": []
+        },
+        {
+          "khối": 3,
+          "loại": "MATCH_REPLACE",
+          "target": "smali*/*.smali",
+          "khớp": 0,
+          "tệp_trúng": [],
+          "tệp_trượt": [
+            "smali/com/demo/MainActivity.smali",
+            "smali/com/demo/Util.smali"
+          ],
+          "biến_thể": [],
+          "ngoài_target": []
+        },
+        {
+          "khối": 4,
+          "loại": "MATCH_REPLACE",
+          "target": "smali*/*.smali",
+          "khớp": 0,
+          "tệp_trúng": [],
+          "tệp_trượt": [
+            "smali/com/demo/MainActivity.smali",
+            "smali/com/demo/Util.smali"
+          ],
+          "biến_thể": [],
+          "ngoài_target": []
+        }
+      ]
+    },
+    {
+      "patch": "DelLoc",
+      "nhóm": "Khác",
+      "tỷ_lệ": 0.0,
+      "quy_tắc_khớp": 0,
+      "quy_tắc": 1,
+      "lần_khớp": 0,
+      "rủi_ro": [
+        "cần --dex-runner"
+      ],
+      "chi_tiết": [
+        {
+          "khối": 4,
+          "loại": "MATCH_REPLACE",
+          "target": "res/values/strings.xml",
+          "khớp": 0,
+          "tệp_trúng": [],
+          "tệp_trượt": [],
+          "biến_thể": [],
+          "ngoài_target": []
+        }
+      ]
+    },
+    {
+      "patch": "Deletion + Extra + Sound",
+      "nhóm": "Khác",
+      "tỷ_lệ": 0.0,
+      "quy_tắc_khớp": 0,
+      "quy_tắc": 4,
+      "lần_khớp": 0,
+      "rủi_ro": [
+        "xóa tệp (có sao lưu)"
+      ],
+      "chi_tiết": [
+        {
+          "khối": 4,
+          "loại": "MATCH_ASSIGN",
+          "target": "res/values/public.xml",
+          "khớp": 0,
+          "tệp_trúng": [],
+          "tệp_trượt": [],
+          "biến_thể": [],
+          "ngoài_target": []
+        },
+        {
+          "khối": 5,
+          "loại": "MATCH_REPLACE",
+          "target": "res/values/strings.xml",
+          "khớp": 0,
+          "tệp_trúng": [],
+          "tệp_trượt": [],
+          "biến_thể": [],
+          "ngoài_target": []
+        },
+        {
+          "khối": 6,
+          "loại": "MATCH_REPLACE",
+          "target": "res/values/strings.xml",
+          "khớp": 0,
+          "tệp_trúng": [],
+          "tệp_trượt": [],
+          "biến_thể": [],
+          "ngoài_target": []
+        },
+        {
+          "khối": 7,
+          "loại": "MATCH_REPLACE",
+          "target": "res/values/strings.xml",
+          "khớp": 0,
+          "tệp_trúng": [],
+          "tệp_trượt": [],
+          "biến_thể": [],
+          "ngoài_target": []
+        }
+      ]
+    },
+    {
+      "patch": "Obleg4it perevod strok",
+      "nhóm": "Khác",
+      "tỷ_lệ": 0.0,
+      "quy_tắc_khớp": 0,
+      "quy_tắc": 36,
+      "lần_khớp": 0,
+      "rủi_ro": [],
+      "chi_tiết": [
+        {
+          "khối": 3,
+          "loại": "MATCH_REPLACE",
+          "target": "res/values-ru/strings.xml",
+          "khớp": 0,
+          "tệp_trúng": [],
+          "tệp_trượt": [],
+          "biến_thể": [],
+          "ngoài_target": [
+            [
+              "AndroidManifest.xml",
+              10
+            ],
+            [
+              "smali/com/demo/MainActivity.smali",
+              12
+            ],
+            [
+              "smali/com/demo/Util.smali",
+              3
+            ]
+          ]
+        },
+        {
+          "khối": 4,
+          "loại": "MATCH_REPLACE",
+          "target": "res/values-ru/strings.xml",
+          "khớp": 0,
+          "tệp_trúng": [],
+          "tệp_trượt": [],
+          "biến_thể": [],
+          "ngoài_target": []
+        },
+        {
+          "khối": 5,
+          "loại": "MATCH_REPLACE",
+          "target": "res/values-ru/strings.xml",
+          "khớp": 0,
+          "tệp_trúng": [],
+          "tệp_trượt": [],
+          "biến_thể": [],
+          "ngoài_target": []
+        },
+        {
+          "khối": 6,
+          "loại": "MATCH_REPLACE",
+          "target": "res/values-ru/strings.xml",
+          "khớp": 0,
+          "tệp_trúng": [],
+          "tệp_trượt": [],
+          "biến_thể": [],
+          "ngoài_target": []
+        },
+        {
+          "khối": 7,
+          "loại": "MATCH_REPLACE",
+          "target": "res/values-ru/strings.xml",
+          "khớp": 0,
+          "tệp_trúng": [],
+          "tệp_trượt": [],
+          "biến_thể": [],
+          "ngoài_target": []
+        },
+        {
+          "khối": 8,
+          "loại": "MATCH_REPLACE",
+          "target": "res/values-ru/strings.xml",
+          "khớp": 0,
+          "tệp_trúng": [],
+          "tệp_trượt": [],
+          "biến_thể": [],
+          "ngoài_target": [
+            [
+              "AndroidManifest.xml",
+              10
+            ],
+            [
+              "smali/com/demo/MainActivity.smali",
+              12
+            ],
+            [
+              "smali/com/demo/Util.smali",
+              3
+            ]
+          ]
+        },
+        {
+          "khối": 9,
+          "loại": "MATCH_ASSIGN",
+          "target": "res/values-ru/strings.xml",
+          "khớp": 0,
+          "tệp_trúng": [],
+          "tệp_trượt": [],
+          "biến_thể": [],
+          "ngoài_target": []
+        },
+        {
+          "khối": 10,
+          "loại": "MATCH_REPLACE",
+          "target": "res/values-ru/strings.xml",
+          "khớp": 0,
+          "tệp_trúng": [],
+          "tệp_trượt": [],
+          "biến_thể": [],
+          "ngoài_target": []
+        },
+        {
+          "khối": 11,
+          "loại": "MATCH_REPLACE",
+          "target": "res/values-ru/strings.xml",
+          "khớp": 0,
+          "tệp_trúng": [],
+          "tệp_trượt": [],
+          "biến_thể": [],
+          "ngoài_target": []
+        },
+        {
+          "khối": 12,
+          "loại": "MATCH_REPLACE",
+          "target": "res/values-ru/strings.xml",
+          "khớp": 0,
+          "tệp_trúng": [],
+          "tệp_trượt": [],
+          "biến_thể": [],
+          "ngoài_target": []
+        },
+        {
+          "khối": 13,
+          "loại": "MATCH_REPLACE",
+          "target": "res/values-ru/strings.xml",
+          "khớp": 0,
+          "tệp_trúng": [],
+          "tệp_trượt": [],
+          "biến_thể": [],
+          "ngoài_target": []
+        },
+        {
+          "khối": 14,
+          "loại": "MATCH_REPLACE",
+          "target": "res/values-ru/strings.xml",
+          "khớp": 0,
+          "tệp_trúng": [],
+          "tệp_trượt": [],
+          "biến_thể": [],
+          "ngoài_target": []
+        },
+        {
+          "khối": 15,
+          "loại": "MATCH_REPLACE",
+          "target": "res/values-ru/strings.xml",
+          "khớp": 0,
+          "tệp_trúng": [],
+          "tệp_trượt": [],
+          "biến_thể": [],
+          "ngoài_target": []
+        },
+        {
+          "khối": 16,
+          "loại": "MATCH_REPLACE",
+          "target": "res/values-ru/strings.xml",
+          "khớp": 0,
+          "tệp_trúng": [],
+          "tệp_trượt": [],
+          "biến_thể": [],
+          "ngoài_target": []
+        },
+        {
+          "khối": 17,
+          "loại": "MATCH_REPLACE",
+          "target": "res/values-ru/strings.xml",
+          "khớp": 0,
+          "tệp_trúng": [],
+          "tệp_trượt": [],
+          "biến_thể": [],
+          "ngoài_target": []
+        },
+        {
+          "khối": 18,
+          "loại": "MATCH_REPLACE",
+          "target": "res/values-ru/strings.xml",
+          "khớp": 0,
+          "tệp_trúng": [],
+          "tệp_trượt": [],
+          "biến_thể": [],
+          "ngoài_target": []
+        },
+        {
+          "khối": 19,
+          "loại": "MATCH_REPLACE",
+          "target": "res/values-ru/strings.xml",
+          "khớp": 0,
+          "tệp_trúng": [],
+          "tệp_trượt": [],
+          "biến_thể": [],
+          "ngoài_target": []
+        },
+        {
+          "khối": 20,
+          "loại": "MATCH_REPLACE",
+          "target": "res/values-ru/strings.xml",
+          "khớp": 0,
+          "tệp_trúng": [],
+          "tệp_trượt": [],
+          "biến_thể": [],
+          "ngoài_target": []
+        },
+        {
+          "khối": 21,
+          "loại": "MATCH_REPLACE",
+          "target": "res/values-uk/strings.xml",
+          "khớp": 0,
+          "tệp_trúng": [],
+          "tệp_trượt": [],
+          "biến_thể": [],
+          "ngoài_target": [
+            [
+              "AndroidManifest.xml",
+              10
+            ],
+            [
+              "smali/com/demo/MainActivity.smali",
+              12
+            ],
+            [
+              "smali/com/demo/Util.smali",
+              3
+            ]
+          ]
+        },
+        {
+          "khối": 22,
+          "loại": "MATCH_REPLACE",
+          "target": "res/values-uk/strings.xml",
+          "khớp": 0,
+          "tệp_trúng": [],
+          "tệp_trượt": [],
+          "biến_thể": [],
+          "ngoài_target": []
+        },
+        {
+          "khối": 23,
+          "loại": "MATCH_REPLACE",
+          "target": "res/values-uk/strings.xml",
+          "khớp": 0,
+          "tệp_trúng": [],
+          "tệp_trượt": [],
+          "biến_thể": [],
+          "ngoài_target": []
+        },
+        {
+          "khối": 24,
+          "loại": "MATCH_REPLACE",
+          "target": "res/values-uk/strings.xml",
+          "khớp": 0,
+          "tệp_trúng": [],
+          "tệp_trượt": [],
+          "biến_thể": [],
+          "ngoài_target": []
+        },
+        {
+          "khối": 25,
+          "loại": "MATCH_REPLACE",
+          "target": "res/values-uk/strings.xml",
+          "khớp": 0,
+          "tệp_trúng": [],
+          "tệp_trượt": [],
+          "biến_thể": [],
+          "ngoài_target": []
+        },
+        {
+          "khối": 26,
+          "loại": "MATCH_REPLACE",
+          "target": "res/values-uk/strings.xml",
+          "khớp": 0,
+          "tệp_trúng": [],
+          "tệp_trượt": [],
+          "biến_thể": [],
+          "ngoài_target": [
+            [
+              "AndroidManifest.xml",
+              10
+            ],
+            [
+              "smali/com/demo/MainActivity.smali",
+              12
+            ],
+            [
+              "smali/com/demo/Util.smali",
+              3
+            ]
+          ]
+        },
+        {
+          "khối": 27,
+          "loại": "MATCH_ASSIGN",
+          "target": "res/values-uk/strings.xml",
+          "khớp": 0,
+          "tệp_trúng": [],
+          "tệp_trượt": [],
+          "biến_thể": [],
+          "ngoài_target": []
+        },
+        {
+          "khối": 28,
+          "loại": "MATCH_REPLACE",
+          "target": "res/values-uk/strings.xml",
+          "khớp": 0,
+          "tệp_trúng": [],
+          "tệp_trượt": [],
+          "biến_thể": [],
+          "ngoài_target": []
+        },
+        {
+          "khối": 29,
+          "loại": "MATCH_REPLACE",
+          "target": "res/values-uk/strings.xml",
+          "khớp": 0,
+          "tệp_trúng": [],
+          "tệp_trượt": [],
+          "biến_thể": [],
+          "ngoài_target": []
+        },
+        {
+          "khối": 30,
+          "loại": "MATCH_REPLACE",
+          "target": "res/values-uk/strings.xml",
+          "khớp": 0,
+          "tệp_trúng": [],
+          "tệp_trượt": [],
+          "biến_thể": [],
+          "ngoài_target": []
+        },
+        {
+          "khối": 31,
+          "loại": "MATCH_REPLACE",
+          "target": "res/values-uk/strings.xml",
+          "khớp": 0,
+          "tệp_trúng": [],
+          "tệp_trượt": [],
+          "biến_thể": [],
+          "ngoài_target": []
+        },
+        {
+          "khối": 32,
+          "loại": "MATCH_REPLACE",
+          "target": "res/values-uk/strings.xml",
+          "khớp": 0,
+          "tệp_trúng": [],
+          "tệp_trượt": [],
+          "biến_thể": [],
+          "ngoài_target": []
+        },
+        {
+          "khối": 33,
+          "loại": "MATCH_REPLACE",
+          "target": "res/values-uk/strings.xml",
+          "khớp": 0,
+          "tệp_trúng": [],
+          "tệp_trượt": [],
+          "biến_thể": [],
+          "ngoài_target": []
+        },
+        {
+          "khối": 34,
+          "loại": "MATCH_REPLACE",
+          "target": "res/values-uk/strings.xml",
+          "khớp": 0,
+          "tệp_trúng": [],
+          "tệp_trượt": [],
+          "biến_thể": [],
+          "ngoài_target": []
+        },
+        {
+          "khối": 35,
+          "loại": "MATCH_REPLACE",
+          "target": "res/values-uk/strings.xml",
+          "khớp": 0,
+          "tệp_trúng": [],
+          "tệp_trượt": [],
+          "biến_thể": [],
+          "ngoài_target": []
+        },
+        {
+          "khối": 36,
+          "loại": "MATCH_REPLACE",
+          "target": "res/values-uk/strings.xml",
+          "khớp": 0,
+          "tệp_trúng": [],
+          "tệp_trượt": [],
+          "biến_thể": [],
+          "ngoài_target": []
+        },
+        {
+          "khối": 37,
+          "loại": "MATCH_REPLACE",
+          "target": "res/values-uk/strings.xml",
+          "khớp": 0,
+          "tệp_trúng": [],
+          "tệp_trượt": [],
+          "biến_thể": [],
+          "ngoài_target": []
+        },
+        {
+          "khối": 38,
+          "loại": "MATCH_REPLACE",
+          "target": "res/values-uk/strings.xml",
+          "khớp": 0,
+          "tệp_trúng": [],
+          "tệp_trượt": [],
+          "biến_thể": [],
+          "ngoài_target": []
+        }
+      ]
+    },
+    {
+      "patch": "Turn off + Checks + On + Emulator + Android",
+      "nhóm": "Khác",
+      "tỷ_lệ": 0.0,
+      "quy_tắc_khớp": 0,
+      "quy_tắc": 4,
+      "lần_khớp": 0,
+      "rủi_ro": [],
+      "chi_tiết": [
+        {
+          "khối": 3,
+          "loại": "MATCH_REPLACE",
+          "target": "smali*/*.smali",
+          "khớp": 0,
+          "tệp_trúng": [],
+          "tệp_trượt": [
+            "smali/com/demo/MainActivity.smali",
+            "smali/com/demo/Util.smali"
+          ],
+          "biến_thể": [],
+          "ngoài_target": []
+        },
+        {
+          "khối": 4,
+          "loại": "MATCH_REPLACE",
+          "target": "smali*/*.smali",
+          "khớp": 0,
+          "tệp_trúng": [],
+          "tệp_trượt": [
+            "smali/com/demo/MainActivity.smali",
+            "smali/com/demo/Util.smali"
+          ],
+          "biến_thể": [],
+          "ngoài_target": []
+        },
+        {
+          "khối": 5,
+          "loại": "MATCH_REPLACE",
+          "target": "smali*/*.smali",
+          "khớp": 0,
+          "tệp_trúng": [],
+          "tệp_trượt": [
+            "smali/com/demo/MainActivity.smali",
+            "smali/com/demo/Util.smali"
+          ],
+          "biến_thể": [],
+          "ngoài_target": []
+        },
+        {
+          "khối": 6,
+          "loại": "MATCH_REPLACE",
+          "target": "smali*/*.smali",
+          "khớp": 0,
+          "tệp_trúng": [],
+          "tệp_trượt": [
+            "smali/com/demo/MainActivity.smali",
+            "smali/com/demo/Util.smali"
+          ],
+          "biến_thể": [],
+          "ngoài_target": []
+        }
+      ]
+    },
+    {
+      "patch": "Только Rus",
+      "nhóm": "Khác",
+      "tỷ_lệ": 0.0,
+      "quy_tắc_khớp": 0,
+      "quy_tắc": 7,
+      "lần_khớp": 0,
+      "rủi_ro": [],
+      "chi_tiết": [
+        {
+          "khối": 3,
+          "loại": "MATCH_REPLACE",
+          "target": "res/values-ru/strings.xml",
+          "khớp": 0,
+          "tệp_trúng": [],
+          "tệp_trượt": [],
+          "biến_thể": [],
+          "ngoài_target": [
+            [
+              "AndroidManifest.xml",
+              10
+            ],
+            [
+              "smali/com/demo/MainActivity.smali",
+              12
+            ],
+            [
+              "smali/com/demo/Util.smali",
+              3
+            ]
+          ]
+        },
+        {
+          "khối": 4,
+          "loại": "MATCH_ASSIGN",
+          "target": "res/values-ru/strings.xml",
+          "khớp": 0,
+          "tệp_trúng": [],
+          "tệp_trượt": [],
+          "biến_thể": [],
+          "ngoài_target": []
+        },
+        {
+          "khối": 5,
+          "loại": "MATCH_REPLACE",
+          "target": "res/values/strings.xml",
+          "khớp": 0,
+          "tệp_trúng": [],
+          "tệp_trượt": [],
+          "biến_thể": [],
+          "ngoài_target": [
+            [
+              "AndroidManifest.xml",
+              10
+            ],
+            [
+              "smali/com/demo/MainActivity.smali",
+              12
+            ],
+            [
+              "smali/com/demo/Util.smali",
+              3
+            ]
+          ]
+        },
+        {
+          "khối": 6,
+          "loại": "MATCH_REPLACE",
+          "target": "res/values/strings.xml",
+          "khớp": 0,
+          "tệp_trúng": [],
+          "tệp_trượt": [],
+          "biến_thể": [],
+          "ngoài_target": []
+        },
+        {
+          "khối": 7,
+          "loại": "MATCH_REPLACE",
+          "target": "res/values/strings.xml",
+          "khớp": 0,
+          "tệp_trúng": [],
+          "tệp_trượt": [],
+          "biến_thể": [],
+          "ngoài_target": []
+        },
+        {
+          "khối": 8,
+          "loại": "MATCH_REPLACE",
+          "target": "res/values-ru/strings.xml",
+          "khớp": 0,
+          "tệp_trúng": [],
+          "tệp_trượt": [],
+          "biến_thể": [],
+          "ngoài_target": []
+        },
+        {
+          "khối": 9,
+          "loại": "MATCH_REPLACE",
+          "target": "res/values/strings.xml",
+          "khớp": 0,
+          "tệp_trúng": [],
+          "tệp_trượt": [],
+          "biến_thể": [],
+          "ngoài_target": []
+        }
+      ]
+    },
+    {
+      "patch": "Disconnect_internet",
+      "nhóm": "Mạng",
+      "tỷ_lệ": 0.0,
+      "quy_tắc_khớp": 0,
+      "quy_tắc": 1,
+      "lần_khớp": 0,
+      "rủi_ro": [],
+      "chi_tiết": [
+        {
+          "khối": 2,
+          "loại": "MATCH_REPLACE",
+          "target": "smali*/*.smali",
+          "khớp": 0,
+          "tệp_trúng": [],
+          "tệp_trượt": [
+            "smali/com/demo/MainActivity.smali",
+            "smali/com/demo/Util.smali"
+          ],
+          "biến_thể": [],
+          "ngoài_target": []
+        }
+      ]
+    },
+    {
+      "patch": "NoInternet",
+      "nhóm": "Mạng",
+      "tỷ_lệ": 0.0,
+      "quy_tắc_khớp": 0,
+      "quy_tắc": 2,
+      "lần_khớp": 0,
+      "rủi_ro": [],
+      "chi_tiết": [
+        {
+          "khối": 3,
+          "loại": "MATCH_REPLACE",
+          "target": "AndroidManifest.xml",
+          "khớp": 0,
+          "tệp_trúng": [],
+          "tệp_trượt": [
+            "AndroidManifest.xml"
+          ],
+          "biến_thể": [],
+          "ngoài_target": []
+        },
+        {
+          "khối": 4,
+          "loại": "MATCH_REPLACE",
+          "target": "AndroidManifest.xml",
+          "khớp": 0,
+          "tệp_trúng": [],
+          "tệp_trượt": [
+            "AndroidManifest.xml"
+          ],
+          "biến_thể": [],
+          "ngoài_target": []
+        }
+      ]
+    },
+    {
+      "patch": "NoLocation",
+      "nhóm": "Mạng",
+      "tỷ_lệ": 0.0,
+      "quy_tắc_khớp": 0,
+      "quy_tắc": 3,
+      "lần_khớp": 0,
+      "rủi_ro": [],
+      "chi_tiết": [
+        {
+          "khối": 3,
+          "loại": "MATCH_REPLACE",
+          "target": "AndroidManifest.xml",
+          "khớp": 0,
+          "tệp_trúng": [],
+          "tệp_trượt": [
+            "AndroidManifest.xml"
+          ],
+          "biến_thể": [],
+          "ngoài_target": []
+        },
+        {
+          "khối": 4,
+          "loại": "MATCH_REPLACE",
+          "target": "AndroidManifest.xml",
+          "khớp": 0,
+          "tệp_trúng": [],
+          "tệp_trượt": [
+            "AndroidManifest.xml"
+          ],
+          "biến_thể": [],
+          "ngoài_target": []
+        },
+        {
+          "khối": 5,
+          "loại": "MATCH_REPLACE",
+          "target": "AndroidManifest.xml",
+          "khớp": 0,
+          "tệp_trúng": [],
+          "tệp_trượt": [
+            "AndroidManifest.xml"
+          ],
+          "biến_thể": [],
+          "ngoài_target": []
+        }
+      ]
+    },
+    {
+      "patch": "NoPlayGames",
+      "nhóm": "Mạng",
+      "tỷ_lệ": 0.0,
+      "quy_tắc_khớp": 0,
+      "quy_tắc": 2,
+      "lần_khớp": 0,
+      "rủi_ro": [],
+      "chi_tiết": [
+        {
+          "khối": 3,
+          "loại": "MATCH_REPLACE",
+          "target": "smali*/*.smali",
+          "khớp": 0,
+          "tệp_trúng": [],
+          "tệp_trượt": [
+            "smali/com/demo/MainActivity.smali",
+            "smali/com/demo/Util.smali"
+          ],
+          "biến_thể": [],
+          "ngoài_target": []
+        },
+        {
+          "khối": 4,
+          "loại": "MATCH_REPLACE",
+          "target": "smali*/*.smali",
+          "khớp": 0,
+          "tệp_trúng": [],
+          "tệp_trượt": [
+            "smali/com/demo/MainActivity.smali",
+            "smali/com/demo/Util.smali"
+          ],
+          "biến_thể": [],
+          "ngoài_target": []
+        }
+      ]
+    },
+    {
+      "patch": "BSSID",
+      "nhóm": "Spoof-ID",
+      "tỷ_lệ": 0.0,
+      "quy_tắc_khớp": 0,
+      "quy_tắc": 1,
+      "lần_khớp": 0,
+      "rủi_ro": [],
+      "chi_tiết": [
+        {
+          "khối": 3,
+          "loại": "MATCH_REPLACE",
+          "target": "smali*/*.smali",
+          "khớp": 0,
+          "tệp_trúng": [],
+          "tệp_trượt": [
+            "smali/com/demo/MainActivity.smali",
+            "smali/com/demo/Util.smali"
+          ],
+          "biến_thể": [],
+          "ngoài_target": []
+        }
+      ]
+    },
+    {
+      "patch": "Bluetooth_Mac",
+      "nhóm": "Spoof-ID",
+      "tỷ_lệ": 0.0,
+      "quy_tắc_khớp": 0,
+      "quy_tắc": 1,
+      "lần_khớp": 0,
+      "rủi_ro": [],
+      "chi_tiết": [
+        {
+          "khối": 3,
+          "loại": "MATCH_REPLACE",
+          "target": "smali*/*.smali",
+          "khớp": 0,
+          "tệp_trúng": [],
+          "tệp_trượt": [
+            "smali/com/demo/MainActivity.smali",
+            "smali/com/demo/Util.smali"
+          ],
+          "biến_thể": [],
+          "ngoài_target": []
+        }
+      ]
+    },
+    {
+      "patch": "GenerateDeviceID",
+      "nhóm": "Spoof-ID",
+      "tỷ_lệ": 0.0,
+      "quy_tắc_khớp": 0,
+      "quy_tắc": 1,
+      "lần_khớp": 0,
+      "rủi_ro": [],
+      "chi_tiết": [
+        {
+          "khối": 3,
+          "loại": "MATCH_REPLACE",
+          "target": "smali*/*.smali",
+          "khớp": 0,
+          "tệp_trúng": [],
+          "tệp_trượt": [
+            "smali/com/demo/MainActivity.smali",
+            "smali/com/demo/Util.smali"
+          ],
+          "biến_thể": [],
+          "ngoài_target": []
+        }
+      ]
+    },
+    {
+      "patch": "Generate_Device model spoofing",
+      "nhóm": "Spoof-ID",
+      "tỷ_lệ": 0.0,
+      "quy_tắc_khớp": 0,
+      "quy_tắc": 1,
+      "lần_khớp": 0,
+      "rủi_ro": [],
+      "chi_tiết": [
+        {
+          "khối": 3,
+          "loại": "MATCH_REPLACE",
+          "target": "smali*/*.smali",
+          "khớp": 0,
+          "tệp_trúng": [],
+          "tệp_trượt": [
+            "smali/com/demo/MainActivity.smali",
+            "smali/com/demo/Util.smali"
+          ],
+          "biến_thể": [],
+          "ngoài_target": []
+        }
+      ]
+    },
+    {
+      "patch": "NoInternetWifi",
+      "nhóm": "Spoof-ID",
+      "tỷ_lệ": 0.0,
+      "quy_tắc_khớp": 0,
+      "quy_tắc": 7,
+      "lần_khớp": 0,
+      "rủi_ro": [],
+      "chi_tiết": [
+        {
+          "khối": 3,
+          "loại": "MATCH_REPLACE",
+          "target": "AndroidManifest.xml",
+          "khớp": 0,
+          "tệp_trúng": [],
+          "tệp_trượt": [
+            "AndroidManifest.xml"
+          ],
+          "biến_thể": [],
+          "ngoài_target": []
+        },
+        {
+          "khối": 4,
+          "loại": "MATCH_REPLACE",
+          "target": "AndroidManifest.xml",
+          "khớp": 0,
+          "tệp_trúng": [],
+          "tệp_trượt": [
+            "AndroidManifest.xml"
+          ],
+          "biến_thể": [],
+          "ngoài_target": []
+        },
+        {
+          "khối": 5,
+          "loại": "MATCH_REPLACE",
+          "target": "AndroidManifest.xml",
+          "khớp": 0,
+          "tệp_trúng": [],
+          "tệp_trượt": [
+            "AndroidManifest.xml"
+          ],
+          "biến_thể": [],
+          "ngoài_target": []
+        },
+        {
+          "khối": 6,
+          "loại": "MATCH_REPLACE",
+          "target": "AndroidManifest.xml",
+          "khớp": 0,
+          "tệp_trúng": [],
+          "tệp_trượt": [
+            "AndroidManifest.xml"
+          ],
+          "biến_thể": [],
+          "ngoài_target": []
+        },
+        {
+          "khối": 7,
+          "loại": "MATCH_REPLACE",
+          "target": "AndroidManifest.xml",
+          "khớp": 0,
+          "tệp_trúng": [],
+          "tệp_trượt": [
+            "AndroidManifest.xml"
+          ],
+          "biến_thể": [],
+          "ngoài_target": []
+        },
+        {
+          "khối": 8,
+          "loại": "MATCH_REPLACE",
+          "target": "AndroidManifest.xml",
+          "khớp": 0,
+          "tệp_trúng": [],
+          "tệp_trượt": [
+            "AndroidManifest.xml"
+          ],
+          "biến_thể": [],
+          "ngoài_target": []
+        },
+        {
+          "khối": 9,
+          "loại": "MATCH_REPLACE",
+          "target": "AndroidManifest.xml",
+          "khớp": 0,
+          "tệp_trúng": [],
+          "tệp_trượt": [
+            "AndroidManifest.xml"
+          ],
+          "biến_thể": [],
+          "ngoài_target": []
+        }
+      ]
+    },
+    {
+      "patch": "SerNum",
+      "nhóm": "Spoof-ID",
+      "tỷ_lệ": 0.0,
+      "quy_tắc_khớp": 0,
+      "quy_tắc": 1,
+      "lần_khớp": 0,
+      "rủi_ro": [],
+      "chi_tiết": [
+        {
+          "khối": 3,
+          "loại": "MATCH_REPLACE",
+          "target": "smali/*.smali",
+          "khớp": 0,
+          "tệp_trúng": [],
+          "tệp_trượt": [
+            "smali/com/demo/MainActivity.smali",
+            "smali/com/demo/Util.smali"
+          ],
+          "biến_thể": [],
+          "ngoài_target": []
+        }
+      ]
+    },
+    {
+      "patch": "WiFi_Mac",
+      "nhóm": "Spoof-ID",
+      "tỷ_lệ": 0.0,
+      "quy_tắc_khớp": 0,
+      "quy_tắc": 1,
+      "lần_khớp": 0,
+      "rủi_ro": [],
+      "chi_tiết": [
+        {
+          "khối": 3,
+          "loại": "MATCH_REPLACE",
+          "target": "smali*/*.smali",
+          "khớp": 0,
+          "tệp_trúng": [],
+          "tệp_trượt": [
+            "smali/com/demo/MainActivity.smali",
+            "smali/com/demo/Util.smali"
+          ],
+          "biến_thể": [],
+          "ngoài_target": []
+        }
+      ]
+    },
+    {
+      "patch": "brand",
+      "nhóm": "Spoof-ID",
+      "tỷ_lệ": 0.0,
+      "quy_tắc_khớp": 0,
+      "quy_tắc": 1,
+      "lần_khớp": 0,
+      "rủi_ro": [],
+      "chi_tiết": [
+        {
+          "khối": 3,
+          "loại": "MATCH_REPLACE",
+          "target": "*.smali",
+          "khớp": 0,
+          "tệp_trúng": [],
+          "tệp_trượt": [
+            "smali/com/demo/MainActivity.smali",
+            "smali/com/demo/Util.smali"
+          ],
+          "biến_thể": [],
+          "ngoài_target": []
+        }
+      ]
+    },
+    {
+      "patch": "imei",
+      "nhóm": "Spoof-ID",
+      "tỷ_lệ": 0.0,
+      "quy_tắc_khớp": 0,
+      "quy_tắc": 2,
+      "lần_khớp": 0,
+      "rủi_ro": [],
+      "chi_tiết": [
+        {
+          "khối": 3,
+          "loại": "MATCH_REPLACE",
+          "target": "smali*/*.smali",
+          "khớp": 0,
+          "tệp_trúng": [],
+          "tệp_trượt": [
+            "smali/com/demo/MainActivity.smali",
+            "smali/com/demo/Util.smali"
+          ],
+          "biến_thể": [],
+          "ngoài_target": []
+        },
+        {
+          "khối": 4,
+          "loại": "MATCH_REPLACE",
+          "target": "smali*/*.smali",
+          "khớp": 0,
+          "tệp_trúng": [],
+          "tệp_trượt": [
+            "smali/com/demo/MainActivity.smali",
+            "smali/com/demo/Util.smali"
+          ],
+          "biến_thể": [],
+          "ngoài_target": []
+        }
+      ]
+    },
+    {
+      "patch": "DexExtractor",
+      "nhóm": "Tiện-ích",
+      "tỷ_lệ": 0.0,
+      "quy_tắc_khớp": 0,
+      "quy_tắc": 1,
+      "lần_khớp": 0,
+      "rủi_ro": [],
+      "chi_tiết": [
+        {
+          "khối": 3,
+          "loại": "MATCH_REPLACE",
+          "target": "smali*/*",
+          "khớp": 0,
+          "tệp_trúng": [],
+          "tệp_trượt": [
+            "smali/com/demo/MainActivity.smali",
+            "smali/com/demo/Util.smali"
+          ],
+          "biến_thể": [],
+          "ngoài_target": []
+        }
+      ]
+    },
+    {
+      "patch": "DuplicateDel",
+      "nhóm": "Tiện-ích",
+      "tỷ_lệ": 0.0,
+      "quy_tắc_khớp": 0,
+      "quy_tắc": 1,
+      "lần_khớp": 0,
+      "rủi_ro": [
+        "cần --dex-runner"
+      ],
+      "chi_tiết": [
+        {
+          "khối": 4,
+          "loại": "MATCH_REPLACE",
+          "target": "res/values/public.xml",
+          "khớp": 0,
+          "tệp_trúng": [],
+          "tệp_trượt": [],
+          "biến_thể": [],
+          "ngoài_target": []
+        }
+      ]
+    },
+    {
+      "patch": "InstallLocation_auto",
+      "nhóm": "Tiện-ích",
+      "tỷ_lệ": 0.0,
+      "quy_tắc_khớp": 0,
+      "quy_tắc": 1,
+      "lần_khớp": 0,
+      "rủi_ro": [],
+      "chi_tiết": [
+        {
+          "khối": 0,
+          "loại": "MATCH_REPLACE",
+          "target": "AndroidManifest.xml",
+          "khớp": 0,
+          "tệp_trúng": [],
+          "tệp_trượt": [
+            "AndroidManifest.xml"
+          ],
+          "biến_thể": [],
+          "ngoài_target": []
+        }
+      ]
+    },
+    {
+      "patch": "InstallerPackageName",
+      "nhóm": "Tiện-ích",
+      "tỷ_lệ": 0.0,
+      "quy_tắc_khớp": 0,
+      "quy_tắc": 2,
+      "lần_khớp": 0,
+      "rủi_ro": [],
+      "chi_tiết": [
+        {
+          "khối": 3,
+          "loại": "MATCH_REPLACE",
+          "target": "smali*/*.smali",
+          "khớp": 0,
+          "tệp_trúng": [],
+          "tệp_trượt": [
+            "smali/com/demo/MainActivity.smali",
+            "smali/com/demo/Util.smali"
+          ],
+          "biến_thể": [],
+          "ngoài_target": []
+        },
+        {
+          "khối": 4,
+          "loại": "MATCH_REPLACE",
+          "target": "smali*/*.smali",
+          "khớp": 0,
+          "tệp_trúng": [],
+          "tệp_trượt": [
+            "smali/com/demo/MainActivity.smali",
+            "smali/com/demo/Util.smali"
+          ],
+          "biến_thể": [],
+          "ngoài_target": []
+        }
+      ]
+    },
+    {
+      "patch": "NoAutoBoot",
+      "nhóm": "Tiện-ích",
+      "tỷ_lệ": 0.0,
+      "quy_tắc_khớp": 0,
+      "quy_tắc": 1,
+      "lần_khớp": 0,
+      "rủi_ro": [],
+      "chi_tiết": [
+        {
+          "khối": 3,
+          "loại": "MATCH_REPLACE",
+          "target": "AndroidManifest.xml",
+          "khớp": 0,
+          "tệp_trúng": [],
+          "tệp_trượt": [
+            "AndroidManifest.xml"
+          ],
+          "biến_thể": [],
+          "ngoài_target": []
+        }
+      ]
+    },
+    {
+      "patch": "NoCamera",
+      "nhóm": "Tiện-ích",
+      "tỷ_lệ": 0.0,
+      "quy_tắc_khớp": 0,
+      "quy_tắc": 1,
+      "lần_khớp": 0,
+      "rủi_ro": [],
+      "chi_tiết": [
+        {
+          "khối": 3,
+          "loại": "MATCH_REPLACE",
+          "target": "AndroidManifest.xml",
+          "khớp": 0,
+          "tệp_trúng": [],
+          "tệp_trượt": [
+            "AndroidManifest.xml"
+          ],
+          "biến_thể": [],
+          "ngoài_target": []
+        }
+      ]
+    },
+    {
+      "patch": "NoRecordAudio",
+      "nhóm": "Tiện-ích",
+      "tỷ_lệ": 0.0,
+      "quy_tắc_khớp": 0,
+      "quy_tắc": 1,
+      "lần_khớp": 0,
+      "rủi_ro": [],
+      "chi_tiết": [
+        {
+          "khối": 3,
+          "loại": "MATCH_REPLACE",
+          "target": "AndroidManifest.xml",
+          "khớp": 0,
+          "tệp_trúng": [],
+          "tệp_trượt": [
+            "AndroidManifest.xml"
+          ],
+          "biến_thể": [],
+          "ngoài_target": []
+        }
+      ]
+    },
+    {
+      "patch": "NoUpdates",
+      "nhóm": "Tiện-ích",
+      "tỷ_lệ": 0.0,
+      "quy_tắc_khớp": 0,
+      "quy_tắc": 0,
+      "lần_khớp": 0,
+      "rủi_ro": [
+        "cần --dex-runner"
+      ],
+      "chi_tiết": []
+    },
+    {
+      "patch": "Receiver_deleter",
+      "nhóm": "Tiện-ích",
+      "tỷ_lệ": 0.0,
+      "quy_tắc_khớp": 0,
+      "quy_tắc": 1,
+      "lần_khớp": 0,
+      "rủi_ro": [],
+      "chi_tiết": [
+        {
+          "khối": 3,
+          "loại": "MATCH_REPLACE",
+          "target": "AndroidManifest.xml",
+          "khớp": 0,
+          "tệp_trúng": [],
+          "tệp_trượt": [
+            "AndroidManifest.xml"
+          ],
+          "biến_thể": [],
+          "ngoài_target": []
+        }
+      ]
+    },
+    {
+      "patch": "TimeStop",
+      "nhóm": "Tiện-ích",
+      "tỷ_lệ": 0.0,
+      "quy_tắc_khớp": 0,
+      "quy_tắc": 2,
+      "lần_khớp": 0,
+      "rủi_ro": [],
+      "chi_tiết": [
+        {
+          "khối": 3,
+          "loại": "MATCH_REPLACE",
+          "target": "smali*/*.smali",
+          "khớp": 0,
+          "tệp_trúng": [],
+          "tệp_trượt": [
+            "smali/com/demo/MainActivity.smali",
+            "smali/com/demo/Util.smali"
+          ],
+          "biến_thể": [],
+          "ngoài_target": []
+        },
+        {
+          "khối": 4,
+          "loại": "MATCH_REPLACE",
+          "target": "smali*/*.smali",
+          "khớp": 0,
+          "tệp_trúng": [],
+          "tệp_trượt": [
+            "smali/com/demo/MainActivity.smali",
+            "smali/com/demo/Util.smali"
+          ],
+          "biến_thể": [],
+          "ngoài_target": []
+        }
+      ]
+    },
+    {
+      "patch": "ToolReplacement",
+      "nhóm": "Tiện-ích",
+      "tỷ_lệ": 0.0,
+      "quy_tắc_khớp": 0,
+      "quy_tắc": 0,
+      "lần_khớp": 0,
+      "rủi_ro": [
+        "cần --dex-runner",
+        "xóa tệp (có sao lưu)"
+      ],
+      "chi_tiết": []
+    },
+    {
+      "patch": "anti_fullscreen",
+      "nhóm": "Tiện-ích",
+      "tỷ_lệ": 0.0,
+      "quy_tắc_khớp": 0,
+      "quy_tắc": 2,
+      "lần_khớp": 0,
+      "rủi_ro": [],
+      "chi_tiết": [
+        {
+          "khối": 3,
+          "loại": "MATCH_REPLACE",
+          "target": "res/values*/styles.xml",
+          "khớp": 0,
+          "tệp_trúng": [],
+          "tệp_trượt": [],
+          "biến_thể": [],
+          "ngoài_target": []
+        },
+        {
+          "khối": 4,
+          "loại": "MATCH_REPLACE",
+          "target": "res/values*/styles.xml",
+          "khớp": 0,
+          "tệp_trúng": [],
+          "tệp_trượt": [],
+          "biến_thể": [],
+          "ngoài_target": []
+        }
+      ]
+    },
+    {
+      "patch": "fix_for_18_9dpi",
+      "nhóm": "Tiện-ích",
+      "tỷ_lệ": 0.0,
+      "quy_tắc_khớp": 0,
+      "quy_tắc": 1,
+      "lần_khớp": 0,
+      "rủi_ro": [],
+      "chi_tiết": [
+        {
+          "khối": 3,
+          "loại": "MATCH_REPLACE",
+          "target": "AndroidManifest.xml",
+          "khớp": 0,
+          "tệp_trúng": [],
+          "tệp_trượt": [
+            "AndroidManifest.xml"
+          ],
+          "biến_thể": [],
+          "ngoài_target": []
+        }
+      ]
+    },
+    {
+      "patch": "fullscreen",
+      "nhóm": "Tiện-ích",
+      "tỷ_lệ": 0.0,
+      "quy_tắc_khớp": 0,
+      "quy_tắc": 2,
+      "lần_khớp": 0,
+      "rủi_ro": [],
+      "chi_tiết": [
+        {
+          "khối": 3,
+          "loại": "MATCH_REPLACE",
+          "target": "res/values*/styles.xml",
+          "khớp": 0,
+          "tệp_trúng": [],
+          "tệp_trượt": [],
+          "biến_thể": [],
+          "ngoài_target": []
+        },
+        {
+          "khối": 4,
+          "loại": "MATCH_REPLACE",
+          "target": "res/values*/styles.xml",
+          "khớp": 0,
+          "tệp_trúng": [],
+          "tệp_trượt": [],
+          "biến_thể": [],
+          "ngoài_target": []
+        }
+      ]
+    },
+    {
+      "patch": "minsdk",
+      "nhóm": "Tiện-ích",
+      "tỷ_lệ": 0.0,
+      "quy_tắc_khớp": 0,
+      "quy_tắc": 1,
+      "lần_khớp": 0,
+      "rủi_ro": [],
+      "chi_tiết": [
+        {
+          "khối": 3,
+          "loại": "MATCH_REPLACE",
+          "target": "AndroidManifest.xml",
+          "khớp": 0,
+          "tệp_trúng": [],
+          "tệp_trượt": [
+            "AndroidManifest.xml"
+          ],
+          "biến_thể": [],
+          "ngoài_target": []
+        }
+      ]
+    },
+    {
+      "patch": "patch_script_example",
+      "nhóm": "Tiện-ích",
+      "tỷ_lệ": 0.0,
+      "quy_tắc_khớp": 0,
+      "quy_tắc": 0,
+      "lần_khớp": 0,
+      "rủi_ro": [
+        "cần --dex-runner"
+      ],
+      "chi_tiết": []
+    }
+  ]
+}

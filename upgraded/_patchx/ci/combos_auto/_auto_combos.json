@@ -1,0 +1,178 @@
+{
+  "patches": 60,
+  "combos": [
+    {
+      "label": "api",
+      "file": "api.patch",
+      "patches": [
+        "1. New.  Metrics, analytics, statistics collection, Deletion.  from Inok_ZP 12.04.18g",
+        "Anonymous[Auto_Generate]",
+        "Anti_analytics2",
+        "Anti_analytics2_22-41-11",
+        "New. Removing the analytic tag, etc.. Inok_ZP 12.04.18"
+      ],
+      "sections": 24,
+      "conflicts": 0
+    },
+    {
+      "label": "google_1",
+      "file": "google_1.patch",
+      "patches": [
+        "2. disable_google_analytics by VERGIL777",
+        "3. GooglePlayServices by Edik1d",
+        "Bin_sig&installer_fix[Google]",
+        "NoPlayGames"
+      ],
+      "sections": 19,
+      "conflicts": 0
+    },
+    {
+      "label": "license",
+      "file": "license.patch",
+      "patches": [
+        "4. DisableBillingService by VERGIL777",
+        "AUTH_VK_AND_FB",
+        "Activator",
+        "IsPremium",
+        "License_hack&htc v2",
+        "License_hack(Amazon)",
+        "License_hack",
+        "accounts_hack"
+      ],
+      "sections": 32,
+      "conflicts": 0
+    },
+    {
+      "label": "quyền_1",
+      "file": "quyền_1.patch",
+      "patches": [
+        "Permission_calendar",
+        "permission_memory"
+      ],
+      "sections": 9,
+      "conflicts": 0
+    },
+    {
+      "label": "shell",
+      "file": "shell.patch",
+      "patches": [
+        "DexExtractor",
+        "Inject_Hook_Remote_Data_Control",
+        "Yandex_Metrica 1",
+        "Yandex_Metrica",
+        "yandex_metrica by Vergil777"
+      ],
+      "sections": 26,
+      "conflicts": 0
+    },
+    {
+      "label": "signature_1",
+      "file": "signature_1.patch",
+      "patches": [
+        "3. GooglePlayServices by Edik1d",
+        "BinSignatureHack_with_htc",
+        "Debug_information_and_hack_signature",
+        "patch_bypass_sigcheck"
+      ],
+      "sections": 17,
+      "conflicts": 0
+    },
+    {
+      "label": "signature_2",
+      "file": "signature_2.patch",
+      "patches": [
+        "Bin_sig&installer_fix[Amazon]",
+        "GooglePlayServices"
+      ],
+      "sections": 14,
+      "conflicts": 0
+    },
+    {
+      "label": "signature_3",
+      "file": "signature_3.patch",
+      "patches": [
+        "Bin_sig&installer_fix[Google]",
+        "License_hack&htc v2"
+      ],
+      "sections": 28,
+      "conflicts": 0
+    },
+    {
+      "label": "signature_4",
+      "file": "signature_4.patch",
+      "patches": [
+        "License_hack(Amazon)",
+        "SignatureHack_arm64"
+      ],
+      "sections": 16,
+      "conflicts": 0
+    },
+    {
+      "label": "signature_5",
+      "file": "signature_5.patch",
+      "patches": [
+        "License_hack",
+        "SignatureHack_armv7"
+      ],
+      "sections": 18,
+      "conflicts": 0
+    },
+    {
+      "label": "trace",
+      "file": "trace.patch",
+      "patches": [
+        "AddSave Debug_Information Toast",
+        "Debug_information",
+        "Debug_information_and_hack_signature",
+        "translate_debugger"
+      ],
+      "sections": 14,
+      "conflicts": 0
+    },
+    {
+      "label": "ẩn danh_1",
+      "file": "ẩn danh_1.patch",
+      "patches": [
+        "Anonymous[Auto_Generate]",
+        "FakeGPS",
+        "MockLocation",
+        "NoLocation",
+        "Permission_location"
+      ],
+      "sections": 30,
+      "conflicts": 0
+    },
+    {
+      "label": "ẩn danh_2",
+      "file": "ẩn danh_2.patch",
+      "patches": [
+        "FakeGpsAutoGenerate",
+        "FakeIP"
+      ],
+      "sections": 6,
+      "conflicts": 0
+    }
+  ],
+  "isolated": [
+    "Commenting on untranslated lines",
+    "Decoder_ID_Resource",
+    "Dictionary+ru+uk+2",
+    "Language substitution",
+    "Only Ru",
+    "Password_login_english",
+    "Permission_camera",
+    "Permission_phone",
+    "Permission_readContact",
+    "Permission_readSMS",
+    "RES-ID",
+    "Unicode text",
+    "UnicodeToUTF",
+    "Wrap non-translated strings",
+    "delete_languages",
+    "patch_bypass_sigcheck_with_reflection",
+    "patch_delete_translation_raw-values_xxx",
+    "patch_remove_translation",
+    "res_raw_TRANSLATIONxx",
+    "translate_obfuscation"
+  ]
+}

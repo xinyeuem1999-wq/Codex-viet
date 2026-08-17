@@ -1,0 +1,162 @@
+# Gộp tối ưu bởi patchx: Khác
+
+[MIN_ENGINE_VER]
+2
+
+[AUTHOR]
+HTC 600
+
+[PACKAGE]
+*
+
+[MATCH_REPLACE]
+TARGET:
+    smali*/*.smali
+MATCH:
+    \.method public allowAccess(.+)\n    \.registers (\d+)\n\n    \.prologue\n    const/4 ([pv]\d+), 0x(\d+)\n\n    const/4 ([pv]\d+), 0x(\d+)
+REGEX:
+    true
+REPLACE:
+    .method public allowAccess${GROUP1}
+    .registers ${GROUP2}
+
+    .prologue
+    const/4 ${GROUP3}, 0x1
+
+    const/4 ${GROUP5}, 0x1
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    smali*/*.smali
+MATCH:
+    invoke-virtual \{([pv]\d+), ([pv]\d+)\}, Ljava/security/Signature;->verify\(\[B\)Z\n\n    move-result ([pv]\d+)
+REGEX:
+    true
+REPLACE:
+    invoke-virtual {${GROUP1}, ${GROUP2}}, Ljava/security/Signature;->verify([B)Z
+
+    const/4 ${GROUP3}, 0x1
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    smali*/*.smali
+MATCH:
+    invoke-virtual \{([pv]\d+), ([pv]\d+)\}, Landroid/content/pm/PackageManager;->(getInstallerPackageName|InstallerPackageName)\(Ljava/lang/String;\)Ljava/lang/String;\n    \:try_end_(.+)\n    \.catch (.+); \{\:try_start_(.+) \.\. \:try_end_(.+)\} \:catch_(.+)\n\n    move-result-object ([pv]\d+)
+REGEX:
+    true
+REPLACE:
+    invoke-virtual {${GROUP1}, ${GROUP2}}, Landroid/content/pm/PackageManager;->${GROUP3}(Ljava/lang/String;)Ljava/lang/String;
+    :try_end_${GROUP4}
+    .catch ${GROUP5}; {:try_start_${GROUP6} .. :try_end_${GROUP7}} :catch_${GROUP8}
+
+    const-string ${GROUP9}, "com.android.vending"
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    smali*/*.smali
+MATCH:
+    invoke-virtual \{([pv]\d+), ([pv]\d+)\}, Landroid/content/pm/PackageManager;->(getInstallerPackageName|InstallerPackageName)\(Ljava/lang/String;\)Ljava/lang/String;\n\n    move-result-object ([pv]\d+)
+REGEX:
+    true
+REPLACE:
+    invoke-virtual {${GROUP1}, ${GROUP2}}, Landroid/content/pm/PackageManager;->${GROUP3}(Ljava/lang/String;)Ljava/lang/String;
+
+    const-string ${GROUP4}, "com.android.vending"
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    AndroidManifest.xml
+MATCH:
+    <application
+REGEX:
+    false
+REPLACE:
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+<application
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    [LAUNCHER_ACTIVITIES]
+MATCH:
+    \.method (.+) onCreate\(Landroid/os/Bundle;\)V\n    \.registers (\d+)
+REGEX:
+    true
+REPLACE:
+    .method ${GROUP1} onCreate(Landroid/os/Bundle;)V
+    .registers ${GROUP2}
+
+    invoke-virtual {p0}, xxx111xxx->isContactPermission()Z
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    [LAUNCHER_ACTIVITIES]
+MATCH:
+    \# virtual methods
+REGEX:
+    true
+REPLACE:
+    # virtual methods
+.method public isContactPermission()Z
+    .registers 5
+
+    const/4 v3, 0x1
+
+    const/4 v2, 0x0
+
+    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    const/16 v1, 0x17
+
+    if-lt v0, v1, :cond_10
+
+    const-string v0, "android.permission.READ_CONTACTS"
+
+    invoke-virtual {p0, v0}, xxx111xxx->checkSelfPermission(Ljava/lang/String;)I
+
+    move-result v0
+
+    if-nez v0, :cond_11
+
+    :cond_10
+    :goto_10
+    return v2
+
+    new-array v0, v3, [Ljava/lang/String;
+
+    const-string v1, "android.permission.READ_CONTACTS"
+
+    aput-object v1, v0, v2
+
+    invoke-static {p0, v0, v3}, Landroid/support/v4/app/ActivityCompat;->requestPermissions(Landroid/app/Activity;[Ljava/lang/String;I)V
+
+    goto :goto_10
+.end method
+[/MATCH_REPLACE]
+
+[MATCH_ASSIGN]
+TARGET:
+    [LAUNCHER_ACTIVITIES]
+MATCH:
+    \.class public (.+)
+REGEX:
+    true
+ASSIGN:
+    LABEL_1=${GROUP1}
+[/MATCH_ASSIGN]
+
+[MATCH_REPLACE]
+TARGET:
+    [LAUNCHER_ACTIVITIES]
+MATCH:
+    xxx111xxx
+REGEX:
+    false
+REPLACE:
+    ${LABEL_1}
+[/MATCH_REPLACE]

@@ -1,0 +1,389 @@
+# Combo tự phát hiện: ẩn danh_1 (5 patch)
+
+[MIN_ENGINE_VER]
+2
+
+[AUTHOR]
+HTC 600
+
+[PACKAGE]
+*
+
+[ADD_FILES]
+TARGET:
+    smali/com/htc/htc600/htc600for4pda/DeviceID.smali
+SOURCE:
+    DeviceID.smali
+[/ADD_FILES]
+
+[MATCH_REPLACE]
+TARGET:
+    smali*/*.smali
+MATCH:
+    invoke-virtual \{([pv]\d+)\}, Landroid/telephony/TelephonyManager;->getDeviceId\(\)Ljava/lang/String;
+REGEX:
+    true
+REPLACE:
+    invoke-static {}, Lcom/htc/htc600/htc600for4pda/DeviceID;->DevicecID()Ljava/lang/String;
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    smali*/*.smali
+MATCH:
+    invoke-virtual \{([pv]\d+)\}, Landroid/net/wifi/WifiInfo;->getMacAddress\(\)Ljava/lang/String;
+REGEX:
+    true
+REPLACE:
+    invoke-static {}, Lcom/htc/htc600/htc600for4pda/DeviceID;->DevicecID()Ljava/lang/String;
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    smali*/*.smali
+MATCH:
+    const-string ([pv]\d+), \"android_id\"\n\n    invoke-static \{([pv]\d+), ([pv]\d+)\}, Landroid/provider/Settings\$Secure;->getString\(Landroid/content/ContentResolver;Ljava/lang/String;\)Ljava/lang/String;
+REGEX:
+    true
+REPLACE:
+    invoke-static {}, Lcom/htc/htc600/htc600for4pda/DeviceID;->DevicecID()Ljava/lang/String;
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    smali*/*.smali
+MATCH:
+    const-string ([pv]\d+), "bluetooth_address"\n\n    invoke-static \{([pv]\d+), ([pv]\d+)\}, Landroid/provider/Settings\$Secure;->getString\(Landroid/content/ContentResolver;Ljava/lang/String;\)Ljava/lang/String;
+REGEX:
+    true
+REPLACE:
+    invoke-static {}, Lcom/htc/htc600/htc600for4pda/DeviceID;->DevicecID()Ljava/lang/String;
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    smali*/*.smali
+MATCH:
+    iget-object ([pv]\d+), ([pv]\d+), L(\S+);->ip:Ljava/lang/String;
+REGEX:
+    true
+REPLACE:
+    invoke-static {}, Lcom/htc/htc600/htc600for4pda/DeviceID;->DevicecID()Ljava/lang/String;
+
+    move-result-object ${GROUP1}
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    smali*/*.smali
+MATCH:
+    invoke-virtual \{([pv]\d+)\}, Landroid/net/wifi/WifiInfo;->getBSSID\(\)Ljava/lang/String;
+REGEX:
+    true
+REPLACE:
+    invoke-static {}, Lcom/htc/htc600/htc600for4pda/DeviceID;->DevicecID()Ljava/lang/String;
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    smali*/*.smali
+MATCH:
+    sget-object ([pv]\d+), Landroid/os/Build;->MODEL:Ljava/lang/String;
+REGEX:
+    true
+REPLACE:
+    invoke-static {}, Lcom/htc/htc600/htc600for4pda/DeviceID;->DevicecID()Ljava/lang/String;
+
+    move-result-object ${GROUP1}
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    smali*/*.smali
+MATCH:
+    sget-object ([pv]\d+), Landroid/os/Build;->BRAND:Ljava/lang/String;
+REGEX:
+    true
+REPLACE:
+    invoke-static {}, Lcom/htc/htc600/htc600for4pda/DeviceID;->DevicecID()Ljava/lang/String;
+
+    move-result-object ${GROUP1}
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    smali*/*.smali
+MATCH:
+    sget-object ([pv]\d+), Landroid/os/Build;->DEVICE:Ljava/lang/String;
+REGEX:
+    true
+REPLACE:
+    invoke-static {}, Lcom/htc/htc600/htc600for4pda/DeviceID;->DevicecID()Ljava/lang/String;
+
+    move-result-object ${GROUP1}
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    smali*/*.smali
+MATCH:
+    sget-object ([pv]\d+), Landroid/os/Build;->BOARD:Ljava/lang/String;
+REGEX:
+    true
+REPLACE:
+    invoke-static {}, Lcom/htc/htc600/htc600for4pda/DeviceID;->DevicecID()Ljava/lang/String;
+
+    move-result-object ${GROUP1}
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    smali*/*.smali
+MATCH:
+    sget-object ([pv]\d+), Landroid/os/Build;->SERIAL:Ljava/lang/String;
+REGEX:
+    true
+REPLACE:
+    invoke-static {}, Lcom/htc/htc600/htc600for4pda/DeviceID;->DevicecID()Ljava/lang/String;
+
+         move-result-object ${GROUP1}
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    smali*/*.smali
+MATCH:
+    sget-object ([pv]\d+), Landroid/os/Build;->MANUFACTURER:Ljava/lang/String;
+REGEX:
+    true
+REPLACE:
+    invoke-static {}, Lcom/htc/htc600/htc600for4pda/DeviceID;->DevicecID()Ljava/lang/String;
+
+         move-result-object ${GROUP1}
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    smali*/*.smali
+MATCH:
+    sget-object ([pv]\d+), Landroid/os/Build;->PRODUCT:Ljava/lang/String;
+REGEX:
+    true
+REPLACE:
+    invoke-static {}, Lcom/htc/htc600/htc600for4pda/DeviceID;->DevicecID()Ljava/lang/String;
+
+         move-result-object ${GROUP1}
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    smali*/*.smali
+MATCH:
+    invoke-virtual \{([pv]\d+)\}, Landroid/telephony/TelephonyManager;->getNetworkOperatorName\(\)Ljava/lang/String;
+REGEX:
+    true
+REPLACE:
+    invoke-static {}, Lcom/htc/htc600/htc600for4pda/DeviceID;->DevicecID()Ljava/lang/String;
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    smali*/*.smali
+MATCH:
+    invoke-virtual \{([pv]\d+)\}, Landroid/telephony/TelephonyManager;->getNetworkOperator\(\)Ljava/lang/String;
+REGEX:
+    true
+REPLACE:
+    invoke-static {}, Lcom/htc/htc600/htc600for4pda/DeviceID;->DevicecID()Ljava/lang/String;
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    smali*/*.smali
+MATCH:
+    invoke-virtual \{([pv]\d+)\}, Landroid/telephony/TelephonyManager;->getSubscriberId\(\)Ljava/lang/String;
+REGEX:
+    true
+REPLACE:
+    invoke-static {}, Lcom/htc/htc600/htc600for4pda/DeviceID;->DevicecID()Ljava/lang/String;
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    smali*/*.smali
+MATCH:
+    invoke-virtual \{([pv]\d+)\}, Landroid/telephony/TelephonyManager;->getSimSerialNumber\(\)Ljava/lang/String;
+REGEX:
+    true
+REPLACE:
+    invoke-static {}, Lcom/htc/htc600/htc600for4pda/DeviceID;->DevicecID()Ljava/lang/String;
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    smali*/*.smali
+MATCH:
+    invoke-virtual \{([pv]\d+)\}, Landroid/bluetooth/BluetoothAdapter;->getAddress\(\)Ljava/lang/String;
+REGEX:
+    true
+REPLACE:
+    invoke-static {}, Lcom/htc/htc600/htc600for4pda/DeviceID;->DevicecID()Ljava/lang/String;
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    smali*/*.smali
+MATCH:
+    invoke-virtual \{([pv]\d+)\}, Landroid/location/Location;->getLatitude\(\)D\n\n    move-result-wide ([pv]\d+)
+REGEX:
+    true
+REPLACE:
+    const-wide ${GROUP2}, 0x404a01a6f3f52fbcL    # 52.012907499999955
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    smali*/*.smali
+MATCH:
+    invoke-virtual \{([pv]\d+)\}, Landroid/location/Location;->getLongitude\(\)D\n\n    move-result-wide ([pv]\d+)
+REGEX:
+    true
+REPLACE:
+    const-wide ${GROUP2}, 0x405c5e47be76c8b2L    # 113.47312890624997
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    smali*/*.smali
+MATCH:
+    invoke-virtual \{([pv]\d+)\}, Landroid/location/Location;->isFromMockProvider\(\)Z\n\n    move-result ([pv]\d+)
+REGEX:
+    true
+REPLACE:
+    const/4 ${GROUP2}, 0x0
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    AndroidManifest.xml
+MATCH:
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+REGEX:
+    false
+REPLACE:
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    AndroidManifest.xml
+MATCH:
+    <uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION" />
+REGEX:
+    false
+REPLACE:
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    AndroidManifest.xml
+MATCH:
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+REGEX:
+    false
+REPLACE:
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    AndroidManifest.xml
+MATCH:
+    <application
+REGEX:
+    true
+REPLACE:
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+<application
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    [LAUNCHER_ACTIVITIES]
+MATCH:
+    \.method (.+) onCreate\(Landroid/os/Bundle;\)V\n    \.registers (\d+)
+REGEX:
+    true
+REPLACE:
+    .method ${GROUP1} onCreate(Landroid/os/Bundle;)V
+    .registers ${GROUP2}
+
+    invoke-virtual {p0}, xxx111xxx->isLocationPermission()Z
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    [LAUNCHER_ACTIVITIES]
+MATCH:
+    \# virtual methods
+REGEX:
+    true
+REPLACE:
+    # virtual methods
+.method public isLocationPermission()Z
+    .registers 5
+
+    const/4 v3, 0x1
+
+    const/4 v2, 0x0
+
+    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    const/16 v1, 0x17
+
+    if-lt v0, v1, :cond_10
+
+    const-string v0, "android.permission.ACCESS_COARSE_LOCATION"
+
+    invoke-virtual {p0, v0}, xxx111xxx->checkSelfPermission(Ljava/lang/String;)I
+
+    move-result v0
+
+    if-nez v0, :cond_11
+
+    :cond_10
+    :goto_10
+    return v2
+
+    :cond_11
+    new-array v0, v3, [Ljava/lang/String;
+
+    const-string v1, "android.permission.ACCESS_COARSE_LOCATION"
+
+    aput-object v1, v0, v2
+
+    invoke-static {p0, v0, v3}, Landroid/support/v4/app/ActivityCompat;->requestPermissions(Landroid/app/Activity;[Ljava/lang/String;I)V
+
+    goto :goto_10
+.end method
+[/MATCH_REPLACE]
+
+[MATCH_ASSIGN]
+TARGET:
+    [LAUNCHER_ACTIVITIES]
+MATCH:
+    \.class public (.+)
+REGEX:
+    true
+ASSIGN:
+    LABEL_1=${GROUP1}
+[/MATCH_ASSIGN]
+
+[MATCH_REPLACE]
+TARGET:
+    [LAUNCHER_ACTIVITIES]
+MATCH:
+    xxx111xxx
+REGEX:
+    true
+REPLACE:
+    ${LABEL_1}
+[/MATCH_REPLACE]

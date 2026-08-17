@@ -1,0 +1,15 @@
+{
+  "generated": "2026-08-15 23:04:37",
+  "tree": "/storage/emulated/0/Patch/patch1/_patchx/real_apk_test/app_tree",
+  "input": "/storage/emulated/0/Patch/patch1/_patchx/upgraded",
+  "patches": 60,
+  "inventory_seconds": 9.94,
+  "coverage_seconds": 13.617,
+  "total_seconds": 23.557,
+  "nghiem_thu_60s": true,
+  "rules": 13604,
+  "rules_matched": 6870,
+  "rules_sampled": 41,
+  "rules_filtered": 5980,
+  "hints_prepared": true
+}

@@ -1,0 +1,528 @@
+# Gộp tối ưu bởi patchx: Khác
+
+[MIN_ENGINE_VER]
+2
+
+[AUTHOR]
+HTC 600
+
+[PACKAGE]
+*
+
+[MATCH_REPLACE]
+TARGET:
+    smali*/*.smali
+MATCH:
+    invoke-virtual \{([pv]\d+), ([pv]\d+)\}, Ljava/security/Signature;->verify\(\[B\)Z\n\n    move-result ([pv]\d+)
+REGEX:
+    true
+REPLACE:
+    invoke-virtual {${GROUP1}, ${GROUP2}}, Ljava/security/Signature;->verify([B)Z
+
+    const/4 ${GROUP3}, 0x1
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    smali*/*.smali
+MATCH:
+    invoke-virtual \{([pv]\d+), ([pv]\d+)\}, Landroid/content/pm/PackageManager;->(getInstallerPackageName|InstallerPackageName)\(Ljava/lang/String;\)Ljava/lang/String;\n    \:try_end_(.+)\n    \.catch (.+); \{\:try_start_(.+) \.\. \:try_end_(.+)\} \:catch_(.+)\n\n    move-result-object ([pv]\d+)
+REGEX:
+    true
+REPLACE:
+    invoke-virtual {${GROUP1}, ${GROUP2}}, Landroid/content/pm/PackageManager;->${GROUP3}(Ljava/lang/String;)Ljava/lang/String;
+    :try_end_${GROUP4}
+    .catch ${GROUP5}; {:try_start_${GROUP6} .. :try_end_${GROUP7}} :catch_${GROUP8}
+
+    const-string ${GROUP9}, "com.android.vending"
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    smali*/*.smali
+MATCH:
+    invoke-virtual \{([pv]\d+), ([pv]\d+)\}, Landroid/content/pm/PackageManager;->(getInstallerPackageName|InstallerPackageName)\(Ljava/lang/String;\)Ljava/lang/String;\n\n    move-result-object ([pv]\d+)
+REGEX:
+    true
+REPLACE:
+    invoke-virtual {${GROUP1}, ${GROUP2}}, Landroid/content/pm/PackageManager;->${GROUP3}(Ljava/lang/String;)Ljava/lang/String;
+
+    const-string ${GROUP4}, "com.android.vending"
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    smali*/*.smali
+MATCH:
+    const-string ([pv]\d+), "com.android.vending.licensing.ILicenseResultListener"\n\n    invoke-virtual \{([pv]\d+), ([pv]\d+)\}, Landroid/os/Parcel;->enforceInterface\(Ljava/lang/String;\)V\n\n    \.line (\d+)\n    invoke-virtual \{([pv]\d+)\}, Landroid/os/Parcel;->readInt\(\)I\n\n    move-result ([pv]\d+)\n\n    \.line (\d+)\n    invoke-virtual \{([pv]\d+)\}, Landroid/os/Parcel;->readString\(\)Ljava/lang/String;\n\n    move-result-object ([pv]\d+)\n\n    \.line (\d+)\n    invoke-virtual \{([pv]\d+)\}, Landroid/os/Parcel;->readString\(\)Ljava/lang/String;\n\n    move-result-object ([pv]\d+)\n\n    \.line (\d+)\n    invoke-virtual \{([pv]\d+), ([pv]\d+), ([pv]\d+), ([pv]\d+)\}, (.+);->a\(ILjava/lang/String;Ljava/lang/String;\)V
+REGEX:
+    true
+REPLACE:
+    const-string ${GROUP1}, "com.android.vending.licensing.ILicenseResultListener"
+
+    invoke-virtual {${GROUP2}, ${GROUP1}}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    const/4 ${GROUP15}, 0x0
+
+    invoke-virtual {${GROUP8}}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+
+    move-result-object ${GROUP16}
+
+    invoke-static {${GROUP16}}, Lcom/android/vending/licensing/htc600;->reworkRequestCode(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object ${GROUP16}
+	
+    const-string ${GROUP17}, "hL9GqWwZL35OoLxZQN1EYmyylu3zmf8umnXW4P0EPqGjV0QcRYjD+NtiqoDEmxnnocvrqA7Z/0v+i0O4cwgOsD7/Tg3B1QI/ukA7ZUcibvFQUNoq7KjUWSg1Qn5MauaFFhAhZbuP840wnCuntxVDUkVJ6GDymDXLqhFG1LbZmNoPl6QjkschEBLVth1YtBxE4GnbVVI8Cq5LY7/F0N8d6EGLIISD6ekoD4lkhxq3nORsibX7kjmotyhLpO7THNMXvOeXeKhVp6dNSblOHp9tcL6l/NJY7sHPw/DBSxteW2hZ9y7yyaMxMAz+nTIN/V8gJXzeaRlmIXntJpQDEMz5pQ=="
+
+    invoke-virtual {${GROUP14}, ${GROUP15}, ${GROUP16}, ${GROUP17}}, ${GROUP18};->a(ILjava/lang/String;Ljava/lang/String;)V
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    smali*/*.smali
+MATCH:
+    const-string ([pv]\d+), "com\.android\.vending\.licensing\.ILicenseResultListener"\n\n    invoke-virtual \{([pv]\d+), ([pv]\d+)\}, Landroid/os/Parcel;->enforceInterface\(Ljava/lang/String;\)V\n\n    invoke-virtual \{([pv]\d+)\}, Landroid/os/Parcel;->readInt\(\)I\n\n    move-result ([pv]\d+)\n\n    invoke-virtual \{([pv]\d+)\}, Landroid/os/Parcel;->readString\(\)Ljava/lang/String;\n\n    move-result-object ([pv]\d+)\n\n    invoke-virtual \{([pv]\d+)\}, Landroid/os/Parcel;->readString\(\)Ljava/lang/String;\n\n    move-result-object ([pv]\d+)\n\n    invoke-virtual \{([pv]\d+), ([pv]\d+), ([pv]\d+), ([pv]\d+)\}, (.+);->(.)\(ILjava/lang/String;Ljava/lang/String;\)V
+REGEX:
+    true
+REPLACE:
+    const-string ${GROUP1}, "com.android.vending.licensing.ILicenseResultListener"
+
+    invoke-virtual {${GROUP2}, ${GROUP3}}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    const/4 ${GROUP11}, 0x0
+
+    invoke-virtual {${GROUP6}}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+
+    move-result-object ${GROUP7}
+
+	invoke-static {${GROUP7}}, Lcom/android/vending/licensing/htc600;->reworkRequestCode(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object ${GROUP12}
+	
+    const-string ${GROUP13}, "hL9GqWwZL35OoLxZQN1EYmyylu3zmf8umnXW4P0EPqGjV0QcRYjD+NtiqoDEmxnnocvrqA7Z/0v+i0O4cwgOsD7/Tg3B1QI/ukA7ZUcibvFQUNoq7KjUWSg1Qn5MauaFFhAhZbuP840wnCuntxVDUkVJ6GDymDXLqhFG1LbZmNoPl6QjkschEBLVth1YtBxE4GnbVVI8Cq5LY7/F0N8d6EGLIISD6ekoD4lkhxq3nORsibX7kjmotyhLpO7THNMXvOeXeKhVp6dNSblOHp9tcL6l/NJY7sHPw/DBSxteW2hZ9y7yyaMxMAz+nTIN/V8gJXzeaRlmIXntJpQDEMz5pQ=="
+
+    invoke-virtual {${GROUP10}, ${GROUP11}, ${GROUP12}, ${GROUP13}}, ${GROUP14};->${GROUP15}(ILjava/lang/String;Ljava/lang/String;)V
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    smali*/*.smali
+MATCH:
+    const-string ([pv]\d+), "com\.android\.vending\.licensing\.ILicenseResultListener"\n\n    invoke-virtual \{([pv]\d+), ([pv]\d+)\}, Landroid/os/Parcel;->enforceInterface\(Ljava/lang/String;\)V\n\n    \.line (\d+)\n    invoke-virtual \{([pv]\d+)\}, Landroid/os/Parcel;->readInt\(\)I\n\n    move-result ([pv]\d+)\n\n    \.line (\d+)\n    \.local (.+)\n    invoke-virtual \{([pv]\d+)\}, Landroid/os/Parcel;->readString\(\)Ljava/lang/String;\n\n    move-result-object ([pv]\d+)\n\n    \.line (\d+)\n    \.local (.+)\n    invoke-virtual \{([pv]\d+)\}, Landroid/os/Parcel;->readString\(\)Ljava/lang/String;\n\n    move-result-object ([pv]\d+)\n\n    \.line (\d+)\n    \.local (.+)\n    invoke-virtual \{([pv]\d+), ([pv]\d+), ([pv]\d+), ([pv]\d+)\}, (.+);->(.+)\(ILjava/lang/String;Ljava/lang/String;\)V
+REGEX:
+    true
+REPLACE:
+    const-string ${GROUP1}, "com.android.vending.licensing.ILicenseResultListener"
+
+    invoke-virtual {${GROUP2}, ${GROUP3}}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line ${GROUP4}
+    const/4 ${GROUP18}, 0x0
+
+    .line ${GROUP7}
+    .local ${GROUP8}
+    invoke-virtual {${GROUP9}}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+
+    move-result-object ${GROUP10}
+
+    .line ${GROUP11}
+    .local ${GROUP12}
+    invoke-static {${GROUP10}}, Lcom/android/vending/licensing/htc600;->reworkRequestCode(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object ${GROUP19}
+
+    .line ${GROUP15}
+    .local ${GROUP16}
+
+    const-string ${GROUP20}, "hL9GqWwZL35OoLxZQN1EYmyylu3zmf8umnXW4P0EPqGjV0QcRYjD+NtiqoDEmxnnocvrqA7Z/0v+i0O4cwgOsD7/Tg3B1QI/ukA7ZUcibvFQUNoq7KjUWSg1Qn5MauaFFhAhZbuP840wnCuntxVDUkVJ6GDymDXLqhFG1LbZmNoPl6QjkschEBLVth1YtBxE4GnbVVI8Cq5LY7/F0N8d6EGLIISD6ekoD4lkhxq3nORsibX7kjmotyhLpO7THNMXvOeXeKhVp6dNSblOHp9tcL6l/NJY7sHPw/DBSxteW2hZ9y7yyaMxMAz+nTIN/V8gJXzeaRlmIXntJpQDEMz5pQ=="
+
+    invoke-virtual {${GROUP17}, ${GROUP18}, ${GROUP19}, ${GROUP20}}, ${GROUP21};->${GROUP22}(ILjava/lang/String;Ljava/lang/String;)V
+[/MATCH_REPLACE]
+
+[ADD_FILES]
+SOURCE:
+    htc600.smali
+TARGET:
+    smali/com/android/vending/licensing/htc600.smali
+[/ADD_FILES]
+
+[MATCH_ASSIGN]
+TARGET:
+    AndroidManifest.xml
+MATCH:
+    package="([^"]+)"
+REGEX:
+    true
+ASSIGN:
+    LABEL_1=${GROUP1}
+[/MATCH_ASSIGN]
+
+[MATCH_REPLACE]
+TARGET:
+    smali/com/android/vending/licensing/htc600.smali
+MATCH:
+    LICENSE_HACK\|
+REGEX:
+    true
+REPLACE:
+    ${LABEL_1}|
+[/MATCH_REPLACE]
+
+[MATCH_ASSIGN]
+TARGET:
+    AndroidManifest.xml
+MATCH:
+    android:versionCode="(.+)" android:versionName
+REGEX:
+    true
+ASSIGN:
+    LABEL_2=${GROUP1}
+[/MATCH_ASSIGN]
+
+[MATCH_REPLACE]
+TARGET:
+    smali/com/android/vending/licensing/htc600.smali
+MATCH:
+    LICENSE_HACK2
+REGEX:
+    false
+REPLACE:
+    ${LABEL_2}
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    smali*/*.smali
+MATCH:
+    if-eq ([pv]\d+), ([pv]\d+), :cond_(.+)\n\n    const-string ([pv]\d+), "LicenseValidator"\n\n    const-string ([pv]\d+), "AajRXYtBCdn42cl9GZgU2Yu9mT"
+REGEX:
+    true
+REPLACE:
+    goto :cond_${GROUP3}
+
+    const-string ${GROUP4}, "LicenseValidator"
+
+    const-string ${GROUP5}, "AajRXYtBCdn42cl9GZgU2Yu9mT"
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    smali*/*.smali
+MATCH:
+    if-eq ([pv]\d+), ([pv]\d+), :cond_(.+)\n\n    const-string ([pv]\d+), "LicenseValidator"\n\n    const-string ([pv]\d+), "Nonce doesn(.+)\."
+REGEX:
+    true
+REPLACE:
+    goto :cond_${GROUP3}
+
+    const-string ${GROUP4}, "LicenseValidator"
+
+    const-string ${GROUP5}, "Nonce doesn${GROUP6}."
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    smali*/*.smali
+MATCH:
+    if-eq ([pv]\d+), ([pv]\d+), :cond_(.+)\n\n    const-string ([pv]\d+), "LicenseValidator"\n\n    const-string ([pv]\d+), "(.+)"\n\n    const-string ([pv]\d+), "(.+)"\n\n    const-string ([pv]\d+), "Nonce doesn(.+)\."
+REGEX:
+    true
+REPLACE:
+    goto :cond_${GROUP3}
+
+    const-string ${GROUP4}, "LicenseValidator"
+
+    const-string ${GROUP5}, "${GROUP6}"
+
+    const-string ${GROUP7}, "${GROUP8}"
+
+    const-string ${GROUP9}, "Nonce doesn${GROUP10}."
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    smali*/*.smali
+MATCH:
+    if-eq ([pv]\d+), ([pv]\d+), :cond_(.+)\n\n    \.line (.+)\n    const-string ([pv]\d+), "(.+)"\n\n    const-string ([pv]\d+), "Nonce doesn(.+)\."
+REGEX:
+    true
+REPLACE:
+    goto :cond_${GROUP3}
+
+    .line 140
+    const-string ${GROUP5}, "${GROUP6}"
+
+    const-string ${GROUP7}, "Nonce doesn${GROUP8}."
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    smali*/*.smali
+MATCH:
+    if-eq ([pv]\d+), ([pv]\d+), :cond_(.+)\n\n    \.line (.+)\n    const-string ([pv]\d+), "Nonce doesn(.+)\."
+REGEX:
+    true
+REPLACE:
+    goto :cond_${GROUP3}
+
+    const-string ${GROUP5}, "Nonce doesn${GROUP6}."
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    smali*/*.smali
+MATCH:
+    if-eq ([pv]\d+), ([pv]\d+), :cond_(.+)\n\n    const-string ([pv]\d+), "Nonce doesn(.+)\."
+REGEX:
+    true
+REPLACE:
+    goto :cond_${GROUP3}
+
+    const-string ${GROUP4}, "Nonce doesn${GROUP5}."
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    AndroidManifest.xml
+MATCH:
+    <application
+REGEX:
+    false
+REPLACE:
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+<application
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    [LAUNCHER_ACTIVITIES]
+MATCH:
+    \.method (.+) onCreate\(Landroid/os/Bundle;\)V\n    \.registers (\d+)
+REGEX:
+    true
+REPLACE:
+    .method ${GROUP1} onCreate(Landroid/os/Bundle;)V
+    .registers ${GROUP2}
+
+    invoke-virtual {p0}, xxx111xxx->isLocationPermission()Z
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    [LAUNCHER_ACTIVITIES]
+MATCH:
+    \# virtual methods
+REGEX:
+    true
+REPLACE:
+    # virtual methods
+.method public isLocationPermission()Z
+    .registers 5
+
+    const/4 v3, 0x1
+
+    const/4 v2, 0x0
+
+    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    const/16 v1, 0x17
+
+    if-lt v0, v1, :cond_10
+
+    const-string v0, "android.permission.ACCESS_COARSE_LOCATION"
+
+    invoke-virtual {p0, v0}, xxx111xxx->checkSelfPermission(Ljava/lang/String;)I
+
+    move-result v0
+
+    if-nez v0, :cond_11
+
+    :cond_10
+    :goto_10
+    return v2
+
+    :cond_11
+    new-array v0, v3, [Ljava/lang/String;
+
+    const-string v1, "android.permission.ACCESS_COARSE_LOCATION"
+
+    aput-object v1, v0, v2
+
+    invoke-static {p0, v0, v3}, Landroid/support/v4/app/ActivityCompat;->requestPermissions(Landroid/app/Activity;[Ljava/lang/String;I)V
+
+    goto :goto_10
+.end method
+[/MATCH_REPLACE]
+
+[MATCH_ASSIGN]
+TARGET:
+    [LAUNCHER_ACTIVITIES]
+MATCH:
+    \.class public (.+)
+REGEX:
+    true
+ASSIGN:
+    LABEL_1=${GROUP1}
+[/MATCH_ASSIGN]
+
+[MATCH_REPLACE]
+TARGET:
+    [LAUNCHER_ACTIVITIES]
+MATCH:
+    xxx111xxx
+REGEX:
+    false
+REPLACE:
+    ${LABEL_1}
+[/MATCH_REPLACE]
+
+[ADD_FILES]
+SOURCE:
+    libfrida-gadget.so
+TARGET:
+    lib/armeabi-v7a/libfrida-gadget.so
+[/ADD_FILES]
+
+[MATCH_GOTO]
+TARGET:
+    smali*/*.smali
+MATCH:
+    c3RhcnQgbWFnaWMh
+REGEX:
+    false
+GOTO:
+    p2_end
+[/MATCH_GOTO]
+
+[ADD_FILES]
+SOURCE:
+    smali.zip
+TARGET:
+    smali
+EXTRACT:
+    true
+[/ADD_FILES]
+
+[SIGNATURE_REVISE]
+TARGET:
+    smali/com/frida/Fix.smali
+[/SIGNATURE_REVISE]
+
+[MATCH_GOTO]
+TARGET:
+    [APPLICATION]
+MATCH:
+    \.method (.+) onCreate\((.+|)\)V\n    \.(registers) ([0-9]+)
+REGEX:
+    true
+GOTO:
+    p2_add_application1
+[/MATCH_GOTO]
+
+[MATCH_GOTO]
+TARGET:
+    smali*/*.smali
+MATCH:
+    invoke-super (.+), Landroid\/app\/Application;->onCreate(.+)
+REGEX:
+    true
+GOTO:
+    p2_add_application2
+[/MATCH_GOTO]
+
+[MATCH_GOTO]
+TARGET:
+    smali/com/unity3d/player/UnityPlayerActivity.smali
+MATCH:
+    \.method (.+) onCreate\((.+|)\)V\n    \.(registers) ([0-9]+)
+REGEX:
+    true
+GOTO:
+    p2_add_unity
+[/MATCH_GOTO]
+
+[MATCH_REPLACE]
+NAME:
+    p2_add_activities
+TARGET:
+    [LAUNCHER_ACTIVITIES]
+MATCH:
+    \.method (.+) <init>\((.+|)\)V\n    \.(registers) (\d+)
+REGEX:
+    true
+REPLACE:
+    .method ${GROUP1} <init>(${GROUP2})V
+    .${GROUP3} ${GROUP4}
+
+    invoke-static {}, Lcom/frida/injector;->startE()V
+[/MATCH_REPLACE]
+
+[GOTO]
+GOTO:
+    p2_final
+[/GOTO]
+
+[MATCH_REPLACE]
+NAME:
+    p2_add_unity
+TARGET:
+    smali/com/unity3d/player/UnityPlayerActivity.smali
+MATCH:
+    \.method (.+) onCreate\((.+|)\)V\n    \.(registers) (\d+)
+REGEX:
+    true
+REPLACE:
+    .method ${GROUP1} onCreate(${GROUP2})V
+    .${GROUP3} ${GROUP4}
+
+    invoke-static {}, Lcom/frida/injector;->startE()V
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+NAME:
+    p2_add_application1
+TARGET:
+    [APPLICATION]
+MATCH:
+    \.method (.+) onCreate\((.+|)\)V\n    \.(registers) (\d+)
+REGEX:
+    true
+REPLACE:
+    .method ${GROUP1} onCreate(${GROUP2})V
+    .${GROUP3} ${GROUP4}
+
+    invoke-static {}, Lcom/frida/injector;->startE()V
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+NAME:
+    p2_add_application2
+TARGET:
+    smali*/*.smali
+MATCH:
+    invoke-super (.+), Landroid\/app\/Application;->onCreate(.+)
+REGEX:
+    true
+REPLACE:
+    invoke-static {}, Lcom/frida/injector;->startE()V
+	
+	invoke-super ${GROUP1}, Landroid/app/Application;->onCreate${GROUP2}
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+NAME:
+    p2_final
+TARGET:
+    smali/com/frida/injector.smali
+MATCH:
+    "FRIDA_E_SCRIPT"
+REGEX:
+    false
+REPLACE:
+    "dmFyIExvZyA9IG51bGw7DQp2YXIgRml4ID0gbnVsbDsNCnZhciBJbmplY3RvciA9IG51bGw7DQp2YXIgZmRvbmUgPSBudWxsOw0KdmFyIEFQUF9QS0cgPSBudWxsOw0KDQp2YXIgVEFHX0wgPSAiW0ZSSURBX1NDUklQVF0iOw0KDQpmdW5jdGlvbiBwYXRjaCgpIHsNCg0KICAgIExvZyA9IEphdmEudXNlKCJhbmRyb2lkLnV0aWwuTG9nIik7DQogICAgRml4ID0gSmF2YS51c2UoImNvbS5mcmlkYS5GaXgiKTsNCiAgICBJbmplY3RvciA9IEphdmEudXNlKCJjb20uZnJpZGEuaW5qZWN0b3IiKTsNCiAgICBmZG9uZSA9IEluamVjdG9yLmdldEFwcEZpbGVzRGlyKCkgKyAiL2RvbmUiOw0KICAgIEFQUF9QS0cgPSBJbmplY3Rvci5nZXRBcHBQYWNrYWdlTmFtZSgpOw0KDQogICAgTG9nLnYoVEFHX0wsICJbKl0gU3RhcnQgcGF0Y2hpbmcuLi4iKTsNCg0KICAgIHZhciBQYWNrYWdlTWFuYWdlciA9IEphdmEudXNlKCJhbmRyb2lkLmFwcC5BcHBsaWNhdGlvblBhY2thZ2VNYW5hZ2VyIik7DQogICAgUGFja2FnZU1hbmFnZXIuZ2V0UGFja2FnZUluZm8uaW1wbGVtZW50YXRpb24gPSBmdW5jdGlvbiAocGFja2FnZV9uYW1lLCBmbGFncykgew0KICAgICAgICB2YXIgcmV0ID0gdGhpcy5nZXRQYWNrYWdlSW5mby5jYWxsKHRoaXMsIHBhY2thZ2VfbmFtZSwgZmxhZ3MpOw0KICAgICAgICBpZiAoQVBQX1BLRyA9PSBwYWNrYWdlX25hbWUpIHsNCiAgICAgICAgICAgIExvZy52KFRBR19MLCAiWypdIEdldCBwYWNrYWdlIGluZm8gZm9yICciICsgcGFja2FnZV9uYW1lICsgIicgc2lnbmF0dXJlcyByZXBsYWNlZCB0byBGaXhlZC4iKTsNCiAgICAgICAgICAgIHJldC5zaWduYXR1cmVzID0gRml4LmdldFNpZ25hdHVyZXMocmV0KTsNCiAgICAgICAgfSBlbHNlIHsNCiAgICAgICAgICAgIExvZy52KFRBR19MLCAiWypdIEdldCBwYWNrYWdlIGluZm8gZm9yICciICsgcGFja2FnZV9uYW1lICsgIicgc2lnbmF0dXJlcyBub3QgcmVwbGFjZWQuIik7DQogICAgICAgIH0NCg0KICAgICAgICByZXR1cm4gcmV0Ow0KICAgIH07DQoNCg0KICAgIHZhciBTaWduYXR1cmUgPSBKYXZhLnVzZSgiamF2YS5zZWN1cml0eS5TaWduYXR1cmUiKTsNCiAgICBTaWduYXR1cmUudmVyaWZ5Lm92ZXJsb2FkKCdbQicpLmltcGxlbWVudGF0aW9uID0gZnVuY3Rpb24gKHAxKSB7DQogICAgICAgIHZhciByZXQgPSB0aGlzLnZlcmlmeS5jYWxsKHRoaXMsIHAxKTsNCiAgICAgICAgTG9nLnYoVEFHX0wsICJbKl0gU2lnbmF0dXJlLnZlcmlmeSBpcyAiICsgcmV0ICsgIiByZXBsYWNlZCB0byB0cnVlLiIpOw0KICAgICAgICByZXR1cm4gdHJ1ZTsNCiAgICB9Ow0KDQogICAgTG9nLnYoVEFHX0wsICJbKl0gUGF0Y2hpbmcgZG9uZS4uLiIpOw0KDQogICAgY29udGludWVfcnVuKCk7DQp9Ow0KDQpmdW5jdGlvbiBjb250aW51ZV9ydW4oKSB7DQogICAgdmFyIGYgPSBuZXcgRmlsZShmZG9uZSwgInciKTsNCiAgICBmLndyaXRlKCIxIik7DQogICAgZi5mbHVzaCgpOw0KICAgIGYuY2xvc2UoKTsNCiAgICBzZXRUaW1lb3V0KGNvbnRpbnVlX3J1biwgMTAwMCk7DQp9Ow0KDQpmdW5jdGlvbiBydW4oKSB7DQogICAgY29uc29sZS5sb2coIldhaXRpbmcgZm9yIEphdmEuLiIpOw0KDQogICAgd2hpbGUgKCFKYXZhLmF2YWlsYWJsZSkgew0KICAgICAgICBjb25zb2xlLmVycm9yKCJKYXZhIG5vdCBhdmFpbGFibGUgeWV0Iik7DQogICAgfQ0KDQogICAgY29uc29sZS5sb2coIlsqXSBTdGFydGluZyBzY3JpcHQiKTsNCg0KICAgIEphdmEucGVyZm9ybShwYXRjaCk7DQoNCn07DQoNCnNldFRpbWVvdXQocnVuLCAyMCk7DQo="
+[/MATCH_REPLACE]
+
+[DUMMY]
+NAME:
+    p2_end
+[/DUMMY]

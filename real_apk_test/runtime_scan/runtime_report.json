@@ -1,0 +1,48 @@
+{
+  "generated": "2026-08-16 00:33:13",
+  "apk": "/storage/emulated/0/Patch/patch1/_patchx/real_apk_test/apk_full_v2/kiss_tree_clean_patched_20260815-235855.apk",
+  "package": "fr.neamar.kiss",
+  "activity": "fr.neamar.kiss.MainActivity",
+  "devices": [],
+  "trạng_thái": "thiếu môi trường",
+  "m2": null,
+  "m3": null,
+  "ghi_chú": "Không có device/emulator kết nối (adb devices trống) — M2/M3 chưa nghiệm thu được. Kết nối thiết bị hoặc khởi động emulator rồi chạy lại.",
+  "connect_attempts": [
+    {
+      "target": "127.0.0.1:5555",
+      "ok": false,
+      "output": "failed to connect to '127.0.0.1:5555': Connection refused"
+    },
+    {
+      "target": "127.0.0.1:5557",
+      "ok": false,
+      "output": "failed to connect to '127.0.0.1:5557': Connection refused"
+    },
+    {
+      "target": "127.0.0.1:5559",
+      "ok": false,
+      "output": "failed to connect to '127.0.0.1:5559': Connection refused"
+    },
+    {
+      "target": "127.0.0.1:5561",
+      "ok": false,
+      "output": "failed to connect to '127.0.0.1:5561': Connection refused"
+    },
+    {
+      "target": "127.0.0.1:21503",
+      "ok": false,
+      "output": "failed to connect to '127.0.0.1:21503': Connection refused"
+    },
+    {
+      "target": "127.0.0.1:26944",
+      "ok": false,
+      "output": "failed to connect to '127.0.0.1:26944': Connection refused"
+    },
+    {
+      "target": "127.0.0.1:26945",
+      "ok": false,
+      "output": "failed to connect to '127.0.0.1:26945': Connection refused"
+    }
+  ]
+}

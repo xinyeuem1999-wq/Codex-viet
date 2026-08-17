@@ -1,0 +1,390 @@
+{
+  "tree": "/storage/emulated/0/Patch/patch1/_patchx/apk_trees/zaz",
+  "protections": [
+    {
+      "loại": "pinning",
+      "tên": "pinning",
+      "lần": 27,
+      "tệp": [
+        "smali/mq6.smali",
+        "smali/ya0.smali",
+        "smali_classes3/com/google/api/client/json/webtoken/JsonWebSignature.smali",
+        "smali_classes3/com/google/api/client/testing/json/webtoken/TestCertificates$CertData.smali",
+        "smali_classes3/com/google/api/client/util/SecurityUtils.smali"
+      ]
+    },
+    {
+      "loại": "emulator",
+      "tên": "emulator",
+      "lần": 22,
+      "tệp": [
+        "AndroidManifest.xml",
+        "smali/ai/onnxruntime/OnnxRuntime.smali",
+        "smali/com/firebase/ui/auth/ui/idp/AuthMethodPickerActivity.smali",
+        "smali/com/firebase/ui/auth/ui/idp/SingleSignInActivity.smali",
+        "smali/com/firebase/ui/auth/ui/idp/WelcomeBackIdpPrompt.smali"
+      ]
+    },
+    {
+      "loại": "safetynet",
+      "tên": "safetynet",
+      "lần": 4,
+      "tệp": [
+        "smali/com/google/android/gms/fido/fido2/api/common/AuthenticatorAttestationResponse.smali",
+        "smali/com/google/android/gms/fido/fido2/api/common/PublicKeyCredentialCreationOptions.smali",
+        "smali_classes3/com/google/android/gms/internal/ads/zzbie.smali",
+        "smali_classes3/com/google/android/gms/internal/ads/zzbkd.smali"
+      ]
+    },
+    {
+      "loại": "root",
+      "tên": "root",
+      "lần": 1,
+      "tệp": [
+        "smali_classes3/e60.smali"
+      ]
+    },
+    {
+      "loại": "anti-debug",
+      "tên": "anti-debug",
+      "lần": 1,
+      "tệp": [
+        "smali_classes3/ab1.smali"
+      ]
+    }
+  ],
+  "top_patches": [
+    {
+      "patch": "Debug_information_and_hack_signature",
+      "điểm": 1.0,
+      "tỷ_lệ_thành_công": 27.0,
+      "phân_tích": {
+        "tỷ_lệ": 27.0,
+        "yếu_tố": [
+          {
+            "tên": "Bao phủ quy tắc khớp 100%",
+            "điểm": 45.0
+          },
+          {
+            "tên": "Số lần khớp 63945 (tối đa 25)",
+            "điểm": 20.0
+          },
+          {
+            "tên": "Khối khớp 2/2",
+            "điểm": 15.0
+          },
+          {
+            "tên": "Độ ưu tiên năng lực 1.00",
+            "điểm": 10.0
+          }
+        ],
+        "phạt": [
+          {
+            "loại": "pinning",
+            "điểm": 15.0
+          },
+          {
+            "loại": "emulator",
+            "điểm": 8.0
+          },
+          {
+            "loại": "safetynet",
+            "điểm": 18.0
+          },
+          {
+            "loại": "root",
+            "điểm": 12.0
+          },
+          {
+            "loại": "anti-debug",
+            "điểm": 10.0
+          }
+        ]
+      },
+      "năng_lực": [
+        "bypass-license",
+        "integrity",
+        "trace"
+      ],
+      "điểm_bypass": [
+        {
+          "khối": 3,
+          "loại": "MATCH_REPLACE",
+          "target": "smali*/*.smali",
+          "khớp": 30,
+          "tệp_trúng": [
+            "smali/ch3.smali",
+            "smali/com/adjust/sdk/DeviceInfo.smali",
+            "smali/com/google/android/gms/common/GooglePlayServicesUtilLight.smali",
+            "smali/com/google/android/gms/common/GoogleSignatureVerifier.smali",
+            "smali/com/google/android/gms/common/util/AndroidUtilsLight.smali",
+            "smali/j12.smali",
+            "smali/y05.smali",
+            "smali_classes3/com/google/android/gms/internal/firebase-auth-api/zzagc.smali",
+            "smali_classes3/com/google/android/gms/measurement/internal/zzgi.smali",
+            "smali_classes3/com/google/android/gms/measurement/internal/zzpp.smali"
+          ],
+          "biến_thể": []
+        },
+        {
+          "khối": 6,
+          "loại": "MATCH_REPLACE",
+          "target": "smali*/*.smali",
+          "khớp": 63915,
+          "tệp_trúng": [
+            "smali/WordDetailsPopupWindow$show$3$1.smali",
+            "smali/a00.smali",
+            "smali/a02.smali",
+            "smali/a03.smali",
+            "smali/a08.smali",
+            "smali/a15.smali",
+            "smali/a16.smali",
+            "smali/a17.smali",
+            "smali/a19.smali",
+            "smali/a1a.smali"
+          ],
+          "biến_thể": []
+        }
+      ],
+      "cách_công_cụ": {
+        "cách": [
+          "Vô hiệu hoá kiểm tra VIP/license: gán cờ đã mua bằng SET_BOOL, nhảy qua khối kiểm tra bằng MATCH_GOTO, hoặc hook hàm kiểm tra bằng Frida/LSPosed.",
+          "Vô hiệu hoá kiểm tra toàn vẹn/chữ ký: sửa luồng check (MATCH_GOTO) hoặc trả true/false cố định (SET_BOOL/MATCH_ASSIGN).",
+          "Bật truy vết dữ liệu: chèn TRACE/API_LOG vào method mục tiêu để đọc tham số và phản hồi trước khi quyết định patch."
+        ],
+        "công_cụ": [
+          "patchx apply",
+          "apktool",
+          "apksigner",
+          "Frida",
+          "LSPosed",
+          "logcat"
+        ],
+        "xác_minh": [
+          "Mở tính năng VIP; xem logcat tìm log trạng thái license.",
+          "Xoá báo lỗi 'signature mismatch'/'app modified' khi mở ứng dụng.",
+          "Đọc logcat thấy dữ liệu mong muốn in ra."
+        ]
+      },
+      "đề_xuất": []
+    },
+    {
+      "patch": "patch_bypass_sigcheck_with_reflection",
+      "điểm": 1.0,
+      "tỷ_lệ_thành_công": 27.0,
+      "phân_tích": {
+        "tỷ_lệ": 27.0,
+        "yếu_tố": [
+          {
+            "tên": "Bao phủ quy tắc khớp 100%",
+            "điểm": 45.0
+          },
+          {
+            "tên": "Số lần khớp 481 (tối đa 25)",
+            "điểm": 20.0
+          },
+          {
+            "tên": "Khối khớp 2/2",
+            "điểm": 15.0
+          },
+          {
+            "tên": "Độ ưu tiên năng lực 1.00",
+            "điểm": 10.0
+          }
+        ],
+        "phạt": [
+          {
+            "loại": "pinning",
+            "điểm": 15.0
+          },
+          {
+            "loại": "emulator",
+            "điểm": 8.0
+          },
+          {
+            "loại": "safetynet",
+            "điểm": 18.0
+          },
+          {
+            "loại": "root",
+            "điểm": 12.0
+          },
+          {
+            "loại": "anti-debug",
+            "điểm": 10.0
+          }
+        ]
+      },
+      "năng_lực": [
+        "bypass-license",
+        "integrity",
+        "shell"
+      ],
+      "điểm_bypass": [
+        {
+          "khối": 3,
+          "loại": "MATCH_REPLACE",
+          "target": "smali*/*",
+          "khớp": 382,
+          "tệp_trúng": [
+            "smali/aj2.smali",
+            "smali/androidx/appcompat/app/AppCompatDelegateImpl.smali",
+            "smali/androidx/appcompat/app/AppCompatViewInflater$DeclaredOnClickListener.smali",
+            "smali/androidx/appcompat/view/SupportMenuInflater$InflatedOnMenuItemClickListener.smali",
+            "smali/androidx/appcompat/view/menu/CascadingMenuPopup.smali",
+            "smali/androidx/appcompat/view/menu/MenuItemWrapperICS.smali",
+            "smali/androidx/appcompat/widget/DropDownListView.smali",
+            "smali/androidx/appcompat/widget/ListPopupWindow.smali",
+            "smali/androidx/appcompat/widget/SearchView$SearchAutoComplete.smali",
+            "smali/androidx/appcompat/widget/SearchView.smali"
+          ],
+          "biến_thể": []
+        },
+        {
+          "khối": 4,
+          "loại": "MATCH_REPLACE",
+          "target": "smali*/*.smali",
+          "khớp": 99,
+          "tệp_trúng": [
+            "smali/a4b.smali",
+            "smali/androidx/credentials/playservices/controllers/BeginSignIn/ua.smali",
+            "smali/androidx/profileinstaller/ProfileInstallReceiver.smali",
+            "smali/as3.smali",
+            "smali/ce7.smali",
+            "smali/ch3.smali",
+            "smali/com/adjust/sdk/DeviceInfo.smali",
+            "smali/com/adjust/sdk/GooglePlayServicesClient.smali",
+            "smali/com/android/installreferrer/api/ub.smali",
+            "smali/com/google/android/gms/ads/identifier/AdvertisingIdClient.smali"
+          ],
+          "biến_thể": []
+        }
+      ],
+      "cách_công_cụ": {
+        "cách": [
+          "Vô hiệu hoá kiểm tra VIP/license: gán cờ đã mua bằng SET_BOOL, nhảy qua khối kiểm tra bằng MATCH_GOTO, hoặc hook hàm kiểm tra bằng Frida/LSPosed.",
+          "Vô hiệu hoá kiểm tra toàn vẹn/chữ ký: sửa luồng check (MATCH_GOTO) hoặc trả true/false cố định (SET_BOOL/MATCH_ASSIGN).",
+          "Chèn khởi tạo mod qua INIT/HOOK_SCRIPT: chạy lệnh/script khi app mở để bơm biến hoặc gọi hàm nội bộ."
+        ],
+        "công_cụ": [
+          "patchx apply",
+          "apktool",
+          "apksigner",
+          "Frida",
+          "LSPosed"
+        ],
+        "xác_minh": [
+          "Mở tính năng VIP; xem logcat tìm log trạng thái license.",
+          "Xoá báo lỗi 'signature mismatch'/'app modified' khi mở ứng dụng.",
+          "Kiểm tra hiệu lực mod ngay sau khi app khởi động."
+        ]
+      },
+      "đề_xuất": []
+    },
+    {
+      "patch": "Debug_information",
+      "điểm": 0.925,
+      "tỷ_lệ_thành_công": 24.5,
+      "phân_tích": {
+        "tỷ_lệ": 24.5,
+        "yếu_tố": [
+          {
+            "tên": "Bao phủ quy tắc khớp 100%",
+            "điểm": 45.0
+          },
+          {
+            "tên": "Số lần khớp 63915 (tối đa 25)",
+            "điểm": 20.0
+          },
+          {
+            "tên": "Khối khớp 1/1",
+            "điểm": 15.0
+          },
+          {
+            "tên": "Độ ưu tiên năng lực 0.75",
+            "điểm": 7.5
+          }
+        ],
+        "phạt": [
+          {
+            "loại": "pinning",
+            "điểm": 15.0
+          },
+          {
+            "loại": "emulator",
+            "điểm": 8.0
+          },
+          {
+            "loại": "safetynet",
+            "điểm": 18.0
+          },
+          {
+            "loại": "root",
+            "điểm": 12.0
+          },
+          {
+            "loại": "anti-debug",
+            "điểm": 10.0
+          }
+        ]
+      },
+      "năng_lực": [
+        "trace"
+      ],
+      "điểm_bypass": [
+        {
+          "khối": 3,
+          "loại": "MATCH_REPLACE",
+          "target": "smali*/*.smali",
+          "khớp": 63915,
+          "tệp_trúng": [
+            "smali/WordDetailsPopupWindow$show$3$1.smali",
+            "smali/a00.smali",
+            "smali/a02.smali",
+            "smali/a03.smali",
+            "smali/a08.smali",
+            "smali/a15.smali",
+            "smali/a16.smali",
+            "smali/a17.smali",
+            "smali/a19.smali",
+            "smali/a1a.smali"
+          ],
+          "biến_thể": []
+        }
+      ],
+      "cách_công_cụ": {
+        "cách": [
+          "Bật truy vết dữ liệu: chèn TRACE/API_LOG vào method mục tiêu để đọc tham số và phản hồi trước khi quyết định patch."
+        ],
+        "công_cụ": [
+          "patchx apply",
+          "logcat"
+        ],
+        "xác_minh": [
+          "Đọc logcat thấy dữ liệu mong muốn in ra."
+        ]
+      },
+      "đề_xuất": []
+    }
+  ],
+  "top_combos": [],
+  "plan": {
+    "phương_án": "Debug_information_and_hack_signature",
+    "tỷ_lệ_dự_đoán": 27.0,
+    "steps": [
+      "Chuẩn bị cây APK (apk-prepare) hoặc dùng cây đã giải mã.",
+      "Áp patch: python3 patchx apply Debug_information_and_hack_signature <cây-apk>",
+      "Chuẩn hoá resource chứa `$`: python3 patchx_toolkit.py apk-fix-res",
+      "Build: apktool b <cây> -o out.apk --aapt <aapt2-thật>",
+      "Zipalign + ký: zipalign -f 4 && apksigner sign",
+      "Cài APK, xác minh động bằng logcat/Frida theo mục xác_minh."
+    ],
+    "rủi_ro": [
+      "APK có dấu hiệu pinning (27 lần) — trừ ~15% điểm dự đoán; ưu tiên patch integrity/token xử lý lớp này.",
+      "APK có dấu hiệu emulator (22 lần) — trừ ~8% điểm dự đoán; ưu tiên patch integrity/token xử lý lớp này.",
+      "APK có dấu hiệu safetynet (4 lần) — trừ ~18% điểm dự đoán; ưu tiên patch integrity/token xử lý lớp này.",
+      "APK có dấu hiệu root (1 lần) — trừ ~12% điểm dự đoán; ưu tiên patch integrity/token xử lý lớp này."
+    ],
+    "tăng_khả_năng": []
+  }
+}

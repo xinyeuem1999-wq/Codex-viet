@@ -1,0 +1,669 @@
+[
+  {
+    "patch": "Debug_information_and_hack_signature",
+    "score": 1.0,
+    "coverage": 1.0,
+    "matches": 63945,
+    "rules": 2,
+    "rules_matched": 2,
+    "capabilities": [
+      "bypass-license",
+      "integrity",
+      "trace"
+    ]
+  },
+  {
+    "patch": "patch_bypass_sigcheck_with_reflection",
+    "score": 1.0,
+    "coverage": 1.0,
+    "matches": 481,
+    "rules": 2,
+    "rules_matched": 2,
+    "capabilities": [
+      "bypass-license",
+      "integrity",
+      "shell"
+    ]
+  },
+  {
+    "patch": "Debug_information",
+    "score": 0.925,
+    "coverage": 1.0,
+    "matches": 63915,
+    "rules": 1,
+    "rules_matched": 1,
+    "capabilities": [
+      "trace"
+    ]
+  },
+  {
+    "patch": "DexExtractor",
+    "score": 0.91,
+    "coverage": 1.0,
+    "matches": 382,
+    "rules": 1,
+    "rules_matched": 1,
+    "capabilities": [
+      "shell"
+    ]
+  },
+  {
+    "patch": "accounts_hack",
+    "score": 0.88,
+    "coverage": 1.0,
+    "matches": 8,
+    "rules": 1,
+    "rules_matched": 1,
+    "capabilities": [
+      "bypass-license",
+      "google"
+    ]
+  },
+  {
+    "patch": "FakeIP",
+    "score": 0.83,
+    "coverage": 1.0,
+    "matches": 15,
+    "rules": 1,
+    "rules_matched": 1,
+    "capabilities": [
+      "anonymity"
+    ]
+  },
+  {
+    "patch": "patch_bypass_sigcheck",
+    "score": 0.75,
+    "coverage": 0.5,
+    "matches": 30,
+    "rules": 2,
+    "rules_matched": 1,
+    "capabilities": [
+      "bypass-license",
+      "google",
+      "integrity"
+    ]
+  },
+  {
+    "patch": "Anonymous[Auto_Generate]",
+    "score": 0.7178,
+    "coverage": 0.5556,
+    "matches": 240,
+    "rules": 18,
+    "rules_matched": 10,
+    "capabilities": [
+      "anonymity",
+      "api"
+    ]
+  },
+  {
+    "patch": "translate_obfuscation",
+    "score": 0.715,
+    "coverage": 1.0,
+    "matches": 9515,
+    "rules": 5,
+    "rules_matched": 5,
+    "capabilities": []
+  },
+  {
+    "patch": "New. Removing the analytic tag, etc.. Inok_ZP 12.04.18",
+    "score": 0.6367,
+    "coverage": 0.3333,
+    "matches": 3058098,
+    "rules": 3,
+    "rules_matched": 1,
+    "capabilities": [
+      "api",
+      "google"
+    ]
+  },
+  {
+    "patch": "AUTH_VK_AND_FB",
+    "score": 0.63,
+    "coverage": 0.5,
+    "matches": 8,
+    "rules": 2,
+    "rules_matched": 1,
+    "capabilities": [
+      "bypass-license"
+    ]
+  },
+  {
+    "patch": "AddSave Debug_Information Toast",
+    "score": 0.5917,
+    "coverage": 0.3333,
+    "matches": 63915,
+    "rules": 3,
+    "rules_matched": 1,
+    "capabilities": [
+      "save",
+      "trace",
+      "ui"
+    ]
+  },
+  {
+    "patch": "Password_login_english",
+    "score": 0.535,
+    "coverage": 0.25,
+    "matches": 2908476,
+    "rules": 12,
+    "rules_matched": 3,
+    "capabilities": [
+      "shell"
+    ]
+  },
+  {
+    "patch": "BinSignatureHack_with_htc",
+    "score": 0.4867,
+    "coverage": 0.3333,
+    "matches": 2,
+    "rules": 6,
+    "rules_matched": 2,
+    "capabilities": [
+      "bypass-license",
+      "integrity"
+    ]
+  },
+  {
+    "patch": "Bin_sig&installer_fix[Amazon]",
+    "score": 0.4479,
+    "coverage": 0.2857,
+    "matches": 2,
+    "rules": 7,
+    "rules_matched": 2,
+    "capabilities": [
+      "installer",
+      "integrity"
+    ]
+  },
+  {
+    "patch": "Bin_sig&installer_fix[Google]",
+    "score": 0.4479,
+    "coverage": 0.2857,
+    "matches": 2,
+    "rules": 7,
+    "rules_matched": 2,
+    "capabilities": [
+      "google",
+      "installer",
+      "integrity"
+    ]
+  },
+  {
+    "patch": "SignatureHack_arm64",
+    "score": 0.4311,
+    "coverage": 0.2222,
+    "matches": 2,
+    "rules": 9,
+    "rules_matched": 2,
+    "capabilities": [
+      "bypass-license",
+      "integrity",
+      "shell"
+    ]
+  },
+  {
+    "patch": "SignatureHack_armv7",
+    "score": 0.4311,
+    "coverage": 0.2222,
+    "matches": 2,
+    "rules": 9,
+    "rules_matched": 2,
+    "capabilities": [
+      "bypass-license",
+      "integrity",
+      "shell"
+    ]
+  },
+  {
+    "patch": "2. disable_google_analytics by VERGIL777",
+    "score": 0.415,
+    "coverage": 0.25,
+    "matches": 2,
+    "rules": 4,
+    "rules_matched": 1,
+    "capabilities": [
+      "google"
+    ]
+  },
+  {
+    "patch": "Permission_location",
+    "score": 0.4,
+    "coverage": 0.4,
+    "matches": 2,
+    "rules": 5,
+    "rules_matched": 2,
+    "capabilities": [
+      "anonymity",
+      "permission"
+    ]
+  },
+  {
+    "patch": "Permission_readSMS",
+    "score": 0.37,
+    "coverage": 0.4,
+    "matches": 2,
+    "rules": 5,
+    "rules_matched": 2,
+    "capabilities": [
+      "ads",
+      "permission"
+    ]
+  },
+  {
+    "patch": "Inject_Hook_Remote_Data_Control",
+    "score": 0.3614,
+    "coverage": 0.1429,
+    "matches": 2,
+    "rules": 7,
+    "rules_matched": 1,
+    "capabilities": [
+      "api",
+      "google",
+      "shell",
+      "trace"
+    ]
+  },
+  {
+    "patch": "License_hack&htc v2",
+    "score": 0.3412,
+    "coverage": 0.0625,
+    "matches": 1,
+    "rules": 16,
+    "rules_matched": 1,
+    "capabilities": [
+      "bypass-license",
+      "installer",
+      "integrity"
+    ]
+  },
+  {
+    "patch": "Permission_calendar",
+    "score": 0.325,
+    "coverage": 0.4,
+    "matches": 2,
+    "rules": 5,
+    "rules_matched": 2,
+    "capabilities": [
+      "permission"
+    ]
+  },
+  {
+    "patch": "Permission_camera",
+    "score": 0.325,
+    "coverage": 0.4,
+    "matches": 2,
+    "rules": 5,
+    "rules_matched": 2,
+    "capabilities": [
+      "permission"
+    ]
+  },
+  {
+    "patch": "Permission_phone",
+    "score": 0.325,
+    "coverage": 0.4,
+    "matches": 2,
+    "rules": 5,
+    "rules_matched": 2,
+    "capabilities": [
+      "permission"
+    ]
+  },
+  {
+    "patch": "Permission_readContact",
+    "score": 0.325,
+    "coverage": 0.4,
+    "matches": 2,
+    "rules": 5,
+    "rules_matched": 2,
+    "capabilities": [
+      "permission"
+    ]
+  },
+  {
+    "patch": "4. DisableBillingService by VERGIL777",
+    "score": 0.3,
+    "coverage": 0.0,
+    "matches": 0,
+    "rules": 2,
+    "rules_matched": 0,
+    "capabilities": [
+      "bypass-license"
+    ]
+  },
+  {
+    "patch": "Activator",
+    "score": 0.3,
+    "coverage": 0.0,
+    "matches": 0,
+    "rules": 0,
+    "rules_matched": 0,
+    "capabilities": [
+      "bypass-license"
+    ]
+  },
+  {
+    "patch": "IsPremium",
+    "score": 0.3,
+    "coverage": 0.0,
+    "matches": 0,
+    "rules": 4,
+    "rules_matched": 0,
+    "capabilities": [
+      "bypass-license"
+    ]
+  },
+  {
+    "patch": "License_hack",
+    "score": 0.3,
+    "coverage": 0.0,
+    "matches": 0,
+    "rules": 4,
+    "rules_matched": 0,
+    "capabilities": [
+      "bypass-license",
+      "installer",
+      "integrity"
+    ]
+  },
+  {
+    "patch": "License_hack(Amazon)",
+    "score": 0.3,
+    "coverage": 0.0,
+    "matches": 0,
+    "rules": 2,
+    "rules_matched": 0,
+    "capabilities": [
+      "bypass-license",
+      "integrity"
+    ]
+  },
+  {
+    "patch": "3. GooglePlayServices by Edik1d",
+    "score": 0.285,
+    "coverage": 0.0,
+    "matches": 0,
+    "rules": 2,
+    "rules_matched": 0,
+    "capabilities": [
+      "google",
+      "integrity"
+    ]
+  },
+  {
+    "patch": "GooglePlayServices",
+    "score": 0.285,
+    "coverage": 0.0,
+    "matches": 0,
+    "rules": 3,
+    "rules_matched": 0,
+    "capabilities": [
+      "google",
+      "integrity"
+    ]
+  },
+  {
+    "patch": "1. New.  Metrics, analytics, statistics collection, Deletion.  from Inok_ZP 12.04.18g",
+    "score": 0.27,
+    "coverage": 0.0,
+    "matches": 0,
+    "rules": 3,
+    "rules_matched": 0,
+    "capabilities": [
+      "api",
+      "google"
+    ]
+  },
+  {
+    "patch": "Anti_analytics2",
+    "score": 0.27,
+    "coverage": 0.0,
+    "matches": 0,
+    "rules": 3,
+    "rules_matched": 0,
+    "capabilities": [
+      "api",
+      "google"
+    ]
+  },
+  {
+    "patch": "Anti_analytics2_22-41-11",
+    "score": 0.27,
+    "coverage": 0.0,
+    "matches": 0,
+    "rules": 3,
+    "rules_matched": 0,
+    "capabilities": [
+      "api",
+      "google"
+    ]
+  },
+  {
+    "patch": "NoPlayGames",
+    "score": 0.27,
+    "coverage": 0.0,
+    "matches": 0,
+    "rules": 2,
+    "rules_matched": 0,
+    "capabilities": [
+      "anonymity",
+      "google"
+    ]
+  },
+  {
+    "patch": "RES-ID",
+    "score": 0.2374,
+    "coverage": 0.0449,
+    "matches": 4543958,
+    "rules": 6755,
+    "rules_matched": 303,
+    "capabilities": []
+  },
+  {
+    "patch": "translate_debugger",
+    "score": 0.225,
+    "coverage": 0.0,
+    "matches": 0,
+    "rules": 6,
+    "rules_matched": 0,
+    "capabilities": [
+      "trace"
+    ]
+  },
+  {
+    "patch": "Yandex_Metrica",
+    "score": 0.21,
+    "coverage": 0.0,
+    "matches": 0,
+    "rules": 2,
+    "rules_matched": 0,
+    "capabilities": [
+      "shell"
+    ]
+  },
+  {
+    "patch": "Yandex_Metrica 1",
+    "score": 0.21,
+    "coverage": 0.0,
+    "matches": 0,
+    "rules": 2,
+    "rules_matched": 0,
+    "capabilities": [
+      "shell"
+    ]
+  },
+  {
+    "patch": "yandex_metrica by Vergil777",
+    "score": 0.21,
+    "coverage": 0.0,
+    "matches": 0,
+    "rules": 11,
+    "rules_matched": 0,
+    "capabilities": [
+      "shell"
+    ]
+  },
+  {
+    "patch": "FakeGPS",
+    "score": 0.18,
+    "coverage": 0.0,
+    "matches": 0,
+    "rules": 2,
+    "rules_matched": 0,
+    "capabilities": [
+      "anonymity"
+    ]
+  },
+  {
+    "patch": "FakeGpsAutoGenerate",
+    "score": 0.18,
+    "coverage": 0.0,
+    "matches": 0,
+    "rules": 2,
+    "rules_matched": 0,
+    "capabilities": [
+      "anonymity"
+    ]
+  },
+  {
+    "patch": "MockLocation",
+    "score": 0.18,
+    "coverage": 0.0,
+    "matches": 0,
+    "rules": 1,
+    "rules_matched": 0,
+    "capabilities": [
+      "anonymity"
+    ]
+  },
+  {
+    "patch": "NoLocation",
+    "score": 0.18,
+    "coverage": 0.0,
+    "matches": 0,
+    "rules": 3,
+    "rules_matched": 0,
+    "capabilities": [
+      "anonymity"
+    ]
+  },
+  {
+    "patch": "permission_memory",
+    "score": 0.105,
+    "coverage": 0.0,
+    "matches": 0,
+    "rules": 4,
+    "rules_matched": 0,
+    "capabilities": [
+      "permission"
+    ]
+  },
+  {
+    "patch": "Language substitution",
+    "score": 0.0964,
+    "coverage": 0.1429,
+    "matches": 1,
+    "rules": 7,
+    "rules_matched": 1,
+    "capabilities": []
+  },
+  {
+    "patch": "Only Ru",
+    "score": 0.0964,
+    "coverage": 0.1429,
+    "matches": 1,
+    "rules": 7,
+    "rules_matched": 1,
+    "capabilities": []
+  },
+  {
+    "patch": "Commenting on untranslated lines",
+    "score": 0.015,
+    "coverage": 0.0,
+    "matches": 0,
+    "rules": 12,
+    "rules_matched": 0,
+    "capabilities": []
+  },
+  {
+    "patch": "Decoder_ID_Resource",
+    "score": 0.015,
+    "coverage": 0.0,
+    "matches": 0,
+    "rules": 0,
+    "rules_matched": 0,
+    "capabilities": []
+  },
+  {
+    "patch": "Dictionary+ru+uk+2",
+    "score": 0.015,
+    "coverage": 0.0,
+    "matches": 0,
+    "rules": 16,
+    "rules_matched": 0,
+    "capabilities": []
+  },
+  {
+    "patch": "Unicode text",
+    "score": 0.015,
+    "coverage": 0.0,
+    "matches": 0,
+    "rules": 70,
+    "rules_matched": 0,
+    "capabilities": []
+  },
+  {
+    "patch": "UnicodeToUTF",
+    "score": 0.015,
+    "coverage": 0.0,
+    "matches": 0,
+    "rules": 0,
+    "rules_matched": 0,
+    "capabilities": []
+  },
+  {
+    "patch": "Wrap non-translated strings",
+    "score": 0.015,
+    "coverage": 0.0,
+    "matches": 0,
+    "rules": 26,
+    "rules_matched": 0,
+    "capabilities": []
+  },
+  {
+    "patch": "delete_languages",
+    "score": 0.015,
+    "coverage": 0.0,
+    "matches": 0,
+    "rules": 0,
+    "rules_matched": 0,
+    "capabilities": []
+  },
+  {
+    "patch": "patch_delete_translation_raw-values_xxx",
+    "score": 0.015,
+    "coverage": 0.0,
+    "matches": 0,
+    "rules": 0,
+    "rules_matched": 0,
+    "capabilities": []
+  },
+  {
+    "patch": "patch_remove_translation",
+    "score": 0.015,
+    "coverage": 0.0,
+    "matches": 0,
+    "rules": 0,
+    "rules_matched": 0,
+    "capabilities": []
+  },
+  {
+    "patch": "res_raw_TRANSLATIONxx",
+    "score": 0.015,
+    "coverage": 0.0,
+    "matches": 0,
+    "rules": 0,
+    "rules_matched": 0,
+    "capabilities": []
+  }
+]

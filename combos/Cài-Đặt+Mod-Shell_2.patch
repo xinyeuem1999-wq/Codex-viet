@@ -1,0 +1,123 @@
+# Combo: Cài-Đặt+Mod-Shell (1 patch)
+
+[MIN_ENGINE_VER]
+2
+
+[AUTHOR]
+HTC 600
+
+[PACKAGE]
+ALL
+
+[ADD_FILES]
+TARGET:
+    smali
+EXTRACT:
+    true
+SOURCE:
+    BiN.zip
+[/ADD_FILES]
+
+[MATCH_REPLACE]
+TARGET:
+    smali/cc/binmt/signature/PmsHookApplication.smali
+MATCH:
+    ### Installer ###
+REGEX:
+    true
+REPLACE:
+    com.android.vending
+[/MATCH_REPLACE]
+
+[MATCH_GOTO]
+TARGET:
+    AndroidManifest.xml
+MATCH:
+    <application(.+)android:name=
+REGEX:
+    true
+GOTO:
+    app1
+[/MATCH_GOTO]
+
+[MATCH_REPLACE]
+TARGET:
+    AndroidManifest.xml
+MATCH:
+    <application(.+)>
+REGEX:
+    true
+REPLACE:
+    <application${GROUP1} android:name="cc.binmt.signature.PmsHookApplication">
+[/MATCH_REPLACE]
+
+[GOTO]
+GOTO:
+    end
+[/GOTO]
+
+[MATCH_REPLACE]
+NAME:
+    app1
+TARGET:
+    AndroidManifest.xml
+MATCH:
+    <application (.+) android:name="([^"]+)"(.+)
+REGEX:
+    true
+REPLACE:
+    <application ${GROUP1} android:name="cc.binmt.signature.PmsHookApplication"${GROUP3}
+[/MATCH_REPLACE]
+
+[MATCH_ASSIGN]
+TARGET:
+    [APPLICATION]
+MATCH:
+    \.class (.+?)L(.+);
+REGEX:
+    true
+ASSIGN:
+    LABEL_1=L${GROUP2};
+[/MATCH_ASSIGN]
+
+[MATCH_REPLACE]
+TARGET:
+    [APPLICATION]
+MATCH:
+    \.class public (|.+)L(.+);
+REGEX:
+    true
+REPLACE:
+    .class public L${GROUP2};
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    smali/cc/binmt/signature/PmsHookApplication.smali
+MATCH:
+    Landroid/app/Application;
+REGEX:
+    true
+REPLACE:
+    ${LABEL_1}
+[/MATCH_REPLACE]
+
+[EXECUTE_DEX]
+NAME:
+    end
+SCRIPT:
+    sigfix.dex
+SMALI_NEEDED:
+    true
+MAIN_CLASS:
+    anymy.BinSignatureFix
+ENTRANCE:
+    BinSignatureFix
+PARAM:
+    smali
+[/EXECUTE_DEX]
+
+[DUMMY]
+NAME:
+    end2
+[/DUMMY]

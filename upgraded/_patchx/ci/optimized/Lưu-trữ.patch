@@ -1,0 +1,64 @@
+# Gộp tối ưu bởi patchx: Lưu-trữ
+
+[MIN_ENGINE_VER]
+2
+
+[AUTHOR]
+NoName
+
+[PACKAGE]
+*
+
+[MATCH_REPLACE]
+TARGET:
+    smali*/*.smali
+MATCH:
+    \.local .+|    \.line \d+|    \.prologue|    \.end local .+|    \.restart local .+|\.source .+
+REGEX:
+    true
+REPLACE:
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    [LAUNCHER_ACTIVITIES]
+MATCH:
+    \.method (.+) onCreate\(Landroid/os/Bundle;\)V\n    \.registers (\d+)
+REGEX:
+    true
+REPLACE:
+    .method ${GROUP1} onCreate(Landroid/os/Bundle;)V
+    .registers ${GROUP2}
+
+    const-string v0, "Hello, I am here!"
+    # p0 (this object) must be an object of Context
+    invoke-static {p0, v0}, Lapkeditor/Utils;->showToast(Landroid/content/Context;Ljava/lang/String;)V
+[/MATCH_REPLACE]
+
+[ADD_FILES]
+SOURCE:
+    Utils.smali
+TARGET:
+    smali/apkeditor/Utils.smali
+[/ADD_FILES]
+
+[ADD_FILES]
+SOURCE:
+    save.smali
+TARGET:
+    smali/save.smali
+[/ADD_FILES]
+
+[MATCH_REPLACE]
+TARGET:
+    [LAUNCHER_ACTIVITIES]
+MATCH:
+    \.method (.+) onCreate\(Landroid/os/Bundle;\)V\n    \.registers (\d+)
+REGEX:
+    true
+REPLACE:
+    .method ${GROUP1} onCreate(Landroid/os/Bundle;)V
+    .registers ${GROUP2}
+
+       invoke-static/range {p0 .. p0}, Lsave;->m(Landroid/content/Context;)V
+[/MATCH_REPLACE]

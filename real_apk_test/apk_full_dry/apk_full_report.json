@@ -1,0 +1,12 @@
+{
+  "generated": "2026-08-15 23:43:29",
+  "tree": "/storage/emulated/0/Patch/patch1/_patchx/apk_trees/KISS launcher_3.26.0",
+  "input": "/storage/emulated/0/Patch/patch1/_patchx/upgraded",
+  "dry_run": true,
+  "plan_seconds": 206.9,
+  "patches_selected": [
+    "Debug_information_and_hack_signature",
+    "patch_bypass_sigcheck_with_reflection",
+    "Debug_information"
+  ]
+}

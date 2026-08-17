@@ -1,0 +1,75 @@
+
+• # Quét toàn bộ yêu cầu "quét chi tiết" từ các phiên trước
+
+  Nguồn đã quét
+
+  - Tài liệu: NGU_CANH.md, UPGRADE_PLAN_V3/V4.md, UPGRADE_PROPOSAL.md,
+    EVALUATION.md, TRANG_THAI_HIEN_TAI.md, KINH_NGHIEM.md, QUY_TRINH.md.
+
+  - Lịch sử gốc: ~/.codex/thread_history_1.sqlite — 4 phiên liên quan: 01a00514,
+    01a00549, 01a00556, 01a00569.
+
+  Chuỗi yêu cầu gốc (nguyên văn)
+
+  - 01a00514: "nhiệm vụ của quét chi tiết là gì" → "tối ưu thêm cho quét chi
+    tiết… báo cáo chi tiết các điểm cụ thể có thể bypass, cách và công cụ có thể
+    dùng, đề xuất triển khai phương án hợp lý, dự đoán tỷ lệ thành công tính bằng
+    %" → "giờ tối ưu tốc độ quét".
+
+  - 01a00556: "quét lại các yêu cầu của tôi về quét chi tiết… báo lại tình trạng"
+    → "trien khai dot A".
+
+  - 01a00569: chốt yêu cầu đầy đủ (3 ý: báo cáo điểm bypass + cách/công cụ; đề
+    xuất + triển khai phương án; dự đoán % thành công) + "tối ưu tốc độ quét:
+    nghiệm thu 477M < 60s bằng rg/hash/index + cache theo hash APK" + "nâng cấp
+    toàn bộ patch có khả thi không?… patch đa phần là regex nên quét chậm" →
+    "được tiến hành toàn bộ".
+
+  Trạng thái từng vấn đề
+
+  - Báo cáo chi tiết từng điểm bypass + cách làm + công cụ → ĐÃ CÓ: patchx_core/
+    bypass_advisor.py (CAP_TOOLING cho 16 năng lực, detect_protections_fast,
+    _suggestions, build_bypass_report), hiển thị qua apk-plan.
+
+  - Dự đoán tỷ lệ thành công % → ĐÃ CÓ: estimate_success gắn vào tỷ_lệ_thành_công
+    trong bypass_report; apk-plan in "thành công dự đoán %".
+
+  - Tối ưu tốc độ quét (Đợt A) → ĐẠT: bench-scan cây 553M = 23.557s < 60s
+    (inventory 9.94s + coverage 13.62s); hồi quy 88/88 test.
+
+  - Nâng cấp patch regex → literal để quét nhanh → MỘT PHẦN:
+    audit._convert_literal_regex tự đổi 178 rule thành REGEX=false; hint lọc được
+    5.980 rule; còn 7.434 rule không có hint.
+
+  - R5 "tìm nhanh hơn, sâu hơn" (ngữ nghĩa mã, method-level coverage) → CHƯA LÀM
+    (trục T1).
+
+  - C1 "quét toàn bộ cây /Patch (16 thư mục) + nguồn Modder Hub" → CHƯA LÀM.
+  - Glob smali*/*.smali đệ quy, dupes theo hash, zip lỗi không crash khi scan →
+    ĐÃ XONG.
+
+  Vấn đề tồn đọng xoay quanh "quét chi tiết"
+
+  - Độ chi tiết bị đánh đổi bằng xấp xỉ: 41 rule bị ước lượng (mẫu ≤ 300 tệp,
+    _SAMPLE_LIMIT), scan_variants bỏ qua khi text > 512KB / khớp ≥ 1000 / regex
+    nguy hiểm, đếm cap 100.000 → số khớp/coverage có thể chưa chính xác tuyệt
+    đối.
+
+  - Còn heavy: New. Removing the anal… 3.3s (rule no-hint quét 300 mẫu smali);
+    rule RES-ID kiểu . (6.400 rule) vô nghĩa cho coverage nhưng chưa loại khi
+    nâng cấp.
+
+  - Cache: file scan_9640271eb29f2e91.json key cũ không khớp (nên xóa); cache chỉ
+    tính theo tệp text.
+
+  - "Triển khai phương án tăng khả năng bypass" tự động → chưa có: apk-full (plan
+    → chọn top → apply → build → sign → verify) mới là bước chốt tiếp theo; hiện
+    mới có từng mảnh apk-plan/apk-test/apk-patch.
+
+  - Đo lường nhiễu do máy dùng chung (load 16–19) → cần đo lại khi load < 5.
+  - Coverage theo chuỗi/file (chưa theo method) → dương tính giả khi MATCH trùng
+    nhiều nơi (T1).
+
+ ===>>> trích nội dụng của AI
+ Mục tiêu dựa theo các yêu cầu của người dùng trong đoạn thoại của AI để lập danh sách tạm 
+ ví dụ: có  3 phiên nhận yêu cầu từ người dùng   01a00549, 01a00556, 01a00569 lập 3 mục danh sách tạm kiểm tra mức độ hoàn thành của từng mục mục nào chưa hoàn thành thì lập tức hoàn thành xong đến mục tiếp theo đến hết danh sách thì báo cáo

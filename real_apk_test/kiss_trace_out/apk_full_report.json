@@ -1,0 +1,27 @@
+{
+  "generated": "2026-08-16 13:33:16",
+  "tree": "/storage/emulated/0/Patch/patch1/_patchx/real_apk_test/kiss_trace_tree",
+  "input": "/storage/emulated/0/Patch/patch1/_patchx/real_apk_test/hook_input",
+  "dry_run": false,
+  "plan_seconds": 1.2,
+  "patches_selected": [
+    "hook_remote_data_control"
+  ],
+  "apply_returncode": 0,
+  "apply_seconds": 18.7,
+  "resource_fixes": 0,
+  "build_seconds": 17.7,
+  "build_returncode": 1,
+  "exercises": [
+    {
+      "title": "Smali do patch sinh ra không hợp lệ",
+      "root_cause": "Chèn thiếu register, invoke sai kiểu, hoặc method không tồn tại.",
+      "suggested_fix": "Dùng smali_lib.alloc_temps và find_method_block trước khi chèn; bổ sung kiểm tra type và test rebuild tự động."
+    },
+    {
+      "title": "Nghi vấn sai số thanh ghi smali",
+      "root_cause": "Patch tăng/giảm .registers/.locals chưa khớp tham số method.",
+      "suggested_fix": "Chuẩn hoá bump register qua smali_lib.smali_alloc_temps; thêm golden test cho method instance/static."
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+[MIN_ENGINE_VER]
+2
+[/MIN_ENGINE_VER]
+
+[AUTHOR]
+patchx-p1
+[/AUTHOR]
+
+[PACKAGE]
+*
+[/PACKAGE]
+
+[INIT]
+TARGET:
+[LAUNCHER_ACTIVITIES]
+METHOD:
+onCreate
+CODE:
+const-string v0, "patchx-p1-smoke"
+invoke-static {v0}, Landroid/util/Log;->i(Ljava/lang/String;)I
+[/INIT]
+
+[TRACE]
+TARGET:
+[LAUNCHER_ACTIVITIES]
+MATCH:
+return-void
+REGEX:
+false
+TAG:
+PatchXP1
+[/TRACE]

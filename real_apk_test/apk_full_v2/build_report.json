@@ -1,0 +1,7 @@
+{
+  "tree": "/storage/emulated/0/Patch/patch1/_patchx/real_apk_test/kiss_tree_clean",
+  "returncode": 0,
+  "seconds": 17.9,
+  "unsigned_apk": "apk_full.unsigned.apk",
+  "output_tail": "I: Using Apktool 3.0.3-dirty on KISS launcher_3.26.0.apk with 8 threads\nI: Smaling smali folder into classes.dex...\nI: Smaling smali_classes2 folder into classes2.dex...\nI: Building resources with aapt2...\nI: Building apk file...\nI: Importing assets...\nI: Importing unknown files...\nI: Built apk into: /storage/emulated/0/Patch/patch1/_patchx/real_apk_test/apk_full_v2/apk_full.unsigned.apk"
+}

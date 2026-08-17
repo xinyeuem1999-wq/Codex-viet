@@ -1,0 +1,11 @@
+{
+  "tree": "/storage/emulated/0/Patch/patch1/_patchx/real_apk_test/kiss_trace_tree",
+  "returncode": 1,
+  "seconds": 17.7,
+  "unsigned_apk": null,
+  "manifest_fix": [
+    "android:enableOnBackInvokedCallback",
+    "android:localeConfig"
+  ],
+  "output_tail": "l that hasn't been placed yet.\nException in thread \"main\" brut.androlib.exceptions.AndrolibException: Could not smali file: /storage/emulated/0/Patch/patch1/_patchx/real_apk_test/kiss_trace_tree/smali/androidx/vectordrawable/graphics/drawable/AndroidResources.smali\n\tat brut.androlib.ApkBuilder.buildSourcesSmaliJob(SourceFile:77)\n\tat brut.androlib.ApkBuilder.lambda$buildSourcesSmali$0(SourceFile:167)\n\tat java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)\n\tat java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)\n\tat java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)\n\tat java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)\n\tat java.base/java.lang.Thread.run(Thread.java:1583)"
+}

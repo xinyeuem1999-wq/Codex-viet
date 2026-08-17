@@ -1,0 +1,22 @@
+# Combo: Ẩn-Root/Giả-Lập (1 patch)
+
+[MIN_ENGINE_VER]
+2
+
+[AUTHOR]
+Patchx Bypass Collection
+
+[PACKAGE]
+*
+
+[MATCH_REPLACE]
+TARGET:
+    smali*/*.smali
+MATCH:
+    (invoke-.*->(isRooted|isDeviceRooted|checkForRoot|isRootAvailable|checkRooted|RootBeer)\(.*\)Z)\n\n    (move-result ([pv]\d+))
+REGEX:
+    true
+REPLACE:
+    # ${GROUP1}
+    const/4 ${GROUP4}, 0x0
+[/MATCH_REPLACE]

@@ -1,0 +1,16 @@
+[
+  {
+    "patch": "hook_remote_data_control",
+    "score": 0.27,
+    "coverage": 0.0,
+    "matches": 0,
+    "rules": 8,
+    "rules_matched": 0,
+    "capabilities": [
+      "api",
+      "google",
+      "shell",
+      "trace"
+    ]
+  }
+]

@@ -1,0 +1,105 @@
+# Combo: Chặn-Quảng-Cáo+Mạng (1 patch)
+
+[MIN_ENGINE_VER]
+1
+
+[AUTHOR]
+Open Source
+
+[PACKAGE]
+*
+
+[MATCH_REPLACE]
+TARGET:
+    AndroidManifest.xml
+MATCH:
+    <application
+REGEX:
+    true
+REPLACE:
+    <uses-permission android:name="android.permission.READ_SMS" />
+<application
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    [LAUNCHER_ACTIVITIES]
+MATCH:
+    \.method (.+) onCreate\(Landroid/os/Bundle;\)V\n    \.registers (\d+)
+REGEX:
+    true
+REPLACE:
+    .method ${GROUP1} onCreate(Landroid/os/Bundle;)V
+    .registers ${GROUP2}
+
+    invoke-virtual {p0}, xxx111xxx->isSmsPermission()Z
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    [LAUNCHER_ACTIVITIES]
+MATCH:
+    \# virtual methods
+REGEX:
+    true
+REPLACE:
+    # virtual methods
+.method public isSmsPermission()Z
+    .registers 5
+
+    const/4 v3, 0x1
+
+    const/4 v2, 0x0
+
+    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    const/16 v1, 0x17
+
+    if-lt v0, v1, :cond_10
+
+    const-string v0, "android.permission.READ_SMS"
+
+    invoke-virtual {p0, v0}, xxx111xxx->checkSelfPermission(Ljava/lang/String;)I
+
+    move-result v0
+
+    if-nez v0, :cond_11
+
+    :cond_10
+    :goto_10
+    return v2
+
+    :cond_11
+    new-array v0, v3, [Ljava/lang/String;
+
+    const-string v1, "android.permission.READ_SMS"
+
+    aput-object v1, v0, v2
+
+    invoke-static {p0, v0, v3}, Landroid/support/v4/app/ActivityCompat;->requestPermissions(Landroid/app/Activity;[Ljava/lang/String;I)V
+
+    goto :goto_10
+.end method
+[/MATCH_REPLACE]
+
+[MATCH_ASSIGN]
+TARGET:
+    [LAUNCHER_ACTIVITIES]
+MATCH:
+    \.class public (.+)
+REGEX:
+    true
+ASSIGN:
+    LABEL_1=${GROUP1}
+[/MATCH_ASSIGN]
+
+[MATCH_REPLACE]
+TARGET:
+    [LAUNCHER_ACTIVITIES]
+MATCH:
+    xxx111xxx
+REGEX:
+    true
+REPLACE:
+    ${LABEL_1}
+[/MATCH_REPLACE]

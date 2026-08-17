@@ -1,0 +1,268 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+set -e
+
+SKILLS=".codex/skills"
+
+echo "[+] Creating APK reverse-engineering skills..."
+
+mkdir -p \
+    "$SKILLS/apk-reverse" \
+    "$SKILLS/smali-analysis" \
+    "$SKILLS/native-jni" \
+    "$SKILLS/android-security"
+
+cat > "$SKILLS/apk-reverse/SKILL.md" <<'SKILL'
+---
+name: apk-reverse
+description: Phân tích APK, DEX, AndroidManifest, resources và tái dựng kiến trúc ứng dụng Android.
+---
+
+# APK Reverse Engineering
+
+## Mục tiêu
+
+Phân tích APK được cung cấp trong project và tái dựng logic ứng dụng một cách có bằng chứng.
+
+Chỉ phân tích ứng dụng mà người dùng sở hữu hoặc có quyền kiểm thử.
+
+## Quy trình
+
+### 1. Khảo sát project
+
+Kiểm tra:
+
+- AndroidManifest.xml
+- package/application ID
+- Activities
+- Services
+- BroadcastReceivers
+- ContentProviders
+- permissions
+- exported components
+- intent filters
+- assets
+- resources
+- classes.dex
+- multidex
+- lib/*/*.so
+
+### 2. Xác định entry points
+
+Tìm:
+
+- launcher Activity
+- exported Activity
+- exported Service
+- BroadcastReceiver
+- ContentProvider
+- deep links
+- custom schemes
+- boot receivers
+
+### 3. DEX
+
+Xác định:
+
+- số lượng DEX
+- package
+- classes
+- methods
+- fields
+- references
+- strings
+- annotations
+
+### 4. Decompiler
+
+Nếu Java/Kotlin từ JADX khác với Smali:
+
+Ưu tiên:
+
+DEX/Smali > decompiler output.
+
+Không tự động coi Java decompiler là source gốc.
+
+### 5. Data flow
+
+Theo dõi:
+
+Input
+→ validation
+→ transformation
+→ storage/network/native
+→ output
+
+### 6. Native
+
+Nếu có:
+
+lib/arm64-v8a/*.so
+lib/armeabi-v7a/*.so
+lib/x86_64/*.so
+
+chuyển sang skill native-jni.
+
+## Quy tắc bằng chứng
+
+FACT:
+Quan sát trực tiếp từ file.
+
+INFERENCE:
+Suy luận dựa trên nhiều bằng chứng.
+
+UNKNOWN:
+Chưa đủ dữ liệu.
+
+Không được trình bày INFERENCE như FACT.
+
+## Khi phân tích class
+
+Báo cáo:
+
+- file
+- package
+- class
+- superclass
+- interfaces
+- fields
+- methods
+- callers
+- callees
+- important strings
+- external APIs
+- native calls
+- storage
+- network
+- security-sensitive operations
+
+## Khi phân tích function
+
+Báo cáo:
+
+1. Signature
+2. Inputs
+3. Outputs
+4. Callers
+5. Callees
+6. Control flow
+7. Data flow
+8. Side effects
+9. FACT
+10. INFERENCE
+11. UNKNOWN
+
+## Không bịa
+
+Không bịa:
+
+- class
+- method
+- API
+- endpoint
+- credential
+- cryptographic key
+- call graph
+- behavior
+
+Nếu thiếu dữ liệu, yêu cầu file/class/method cần thiết.
+SKILL
+
+cat > "$SKILLS/smali-analysis/SKILL.md" <<'SKILL'
+---
+name: smali-analysis
+description: Phân tích DEX và Smali, reconstruct Java/Kotlin và theo dõi control/data flow.
+---
+
+# Smali and DEX Analysis
+
+## Mục tiêu
+
+Phân tích Smali ở mức instruction và tái dựng logic tương đương Java/Kotlin khi có đủ bằng chứng.
+
+## Nguyên tắc
+
+Smali/DEX là nguồn tham chiếu ưu tiên khi decompiler tạo output không đáng tin cậy.
+
+Không sửa semantics chỉ để Java/Kotlin nhìn đẹp hơn.
+
+## Register analysis
+
+Theo dõi:
+
+- p0, p1...
+- v0, v1...
+- parameter
+- local register
+- return register
+- object type
+- primitive type
+
+Đặc biệt chú ý:
+
+- move
+- move-result
+- move-result-object
+- const
+- new-instance
+- invoke-*
+- iget/iput
+- sget/sput
+- if-*
+- goto
+- switch
+- throw
+- catch
+- return-*
+
+## Control flow
+
+Xây dựng:
+
+entry
+→ branches
+→ loops
+→ exception handlers
+→ return
+
+Khi cần, mô tả CFG bằng text.
+
+## Data flow
+
+Theo dõi dữ liệu từ:
+
+- method parameters
+- constants
+- fields
+- SharedPreferences
+- Intent extras
+- Bundle
+- database
+- network
+- native methods
+
+đến:
+
+- return
+- network request
+- file
+- database
+- log
+- UI
+- native layer
+
+## Java reconstruction
+
+Khi reconstruct:
+
+- giữ nguyên method semantics;
+- giữ nguyên exception behavior;
+- giữ nguyên null checks;
+- giữ nguyên branch conditions;
+- giữ nguyên casts;
+- giữ nguyên synchronized/monitor behavior.
+
+Nếu không chắc:
+
+```text
+// INFERENCE

@@ -1,0 +1,8 @@
+{
+  "tree": "/storage/emulated/0/Patch/patch1/_patchx/real_apk_test/kiss_trace_tree",
+  "patches": [
+    "hook_remote_data_control"
+  ],
+  "returncode": 0,
+  "seconds": 18.7
+}

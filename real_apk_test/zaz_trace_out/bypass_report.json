@@ -1,0 +1,449 @@
+{
+  "tree": "/storage/emulated/0/Patch/patch1/_patchx/real_apk_test/zaz_trace_tree",
+  "protections": [
+    {
+      "loại": "tamper",
+      "tên": "tamper",
+      "lần": 94,
+      "tệp": [
+        "smali/a4b.smali",
+        "smali/androidx/credentials/playservices/controllers/BeginSignIn/ua.smali",
+        "smali/androidx/profileinstaller/ProfileInstallReceiver.smali",
+        "smali/as3.smali",
+        "smali/ce7.smali"
+      ]
+    },
+    {
+      "loại": "pinning",
+      "tên": "pinning",
+      "lần": 27,
+      "tệp": [
+        "smali/mq6.smali",
+        "smali/ya0.smali",
+        "smali_classes3/com/google/api/client/json/webtoken/JsonWebSignature.smali",
+        "smali_classes3/com/google/api/client/testing/json/webtoken/TestCertificates$CertData.smali",
+        "smali_classes3/com/google/api/client/util/SecurityUtils.smali"
+      ]
+    },
+    {
+      "loại": "emulator",
+      "tên": "emulator",
+      "lần": 22,
+      "tệp": [
+        "AndroidManifest.xml",
+        "smali/ai/onnxruntime/OnnxRuntime.smali",
+        "smali/com/firebase/ui/auth/ui/idp/AuthMethodPickerActivity.smali",
+        "smali/com/firebase/ui/auth/ui/idp/SingleSignInActivity.smali",
+        "smali/com/firebase/ui/auth/ui/idp/WelcomeBackIdpPrompt.smali"
+      ]
+    },
+    {
+      "loại": "safetynet",
+      "tên": "safetynet",
+      "lần": 4,
+      "tệp": [
+        "smali/com/google/android/gms/fido/fido2/api/common/AuthenticatorAttestationResponse.smali",
+        "smali/com/google/android/gms/fido/fido2/api/common/PublicKeyCredentialCreationOptions.smali",
+        "smali_classes3/com/google/android/gms/internal/ads/zzbie.smali",
+        "smali_classes3/com/google/android/gms/internal/ads/zzbkd.smali"
+      ]
+    },
+    {
+      "loại": "root",
+      "tên": "root",
+      "lần": 1,
+      "tệp": [
+        "smali_classes3/e60.smali"
+      ]
+    },
+    {
+      "loại": "frida",
+      "tên": "frida",
+      "lần": 1,
+      "tệp": [
+        "unknown/mozilla/public-suffix-list.txt"
+      ]
+    },
+    {
+      "loại": "anti-debug",
+      "tên": "anti-debug",
+      "lần": 1,
+      "tệp": [
+        "smali_classes3/ab1.smali"
+      ]
+    }
+  ],
+  "top_patches": [
+    {
+      "patch": "pro_unlock_vip",
+      "điểm": 0.83,
+      "tỷ_lệ_thành_công": 0.0,
+      "phân_tích": {
+        "tỷ_lệ": 0.0,
+        "yếu_tố": [
+          {
+            "tên": "Bao phủ quy tắc khớp 100%",
+            "điểm": 45.0
+          },
+          {
+            "tên": "Số lần khớp 3 (tối đa 25)",
+            "điểm": 2.4
+          },
+          {
+            "tên": "Khối khớp 3/3",
+            "điểm": 15.0
+          },
+          {
+            "tên": "Độ ưu tiên năng lực 1.00",
+            "điểm": 10.0
+          }
+        ],
+        "phạt": [
+          {
+            "loại": "tamper",
+            "điểm": 8.0
+          },
+          {
+            "loại": "pinning",
+            "điểm": 15.0
+          },
+          {
+            "loại": "emulator",
+            "điểm": 8.0
+          },
+          {
+            "loại": "safetynet",
+            "điểm": 18.0
+          },
+          {
+            "loại": "root",
+            "điểm": 12.0
+          },
+          {
+            "loại": "frida",
+            "điểm": 10.0
+          },
+          {
+            "loại": "anti-debug",
+            "điểm": 10.0
+          }
+        ]
+      },
+      "năng_lực": [
+        "bypass-license"
+      ],
+      "điểm_bypass": [
+        {
+          "khối": 3,
+          "loại": "MATCH_REPLACE",
+          "target": "smali_classes4/com/zaz/account/uc.smali",
+          "khớp": 1,
+          "tệp_trúng": [
+            "smali_classes4/com/zaz/account/uc.smali"
+          ],
+          "biến_thể": []
+        },
+        {
+          "khối": 4,
+          "loại": "MATCH_REPLACE",
+          "target": "smali_classes4/com/zaz/subscription/manager/ua.smali",
+          "khớp": 1,
+          "tệp_trúng": [
+            "smali_classes4/com/zaz/subscription/manager/ua.smali"
+          ],
+          "biến_thể": []
+        },
+        {
+          "khối": 5,
+          "loại": "MATCH_REPLACE",
+          "target": "smali_classes4/com/zaz/subscription/manager/ua.smali",
+          "khớp": 1,
+          "tệp_trúng": [
+            "smali_classes4/com/zaz/subscription/manager/ua.smali"
+          ],
+          "biến_thể": []
+        }
+      ],
+      "cách_công_cụ": {
+        "cách": [
+          "Vô hiệu hoá kiểm tra VIP/license: gán cờ đã mua bằng SET_BOOL, nhảy qua khối kiểm tra bằng MATCH_GOTO, hoặc hook hàm kiểm tra bằng Frida/LSPosed."
+        ],
+        "công_cụ": [
+          "patchx apply",
+          "apktool",
+          "apksigner",
+          "Frida",
+          "LSPosed"
+        ],
+        "xác_minh": [
+          "Mở tính năng VIP; xem logcat tìm log trạng thái license."
+        ]
+      },
+      "đề_xuất": []
+    },
+    {
+      "patch": "hook_remote_data_control",
+      "điểm": 0.425,
+      "tỷ_lệ_thành_công": 0.0,
+      "phân_tích": {
+        "tỷ_lệ": 0.0,
+        "yếu_tố": [
+          {
+            "tên": "Bao phủ quy tắc khớp 25%",
+            "điểm": 11.2
+          },
+          {
+            "tên": "Số lần khớp 3 (tối đa 25)",
+            "điểm": 2.4
+          },
+          {
+            "tên": "Khối khớp 2/8",
+            "điểm": 3.8
+          },
+          {
+            "tên": "Độ ưu tiên năng lực 0.90",
+            "điểm": 9.0
+          },
+          {
+            "tên": "Tỷ lệ khối hiện đại 31%",
+            "điểm": 3.1
+          }
+        ],
+        "phạt": [
+          {
+            "loại": "tamper",
+            "điểm": 8.0
+          },
+          {
+            "loại": "pinning",
+            "điểm": 15.0
+          },
+          {
+            "loại": "emulator",
+            "điểm": 8.0
+          },
+          {
+            "loại": "safetynet",
+            "điểm": 18.0
+          },
+          {
+            "loại": "root",
+            "điểm": 12.0
+          },
+          {
+            "loại": "frida",
+            "điểm": 10.0
+          },
+          {
+            "loại": "anti-debug",
+            "điểm": 10.0
+          }
+        ]
+      },
+      "năng_lực": [
+        "api",
+        "google",
+        "shell",
+        "trace"
+      ],
+      "điểm_bypass": [
+        {
+          "khối": 4,
+          "loại": "MATCH_REPLACE",
+          "target": "smali*/com/zaz/translate/ui/tool/ConfigKt.smali",
+          "khớp": 1,
+          "tệp_trúng": [
+            "smali_classes5/com/zaz/translate/ui/tool/ConfigKt.smali"
+          ],
+          "biến_thể": []
+        },
+        {
+          "khối": 9,
+          "loại": "MATCH_REPLACE",
+          "target": "smali*/*.smali",
+          "khớp": 2,
+          "tệp_trúng": [
+            "smali_classes4/com/zaz/translate/analysis/DataAnalysisHelperKt$logFirebaseEvent$1.smali",
+            "smali_classes4/com/zaz/translate/analysis/DataAnalysisHelperKt$logFirebaseEvent$2.smali"
+          ],
+          "biến_thể": []
+        }
+      ],
+      "cách_công_cụ": {
+        "cách": [
+          "Tìm API thật bằng log API_LOG/TRACE, sau đó thay domain/endpoint trong MATCH_REPLACE hoặc chặn tại class xử lý mạng.",
+          "Bỏ kiểm tra Google Play Services/SafetyNet: gỡ hoặc bỏ qua khối attestation, thay bằng kết quả giả.",
+          "Chèn khởi tạo mod qua INIT/HOOK_SCRIPT: chạy lệnh/script khi app mở để bơm biến hoặc gọi hàm nội bộ.",
+          "Bật truy vết dữ liệu: chèn TRACE/API_LOG vào method mục tiêu để đọc tham số và phản hồi trước khi quyết định patch."
+        ],
+        "công_cụ": [
+          "patchx apply",
+          "Frida",
+          "logcat",
+          "apktool",
+          "LSPosed"
+        ],
+        "xác_minh": [
+          "Theo dõi log chứa endpoint sau khi kích hoạt chức năng.",
+          "Mở ứng dụng khi không có Google Play đầy đủ; kiểm tra logcat.",
+          "Kiểm tra hiệu lực mod ngay sau khi app khởi động.",
+          "Đọc logcat thấy dữ liệu mong muốn in ra."
+        ]
+      },
+      "đề_xuất": [
+        "Khối 8 trượt target smali*/*.smali — cập nhật TARGET theo class-link thật của APK",
+        "Khối 10 trượt target smali*/*.smali — cập nhật TARGET theo class-link thật của APK",
+        "Khối 11 trượt target smali*/*.smali — cập nhật TARGET theo class-link thật của APK",
+        "Khối 12 trượt target smali*/*.smali — cập nhật TARGET theo class-link thật của APK",
+        "Khối 13 trượt target smali*/*.smali — cập nhật TARGET theo class-link thật của APK",
+        "Khối 14 trượt target smali*/*.smali — cập nhật TARGET theo class-link thật của APK"
+      ]
+    },
+    {
+      "patch": "zaz_force",
+      "điểm": 0.24,
+      "tỷ_lệ_thành_công": 0.0,
+      "phân_tích": {
+        "tỷ_lệ": 0.0,
+        "yếu_tố": [
+          {
+            "tên": "Bao phủ quy tắc khớp 0%",
+            "điểm": 0.0
+          },
+          {
+            "tên": "Số lần khớp 0 (tối đa 25)",
+            "điểm": 0.0
+          },
+          {
+            "tên": "Khối khớp 0/1",
+            "điểm": 0.0
+          },
+          {
+            "tên": "Độ ưu tiên năng lực 0.80",
+            "điểm": 8.0
+          },
+          {
+            "tên": "Tỷ lệ khối hiện đại 25%",
+            "điểm": 2.5
+          }
+        ],
+        "phạt": [
+          {
+            "loại": "tamper",
+            "điểm": 8.0
+          },
+          {
+            "loại": "pinning",
+            "điểm": 15.0
+          },
+          {
+            "loại": "emulator",
+            "điểm": 8.0
+          },
+          {
+            "loại": "safetynet",
+            "điểm": 18.0
+          },
+          {
+            "loại": "root",
+            "điểm": 12.0
+          },
+          {
+            "loại": "frida",
+            "điểm": 10.0
+          },
+          {
+            "loại": "anti-debug",
+            "điểm": 10.0
+          }
+        ]
+      },
+      "năng_lực": [
+        "api"
+      ],
+      "điểm_bypass": [],
+      "cách_công_cụ": {
+        "cách": [
+          "Tìm API thật bằng log API_LOG/TRACE, sau đó thay domain/endpoint trong MATCH_REPLACE hoặc chặn tại class xử lý mạng."
+        ],
+        "công_cụ": [
+          "patchx apply",
+          "Frida",
+          "logcat"
+        ],
+        "xác_minh": [
+          "Theo dõi log chứa endpoint sau khi kích hoạt chức năng."
+        ]
+      },
+      "đề_xuất": []
+    }
+  ],
+  "top_combos": [
+    {
+      "patches": [
+        "hook_remote_data_control",
+        "pro_unlock_vip"
+      ],
+      "tỷ_lệ_thành_công": 1.6,
+      "năng_lực": [
+        "api",
+        "bypass-license",
+        "google",
+        "shell",
+        "trace"
+      ],
+      "bổ_trợ": [
+        [
+          "google",
+          "bypass-license"
+        ],
+        [
+          "shell",
+          "bypass-license"
+        ]
+      ]
+    },
+    {
+      "patches": [
+        "hook_remote_data_control",
+        "zaz_force"
+      ],
+      "tỷ_lệ_thành_công": 1.6,
+      "năng_lực": [
+        "api",
+        "google",
+        "shell",
+        "trace"
+      ],
+      "bổ_trợ": [
+        [
+          "shell",
+          "api"
+        ],
+        [
+          "trace",
+          "api"
+        ]
+      ]
+    }
+  ],
+  "plan": {
+    "phương_án": "pro_unlock_vip",
+    "tỷ_lệ_dự_đoán": 0.0,
+    "steps": [
+      "Chuẩn bị cây APK (apk-prepare) hoặc dùng cây đã giải mã.",
+      "Áp patch: python3 patchx apply pro_unlock_vip <cây-apk>",
+      "Chuẩn hoá resource chứa `$`: python3 patchx_toolkit.py apk-fix-res",
+      "Build: apktool b <cây> -o out.apk --aapt <aapt2-thật>",
+      "Zipalign + ký: zipalign -f 4 && apksigner sign",
+      "Cài APK, xác minh động bằng logcat/Frida theo mục xác_minh."
+    ],
+    "rủi_ro": [
+      "APK có dấu hiệu tamper (94 lần) — trừ ~8% điểm dự đoán; ưu tiên patch integrity/token xử lý lớp này.",
+      "APK có dấu hiệu pinning (27 lần) — trừ ~15% điểm dự đoán; ưu tiên patch integrity/token xử lý lớp này.",
+      "APK có dấu hiệu emulator (22 lần) — trừ ~8% điểm dự đoán; ưu tiên patch integrity/token xử lý lớp này.",
+      "APK có dấu hiệu safetynet (4 lần) — trừ ~18% điểm dự đoán; ưu tiên patch integrity/token xử lý lớp này."
+    ],
+    "tăng_khả_năng": []
+  }
+}

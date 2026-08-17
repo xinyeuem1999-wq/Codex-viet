@@ -1,0 +1,10 @@
+{
+  "tree": "/storage/emulated/0/Patch/patch1/_patchx/apk_trees/KISS launcher_3.26.0",
+  "patches": [
+    "Debug_information_and_hack_signature",
+    "patch_bypass_sigcheck_with_reflection",
+    "Debug_information"
+  ],
+  "returncode": 0,
+  "seconds": 35.2
+}

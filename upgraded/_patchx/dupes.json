@@ -1,0 +1,43 @@
+{
+  "generated": "2026-08-17 20:05:47",
+  "root": "upgraded",
+  "total": 60,
+  "groups": [
+    {
+      "nhóm": 1,
+      "bản_chuẩn": "Anti_analytics2.zip",
+      "bản_trùng": [
+        "Anti_analytics2_22-41-11.zip"
+      ],
+      "sha256": "d31689b83bf164e6a3a19818ea7756f042285aee2809bec7270f33ef2525294b",
+      "số_file": 2
+    },
+    {
+      "nhóm": 2,
+      "bản_chuẩn": "UnicodeToUTF.zip",
+      "bản_trùng": [
+        "Decoder_ID_Resource.zip"
+      ],
+      "sha256": "f8ca39ec66a2033d27ed2a9c9783d255978469f9eec7279776986dc730f722b2",
+      "số_file": 2
+    },
+    {
+      "nhóm": 3,
+      "bản_chuẩn": "Language substitution.zip",
+      "bản_trùng": [
+        "Only Ru.zip"
+      ],
+      "sha256": "640cc58876dda46191b63451066f7b6f889375cea3e272614cba2cd06cc83778",
+      "số_file": 2
+    },
+    {
+      "nhóm": 4,
+      "bản_chuẩn": "Yandex_Metrica 1.zip",
+      "bản_trùng": [
+        "Yandex_Metrica.zip"
+      ],
+      "sha256": "b1fea23aff982f590d59c195316d4471eaa767a33bd24237d42c0057db1f0514",
+      "số_file": 2
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+README.md
+pyproject.toml
+patchx_git/__init__.py
+patchx_git/__main__.py
+patchx_git/cli.py
+patchx_git/git.py
+patchx_git/ui.py
+patchx_git.egg-info/PKG-INFO
+patchx_git.egg-info/SOURCES.txt
+patchx_git.egg-info/dependency_links.txt
+patchx_git.egg-info/entry_points.txt
+patchx_git.egg-info/requires.txt
+patchx_git.egg-info/top_level.txt

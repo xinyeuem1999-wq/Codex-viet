@@ -1,0 +1,28 @@
+{
+  "generated": "2026-08-16 02:20:27",
+  "apk": "/storage/emulated/0/Patch/patch1/_patchx/real_apk_test/apk_full_v3/KISS launcher_3.26.0_patched_20260816-021659.apk",
+  "package": "fr.neamar.kiss",
+  "activity": "fr.neamar.kiss.MainActivity",
+  "devices": [
+    "100.64.170.99:5555"
+  ],
+  "device": "100.64.170.99:5555",
+  "install_returncode": 0,
+  "install_output": "Serving...\nPerforming Incremental Install\nFailure [INSTALL_FAILED_MEDIA_UNAVAILABLE: Failed to prepare image.]\nPerforming Streamed Install\nSuccess",
+  "launch_returncode": 0,
+  "launch_output": "Starting: Intent { cmp=fr.neamar.kiss/.MainActivity }",
+  "pid": "33303",
+  "logcat_tail": "itManager: 03:20:37.337 [RxCachedThreadScheduler-15] INFO  [c.r.m.r.RetrofitManager.log:47] - \n08-16 03:20:37.338 26843 33021 I c.r.m.r.RetrofitManager: 03:20:37.338 [RxCachedThreadScheduler-15] INFO  [c.r.m.r.RetrofitManager.log:47] - {\"code\":0,\"msg\":\"成功\",\"response\":{},\"times\":1786821637317}\n08-16 03:20:37.339 26843 33021 I c.r.m.r.RetrofitManager: 03:20:37.338 [RxCachedThreadScheduler-15] INFO  [c.r.m.r.RetrofitManager.log:47] - <-- END HTTP (61-byte body)\n08-16 03:20:37.441   845  1307 D BufferPoolAccessor2.0: bufferpool2 0xb400007dfb9b22e8 : 0(0 size) total buffers - 0(0 size) used buffers - 7/10 (recycle/alloc) - 3/9 (fetch/transfer)\n08-16 03:20:37.441   845  1307 D BufferPoolAccessor2.0: evictor expired: 1, evicted: 1\n08-16 03:20:38.226 23986 25351 D DataSyncHelper: onDataSync result:233\n08-16 03:20:38.769   677   677 W HWCDisplay: [msiq-display]{SetVsyncEnabled:487} in...\n08-16 03:20:38.769   677   677 W HWCDisplay: Display ID: 0 enabled: Enable\n08-16 03:20:38.866   677   677 W HWCDisplay: [msiq-display]{SetVsyncEnabled:487} in...\n08-16 03:20:38.866   677   677 W HWCDisplay: Display ID: 0 enabled: Disable\n08-16 03:20:39.682 23440 31006 W ProcessStats: Tracking association SourceState{35339d5 system/1000 BTopFgs #4169} whose proc state 2 is better than process ProcessState{5ccb5ea com.tailscale.ipn/10079 pkg=com.tailscale.ipn} proc state 3 (67 skipped)\n08-16 03:20:43.277   662 33300 I keystore2: keystore2::watchdog: Watchdog thread idle -> terminating. Have a great day.",
+  "crash_lines": [],
+  "m2": true,
+  "m3": true,
+  "m3_reasons": [],
+  "ghi_chú": "M2 = cài + mở + process sống + không FATAL EXCEPTION. M3 = kịch bản hành vi theo app.",
+  "connect_attempts": [
+    {
+      "target": "100.64.170.99:5555",
+      "ok": true,
+      "output": "already connected to 100.64.170.99:5555"
+    }
+  ]
+}

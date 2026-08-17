@@ -1,0 +1,530 @@
+# Combo: Mod-Shell+Truy-Vết-Dữ-Liệu (9 patch)
+
+[MIN_ENGINE_VER]
+3
+
+[AUTHOR]
+Anymy
+
+[PACKAGE]
+*
+
+[MATCH_REPLACE]
+TARGET:
+    smali*/*
+MATCH:
+    invoke-virtual \{([vp]\d+), ([vp]\d+), ([vp]\d+)\}, Ljava\/lang\/reflect\/Method;->invoke\(Ljava\/lang\/Object;\[Ljava\/lang\/Object;\)Ljava\/lang\/Object;
+REGEX:
+    true
+REPLACE:
+    invoke-static {${GROUP1}, ${GROUP2}, ${GROUP3}}, Lcom/anymy/ref;->invoke(Ljava/lang/Object;Ljava/lang/Object;[Ljava/lang/Object;)V
+
+invoke-virtual {${GROUP1}, ${GROUP2}, ${GROUP3}}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+[/MATCH_REPLACE]
+
+[ADD_FILES]
+SOURCE:
+    smali.zip
+TARGET:
+    smali
+EXTRACT:
+    true
+[/ADD_FILES]
+
+[DUMMY]
+NAME:
+    p0_end
+[/DUMMY]
+
+[MATCH_GOTO]
+NAME:
+    p1_Support
+TARGET:
+    smali*/*.smali
+MATCH:
+    (.+?)
+REGEX:
+    true
+GOTO:
+    p1_Extract
+[/MATCH_GOTO]
+
+[ADD_FILES]
+NAME:
+    p1_Extract
+SOURCE:
+    smali.zip
+TARGET:
+    /
+EXTRACT:
+    true
+[/ADD_FILES]
+
+[MATCH_GOTO]
+NAME:
+    p1_CheckAlias
+TARGET:
+    AndroidManifest.xml
+MATCH:
+    <activity-alias[^>]+android:targetActivity="(.+?)"((?!<\/activity-alias>)[\s\S]+)<category[^>]+android:name="android.intent.category.LAUNCHER"[^>]*\/>
+REGEX:
+    true
+GOTO:
+    p1_Init2
+[/MATCH_GOTO]
+
+[MATCH_ASSIGN]
+NAME:
+    p1_Init1
+TARGET:
+    AndroidManifest.xml
+MATCH:
+    <manifest[^>]+package="(.+?)"[\s\S]+<activity[^>]+android:name="(.+?)"((?!<\/activity>)[\s\S]+)<category[^>]+android:name="android.intent.category.LAUNCHER"[^>]*\/>
+REGEX:
+    true
+ASSIGN:
+    PACKAGE=${GROUP1}
+ACTIVITY=${GROUP2}
+ALIASES=FALSE
+[/MATCH_ASSIGN]
+
+[GOTO]
+NAME:
+    p1_GoReplace1
+GOTO:
+    p1_Replace1
+[/GOTO]
+
+[MATCH_ASSIGN]
+NAME:
+    p1_Init2
+TARGET:
+    AndroidManifest.xml
+MATCH:
+    <manifest[^>]+package="(.+?)"[\s\S]+<activity-alias[^>]+android:targetActivity="(.+?)"((?!<\/activity-alias>)[\s\S]+)<category[^>]+android:name="android.intent.category.LAUNCHER"[^>]*\/>
+REGEX:
+    true
+ASSIGN:
+    PACKAGE=${GROUP1}
+ACTIVITY=${GROUP2}
+ALIASES=TRUE
+[/MATCH_ASSIGN]
+
+[GOTO]
+NAME:
+    p1_GoReplace2
+GOTO:
+    p1_Replace2
+[/GOTO]
+
+[MATCH_REPLACE]
+NAME:
+    p1_Replace1
+TARGET:
+    AndroidManifest.xml
+MATCH:
+    <category[^>]+android:name="android.intent.category.LAUNCHER"[^>]*\/>
+REGEX:
+    true
+REPLACE:
+[/MATCH_REPLACE]
+
+[MATCH_GOTO]
+NAME:
+    p1_CheckReplace1
+TARGET:
+    AndroidManifest.xml
+MATCH:
+    <category[^>]+android:name="android.intent.category.LAUNCHER"[^>]*\/>
+REGEX:
+    true
+GOTO:
+    p1_Replace1
+[/MATCH_GOTO]
+
+[GOTO]
+NAME:
+    p1_GoReplace3
+GOTO:
+    p1_Replace3
+[/GOTO]
+
+[MATCH_REPLACE]
+NAME:
+    p1_Replace2
+TARGET:
+    AndroidManifest.xml
+MATCH:
+    android:targetActivity="${ACTIVITY}"
+REGEX:
+    true
+REPLACE:
+    android:targetActivity="password_login.login_passwordbyrioo.MainActivity"
+[/MATCH_REPLACE]
+
+[MATCH_GOTO]
+NAME:
+    p1_CheckReplace2
+TARGET:
+    AndroidManifest.xml
+MATCH:
+    <activity-alias[^>]+android:targetActivity="${ACTIVITY}"((?!<\/activity-alias>)[\s\S]+)<category[^>]+android:name="android.intent.category.LAUNCHER"[^>]*\/>
+REGEX:
+    true
+GOTO:
+    p1_Replace2
+[/MATCH_GOTO]
+
+[GOTO]
+NAME:
+    p1_GoReplace4
+GOTO:
+    p1_Replace4
+[/GOTO]
+
+[MATCH_REPLACE]
+NAME:
+    p1_Replace3
+TARGET:
+    AndroidManifest.xml
+MATCH:
+    </activity>
+REPLACE:
+    </activity>
+<activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="password_login.login_passwordbyrioo.MainActivity">
+	<intent-filter>
+		<action android:name="android.intent.action.MAIN" />
+		<category android:name="android.intent.category.LAUNCHER" />
+	</intent-filter>
+</activity>
+[/MATCH_REPLACE]
+
+[GOTO]
+NAME:
+    p1_GoReplace5
+GOTO:
+    p1_Replace5
+[/GOTO]
+
+[MATCH_REPLACE]
+NAME:
+    p1_Replace4
+TARGET:
+    AndroidManifest.xml
+MATCH:
+    </activity>
+REPLACE:
+    </activity>
+<activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="password_login.login_passwordbyrioo.MainActivity" />
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+NAME:
+    p1_Replace5
+TARGET:
+    smali/password_login/login_passwordbyrioo/MainActivity.smali
+MATCH:
+    const-string v(\d+), "\{PACKAGE\}"
+REGEX:
+    true
+REPLACE:
+    const-string v${GROUP1}, "${PACKAGE}"
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+NAME:
+    p1_Replace6
+TARGET:
+    smali/password_login/login_passwordbyrioo/MainActivity.smali
+MATCH:
+    const-string v(\d+), "\{ACTIVITY\}"
+REGEX:
+    true
+REPLACE:
+    const-string v${GROUP1}, "${ACTIVITY}"
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    smali*/*.smali
+MATCH:
+    invoke-static(.+)YandexMetrica;->(activate.+|reportEvent.+)
+REGEX:
+    true
+REPLACE:
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    smali*/*.smali
+MATCH:
+    invoke-static(.+)YandexMetrica;->enableActivityAutoTracking.+
+REGEX:
+    true
+REPLACE:
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    smali*/*.smali
+MATCH:
+    "com.yandex.metrica.IMetricaService
+REGEX:
+    true
+REPLACE:
+    "disabled_com.yandex.metrica.IMetricaService
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    AndroidManifest.xml
+MATCH:
+    "com.yandex.metrica.IMetricaService"
+REGEX:
+    true
+REPLACE:
+    "disabled_com.yandex.metrica.IMetricaService"
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    AndroidManifest.xml
+MATCH:
+    "com.yandex.metrica.MetricaService"
+REGEX:
+    true
+REPLACE:
+    "disabled_com.yandex.metrica.MetricaService"
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    AndroidManifest.xml
+MATCH:
+    "com.yandex.metrica.ConfigurationService"
+REGEX:
+    true
+REPLACE:
+    "disabled_com.yandex.metrica.ConfigurationService"
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    AndroidManifest.xml
+MATCH:
+    "com.yandex.metrica.ConfigurationJobService"
+REGEX:
+    true
+REPLACE:
+    "disabled_com.yandex.metrica.ConfigurationJobService"
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    AndroidManifest.xml
+MATCH:
+    "com.yandex.metrica.MetricaEventHandler"
+REGEX:
+    true
+REPLACE:
+    "disabled_com.yandex.metrica.MetricaEventHandler"
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    AndroidManifest.xml
+MATCH:
+    "com.yandex.metrica.push.firebase.MetricaMessagingService"
+REGEX:
+    true
+REPLACE:
+    "disabled_com.yandex.metrica.push.firebase.MetricaMessagingService"
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    AndroidManifest.xml
+MATCH:
+    "com.yandex.metrica.push.firebase.MetricaInstanceIdService"
+REGEX:
+    true
+REPLACE:
+    "disabled_com.yandex.metrica.push.firebase.MetricaInstanceIdService"
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    AndroidManifest.xml
+MATCH:
+    "com.yandex.metrica.push.core.notification.MetricaPushBroadcastReceiver"
+REGEX:
+    true
+REPLACE:
+    "disabled_com.yandex.metrica.push.core.notification.MetricaPushBroadcastReceiver"
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    AndroidManifest.xml
+MATCH:
+    "com.yandex.metrica.push.PushService"
+REGEX:
+    true
+REPLACE:
+    "disabled_com.yandex.metrica.push.PushService"
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    AndroidManifest.xml
+MATCH:
+    "com.yandex.metrica.push.core.notification.MetricaPushNotificationStatusChangeHandler"
+REGEX:
+    true
+REPLACE:
+    "disabled_com.yandex.metrica.push.core.notification.MetricaPushNotificationStatusChangeHandler"
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    smali*/*.smali
+MATCH:
+    \.local .+|    \.line \d+|    \.prologue|    \.end local .+|    \.restart local .+|\.source .+
+REGEX:
+    true
+REPLACE:
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    [LAUNCHER_ACTIVITIES]
+MATCH:
+    \.method (.+) onCreate\(Landroid/os/Bundle;\)V\n    \.registers (\d+)
+REGEX:
+    true
+REPLACE:
+    .method ${GROUP1} onCreate(Landroid/os/Bundle;)V
+    .registers ${GROUP2}
+
+    const-string v0, "Hello, I am here!"
+    # p0 (this object) must be an object of Context
+    invoke-static {p0, v0}, Lapkeditor/Utils;->showToast(Landroid/content/Context;Ljava/lang/String;)V
+[/MATCH_REPLACE]
+
+[ADD_FILES]
+SOURCE:
+    Utils.smali
+TARGET:
+    smali/apkeditor/Utils.smali
+[/ADD_FILES]
+
+[ADD_FILES]
+SOURCE:
+    save.smali
+TARGET:
+    smali/save.smali
+[/ADD_FILES]
+
+[MATCH_REPLACE]
+TARGET:
+    [LAUNCHER_ACTIVITIES]
+MATCH:
+    \.method (.+) onCreate\(Landroid/os/Bundle;\)V\n    \.registers (\d+)
+REGEX:
+    true
+REPLACE:
+    .method ${GROUP1} onCreate(Landroid/os/Bundle;)V
+    .registers ${GROUP2}
+
+       invoke-static/range {p0 .. p0}, Lsave;->m(Landroid/content/Context;)V
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    smali*/*.smali
+MATCH:
+    iget-object ([pv]\d+), ([pv]\d+), Landroid/content/pm/PackageInfo;->signatures:\[Landroid/content/pm/Signature;
+REGEX:
+    true
+REPLACE:
+    invoke-static {${GROUP2}}, Lapkeditor/patch/signature/Fix;->getSignatures(Landroid/content/pm/PackageInfo;)[Landroid/content/pm/Signature;
+    move-result-object ${GROUP1}
+[/MATCH_REPLACE]
+
+[ADD_FILES]
+SOURCE:
+    Fix.smali
+TARGET:
+    smali/apkeditor/patch/signature/Fix.smali
+[/ADD_FILES]
+
+[SIGNATURE_REVISE]
+TARGET:
+    smali/apkeditor/patch/signature/Fix.smali
+[/SIGNATURE_REVISE]
+
+[MATCH_REPLACE]
+TARGET:
+    res/values-ru/strings.xml
+MATCH:
+    % {1,2}(\d) {1,2}\$ {1,2}(\w)
+REGEX:
+    true
+REPLACE:
+    %${GROUP1}$${GROUP2} 
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    res/values-ru/strings.xml
+MATCH:
+    % {1,2}(\d|\w)
+REGEX:
+    true
+REPLACE:
+    %${GROUP1}
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    res/values-ru/strings.xml
+MATCH:
+    % {1,2}(D|д|Д)
+REGEX:
+    true
+REPLACE:
+    %d
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    res/values-ru/strings.xml
+MATCH:
+    % {1,2}(S|с|С)
+REGEX:
+    true
+REPLACE:
+    %s
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    res/values-ru/strings.xml
+MATCH:
+    \$ {1,2}(D|д|Д)
+REGEX:
+    true
+REPLACE:
+    $d
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    res/values-ru/strings.xml
+MATCH:
+    \$ {1,2}(S|с|С)
+REGEX:
+    true
+REPLACE:
+    $s
+[/MATCH_REPLACE]

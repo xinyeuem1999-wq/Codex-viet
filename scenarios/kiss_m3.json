@@ -1,0 +1,53 @@
+{
+  "name": "m3-kiss-launch-search",
+  "steps": [
+    {
+      "type": "stop"
+    },
+    {
+      "type": "wait",
+      "seconds": 1
+    },
+    {
+      "type": "launch"
+    },
+    {
+      "type": "wait",
+      "seconds": 3
+    },
+    {
+      "type": "assert_pid"
+    },
+    {
+      "type": "input",
+      "text": "hello"
+    },
+    {
+      "type": "wait",
+      "seconds": 2
+    },
+    {
+      "type": "assert_logcat",
+      "expect": [
+        "Displayed fr.neamar.kiss"
+      ],
+      "forbid": [
+        "FATAL EXCEPTION"
+      ]
+    },
+    {
+      "type": "assert_no_anr"
+    },
+    {
+      "type": "screenshot",
+      "name": "kiss_search"
+    },
+    {
+      "type": "navigate",
+      "key": "home"
+    },
+    {
+      "type": "assert_no_crash"
+    }
+  ]
+}

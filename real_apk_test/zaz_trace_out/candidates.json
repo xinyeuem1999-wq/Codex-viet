@@ -1,0 +1,38 @@
+[
+  {
+    "patch": "pro_unlock_vip",
+    "score": 0.83,
+    "coverage": 1.0,
+    "matches": 3,
+    "rules": 3,
+    "rules_matched": 3,
+    "capabilities": [
+      "bypass-license"
+    ]
+  },
+  {
+    "patch": "hook_remote_data_control",
+    "score": 0.425,
+    "coverage": 0.25,
+    "matches": 3,
+    "rules": 8,
+    "rules_matched": 2,
+    "capabilities": [
+      "api",
+      "google",
+      "shell",
+      "trace"
+    ]
+  },
+  {
+    "patch": "zaz_force",
+    "score": 0.24,
+    "coverage": 0.0,
+    "matches": 0,
+    "rules": 0,
+    "rules_matched": 0,
+    "capabilities": [
+      "api"
+    ]
+  }
+]

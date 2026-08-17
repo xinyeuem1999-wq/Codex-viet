@@ -1,0 +1,16 @@
+{
+  "generated": "2026-08-14 16:31:14",
+  "tree": "/storage/emulated/0/patch/1. PATCH others/_patchx/real_apk_test/app_tree",
+  "patches": [
+    "real_apk_test/p1_test.patch.txt"
+  ],
+  "apply_returncode": 0,
+  "build_returncode": 1,
+  "exercises": [
+    {
+      "title": "Patch không thay đổi gì trên APK thật",
+      "root_cause": "MATCH/TARGET không khớp class/method của APK đích.",
+      "suggested_fix": "Chạy `coverage`/`roadmap` trước, lấy class-link thật từ manifest/smali rồi cập nhật TARGET/MATCH."
+    }
+  ]
+}

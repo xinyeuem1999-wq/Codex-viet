@@ -1,0 +1,32 @@
+{
+  "generated": "2026-08-16 02:01:05",
+  "apk": "/storage/emulated/0/Patch/patch1/_patchx/real_apk_test/apk_full_v2/kiss_tree_clean_patched_20260815-235855.apk",
+  "package": "fr.neamar.kiss",
+  "activity": "fr.neamar.kiss.MainActivity",
+  "devices": [
+    "100.64.170.99:5555"
+  ],
+  "device": "100.64.170.99:5555",
+  "install_returncode": 0,
+  "install_output": "Serving...\nPerforming Incremental Install\nFailure [INSTALL_FAILED_MEDIA_UNAVAILABLE: Failed to prepare image.]\nPerforming Streamed Install\nSuccess",
+  "launch_returncode": 0,
+  "launch_output": "Starting: Intent { cmp=fr.neamar.kiss/.MainActivity }",
+  "pid": "30210",
+  "logcat_tail": "dle: u0a83 -7s398ms fr.neamar.kiss/.dataprovider.AppProvider\n08-16 03:01:19.047 23440 26639 W ActivityManager: Stopping service due to app idle: u0a83 -7s395ms fr.neamar.kiss/.dataprovider.ContactsProvider\n08-16 03:01:19.047 23440 26639 W ActivityManager: Stopping service due to app idle: u0a83 -7s391ms fr.neamar.kiss/.dataprovider.ShortcutsProvider\n08-16 03:01:19.051 30210 30210 I ActivityThread: Relaunch all activities: onCoreSettingsChange\n08-16 03:01:19.054 30210 30210 D CompatibilityChangeReporter: Compat change id reported: 171979766; UID 10083; state: ENABLED\n08-16 03:01:19.075 30210 30210 V GraphicsEnvironment: ANGLE Developer option for 'fr.neamar.kiss' set to: 'default'\n08-16 03:01:19.075 30210 30210 V GraphicsEnvironment: Neither updatable production driver nor prerelease driver is supported.\n08-16 03:01:19.082 30210 30210 D NetworkSecurityConfig: No Network Security Config specified, using platform default\n08-16 03:01:19.082 30210 30210 D NetworkSecurityConfig: No Network Security Config specified, using platform default\n08-16 03:01:19.092   677   677 W HWCDisplay: [msiq-display]{SetVsyncEnabled:487} in...\n08-16 03:01:19.092   677   677 W HWCDisplay: Display ID: 0 enabled: Enable\n08-16 03:01:19.105 30210 30210 I ActivityThread: handleStopService: token=android.os.BinderProxy@7c951a4 not found.\n08-16 03:01:19.111 23440 26639 W ActivityManager: Service done with onDestroy, but executeNesting=2: ServiceRecord{dbe793b u0 fr.neamar.kiss/.dataprovider.ShortcutsProvider}",
+  "crash_lines": [
+    "08-16 03:01:17.826 30118 30196 E AndroidRuntime: Process: fr.neamar.kiss, PID: 30118"
+  ],
+  "m2": false,
+  "m3": null,
+  "m3_reasons": [
+    "Chưa cung cấp kịch bản xác minh hành vi (--expect/--forbid)."
+  ],
+  "ghi_chú": "M2 = cài + mở + process sống + không FATAL EXCEPTION. M3 = kịch bản hành vi theo app.",
+  "connect_attempts": [
+    {
+      "target": "100.64.170.99:5555",
+      "ok": true,
+      "output": "already connected to 100.64.170.99:5555"
+    }
+  ]
+}

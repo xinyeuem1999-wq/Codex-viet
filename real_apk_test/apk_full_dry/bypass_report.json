@@ -1,0 +1,259 @@
+{
+  "tree": "/storage/emulated/0/Patch/patch1/_patchx/apk_trees/KISS launcher_3.26.0",
+  "protections": [],
+  "top_patches": [
+    {
+      "patch": "Debug_information_and_hack_signature",
+      "điểm": 1.0,
+      "tỷ_lệ_thành_công": 90.0,
+      "phân_tích": {
+        "tỷ_lệ": 90.0,
+        "yếu_tố": [
+          {
+            "tên": "Bao phủ quy tắc khớp 100%",
+            "điểm": 45.0
+          },
+          {
+            "tên": "Số lần khớp 78141 (tối đa 25)",
+            "điểm": 20.0
+          },
+          {
+            "tên": "Khối khớp 2/2",
+            "điểm": 15.0
+          },
+          {
+            "tên": "Độ ưu tiên năng lực 1.00",
+            "điểm": 10.0
+          }
+        ],
+        "phạt": []
+      },
+      "năng_lực": [
+        "bypass-license",
+        "integrity",
+        "trace"
+      ],
+      "điểm_bypass": [
+        {
+          "khối": 3,
+          "loại": "MATCH_REPLACE",
+          "target": "smali*/*.smali",
+          "khớp": 3,
+          "tệp_trúng": [
+            "smali/androidx/collection/internal/Lock.smali",
+            "smali/androidx/core/provider/FontProvider.smali",
+            "smali/androidx/emoji2/text/DefaultEmojiCompatConfig$DefaultEmojiCompatConfigHelper_API28.smali"
+          ],
+          "biến_thể": []
+        },
+        {
+          "khối": 6,
+          "loại": "MATCH_REPLACE",
+          "target": "smali*/*.smali",
+          "khớp": 78138,
+          "tệp_trúng": [
+            "smali/android/support/v4/app/RemoteActionCompatParcelizer.smali",
+            "smali/android/support/v4/graphics/drawable/IconCompatParcelizer.smali",
+            "smali/androidx/activity/Api34Impl.smali",
+            "smali/androidx/activity/Api36Impl.smali",
+            "smali/androidx/activity/BackEventCompat.smali",
+            "smali/androidx/activity/Cancellable.smali",
+            "smali/androidx/activity/ComponentActivity$$ExternalSyntheticLambda1.smali",
+            "smali/androidx/activity/ComponentActivity$$ExternalSyntheticLambda11.smali",
+            "smali/androidx/activity/ComponentActivity$$ExternalSyntheticLambda2.smali",
+            "smali/androidx/activity/ComponentActivity$$ExternalSyntheticLambda3.smali"
+          ],
+          "biến_thể": []
+        }
+      ],
+      "cách_công_cụ": {
+        "cách": [
+          "Vô hiệu hoá kiểm tra VIP/license: gán cờ đã mua bằng SET_BOOL, nhảy qua khối kiểm tra bằng MATCH_GOTO, hoặc hook hàm kiểm tra bằng Frida/LSPosed.",
+          "Vô hiệu hoá kiểm tra toàn vẹn/chữ ký: sửa luồng check (MATCH_GOTO) hoặc trả true/false cố định (SET_BOOL/MATCH_ASSIGN).",
+          "Bật truy vết dữ liệu: chèn TRACE/API_LOG vào method mục tiêu để đọc tham số và phản hồi trước khi quyết định patch."
+        ],
+        "công_cụ": [
+          "patchx apply",
+          "apktool",
+          "apksigner",
+          "Frida",
+          "LSPosed",
+          "logcat"
+        ],
+        "xác_minh": [
+          "Mở tính năng VIP; xem logcat tìm log trạng thái license.",
+          "Xoá báo lỗi 'signature mismatch'/'app modified' khi mở ứng dụng.",
+          "Đọc logcat thấy dữ liệu mong muốn in ra."
+        ]
+      },
+      "đề_xuất": []
+    },
+    {
+      "patch": "patch_bypass_sigcheck_with_reflection",
+      "điểm": 1.0,
+      "tỷ_lệ_thành_công": 90.0,
+      "phân_tích": {
+        "tỷ_lệ": 90.0,
+        "yếu_tố": [
+          {
+            "tên": "Bao phủ quy tắc khớp 100%",
+            "điểm": 45.0
+          },
+          {
+            "tên": "Số lần khớp 66 (tối đa 25)",
+            "điểm": 20.0
+          },
+          {
+            "tên": "Khối khớp 2/2",
+            "điểm": 15.0
+          },
+          {
+            "tên": "Độ ưu tiên năng lực 1.00",
+            "điểm": 10.0
+          }
+        ],
+        "phạt": []
+      },
+      "năng_lực": [
+        "bypass-license",
+        "integrity",
+        "shell"
+      ],
+      "điểm_bypass": [
+        {
+          "khối": 3,
+          "loại": "MATCH_REPLACE",
+          "target": "smali*/*",
+          "khớp": 60,
+          "tệp_trúng": [
+            "smali/androidx/appcompat/app/AppCompatDelegateImpl$3.smali",
+            "smali/androidx/appcompat/app/AppCompatDelegateImpl.smali",
+            "smali/androidx/appcompat/app/AppCompatViewInflater$DeclaredOnClickListener.smali",
+            "smali/androidx/appcompat/view/SupportMenuInflater$InflatedOnMenuItemClickListener.smali",
+            "smali/androidx/appcompat/view/SupportMenuInflater$MenuState.smali",
+            "smali/androidx/appcompat/view/menu/CascadingMenuPopup.smali",
+            "smali/androidx/appcompat/widget/AppCompatTextViewAutoSizeHelper$Impl.smali",
+            "smali/androidx/appcompat/widget/AppCompatTextViewAutoSizeHelper$Impl23.smali",
+            "smali/androidx/appcompat/widget/AppCompatTextViewAutoSizeHelper.smali",
+            "smali/androidx/appcompat/widget/DrawableUtils.smali"
+          ],
+          "biến_thể": []
+        },
+        {
+          "khối": 4,
+          "loại": "MATCH_REPLACE",
+          "target": "smali*/*.smali",
+          "khớp": 6,
+          "tệp_trúng": [
+            "smali/androidx/collection/internal/Lock.smali",
+            "smali/androidx/core/provider/FontProvider.smali",
+            "smali/androidx/emoji2/text/DefaultEmojiCompatConfig$DefaultEmojiCompatConfigHelper_API28.smali",
+            "smali/androidx/profileinstaller/Encoding.smali",
+            "smali/androidx/profileinstaller/ProfileInstallReceiver.smali",
+            "smali/androidx/profileinstaller/ProfileVerifier.smali"
+          ],
+          "biến_thể": []
+        }
+      ],
+      "cách_công_cụ": {
+        "cách": [
+          "Vô hiệu hoá kiểm tra VIP/license: gán cờ đã mua bằng SET_BOOL, nhảy qua khối kiểm tra bằng MATCH_GOTO, hoặc hook hàm kiểm tra bằng Frida/LSPosed.",
+          "Vô hiệu hoá kiểm tra toàn vẹn/chữ ký: sửa luồng check (MATCH_GOTO) hoặc trả true/false cố định (SET_BOOL/MATCH_ASSIGN).",
+          "Chèn khởi tạo mod qua INIT/HOOK_SCRIPT: chạy lệnh/script khi app mở để bơm biến hoặc gọi hàm nội bộ."
+        ],
+        "công_cụ": [
+          "patchx apply",
+          "apktool",
+          "apksigner",
+          "Frida",
+          "LSPosed"
+        ],
+        "xác_minh": [
+          "Mở tính năng VIP; xem logcat tìm log trạng thái license.",
+          "Xoá báo lỗi 'signature mismatch'/'app modified' khi mở ứng dụng.",
+          "Kiểm tra hiệu lực mod ngay sau khi app khởi động."
+        ]
+      },
+      "đề_xuất": []
+    },
+    {
+      "patch": "Debug_information",
+      "điểm": 0.925,
+      "tỷ_lệ_thành_công": 87.5,
+      "phân_tích": {
+        "tỷ_lệ": 87.5,
+        "yếu_tố": [
+          {
+            "tên": "Bao phủ quy tắc khớp 100%",
+            "điểm": 45.0
+          },
+          {
+            "tên": "Số lần khớp 78138 (tối đa 25)",
+            "điểm": 20.0
+          },
+          {
+            "tên": "Khối khớp 1/1",
+            "điểm": 15.0
+          },
+          {
+            "tên": "Độ ưu tiên năng lực 0.75",
+            "điểm": 7.5
+          }
+        ],
+        "phạt": []
+      },
+      "năng_lực": [
+        "trace"
+      ],
+      "điểm_bypass": [
+        {
+          "khối": 3,
+          "loại": "MATCH_REPLACE",
+          "target": "smali*/*.smali",
+          "khớp": 78138,
+          "tệp_trúng": [
+            "smali/android/support/v4/app/RemoteActionCompatParcelizer.smali",
+            "smali/android/support/v4/graphics/drawable/IconCompatParcelizer.smali",
+            "smali/androidx/activity/Api34Impl.smali",
+            "smali/androidx/activity/Api36Impl.smali",
+            "smali/androidx/activity/BackEventCompat.smali",
+            "smali/androidx/activity/Cancellable.smali",
+            "smali/androidx/activity/ComponentActivity$$ExternalSyntheticLambda1.smali",
+            "smali/androidx/activity/ComponentActivity$$ExternalSyntheticLambda11.smali",
+            "smali/androidx/activity/ComponentActivity$$ExternalSyntheticLambda2.smali",
+            "smali/androidx/activity/ComponentActivity$$ExternalSyntheticLambda3.smali"
+          ],
+          "biến_thể": []
+        }
+      ],
+      "cách_công_cụ": {
+        "cách": [
+          "Bật truy vết dữ liệu: chèn TRACE/API_LOG vào method mục tiêu để đọc tham số và phản hồi trước khi quyết định patch."
+        ],
+        "công_cụ": [
+          "patchx apply",
+          "logcat"
+        ],
+        "xác_minh": [
+          "Đọc logcat thấy dữ liệu mong muốn in ra."
+        ]
+      },
+      "đề_xuất": []
+    }
+  ],
+  "top_combos": [],
+  "plan": {
+    "phương_án": "Debug_information_and_hack_signature",
+    "tỷ_lệ_dự_đoán": 90.0,
+    "steps": [
+      "Chuẩn bị cây APK (apk-prepare) hoặc dùng cây đã giải mã.",
+      "Áp patch: python3 patchx apply Debug_information_and_hack_signature <cây-apk>",
+      "Chuẩn hoá resource chứa `$`: python3 patchx_toolkit.py apk-fix-res",
+      "Build: apktool b <cây> -o out.apk --aapt <aapt2-thật>",
+      "Zipalign + ký: zipalign -f 4 && apksigner sign",
+      "Cài APK, xác minh động bằng logcat/Frida theo mục xác_minh."
+    ],
+    "rủi_ro": [],
+    "tăng_khả_năng": []
+  }
+}

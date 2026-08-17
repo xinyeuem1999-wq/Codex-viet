@@ -1,0 +1,163 @@
+# Combo: Chặn-Quảng-Cáo+Ẩn-Danh (3 patch)
+
+[MIN_ENGINE_VER]
+2
+
+[AUTHOR]
+HTC 600
+
+[PACKAGE]
+*
+
+[MATCH_REPLACE]
+TARGET:
+    smali*/*.smali
+MATCH:
+    invoke-virtual \{([pv]\d+)\}, Landroid/location/Location;->getLatitude\(\)D\n\n    move-result-wide ([pv]\d+)
+REGEX:
+    true
+REPLACE:
+    invoke-static {}, Lcom/htc/htc600/htc600for4pda/generatE;->MaccID()D
+
+    move-result-wide ${GROUP2}
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    smali*/*.smali
+MATCH:
+    invoke-virtual \{([pv]\d+)\}, Landroid/location/Location;->getLongitude\(\)D\n\n    move-result-wide ([pv]\d+)
+REGEX:
+    true
+REPLACE:
+    invoke-static {}, Lcom/htc/htc600/htc600for4pda/generatE;->MaccID()D
+
+    move-result-wide ${GROUP2}
+[/MATCH_REPLACE]
+
+[ADD_FILES]
+TARGET:
+    smali/com/htc/htc600/htc600for4pda/AndroidID.smali
+SOURCE:
+    AndroidID.smali
+[/ADD_FILES]
+
+[ADD_FILES]
+TARGET:
+    smali/com/htc/htc600/htc600for4pda/AndroidID2.smali
+SOURCE:
+    AndroidID2.smali
+[/ADD_FILES]
+
+[ADD_FILES]
+TARGET:
+    smali/com/htc/htc600/htc600for4pda/generatE.smali
+SOURCE:
+    generatE.smali
+[/ADD_FILES]
+
+[MATCH_REPLACE]
+TARGET:
+    smali*/*.smali
+MATCH:
+    iget-object ([pv]\d+), ([pv]\d+), L(\S+);->ip:Ljava/lang/String;
+REGEX:
+    true
+REPLACE:
+    const-string ${GROUP1}, "255.255.255.255"
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    AndroidManifest.xml
+MATCH:
+    <application
+REGEX:
+    true
+REPLACE:
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+<application
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    [LAUNCHER_ACTIVITIES]
+MATCH:
+    \.method (.+) onCreate\(Landroid/os/Bundle;\)V\n    \.registers (\d+)
+REGEX:
+    true
+REPLACE:
+    .method ${GROUP1} onCreate(Landroid/os/Bundle;)V
+    .registers ${GROUP2}
+
+    invoke-virtual {p0}, xxx111xxx->isLocationPermission()Z
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    [LAUNCHER_ACTIVITIES]
+MATCH:
+    \# virtual methods
+REGEX:
+    true
+REPLACE:
+    # virtual methods
+.method public isLocationPermission()Z
+    .registers 5
+
+    const/4 v3, 0x1
+
+    const/4 v2, 0x0
+
+    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    const/16 v1, 0x17
+
+    if-lt v0, v1, :cond_10
+
+    const-string v0, "android.permission.ACCESS_COARSE_LOCATION"
+
+    invoke-virtual {p0, v0}, xxx111xxx->checkSelfPermission(Ljava/lang/String;)I
+
+    move-result v0
+
+    if-nez v0, :cond_11
+
+    :cond_10
+    :goto_10
+    return v2
+
+    :cond_11
+    new-array v0, v3, [Ljava/lang/String;
+
+    const-string v1, "android.permission.ACCESS_COARSE_LOCATION"
+
+    aput-object v1, v0, v2
+
+    invoke-static {p0, v0, v3}, Landroid/support/v4/app/ActivityCompat;->requestPermissions(Landroid/app/Activity;[Ljava/lang/String;I)V
+
+    goto :goto_10
+.end method
+[/MATCH_REPLACE]
+
+[MATCH_ASSIGN]
+TARGET:
+    [LAUNCHER_ACTIVITIES]
+MATCH:
+    \.class public (.+)
+REGEX:
+    true
+ASSIGN:
+    LABEL_1=${GROUP1}
+[/MATCH_ASSIGN]
+
+[MATCH_REPLACE]
+TARGET:
+    [LAUNCHER_ACTIVITIES]
+MATCH:
+    xxx111xxx
+REGEX:
+    true
+REPLACE:
+    ${LABEL_1}
+[/MATCH_REPLACE]

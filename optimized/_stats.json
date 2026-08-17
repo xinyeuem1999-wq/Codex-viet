@@ -1,0 +1,175 @@
+{
+  "patches": 59,
+  "files": [
+    {
+      "input_patches": 34,
+      "rules_in": 13891,
+      "rules_out": 13872,
+      "saved_rules": 19,
+      "file": "Khác.patch",
+      "source_patches": [
+        "1. New.  Metrics, analytics, statistics collection, Deletion.  from Inok_ZP 12.04.18g",
+        "2. disable_google_analytics by VERGIL777",
+        "3. GooglePlayServices by Edik1d",
+        "4. DisableBillingService by VERGIL777",
+        "AUTH_VK_AND_FB",
+        "Activator",
+        "Anonymous[Auto_Generate]",
+        "Anti_analytics2",
+        "Anti_analytics2_22-41-11",
+        "BinSignatureHack_with_htc",
+        "Commenting on untranslated lines",
+        "Debug_information",
+        "Debug_information_and_hack_signature",
+        "Decoder_ID_Resource",
+        "Dictionary+ru+uk+2",
+        "FakeGPS",
+        "IsPremium",
+        "Language substitution",
+        "MockLocation",
+        "New. Removing the analytic tag, etc.. Inok_ZP 12.04.18",
+        "Only Ru",
+        "Password_login_english",
+        "RES-ID",
+        "Unicode text",
+        "UnicodeToUTF",
+        "Yandex_Metrica 1",
+        "Yandex_Metrica",
+        "accounts_hack",
+        "delete_languages",
+        "permission_memory",
+        "res_raw_TRANSLATIONxx",
+        "translate_debugger",
+        "translate_obfuscation",
+        "yandex_metrica by Vergil777"
+      ]
+    },
+    {
+      "input_patches": 6,
+      "rules_in": 54,
+      "rules_out": 54,
+      "saved_rules": 0,
+      "file": "Khác_2.patch",
+      "source_patches": [
+        "FakeGpsAutoGenerate",
+        "FakeIP",
+        "GooglePlayServices",
+        "Permission_calendar",
+        "SignatureHack_arm64",
+        "Wrap non-translated strings"
+      ]
+    },
+    {
+      "input_patches": 3,
+      "rules_in": 36,
+      "rules_out": 36,
+      "saved_rules": 0,
+      "file": "Khác_3.patch",
+      "source_patches": [
+        "License_hack&htc v2",
+        "Permission_location",
+        "SignatureHack_armv7"
+      ]
+    },
+    {
+      "input_patches": 2,
+      "rules_in": 7,
+      "rules_out": 7,
+      "saved_rules": 0,
+      "file": "Khác_4.patch",
+      "source_patches": [
+        "License_hack(Amazon)",
+        "Permission_phone"
+      ]
+    },
+    {
+      "input_patches": 2,
+      "rules_in": 9,
+      "rules_out": 9,
+      "saved_rules": 0,
+      "file": "Khác_5.patch",
+      "source_patches": [
+        "License_hack",
+        "Permission_readContact"
+      ]
+    },
+    {
+      "input_patches": 1,
+      "rules_in": 5,
+      "rules_out": 5,
+      "saved_rules": 0,
+      "file": "Khác_6.patch",
+      "source_patches": [
+        "Permission_readSMS"
+      ]
+    },
+    {
+      "input_patches": 1,
+      "rules_in": 5,
+      "rules_out": 5,
+      "saved_rules": 0,
+      "file": "Lưu-trữ.patch",
+      "source_patches": [
+        "AddSave Debug_Information Toast"
+      ]
+    },
+    {
+      "input_patches": 2,
+      "rules_in": 5,
+      "rules_out": 5,
+      "saved_rules": 0,
+      "file": "Mạng.patch",
+      "source_patches": [
+        "NoLocation",
+        "NoPlayGames"
+      ]
+    },
+    {
+      "input_patches": 5,
+      "rules_in": 22,
+      "rules_out": 22,
+      "saved_rules": 0,
+      "file": "Tiện-ích.patch",
+      "source_patches": [
+        "Bin_sig&installer_fix[Amazon]",
+        "Permission_camera",
+        "patch_bypass_sigcheck",
+        "patch_delete_translation_raw-values_xxx",
+        "patch_remove_translation"
+      ]
+    },
+    {
+      "input_patches": 1,
+      "rules_in": 11,
+      "rules_out": 11,
+      "saved_rules": 0,
+      "file": "Tiện-ích_2.patch",
+      "source_patches": [
+        "Bin_sig&installer_fix[Google]"
+      ]
+    },
+    {
+      "input_patches": 1,
+      "rules_in": 3,
+      "rules_out": 3,
+      "saved_rules": 0,
+      "file": "Tiện-ích_3.patch",
+      "source_patches": [
+        "DexExtractor"
+      ]
+    },
+    {
+      "input_patches": 1,
+      "rules_in": 5,
+      "rules_out": 5,
+      "saved_rules": 0,
+      "file": "Tiện-ích_4.patch",
+      "source_patches": [
+        "patch_bypass_sigcheck_with_reflection"
+      ]
+    }
+  ],
+  "merged_across_groups": [],
+  "saved_rules": 19,
+  "conflicts": 20
+}

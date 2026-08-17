@@ -1,0 +1,390 @@
+{
+  "generated": "2026-08-16 14:21:51",
+  "tree": "/storage/emulated/0/Patch/patch1/_patchx/real_apk_test/zaz_trace_tree",
+  "input": "/storage/emulated/0/Patch/patch1/_patchx/real_apk_test/hook_input",
+  "top_patches": [
+    {
+      "patch": "pro_unlock_vip",
+      "score": 0.83,
+      "coverage": 1.0,
+      "matches": 3,
+      "rules": 3,
+      "rules_matched": 3,
+      "capabilities": [
+        "bypass-license"
+      ],
+      "chi_tiết": [
+        {
+          "khối": 3,
+          "loại": "MATCH_REPLACE",
+          "target": "smali_classes4/com/zaz/account/uc.smali",
+          "khớp": 1,
+          "tệp_trúng": [
+            "smali_classes4/com/zaz/account/uc.smali"
+          ],
+          "tệp_trượt": [],
+          "biến_thể": [],
+          "ngoài_target": [],
+          "ước_lượng": false,
+          "lọc_hint": true
+        },
+        {
+          "khối": 4,
+          "loại": "MATCH_REPLACE",
+          "target": "smali_classes4/com/zaz/subscription/manager/ua.smali",
+          "khớp": 1,
+          "tệp_trúng": [
+            "smali_classes4/com/zaz/subscription/manager/ua.smali"
+          ],
+          "tệp_trượt": [],
+          "biến_thể": [],
+          "ngoài_target": [],
+          "ước_lượng": false,
+          "lọc_hint": true
+        },
+        {
+          "khối": 5,
+          "loại": "MATCH_REPLACE",
+          "target": "smali_classes4/com/zaz/subscription/manager/ua.smali",
+          "khớp": 1,
+          "tệp_trúng": [
+            "smali_classes4/com/zaz/subscription/manager/ua.smali"
+          ],
+          "tệp_trượt": [],
+          "biến_thể": [],
+          "ngoài_target": [],
+          "ước_lượng": false,
+          "lọc_hint": true
+        }
+      ],
+      "modern_ratio": 0.0
+    },
+    {
+      "patch": "hook_remote_data_control",
+      "score": 0.425,
+      "coverage": 0.25,
+      "matches": 3,
+      "rules": 8,
+      "rules_matched": 2,
+      "capabilities": [
+        "api",
+        "google",
+        "shell",
+        "trace"
+      ],
+      "chi_tiết": [
+        {
+          "khối": 4,
+          "loại": "MATCH_REPLACE",
+          "target": "smali*/com/zaz/translate/ui/tool/ConfigKt.smali",
+          "khớp": 1,
+          "tệp_trúng": [
+            "smali_classes5/com/zaz/translate/ui/tool/ConfigKt.smali"
+          ],
+          "tệp_trượt": [],
+          "biến_thể": [],
+          "ngoài_target": [],
+          "ước_lượng": false,
+          "lọc_hint": true
+        },
+        {
+          "khối": 8,
+          "loại": "MATCH_REPLACE",
+          "target": "smali*/*.smali",
+          "khớp": 0,
+          "tệp_trúng": [],
+          "tệp_trượt": [
+            "smali/WordDetailsPopupWindow$show$3$1.smali",
+            "smali/a00.smali",
+            "smali/a02.smali",
+            "smali/a03.smali",
+            "smali/a08.smali",
+            "smali/a15.smali",
+            "smali/a16.smali",
+            "smali/a17.smali",
+            "smali/a19.smali",
+            "smali/a1a.smali",
+            "smali/a2.smali",
+            "smali/a22.smali",
+            "smali/a28.smali",
+            "smali/a29.smali",
+            "smali/a32.smali",
+            "smali/a33.smali",
+            "smali/a37.smali",
+            "smali/a39.smali",
+            "smali/a3b.smali",
+            "smali/a46.smali"
+          ],
+          "biến_thể": [],
+          "ngoài_target": [],
+          "ước_lượng": false,
+          "lọc_hint": true
+        },
+        {
+          "khối": 9,
+          "loại": "MATCH_REPLACE",
+          "target": "smali*/*.smali",
+          "khớp": 2,
+          "tệp_trúng": [
+            "smali_classes4/com/zaz/translate/analysis/DataAnalysisHelperKt$logFirebaseEvent$1.smali",
+            "smali_classes4/com/zaz/translate/analysis/DataAnalysisHelperKt$logFirebaseEvent$2.smali"
+          ],
+          "tệp_trượt": [
+            "smali/WordDetailsPopupWindow$show$3$1.smali",
+            "smali/a00.smali",
+            "smali/a02.smali",
+            "smali/a03.smali",
+            "smali/a08.smali",
+            "smali/a15.smali",
+            "smali/a16.smali",
+            "smali/a17.smali",
+            "smali/a19.smali",
+            "smali/a1a.smali",
+            "smali/a2.smali",
+            "smali/a22.smali",
+            "smali/a28.smali",
+            "smali/a29.smali",
+            "smali/a32.smali",
+            "smali/a33.smali",
+            "smali/a37.smali",
+            "smali/a39.smali",
+            "smali/a3b.smali",
+            "smali/a46.smali"
+          ],
+          "biến_thể": [],
+          "ngoài_target": [],
+          "ước_lượng": false,
+          "lọc_hint": true
+        },
+        {
+          "khối": 10,
+          "loại": "MATCH_REPLACE",
+          "target": "smali*/*.smali",
+          "khớp": 0,
+          "tệp_trúng": [],
+          "tệp_trượt": [
+            "smali/WordDetailsPopupWindow$show$3$1.smali",
+            "smali/a00.smali",
+            "smali/a02.smali",
+            "smali/a03.smali",
+            "smali/a08.smali",
+            "smali/a15.smali",
+            "smali/a16.smali",
+            "smali/a17.smali",
+            "smali/a19.smali",
+            "smali/a1a.smali",
+            "smali/a2.smali",
+            "smali/a22.smali",
+            "smali/a28.smali",
+            "smali/a29.smali",
+            "smali/a32.smali",
+            "smali/a33.smali",
+            "smali/a37.smali",
+            "smali/a39.smali",
+            "smali/a3b.smali",
+            "smali/a46.smali"
+          ],
+          "biến_thể": [],
+          "ngoài_target": [],
+          "ước_lượng": false,
+          "lọc_hint": true
+        },
+        {
+          "khối": 11,
+          "loại": "MATCH_REPLACE",
+          "target": "smali*/*.smali",
+          "khớp": 0,
+          "tệp_trúng": [],
+          "tệp_trượt": [
+            "smali/WordDetailsPopupWindow$show$3$1.smali",
+            "smali/a00.smali",
+            "smali/a02.smali",
+            "smali/a03.smali",
+            "smali/a08.smali",
+            "smali/a15.smali",
+            "smali/a16.smali",
+            "smali/a17.smali",
+            "smali/a19.smali",
+            "smali/a1a.smali",
+            "smali/a2.smali",
+            "smali/a22.smali",
+            "smali/a28.smali",
+            "smali/a29.smali",
+            "smali/a32.smali",
+            "smali/a33.smali",
+            "smali/a37.smali",
+            "smali/a39.smali",
+            "smali/a3b.smali",
+            "smali/a46.smali"
+          ],
+          "biến_thể": [],
+          "ngoài_target": [],
+          "ước_lượng": false,
+          "lọc_hint": true
+        },
+        {
+          "khối": 12,
+          "loại": "MATCH_REPLACE",
+          "target": "smali*/*.smali",
+          "khớp": 0,
+          "tệp_trúng": [],
+          "tệp_trượt": [
+            "smali/WordDetailsPopupWindow$show$3$1.smali",
+            "smali/a00.smali",
+            "smali/a02.smali",
+            "smali/a03.smali",
+            "smali/a08.smali",
+            "smali/a15.smali",
+            "smali/a16.smali",
+            "smali/a17.smali",
+            "smali/a19.smali",
+            "smali/a1a.smali",
+            "smali/a2.smali",
+            "smali/a22.smali",
+            "smali/a28.smali",
+            "smali/a29.smali",
+            "smali/a32.smali",
+            "smali/a33.smali",
+            "smali/a37.smali",
+            "smali/a39.smali",
+            "smali/a3b.smali",
+            "smali/a46.smali"
+          ],
+          "biến_thể": [],
+          "ngoài_target": [],
+          "ước_lượng": false,
+          "lọc_hint": true
+        },
+        {
+          "khối": 13,
+          "loại": "MATCH_REPLACE",
+          "target": "smali*/*.smali",
+          "khớp": 0,
+          "tệp_trúng": [],
+          "tệp_trượt": [
+            "smali/WordDetailsPopupWindow$show$3$1.smali",
+            "smali/a00.smali",
+            "smali/a02.smali",
+            "smali/a03.smali",
+            "smali/a08.smali",
+            "smali/a15.smali",
+            "smali/a16.smali",
+            "smali/a17.smali",
+            "smali/a19.smali",
+            "smali/a1a.smali",
+            "smali/a2.smali",
+            "smali/a22.smali",
+            "smali/a28.smali",
+            "smali/a29.smali",
+            "smali/a32.smali",
+            "smali/a33.smali",
+            "smali/a37.smali",
+            "smali/a39.smali",
+            "smali/a3b.smali",
+            "smali/a46.smali"
+          ],
+          "biến_thể": [],
+          "ngoài_target": [],
+          "ước_lượng": false,
+          "lọc_hint": true
+        },
+        {
+          "khối": 14,
+          "loại": "MATCH_REPLACE",
+          "target": "smali*/*.smali",
+          "khớp": 0,
+          "tệp_trúng": [],
+          "tệp_trượt": [
+            "smali/WordDetailsPopupWindow$show$3$1.smali",
+            "smali/a00.smali",
+            "smali/a02.smali",
+            "smali/a03.smali",
+            "smali/a08.smali",
+            "smali/a15.smali",
+            "smali/a16.smali",
+            "smali/a17.smali",
+            "smali/a19.smali",
+            "smali/a1a.smali",
+            "smali/a2.smali",
+            "smali/a22.smali",
+            "smali/a28.smali",
+            "smali/a29.smali",
+            "smali/a32.smali",
+            "smali/a33.smali",
+            "smali/a37.smali",
+            "smali/a39.smali",
+            "smali/a3b.smali",
+            "smali/a46.smali"
+          ],
+          "biến_thể": [],
+          "ngoài_target": [],
+          "ước_lượng": false,
+          "lọc_hint": true
+        }
+      ],
+      "modern_ratio": 0.312
+    },
+    {
+      "patch": "zaz_force",
+      "score": 0.24,
+      "coverage": 0.0,
+      "matches": 0,
+      "rules": 0,
+      "rules_matched": 0,
+      "capabilities": [
+        "api"
+      ],
+      "chi_tiết": [],
+      "modern_ratio": 0.25
+    }
+  ],
+  "top_combos": [
+    {
+      "patches": [
+        "hook_remote_data_control",
+        "pro_unlock_vip"
+      ],
+      "score": 0.6775,
+      "capabilities": [
+        "api",
+        "bypass-license",
+        "google",
+        "shell",
+        "trace"
+      ],
+      "support": [
+        [
+          "google",
+          "bypass-license"
+        ],
+        [
+          "shell",
+          "bypass-license"
+        ]
+      ]
+    },
+    {
+      "patches": [
+        "hook_remote_data_control",
+        "zaz_force"
+      ],
+      "score": 0.3825,
+      "capabilities": [
+        "api",
+        "google",
+        "shell",
+        "trace"
+      ],
+      "support": [
+        [
+          "shell",
+          "api"
+        ],
+        [
+          "trace",
+          "api"
+        ]
+      ]
+    }
+  ]
+}

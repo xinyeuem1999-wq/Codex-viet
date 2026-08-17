@@ -1,0 +1,4414 @@
+{
+  "tree": "/storage/emulated/0/Patch/patch1/_patchx/apk_trees/ApkToolPatcher v5.0",
+  "protections": [
+    {
+      "loại": "tamper",
+      "tên": "tamper",
+      "lần": 7,
+      "tệp": [
+        "assets/signatureHack/cc/binmt/signature/PmsHookApplication.smali",
+        "smali/androidx/fragment/app/FragmentManagеrImpl.smali",
+        "smali/jp/sblo/pandora/aGrep/OptionActivity.smali",
+        "smali/org/セト.smali",
+        "smali/ru/svolf/rxmanager/AppsDetailsFragment.smali"
+      ]
+    },
+    {
+      "loại": "emulator",
+      "tên": "emulator",
+      "lần": 6,
+      "tệp": [
+        "smali/apk/tool/patcher/filesystem/private.smali",
+        "smali/org/アザレ.smali",
+        "smali/org/アヮオ.smali",
+        "smali/org/ヶト.smali",
+        "smali_classes2/org/アズワ.smali"
+      ]
+    },
+    {
+      "loại": "signature",
+      "tên": "signature",
+      "lần": 1,
+      "tệp": [
+        "res/values/strings.xml"
+      ]
+    },
+    {
+      "loại": "anti-debug",
+      "tên": "anti-debug",
+      "lần": 1,
+      "tệp": [
+        "smali_classes2/org/アホゾ$private.smali"
+      ]
+    }
+  ],
+  "top_patches": [
+    {
+      "patch": "DexExtractor",
+      "điểm": 0.91,
+      "tỷ_lệ_thành_công": 41.0,
+      "phân_tích": {
+        "tỷ_lệ": 41.0,
+        "yếu_tố": [
+          {
+            "tên": "Bao phủ quy tắc khớp 100%",
+            "điểm": 45.0
+          },
+          {
+            "tên": "Số lần khớp 71 (tối đa 25)",
+            "điểm": 20.0
+          },
+          {
+            "tên": "Khối khớp 1/1",
+            "điểm": 15.0
+          },
+          {
+            "tên": "Độ ưu tiên năng lực 0.70",
+            "điểm": 7.0
+          }
+        ],
+        "phạt": [
+          {
+            "loại": "tamper",
+            "điểm": 8.0
+          },
+          {
+            "loại": "emulator",
+            "điểm": 8.0
+          },
+          {
+            "loại": "signature",
+            "điểm": 20.0
+          },
+          {
+            "loại": "anti-debug",
+            "điểm": 10.0
+          }
+        ]
+      },
+      "năng_lực": [
+        "shell"
+      ],
+      "điểm_bypass": [
+        {
+          "khối": 3,
+          "loại": "MATCH_REPLACE",
+          "target": "smali*/*",
+          "khớp": 71,
+          "tệp_trúng": [
+            "smali/androidx/appcompat/widget/SearchView$if.smali",
+            "smali/androidx/appcompat/widget/const.smali",
+            "smali/androidx/appcompat/widget/デボ.smali",
+            "smali/androidx/appcompat/widget/ヹゲ.smali",
+            "smali/androidx/core/app/catch$private.smali",
+            "smali/androidx/core/app/continue$class.smali",
+            "smali/androidx/core/app/static.smali",
+            "smali/androidx/core/graphics/drawable/class.smali",
+            "smali/androidx/core/graphics/drawable/static.smali",
+            "smali/androidx/core/widget/abstract$class.smali"
+          ],
+          "biến_thể": []
+        }
+      ],
+      "cách_công_cụ": {
+        "cách": [
+          "Chèn khởi tạo mod qua INIT/HOOK_SCRIPT: chạy lệnh/script khi app mở để bơm biến hoặc gọi hàm nội bộ."
+        ],
+        "công_cụ": [
+          "patchx apply",
+          "apktool",
+          "Frida"
+        ],
+        "xác_minh": [
+          "Kiểm tra hiệu lực mod ngay sau khi app khởi động."
+        ]
+      },
+      "đề_xuất": [
+        "Chuỗi khối 3 còn xuất hiện ngoài target (assets/signatureHack/cc/binmt/signature/PmsHookApplication.smali, 3 lần) — cân nhắc bổ sung class-link"
+      ]
+    },
+    {
+      "patch": "patch_bypass_sigcheck_with_reflection",
+      "điểm": 0.75,
+      "tỷ_lệ_thành_công": 14.0,
+      "phân_tích": {
+        "tỷ_lệ": 14.0,
+        "yếu_tố": [
+          {
+            "tên": "Bao phủ quy tắc khớp 50%",
+            "điểm": 22.5
+          },
+          {
+            "tên": "Số lần khớp 71 (tối đa 25)",
+            "điểm": 20.0
+          },
+          {
+            "tên": "Khối khớp 1/2",
+            "điểm": 7.5
+          },
+          {
+            "tên": "Độ ưu tiên năng lực 1.00",
+            "điểm": 10.0
+          }
+        ],
+        "phạt": [
+          {
+            "loại": "tamper",
+            "điểm": 8.0
+          },
+          {
+            "loại": "emulator",
+            "điểm": 8.0
+          },
+          {
+            "loại": "signature",
+            "điểm": 20.0
+          },
+          {
+            "loại": "anti-debug",
+            "điểm": 10.0
+          }
+        ]
+      },
+      "năng_lực": [
+        "bypass-license",
+        "integrity",
+        "shell"
+      ],
+      "điểm_bypass": [
+        {
+          "khối": 3,
+          "loại": "MATCH_REPLACE",
+          "target": "smali*/*",
+          "khớp": 71,
+          "tệp_trúng": [
+            "smali/androidx/appcompat/widget/SearchView$if.smali",
+            "smali/androidx/appcompat/widget/const.smali",
+            "smali/androidx/appcompat/widget/デボ.smali",
+            "smali/androidx/appcompat/widget/ヹゲ.smali",
+            "smali/androidx/core/app/catch$private.smali",
+            "smali/androidx/core/app/continue$class.smali",
+            "smali/androidx/core/app/static.smali",
+            "smali/androidx/core/graphics/drawable/class.smali",
+            "smali/androidx/core/graphics/drawable/static.smali",
+            "smali/androidx/core/widget/abstract$class.smali"
+          ],
+          "biến_thể": []
+        }
+      ],
+      "cách_công_cụ": {
+        "cách": [
+          "Vô hiệu hoá kiểm tra VIP/license: gán cờ đã mua bằng SET_BOOL, nhảy qua khối kiểm tra bằng MATCH_GOTO, hoặc hook hàm kiểm tra bằng Frida/LSPosed.",
+          "Vô hiệu hoá kiểm tra toàn vẹn/chữ ký: sửa luồng check (MATCH_GOTO) hoặc trả true/false cố định (SET_BOOL/MATCH_ASSIGN).",
+          "Chèn khởi tạo mod qua INIT/HOOK_SCRIPT: chạy lệnh/script khi app mở để bơm biến hoặc gọi hàm nội bộ."
+        ],
+        "công_cụ": [
+          "patchx apply",
+          "apktool",
+          "apksigner",
+          "Frida",
+          "LSPosed"
+        ],
+        "xác_minh": [
+          "Mở tính năng VIP; xem logcat tìm log trạng thái license.",
+          "Xoá báo lỗi 'signature mismatch'/'app modified' khi mở ứng dụng.",
+          "Kiểm tra hiệu lực mod ngay sau khi app khởi động."
+        ]
+      },
+      "đề_xuất": [
+        "Chuỗi khối 3 còn xuất hiện ngoài target (assets/signatureHack/cc/binmt/signature/PmsHookApplication.smali, 3 lần) — cân nhắc bổ sung class-link",
+        "Khối 4 trượt target smali*/*.smali — cập nhật TARGET theo class-link thật của APK"
+      ]
+    },
+    {
+      "patch": "Unicode text",
+      "điểm": 0.715,
+      "tỷ_lệ_thành_công": 34.5,
+      "phân_tích": {
+        "tỷ_lệ": 34.5,
+        "yếu_tố": [
+          {
+            "tên": "Bao phủ quy tắc khớp 100%",
+            "điểm": 45.0
+          },
+          {
+            "tên": "Số lần khớp 934 (tối đa 25)",
+            "điểm": 20.0
+          },
+          {
+            "tên": "Khối khớp 70/70",
+            "điểm": 15.0
+          },
+          {
+            "tên": "Độ ưu tiên năng lực 0.05",
+            "điểm": 0.5
+          }
+        ],
+        "phạt": [
+          {
+            "loại": "tamper",
+            "điểm": 8.0
+          },
+          {
+            "loại": "emulator",
+            "điểm": 8.0
+          },
+          {
+            "loại": "signature",
+            "điểm": 20.0
+          },
+          {
+            "loại": "anti-debug",
+            "điểm": 10.0
+          }
+        ]
+      },
+      "năng_lực": [],
+      "điểm_bypass": [
+        {
+          "khối": 3,
+          "loại": "MATCH_REPLACE",
+          "target": "smali/*.smali",
+          "khớp": 15,
+          "tệp_trúng": [
+            "smali/org/アザレ.smali",
+            "smali/org/ゲワ.smali",
+            "smali/org/サプ.smali",
+            "smali/org/ゼメ.smali",
+            "smali/org/ヱベ.smali"
+          ],
+          "biến_thể": []
+        },
+        {
+          "khối": 4,
+          "loại": "MATCH_REPLACE",
+          "target": "smali/*.smali",
+          "khớp": 12,
+          "tệp_trúng": [
+            "smali/org/アザレ.smali",
+            "smali/org/ゲワ.smali",
+            "smali/org/サプ.smali",
+            "smali/org/ゼメ.smali",
+            "smali/org/ヱベ.smali"
+          ],
+          "biến_thể": []
+        },
+        {
+          "khối": 5,
+          "loại": "MATCH_REPLACE",
+          "target": "smali/*.smali",
+          "khớp": 14,
+          "tệp_trúng": [
+            "smali/org/アザレ.smali",
+            "smali/org/ゲワ.smali",
+            "smali/org/サプ.smali",
+            "smali/org/ゼメ.smali",
+            "smali/org/ヱベ.smali"
+          ],
+          "biến_thể": []
+        },
+        {
+          "khối": 6,
+          "loại": "MATCH_REPLACE",
+          "target": "smali/*.smali",
+          "khớp": 13,
+          "tệp_trúng": [
+            "smali/org/アザレ.smali",
+            "smali/org/ゲワ.smali",
+            "smali/org/サプ.smali",
+            "smali/org/ゼメ.smali",
+            "smali/org/ヱベ.smali"
+          ],
+          "biến_thể": []
+        },
+        {
+          "khối": 7,
+          "loại": "MATCH_REPLACE",
+          "target": "smali/*.smali",
+          "khớp": 15,
+          "tệp_trúng": [
+            "smali/org/アザレ.smali",
+            "smali/org/ゲワ.smali",
+            "smali/org/サプ.smali",
+            "smali/org/ゼメ.smali",
+            "smali/org/ヱベ.smali"
+          ],
+          "biến_thể": []
+        },
+        {
+          "khối": 8,
+          "loại": "MATCH_REPLACE",
+          "target": "smali/*.smali",
+          "khớp": 16,
+          "tệp_trúng": [
+            "smali/org/アザレ.smali",
+            "smali/org/ゲワ.smali",
+            "smali/org/サプ.smali",
+            "smali/org/ゼメ.smali",
+            "smali/org/ヱベ.smali"
+          ],
+          "biến_thể": []
+        },
+        {
+          "khối": 9,
+          "loại": "MATCH_REPLACE",
+          "target": "smali/*.smali",
+          "khớp": 13,
+          "tệp_trúng": [
+            "smali/org/アザレ.smali",
+            "smali/org/ゲワ.smali",
+            "smali/org/サプ.smali",
+            "smali/org/ゼメ.smali",
+            "smali/org/ヱベ.smali"
+          ],
+          "biến_thể": []
+        },
+        {
+          "khối": 10,
+          "loại": "MATCH_REPLACE",
+          "target": "smali/*.smali",
+          "khớp": 10,
+          "tệp_trúng": [
+            "smali/org/アザレ.smali",
+            "smali/org/ゲワ.smali",
+            "smali/org/サプ.smali",
+            "smali/org/ゼメ.smali",
+            "smali/org/ヱベ.smali"
+          ],
+          "biến_thể": []
+        },
+        {
+          "khối": 11,
+          "loại": "MATCH_REPLACE",
+          "target": "smali/*.smali",
+          "khớp": 12,
+          "tệp_trúng": [
+            "smali/org/アザレ.smali",
+            "smali/org/ゲワ.smali",
+            "smali/org/サプ.smali",
+            "smali/org/ゼメ.smali",
+            "smali/org/ヱベ.smali"
+          ],
+          "biến_thể": []
+        },
+        {
+          "khối": 12,
+          "loại": "MATCH_REPLACE",
+          "target": "smali/*.smali",
+          "khớp": 12,
+          "tệp_trúng": [
+            "smali/org/アザレ.smali",
+            "smali/org/ゲワ.smali",
+            "smali/org/サプ.smali",
+            "smali/org/ゼメ.smali",
+            "smali/org/ヱベ.smali"
+          ],
+          "biến_thể": []
+        },
+        {
+          "khối": 13,
+          "loại": "MATCH_REPLACE",
+          "target": "smali/*.smali",
+          "khớp": 12,
+          "tệp_trúng": [
+            "smali/org/アザレ.smali",
+            "smali/org/ゲワ.smali",
+            "smali/org/サプ.smali",
+            "smali/org/ゼメ.smali",
+            "smali/org/ヱベ.smali"
+          ],
+          "biến_thể": []
+        },
+        {
+          "khối": 14,
+          "loại": "MATCH_REPLACE",
+          "target": "smali/*.smali",
+          "khớp": 12,
+          "tệp_trúng": [
+            "smali/org/アザレ.smali",
+            "smali/org/ゲワ.smali",
+            "smali/org/サプ.smali",
+            "smali/org/ゼメ.smali",
+            "smali/org/ヱベ.smali"
+          ],
+          "biến_thể": []
+        },
+        {
+          "khối": 15,
+          "loại": "MATCH_REPLACE",
+          "target": "smali/*.smali",
+          "khớp": 10,
+          "tệp_trúng": [
+            "smali/org/アザレ.smali",
+            "smali/org/ゲワ.smali",
+            "smali/org/サプ.smali",
+            "smali/org/ゼメ.smali",
+            "smali/org/ヱベ.smali"
+          ],
+          "biến_thể": []
+        },
+        {
+          "khối": 16,
+          "loại": "MATCH_REPLACE",
+          "target": "smali/*.smali",
+          "khớp": 10,
+          "tệp_trúng": [
+            "smali/org/アザレ.smali",
+            "smali/org/ゲワ.smali",
+            "smali/org/サプ.smali",
+            "smali/org/ゼメ.smali",
+            "smali/org/ヱベ.smali"
+          ],
+          "biến_thể": []
+        },
+        {
+          "khối": 17,
+          "loại": "MATCH_REPLACE",
+          "target": "smali/*.smali",
+          "khớp": 13,
+          "tệp_trúng": [
+            "smali/org/アザレ.smali",
+            "smali/org/ゲワ.smali",
+            "smali/org/サプ.smali",
+            "smali/org/ゼメ.smali",
+            "smali/org/ヱベ.smali"
+          ],
+          "biến_thể": []
+        },
+        {
+          "khối": 18,
+          "loại": "MATCH_REPLACE",
+          "target": "smali/*.smali",
+          "khớp": 17,
+          "tệp_trúng": [
+            "smali/org/アザレ.smali",
+            "smali/org/ゲワ.smali",
+            "smali/org/サプ.smali",
+            "smali/org/ゼメ.smali",
+            "smali/org/ヱベ.smali"
+          ],
+          "biến_thể": []
+        },
+        {
+          "khối": 19,
+          "loại": "MATCH_REPLACE",
+          "target": "smali/*.smali",
+          "khớp": 14,
+          "tệp_trúng": [
+            "smali/org/アザレ.smali",
+            "smali/org/ゲワ.smali",
+            "smali/org/サプ.smali",
+            "smali/org/ゼメ.smali",
+            "smali/org/ヱベ.smali"
+          ],
+          "biến_thể": []
+        },
+        {
+          "khối": 20,
+          "loại": "MATCH_REPLACE",
+          "target": "smali/*.smali",
+          "khớp": 21,
+          "tệp_trúng": [
+            "smali/org/アザレ.smali",
+            "smali/org/ゲワ.smali",
+            "smali/org/サプ.smali",
+            "smali/org/ゼメ.smali",
+            "smali/org/ヱベ.smali"
+          ],
+          "biến_thể": []
+        },
+        {
+          "khối": 21,
+          "loại": "MATCH_REPLACE",
+          "target": "smali/*.smali",
+          "khớp": 18,
+          "tệp_trúng": [
+            "smali/org/アザレ.smali",
+            "smali/org/ゲワ.smali",
+            "smali/org/サプ.smali",
+            "smali/org/ゼメ.smali",
+            "smali/org/ヱベ.smali"
+          ],
+          "biến_thể": []
+        },
+        {
+          "khối": 22,
+          "loại": "MATCH_REPLACE",
+          "target": "smali/*.smali",
+          "khớp": 10,
+          "tệp_trúng": [
+            "smali/org/アザレ.smali",
+            "smali/org/ゲワ.smali",
+            "smali/org/サプ.smali",
+            "smali/org/ゼメ.smali",
+            "smali/org/ヱベ.smali"
+          ],
+          "biến_thể": []
+        },
+        {
+          "khối": 23,
+          "loại": "MATCH_REPLACE",
+          "target": "smali/*.smali",
+          "khớp": 10,
+          "tệp_trúng": [
+            "smali/org/アザレ.smali",
+            "smali/org/ゲワ.smali",
+            "smali/org/サプ.smali",
+            "smali/org/ゼメ.smali",
+            "smali/org/ヱベ.smali"
+          ],
+          "biến_thể": []
+        },
+        {
+          "khối": 24,
+          "loại": "MATCH_REPLACE",
+          "target": "smali/*.smali",
+          "khớp": 10,
+          "tệp_trúng": [
+            "smali/org/アザレ.smali",
+            "smali/org/ゲワ.smali",
+            "smali/org/サプ.smali",
+            "smali/org/ゼメ.smali",
+            "smali/org/ヱベ.smali"
+          ],
+          "biến_thể": []
+        },
+        {
+          "khối": 25,
+          "loại": "MATCH_REPLACE",
+          "target": "smali/*.smali",
+          "khớp": 14,
+          "tệp_trúng": [
+            "smali/org/アザレ.smali",
+            "smali/org/ゲワ.smali",
+            "smali/org/サプ.smali",
+            "smali/org/ゼメ.smali",
+            "smali/org/ヱベ.smali"
+          ],
+          "biến_thể": []
+        },
+        {
+          "khối": 26,
+          "loại": "MATCH_REPLACE",
+          "target": "smali/*.smali",
+          "khớp": 14,
+          "tệp_trúng": [
+            "smali/org/アザレ.smali",
+            "smali/org/ゲワ.smali",
+            "smali/org/サプ.smali",
+            "smali/org/ゼメ.smali",
+            "smali/org/ヱベ.smali"
+          ],
+          "biến_thể": []
+        },
+        {
+          "khối": 27,
+          "loại": "MATCH_REPLACE",
+          "target": "smali/*.smali",
+          "khớp": 15,
+          "tệp_trúng": [
+            "smali/org/アザレ.smali",
+            "smali/org/ゲワ.smali",
+            "smali/org/サプ.smali",
+            "smali/org/ゼメ.smali",
+            "smali/org/ヱベ.smali"
+          ],
+          "biến_thể": []
+        },
+        {
+          "khối": 28,
+          "loại": "MATCH_REPLACE",
+          "target": "smali/*.smali",
+          "khớp": 19,
+          "tệp_trúng": [
+            "smali/org/アザレ.smali",
+            "smali/org/ゲワ.smali",
+            "smali/org/サプ.smali",
+            "smali/org/ゼメ.smali",
+            "smali/org/ヱベ.smali"
+          ],
+          "biến_thể": []
+        },
+        {
+          "khối": 29,
+          "loại": "MATCH_REPLACE",
+          "target": "smali/*.smali",
+          "khớp": 14,
+          "tệp_trúng": [
+            "smali/org/アザレ.smali",
+            "smali/org/ゲワ.smali",
+            "smali/org/サプ.smali",
+            "smali/org/ゼメ.smali",
+            "smali/org/ヱベ.smali"
+          ],
+          "biến_thể": []
+        },
+        {
+          "khối": 30,
+          "loại": "MATCH_REPLACE",
+          "target": "smali/*.smali",
+          "khớp": 12,
+          "tệp_trúng": [
+            "smali/org/アザレ.smali",
+            "smali/org/ゲワ.smali",
+            "smali/org/サプ.smali",
+            "smali/org/ゼメ.smali",
+            "smali/org/ヱベ.smali"
+          ],
+          "biến_thể": []
+        },
+        {
+          "khối": 31,
+          "loại": "MATCH_REPLACE",
+          "target": "smali/*.smali",
+          "khớp": 12,
+          "tệp_trúng": [
+            "smali/org/アザレ.smali",
+            "smali/org/ゲワ.smali",
+            "smali/org/サプ.smali",
+            "smali/org/ゼメ.smali",
+            "smali/org/ヱベ.smali"
+          ],
+          "biến_thể": []
+        },
+        {
+          "khối": 32,
+          "loại": "MATCH_REPLACE",
+          "target": "smali/*.smali",
+          "khớp": 14,
+          "tệp_trúng": [
+            "smali/org/アザレ.smali",
+            "smali/org/ゲワ.smali",
+            "smali/org/サプ.smali",
+            "smali/org/ゼメ.smali",
+            "smali/org/ヱベ.smali"
+          ],
+          "biến_thể": []
+        },
+        {
+          "khối": 33,
+          "loại": "MATCH_REPLACE",
+          "target": "smali/*.smali",
+          "khớp": 12,
+          "tệp_trúng": [
+            "smali/org/アザレ.smali",
+            "smali/org/ゲワ.smali",
+            "smali/org/サプ.smali",
+            "smali/org/ゼメ.smali",
+            "smali/org/ヱベ.smali"
+          ],
+          "biến_thể": []
+        },
+        {
+          "khối": 34,
+          "loại": "MATCH_REPLACE",
+          "target": "smali/*.smali",
+          "khớp": 10,
+          "tệp_trúng": [
+            "smali/org/アザレ.smali",
+            "smali/org/ゲワ.smali",
+            "smali/org/サプ.smali",
+            "smali/org/ゼメ.smali",
+            "smali/org/ヱベ.smali"
+          ],
+          "biến_thể": []
+        },
+        {
+          "khối": 35,
+          "loại": "MATCH_REPLACE",
+          "target": "smali/*.smali",
+          "khớp": 10,
+          "tệp_trúng": [
+            "smali/org/アザレ.smali",
+            "smali/org/ゲワ.smali",
+            "smali/org/サプ.smali",
+            "smali/org/ゼメ.smali",
+            "smali/org/ヱベ.smali"
+          ],
+          "biến_thể": []
+        },
+        {
+          "khối": 36,
+          "loại": "MATCH_REPLACE",
+          "target": "smali/*.smali",
+          "khớp": 12,
+          "tệp_trúng": [
+            "smali/org/アザレ.smali",
+            "smali/org/ゲワ.smali",
+            "smali/org/サプ.smali",
+            "smali/org/ゼメ.smali",
+            "smali/org/ヱベ.smali"
+          ],
+          "biến_thể": []
+        },
+        {
+          "khối": 37,
+          "loại": "MATCH_REPLACE",
+          "target": "smali/*.smali",
+          "khớp": 12,
+          "tệp_trúng": [
+            "smali/org/アザレ.smali",
+            "smali/org/ゲワ.smali",
+            "smali/org/サプ.smali",
+            "smali/org/ゼメ.smali",
+            "smali/org/ヱベ.smali"
+          ],
+          "biến_thể": []
+        },
+        {
+          "khối": 38,
+          "loại": "MATCH_REPLACE",
+          "target": "smali/*.smali",
+          "khớp": 10,
+          "tệp_trúng": [
+            "smali/org/アザレ.smali",
+            "smali/org/ゲワ.smali",
+            "smali/org/サプ.smali",
+            "smali/org/ゼメ.smali",
+            "smali/org/ヱベ.smali"
+          ],
+          "biến_thể": []
+        },
+        {
+          "khối": 39,
+          "loại": "MATCH_REPLACE",
+          "target": "smali/*.smali",
+          "khớp": 10,
+          "tệp_trúng": [
+            "smali/org/アザレ.smali",
+            "smali/org/ゲワ.smali",
+            "smali/org/サプ.smali",
+            "smali/org/ゼメ.smali",
+            "smali/org/ヱベ.smali"
+          ],
+          "biến_thể": []
+        },
+        {
+          "khối": 40,
+          "loại": "MATCH_REPLACE",
+          "target": "smali/*.smali",
+          "khớp": 12,
+          "tệp_trúng": [
+            "smali/org/アザレ.smali",
+            "smali/org/ゲワ.smali",
+            "smali/org/サプ.smali",
+            "smali/org/ゼメ.smali",
+            "smali/org/ヱベ.smali"
+          ],
+          "biến_thể": []
+        },
+        {
+          "khối": 41,
+          "loại": "MATCH_REPLACE",
+          "target": "smali/*.smali",
+          "khớp": 12,
+          "tệp_trúng": [
+            "smali/org/アザレ.smali",
+            "smali/org/ゲワ.smali",
+            "smali/org/サプ.smali",
+            "smali/org/ゼメ.smali",
+            "smali/org/ヱベ.smali"
+          ],
+          "biến_thể": []
+        },
+        {
+          "khối": 42,
+          "loại": "MATCH_REPLACE",
+          "target": "smali/*.smali",
+          "khớp": 12,
+          "tệp_trúng": [
+            "smali/org/アザレ.smali",
+            "smali/org/ゲワ.smali",
+            "smali/org/サプ.smali",
+            "smali/org/ゼメ.smali",
+            "smali/org/ヱベ.smali"
+          ],
+          "biến_thể": []
+        },
+        {
+          "khối": 43,
+          "loại": "MATCH_REPLACE",
+          "target": "smali/*.smali",
+          "khớp": 12,
+          "tệp_trúng": [
+            "smali/org/アザレ.smali",
+            "smali/org/ゲワ.smali",
+            "smali/org/サプ.smali",
+            "smali/org/ゼメ.smali",
+            "smali/org/ヱベ.smali"
+          ],
+          "biến_thể": []
+        },
+        {
+          "khối": 44,
+          "loại": "MATCH_REPLACE",
+          "target": "smali/*.smali",
+          "khớp": 15,
+          "tệp_trúng": [
+            "smali/org/アザレ.smali",
+            "smali/org/ゲワ.smali",
+            "smali/org/サプ.smali",
+            "smali/org/ゼメ.smali",
+            "smali/org/ヱベ.smali"
+          ],
+          "biến_thể": []
+        },
+        {
+          "khối": 45,
+          "loại": "MATCH_REPLACE",
+          "target": "smali/*.smali",
+          "khớp": 10,
+          "tệp_trúng": [
+            "smali/org/アザレ.smali",
+            "smali/org/ゲワ.smali",
+            "smali/org/サプ.smali",
+            "smali/org/ゼメ.smali",
+            "smali/org/ヱベ.smali"
+          ],
+          "biến_thể": []
+        },
+        {
+          "khối": 46,
+          "loại": "MATCH_REPLACE",
+          "target": "smali/*.smali",
+          "khớp": 10,
+          "tệp_trúng": [
+            "smali/org/アザレ.smali",
+            "smali/org/ゲワ.smali",
+            "smali/org/サプ.smali",
+            "smali/org/ゼメ.smali",
+            "smali/org/ヱベ.smali"
+          ],
+          "biến_thể": []
+        },
+        {
+          "khối": 47,
+          "loại": "MATCH_REPLACE",
+          "target": "smali/*.smali",
+          "khớp": 14,
+          "tệp_trúng": [
+            "smali/org/アザレ.smali",
+            "smali/org/ゲワ.smali",
+            "smali/org/サプ.smali",
+            "smali/org/ゼメ.smali",
+            "smali/org/ヱベ.smali"
+          ],
+          "biến_thể": []
+        },
+        {
+          "khối": 48,
+          "loại": "MATCH_REPLACE",
+          "target": "smali/*.smali",
+          "khớp": 14,
+          "tệp_trúng": [
+            "smali/org/アザレ.smali",
+            "smali/org/ゲワ.smali",
+            "smali/org/サプ.smali",
+            "smali/org/ゼメ.smali",
+            "smali/org/ヱベ.smali"
+          ],
+          "biến_thể": []
+        },
+        {
+          "khối": 49,
+          "loại": "MATCH_REPLACE",
+          "target": "smali/*.smali",
+          "khớp": 10,
+          "tệp_trúng": [
+            "smali/org/アザレ.smali",
+            "smali/org/ゲワ.smali",
+            "smali/org/サプ.smali",
+            "smali/org/ゼメ.smali",
+            "smali/org/ヱベ.smali"
+          ],
+          "biến_thể": []
+        },
+        {
+          "khối": 50,
+          "loại": "MATCH_REPLACE",
+          "target": "smali/*.smali",
+          "khớp": 11,
+          "tệp_trúng": [
+            "smali/org/アザレ.smali",
+            "smali/org/ゲワ.smali",
+            "smali/org/サプ.smali",
+            "smali/org/ゼメ.smali",
+            "smali/org/ヱベ.smali"
+          ],
+          "biến_thể": []
+        },
+        {
+          "khối": 51,
+          "loại": "MATCH_REPLACE",
+          "target": "smali/*.smali",
+          "khớp": 17,
+          "tệp_trúng": [
+            "smali/org/アザレ.smali",
+            "smali/org/ゲワ.smali",
+            "smali/org/サプ.smali",
+            "smali/org/ゼメ.smali",
+            "smali/org/ヱベ.smali"
+          ],
+          "biến_thể": []
+        },
+        {
+          "khối": 52,
+          "loại": "MATCH_REPLACE",
+          "target": "smali/*.smali",
+          "khớp": 14,
+          "tệp_trúng": [
+            "smali/org/アザレ.smali",
+            "smali/org/ゲワ.smali",
+            "smali/org/サプ.smali",
+            "smali/org/ゼメ.smali",
+            "smali/org/ヱベ.smali"
+          ],
+          "biến_thể": []
+        },
+        {
+          "khối": 53,
+          "loại": "MATCH_REPLACE",
+          "target": "smali/*.smali",
+          "khớp": 11,
+          "tệp_trúng": [
+            "smali/org/アザレ.smali",
+            "smali/org/ゲワ.smali",
+            "smali/org/サプ.smali",
+            "smali/org/ゼメ.smali",
+            "smali/org/ヱベ.smali"
+          ],
+          "biến_thể": []
+        },
+        {
+          "khối": 54,
+          "loại": "MATCH_REPLACE",
+          "target": "smali/*.smali",
+          "khớp": 13,
+          "tệp_trúng": [
+            "smali/org/アザレ.smali",
+            "smali/org/ゲワ.smali",
+            "smali/org/サプ.smali",
+            "smali/org/ゼメ.smali",
+            "smali/org/ヱベ.smali"
+          ],
+          "biến_thể": []
+        },
+        {
+          "khối": 55,
+          "loại": "MATCH_REPLACE",
+          "target": "smali/*.smali",
+          "khớp": 20,
+          "tệp_trúng": [
+            "smali/org/アザレ.smali",
+            "smali/org/ゲワ.smali",
+            "smali/org/サプ.smali",
+            "smali/org/ゼメ.smali",
+            "smali/org/ヱベ.smali"
+          ],
+          "biến_thể": []
+        },
+        {
+          "khối": 56,
+          "loại": "MATCH_REPLACE",
+          "target": "smali/*.smali",
+          "khớp": 17,
+          "tệp_trúng": [
+            "smali/org/アザレ.smali",
+            "smali/org/ゲワ.smali",
+            "smali/org/サプ.smali",
+            "smali/org/ゼメ.smali",
+            "smali/org/ヱベ.smali"
+          ],
+          "biến_thể": []
+        },
+        {
+          "khối": 57,
+          "loại": "MATCH_REPLACE",
+          "target": "smali/*.smali",
+          "khớp": 14,
+          "tệp_trúng": [
+            "smali/org/アザレ.smali",
+            "smali/org/ゲワ.smali",
+            "smali/org/サプ.smali",
+            "smali/org/ゼメ.smali",
+            "smali/org/ヱベ.smali"
+          ],
+          "biến_thể": []
+        },
+        {
+          "khối": 58,
+          "loại": "MATCH_REPLACE",
+          "target": "smali/*.smali",
+          "khớp": 16,
+          "tệp_trúng": [
+            "smali/org/アザレ.smali",
+            "smali/org/ゲワ.smali",
+            "smali/org/サプ.smali",
+            "smali/org/ゼメ.smali",
+            "smali/org/ヱベ.smali"
+          ],
+          "biến_thể": []
+        },
+        {
+          "khối": 59,
+          "loại": "MATCH_REPLACE",
+          "target": "smali/*.smali",
+          "khớp": 12,
+          "tệp_trúng": [
+            "smali/org/アザレ.smali",
+            "smali/org/ゲワ.smali",
+            "smali/org/サプ.smali",
+            "smali/org/ゼメ.smali",
+            "smali/org/ヱベ.smali"
+          ],
+          "biến_thể": []
+        },
+        {
+          "khối": 60,
+          "loại": "MATCH_REPLACE",
+          "target": "smali/*.smali",
+          "khớp": 15,
+          "tệp_trúng": [
+            "smali/org/アザレ.smali",
+            "smali/org/ゲワ.smali",
+            "smali/org/サプ.smali",
+            "smali/org/ゼメ.smali",
+            "smali/org/ヱベ.smali"
+          ],
+          "biến_thể": []
+        },
+        {
+          "khối": 61,
+          "loại": "MATCH_REPLACE",
+          "target": "smali/*.smali",
+          "khớp": 17,
+          "tệp_trúng": [
+            "smali/org/アザレ.smali",
+            "smali/org/ゲワ.smali",
+            "smali/org/サプ.smali",
+            "smali/org/ゼメ.smali",
+            "smali/org/ヱベ.smali"
+          ],
+          "biến_thể": []
+        },
+        {
+          "khối": 62,
+          "loại": "MATCH_REPLACE",
+          "target": "smali/*.smali",
+          "khớp": 12,
+          "tệp_trúng": [
+            "smali/org/アザレ.smali",
+            "smali/org/ゲワ.smali",
+            "smali/org/サプ.smali",
+            "smali/org/ゼメ.smali",
+            "smali/org/ヱベ.smali"
+          ],
+          "biến_thể": []
+        },
+        {
+          "khối": 63,
+          "loại": "MATCH_REPLACE",
+          "target": "smali/*.smali",
+          "khớp": 10,
+          "tệp_trúng": [
+            "smali/org/アザレ.smali",
+            "smali/org/ゲワ.smali",
+            "smali/org/サプ.smali",
+            "smali/org/ゼメ.smali",
+            "smali/org/ヱベ.smali"
+          ],
+          "biến_thể": []
+        },
+        {
+          "khối": 64,
+          "loại": "MATCH_REPLACE",
+          "target": "smali/*.smali",
+          "khớp": 19,
+          "tệp_trúng": [
+            "smali/org/アザレ.smali",
+            "smali/org/ゲワ.smali",
+            "smali/org/サプ.smali",
+            "smali/org/ゼメ.smali",
+            "smali/org/ヱベ.smali"
+          ],
+          "biến_thể": []
+        },
+        {
+          "khối": 65,
+          "loại": "MATCH_REPLACE",
+          "target": "smali/*.smali",
+          "khớp": 20,
+          "tệp_trúng": [
+            "smali/org/アザレ.smali",
+            "smali/org/ゲワ.smali",
+            "smali/org/サプ.smali",
+            "smali/org/ゼメ.smali",
+            "smali/org/ヱベ.smali"
+          ],
+          "biến_thể": []
+        },
+        {
+          "khối": 66,
+          "loại": "MATCH_REPLACE",
+          "target": "smali/*.smali",
+          "khớp": 15,
+          "tệp_trúng": [
+            "smali/org/アザレ.smali",
+            "smali/org/ゲワ.smali",
+            "smali/org/サプ.smali",
+            "smali/org/ゼメ.smali",
+            "smali/org/ヱベ.smali"
+          ],
+          "biến_thể": []
+        },
+        {
+          "khối": 67,
+          "loại": "MATCH_REPLACE",
+          "target": "smali/*.smali",
+          "khớp": 17,
+          "tệp_trúng": [
+            "smali/org/アザレ.smali",
+            "smali/org/ゲワ.smali",
+            "smali/org/サプ.smali",
+            "smali/org/ゼメ.smali",
+            "smali/org/ヱベ.smali"
+          ],
+          "biến_thể": []
+        },
+        {
+          "khối": 68,
+          "loại": "MATCH_REPLACE",
+          "target": "smali/*.smali",
+          "khớp": 17,
+          "tệp_trúng": [
+            "smali/org/アザレ.smali",
+            "smali/org/ゲワ.smali",
+            "smali/org/サプ.smali",
+            "smali/org/ゼメ.smali",
+            "smali/org/ヱベ.smali"
+          ],
+          "biến_thể": []
+        },
+        {
+          "khối": 69,
+          "loại": "MATCH_REPLACE",
+          "target": "smali/*.smali",
+          "khớp": 13,
+          "tệp_trúng": [
+            "smali/org/アザレ.smali",
+            "smali/org/ゲワ.smali",
+            "smali/org/サプ.smali",
+            "smali/org/ゼメ.smali",
+            "smali/org/ヱベ.smali"
+          ],
+          "biến_thể": []
+        },
+        {
+          "khối": 70,
+          "loại": "MATCH_REPLACE",
+          "target": "smali/*.smali",
+          "khớp": 10,
+          "tệp_trúng": [
+            "smali/org/アザレ.smali",
+            "smali/org/ゲワ.smali",
+            "smali/org/サプ.smali",
+            "smali/org/ゼメ.smali",
+            "smali/org/ヱベ.smali"
+          ],
+          "biến_thể": []
+        },
+        {
+          "khối": 71,
+          "loại": "MATCH_REPLACE",
+          "target": "smali/*.smali",
+          "khớp": 13,
+          "tệp_trúng": [
+            "smali/org/アザレ.smali",
+            "smali/org/ゲワ.smali",
+            "smali/org/サプ.smali",
+            "smali/org/ゼメ.smali",
+            "smali/org/ヱベ.smali"
+          ],
+          "biến_thể": []
+        },
+        {
+          "khối": 72,
+          "loại": "MATCH_REPLACE",
+          "target": "smali/*.smali",
+          "khớp": 11,
+          "tệp_trúng": [
+            "smali/org/アザレ.smali",
+            "smali/org/ゲワ.smali",
+            "smali/org/サプ.smali",
+            "smali/org/ゼメ.smali",
+            "smali/org/ヱベ.smali"
+          ],
+          "biến_thể": []
+        }
+      ],
+      "cách_công_cụ": {
+        "cách": [],
+        "công_cụ": [],
+        "xác_minh": []
+      },
+      "đề_xuất": [
+        "Chuỗi khối 3 còn xuất hiện ngoài target (smali_classes2/org/ヒオ.smali, 2 lần) — cân nhắc bổ sung class-link",
+        "Chuỗi khối 4 còn xuất hiện ngoài target (smali_classes2/org/ヒオ.smali, 2 lần) — cân nhắc bổ sung class-link",
+        "Chuỗi khối 5 còn xuất hiện ngoài target (smali_classes2/org/ヒオ.smali, 2 lần) — cân nhắc bổ sung class-link",
+        "Chuỗi khối 6 còn xuất hiện ngoài target (smali_classes2/org/ヒオ.smali, 2 lần) — cân nhắc bổ sung class-link",
+        "Chuỗi khối 7 còn xuất hiện ngoài target (smali_classes2/org/ヒオ.smali, 2 lần) — cân nhắc bổ sung class-link",
+        "Chuỗi khối 8 còn xuất hiện ngoài target (smali_classes2/org/シプ.smali, 1 lần) — cân nhắc bổ sung class-link"
+      ]
+    },
+    {
+      "patch": "License_hack",
+      "điểm": 0.64,
+      "tỷ_lệ_thành_công": 1.2,
+      "phân_tích": {
+        "tỷ_lệ": 1.2,
+        "yếu_tố": [
+          {
+            "tên": "Bao phủ quy tắc khớp 50%",
+            "điểm": 22.5
+          },
+          {
+            "tên": "Số lần khớp 9 (tối đa 25)",
+            "điểm": 7.2
+          },
+          {
+            "tên": "Khối khớp 2/4",
+            "điểm": 7.5
+          },
+          {
+            "tên": "Độ ưu tiên năng lực 1.00",
+            "điểm": 10.0
+          }
+        ],
+        "phạt": [
+          {
+            "loại": "tamper",
+            "điểm": 8.0
+          },
+          {
+            "loại": "emulator",
+            "điểm": 8.0
+          },
+          {
+            "loại": "signature",
+            "điểm": 20.0
+          },
+          {
+            "loại": "anti-debug",
+            "điểm": 10.0
+          }
+        ]
+      },
+      "năng_lực": [
+        "bypass-license",
+        "installer",
+        "integrity"
+      ],
+      "điểm_bypass": [
+        {
+          "khối": 4,
+          "loại": "MATCH_REPLACE",
+          "target": "smali*/*.smali",
+          "khớp": 8,
+          "tệp_trúng": [
+            "smali/org/アズピ.smali",
+            "smali/org/ィゾケ.smali",
+            "smali/org/ウィ.smali",
+            "smali_classes2/org/アオロ.smali",
+            "smali_classes2/org/アゼム.smali",
+            "smali_classes2/org/ィジリ.smali",
+            "smali_classes2/org/イヵ.smali",
+            "smali_classes2/org/ザャ.smali"
+          ],
+          "biến_thể": []
+        },
+        {
+          "khối": 6,
+          "loại": "MATCH_REPLACE",
+          "target": "smali*/*.smali",
+          "khớp": 1,
+          "tệp_trúng": [
+            "smali_classes2/org/ヲモ.smali"
+          ],
+          "biến_thể": []
+        }
+      ],
+      "cách_công_cụ": {
+        "cách": [
+          "Vô hiệu hoá kiểm tra VIP/license: gán cờ đã mua bằng SET_BOOL, nhảy qua khối kiểm tra bằng MATCH_GOTO, hoặc hook hàm kiểm tra bằng Frida/LSPosed.",
+          "Bỏ kiểm tra nguồn cài đặt: sửa luồng kiểm tra installer (getInstallerPackageName) trả về giá trị hợp lệ.",
+          "Vô hiệu hoá kiểm tra toàn vẹn/chữ ký: sửa luồng check (MATCH_GOTO) hoặc trả true/false cố định (SET_BOOL/MATCH_ASSIGN)."
+        ],
+        "công_cụ": [
+          "patchx apply",
+          "apktool",
+          "apksigner",
+          "Frida",
+          "LSPosed"
+        ],
+        "xác_minh": [
+          "Mở tính năng VIP; xem logcat tìm log trạng thái license.",
+          "Mở app ngay sau khi cài từ file APK.",
+          "Xoá báo lỗi 'signature mismatch'/'app modified' khi mở ứng dụng."
+        ]
+      },
+      "đề_xuất": [
+        "Khối 3 trượt target smali*/*.smali — cập nhật TARGET theo class-link thật của APK",
+        "Khối 5 trượt target smali*/*.smali — cập nhật TARGET theo class-link thật của APK"
+      ]
+    },
+    {
+      "patch": "New. Removing the analytic tag, etc.. Inok_ZP 12.04.18",
+      "điểm": 0.6367,
+      "tỷ_lệ_thành_công": 3.0,
+      "phân_tích": {
+        "tỷ_lệ": 3.0,
+        "yếu_tố": [
+          {
+            "tên": "Bao phủ quy tắc khớp 33%",
+            "điểm": 15.0
+          },
+          {
+            "tên": "Số lần khớp 2723982 (tối đa 25)",
+            "điểm": 20.0
+          },
+          {
+            "tên": "Khối khớp 1/3",
+            "điểm": 5.0
+          },
+          {
+            "tên": "Độ ưu tiên năng lực 0.90",
+            "điểm": 9.0
+          }
+        ],
+        "phạt": [
+          {
+            "loại": "tamper",
+            "điểm": 8.0
+          },
+          {
+            "loại": "emulator",
+            "điểm": 8.0
+          },
+          {
+            "loại": "signature",
+            "điểm": 20.0
+          },
+          {
+            "loại": "anti-debug",
+            "điểm": 10.0
+          }
+        ]
+      },
+      "năng_lực": [
+        "api",
+        "google"
+      ],
+      "điểm_bypass": [
+        {
+          "khối": 1,
+          "loại": "MATCH_REPLACE",
+          "target": "smali*/*.smali",
+          "khớp": 2723982,
+          "tệp_trúng": [
+            "smali/android/support/design/widget/TabLayout$break.smali",
+            "smali/android/support/design/widget/TabLayout$catch.smali",
+            "smali/android/support/design/widget/TabLayout$class.smali",
+            "smali/android/support/design/widget/TabLayout$instanceof.smali",
+            "smali/android/support/design/widget/TabLayout$private.smali",
+            "smali/android/support/design/widget/TabLayout$static$catch.smali",
+            "smali/android/support/design/widget/TabLayout$static$class.smali",
+            "smali/android/support/design/widget/TabLayout$strictfp.smali",
+            "smali/android/support/design/widget/TabLayout.smali",
+            "smali/android/support/design/widget/break$catch.smali"
+          ],
+          "biến_thể": []
+        }
+      ],
+      "cách_công_cụ": {
+        "cách": [
+          "Tìm API thật bằng log API_LOG/TRACE, sau đó thay domain/endpoint trong MATCH_REPLACE hoặc chặn tại class xử lý mạng.",
+          "Bỏ kiểm tra Google Play Services/SafetyNet: gỡ hoặc bỏ qua khối attestation, thay bằng kết quả giả."
+        ],
+        "công_cụ": [
+          "patchx apply",
+          "Frida",
+          "logcat",
+          "apktool",
+          "LSPosed"
+        ],
+        "xác_minh": [
+          "Theo dõi log chứa endpoint sau khi kích hoạt chức năng.",
+          "Mở ứng dụng khi không có Google Play đầy đủ; kiểm tra logcat."
+        ]
+      },
+      "đề_xuất": [
+        "Khối 2 trượt target AndroidManifest.xml — cập nhật TARGET theo class-link thật của APK",
+        "Khối 3 trượt target AndroidManifest.xml — cập nhật TARGET theo class-link thật của APK"
+      ]
+    },
+    {
+      "patch": "License_hack(Amazon)",
+      "điểm": 0.63,
+      "tỷ_lệ_thành_công": 0.4,
+      "phân_tích": {
+        "tỷ_lệ": 0.4,
+        "yếu_tố": [
+          {
+            "tên": "Bao phủ quy tắc khớp 50%",
+            "điểm": 22.5
+          },
+          {
+            "tên": "Số lần khớp 8 (tối đa 25)",
+            "điểm": 6.4
+          },
+          {
+            "tên": "Khối khớp 1/2",
+            "điểm": 7.5
+          },
+          {
+            "tên": "Độ ưu tiên năng lực 1.00",
+            "điểm": 10.0
+          }
+        ],
+        "phạt": [
+          {
+            "loại": "tamper",
+            "điểm": 8.0
+          },
+          {
+            "loại": "emulator",
+            "điểm": 8.0
+          },
+          {
+            "loại": "signature",
+            "điểm": 20.0
+          },
+          {
+            "loại": "anti-debug",
+            "điểm": 10.0
+          }
+        ]
+      },
+      "năng_lực": [
+        "bypass-license",
+        "integrity"
+      ],
+      "điểm_bypass": [
+        {
+          "khối": 3,
+          "loại": "MATCH_REPLACE",
+          "target": "smali*/*.smali",
+          "khớp": 8,
+          "tệp_trúng": [
+            "smali/org/アズピ.smali",
+            "smali/org/ィゾケ.smali",
+            "smali/org/ウィ.smali",
+            "smali_classes2/org/アオロ.smali",
+            "smali_classes2/org/アゼム.smali",
+            "smali_classes2/org/ィジリ.smali",
+            "smali_classes2/org/イヵ.smali",
+            "smali_classes2/org/ザャ.smali"
+          ],
+          "biến_thể": []
+        }
+      ],
+      "cách_công_cụ": {
+        "cách": [
+          "Vô hiệu hoá kiểm tra VIP/license: gán cờ đã mua bằng SET_BOOL, nhảy qua khối kiểm tra bằng MATCH_GOTO, hoặc hook hàm kiểm tra bằng Frida/LSPosed.",
+          "Vô hiệu hoá kiểm tra toàn vẹn/chữ ký: sửa luồng check (MATCH_GOTO) hoặc trả true/false cố định (SET_BOOL/MATCH_ASSIGN)."
+        ],
+        "công_cụ": [
+          "patchx apply",
+          "apktool",
+          "apksigner",
+          "Frida",
+          "LSPosed"
+        ],
+        "xác_minh": [
+          "Mở tính năng VIP; xem logcat tìm log trạng thái license.",
+          "Xoá báo lỗi 'signature mismatch'/'app modified' khi mở ứng dụng."
+        ]
+      },
+      "đề_xuất": [
+        "Khối 4 trượt target smali*/*.smali — cập nhật TARGET theo class-link thật của APK"
+      ]
+    },
+    {
+      "patch": "translate_obfuscation",
+      "điểm": 0.615,
+      "tỷ_lệ_thành_công": 22.5,
+      "phân_tích": {
+        "tỷ_lệ": 22.5,
+        "yếu_tố": [
+          {
+            "tên": "Bao phủ quy tắc khớp 80%",
+            "điểm": 36.0
+          },
+          {
+            "tên": "Số lần khớp 1242 (tối đa 25)",
+            "điểm": 20.0
+          },
+          {
+            "tên": "Khối khớp 4/5",
+            "điểm": 12.0
+          },
+          {
+            "tên": "Độ ưu tiên năng lực 0.05",
+            "điểm": 0.5
+          }
+        ],
+        "phạt": [
+          {
+            "loại": "tamper",
+            "điểm": 8.0
+          },
+          {
+            "loại": "emulator",
+            "điểm": 8.0
+          },
+          {
+            "loại": "signature",
+            "điểm": 20.0
+          },
+          {
+            "loại": "anti-debug",
+            "điểm": 10.0
+          }
+        ]
+      },
+      "năng_lực": [],
+      "điểm_bypass": [
+        {
+          "khối": 3,
+          "loại": "MATCH_REPLACE",
+          "target": "res/*",
+          "khớp": 190,
+          "tệp_trúng": [
+            "res/drawable-anydpi/design_ic_visibility.xml",
+            "res/drawable/$avd_hide_password__0.xml",
+            "res/drawable/$avd_hide_password__1.xml",
+            "res/drawable/$avd_show_password__0.xml",
+            "res/drawable/$avd_show_password__1.xml",
+            "res/layout-v26/abc_screen_toolbar.xml",
+            "res/layout/abc_action_mode_close_item_material.xml",
+            "res/layout/abc_screen_toolbar.xml",
+            "res/layout/abc_search_view.xml",
+            "res/layout/activity_external_card.xml"
+          ],
+          "biến_thể": []
+        },
+        {
+          "khối": 4,
+          "loại": "MATCH_REPLACE",
+          "target": "res/values*/strings.xml",
+          "khớp": 681,
+          "tệp_trúng": [
+            "res/values-ru/strings.xml",
+            "res/values/strings.xml"
+          ],
+          "biến_thể": []
+        },
+        {
+          "khối": 5,
+          "loại": "MATCH_REPLACE",
+          "target": "res/values/public.xml",
+          "khớp": 370,
+          "tệp_trúng": [
+            "res/values/public.xml"
+          ],
+          "biến_thể": []
+        },
+        {
+          "khối": 6,
+          "loại": "MATCH_GOTO",
+          "target": "AndroidManifest.xml",
+          "khớp": 1,
+          "tệp_trúng": [
+            "AndroidManifest.xml"
+          ],
+          "biến_thể": []
+        }
+      ],
+      "cách_công_cụ": {
+        "cách": [],
+        "công_cụ": [],
+        "xác_minh": []
+      },
+      "đề_xuất": [
+        "Chuỗi khối 3 còn xuất hiện ngoài target (smali/org/アドヤ.smali, 1 lần) — cân nhắc bổ sung class-link",
+        "Khối 8 trượt target AndroidManifest.xml — cập nhật TARGET theo class-link thật của APK"
+      ]
+    },
+    {
+      "patch": "3. GooglePlayServices by Edik1d",
+      "điểm": 0.615,
+      "tỷ_lệ_thành_công": 0.0,
+      "phân_tích": {
+        "tỷ_lệ": 0.0,
+        "yếu_tố": [
+          {
+            "tên": "Bao phủ quy tắc khớp 50%",
+            "điểm": 22.5
+          },
+          {
+            "tên": "Số lần khớp 8 (tối đa 25)",
+            "điểm": 6.4
+          },
+          {
+            "tên": "Khối khớp 1/2",
+            "điểm": 7.5
+          },
+          {
+            "tên": "Độ ưu tiên năng lực 0.95",
+            "điểm": 9.5
+          }
+        ],
+        "phạt": [
+          {
+            "loại": "tamper",
+            "điểm": 8.0
+          },
+          {
+            "loại": "emulator",
+            "điểm": 8.0
+          },
+          {
+            "loại": "signature",
+            "điểm": 20.0
+          },
+          {
+            "loại": "anti-debug",
+            "điểm": 10.0
+          }
+        ]
+      },
+      "năng_lực": [
+        "google",
+        "integrity"
+      ],
+      "điểm_bypass": [
+        {
+          "khối": 1,
+          "loại": "MATCH_REPLACE",
+          "target": "smali*/*.smali",
+          "khớp": 8,
+          "tệp_trúng": [
+            "smali/org/アズピ.smali",
+            "smali/org/ィゾケ.smali",
+            "smali/org/ウィ.smali",
+            "smali_classes2/org/アオロ.smali",
+            "smali_classes2/org/アゼム.smali",
+            "smali_classes2/org/ィジリ.smali",
+            "smali_classes2/org/イヵ.smali",
+            "smali_classes2/org/ザャ.smali"
+          ],
+          "biến_thể": []
+        }
+      ],
+      "cách_công_cụ": {
+        "cách": [
+          "Bỏ kiểm tra Google Play Services/SafetyNet: gỡ hoặc bỏ qua khối attestation, thay bằng kết quả giả.",
+          "Vô hiệu hoá kiểm tra toàn vẹn/chữ ký: sửa luồng check (MATCH_GOTO) hoặc trả true/false cố định (SET_BOOL/MATCH_ASSIGN)."
+        ],
+        "công_cụ": [
+          "patchx apply",
+          "apktool",
+          "LSPosed",
+          "apksigner"
+        ],
+        "xác_minh": [
+          "Mở ứng dụng khi không có Google Play đầy đủ; kiểm tra logcat.",
+          "Xoá báo lỗi 'signature mismatch'/'app modified' khi mở ứng dụng."
+        ]
+      },
+      "đề_xuất": [
+        "Khối 0 trượt target smali*/*.smali — cập nhật TARGET theo class-link thật của APK"
+      ]
+    },
+    {
+      "patch": "Debug_information_and_hack_signature",
+      "điểm": 0.56,
+      "tỷ_lệ_thành_công": 0.0,
+      "phân_tích": {
+        "tỷ_lệ": 0.0,
+        "yếu_tố": [
+          {
+            "tên": "Bao phủ quy tắc khớp 50%",
+            "điểm": 22.5
+          },
+          {
+            "tên": "Số lần khớp 1 (tối đa 25)",
+            "điểm": 0.8
+          },
+          {
+            "tên": "Khối khớp 1/2",
+            "điểm": 7.5
+          },
+          {
+            "tên": "Độ ưu tiên năng lực 1.00",
+            "điểm": 10.0
+          }
+        ],
+        "phạt": [
+          {
+            "loại": "tamper",
+            "điểm": 8.0
+          },
+          {
+            "loại": "emulator",
+            "điểm": 8.0
+          },
+          {
+            "loại": "signature",
+            "điểm": 20.0
+          },
+          {
+            "loại": "anti-debug",
+            "điểm": 10.0
+          }
+        ]
+      },
+      "năng_lực": [
+        "anti-debug",
+        "bypass-license",
+        "integrity",
+        "trace"
+      ],
+      "điểm_bypass": [
+        {
+          "khối": 3,
+          "loại": "MATCH_REPLACE",
+          "target": "smali*/*.smali",
+          "khớp": 1,
+          "tệp_trúng": [
+            "smali_classes2/org/アヅハ.smali"
+          ],
+          "biến_thể": []
+        }
+      ],
+      "cách_công_cụ": {
+        "cách": [
+          "Chống phát hiện gỡ lỗi: gán kết quả isDebuggerConnected về false, xoá kiểm tra TracerPid bằng MATCH_REPLACE/SET_BOOL.",
+          "Vô hiệu hoá kiểm tra VIP/license: gán cờ đã mua bằng SET_BOOL, nhảy qua khối kiểm tra bằng MATCH_GOTO, hoặc hook hàm kiểm tra bằng Frida/LSPosed.",
+          "Vô hiệu hoá kiểm tra toàn vẹn/chữ ký: sửa luồng check (MATCH_GOTO) hoặc trả true/false cố định (SET_BOOL/MATCH_ASSIGN).",
+          "Bật truy vết dữ liệu: chèn TRACE/API_LOG vào method mục tiêu để đọc tham số và phản hồi trước khi quyết định patch."
+        ],
+        "công_cụ": [
+          "patchx apply",
+          "apktool",
+          "apksigner",
+          "Frida",
+          "LSPosed",
+          "logcat"
+        ],
+        "xác_minh": [
+          "Chạy app trong trình gỡ lỗi mà không tự thoát.",
+          "Mở tính năng VIP; xem logcat tìm log trạng thái license.",
+          "Xoá báo lỗi 'signature mismatch'/'app modified' khi mở ứng dụng.",
+          "Đọc logcat thấy dữ liệu mong muốn in ra."
+        ]
+      },
+      "đề_xuất": [
+        "Chuỗi khối 3 còn xuất hiện ngoài target (assets/signatureHack/cc/binmt/signature/PmsHookApplication.smali, 2 lần) — cân nhắc bổ sung class-link",
+        "Khối 6 trượt target smali*/*.smali — cập nhật TARGET theo class-link thật của APK"
+      ]
+    },
+    {
+      "patch": "patch_bypass_sigcheck",
+      "điểm": 0.56,
+      "tỷ_lệ_thành_công": 0.0,
+      "phân_tích": {
+        "tỷ_lệ": 0.0,
+        "yếu_tố": [
+          {
+            "tên": "Bao phủ quy tắc khớp 50%",
+            "điểm": 22.5
+          },
+          {
+            "tên": "Số lần khớp 1 (tối đa 25)",
+            "điểm": 0.8
+          },
+          {
+            "tên": "Khối khớp 1/2",
+            "điểm": 7.5
+          },
+          {
+            "tên": "Độ ưu tiên năng lực 1.00",
+            "điểm": 10.0
+          }
+        ],
+        "phạt": [
+          {
+            "loại": "tamper",
+            "điểm": 8.0
+          },
+          {
+            "loại": "emulator",
+            "điểm": 8.0
+          },
+          {
+            "loại": "signature",
+            "điểm": 20.0
+          },
+          {
+            "loại": "anti-debug",
+            "điểm": 10.0
+          }
+        ]
+      },
+      "năng_lực": [
+        "bypass-license",
+        "google",
+        "integrity"
+      ],
+      "điểm_bypass": [
+        {
+          "khối": 3,
+          "loại": "MATCH_REPLACE",
+          "target": "smali*/*.smali",
+          "khớp": 1,
+          "tệp_trúng": [
+            "smali_classes2/org/アヅハ.smali"
+          ],
+          "biến_thể": []
+        }
+      ],
+      "cách_công_cụ": {
+        "cách": [
+          "Vô hiệu hoá kiểm tra VIP/license: gán cờ đã mua bằng SET_BOOL, nhảy qua khối kiểm tra bằng MATCH_GOTO, hoặc hook hàm kiểm tra bằng Frida/LSPosed.",
+          "Bỏ kiểm tra Google Play Services/SafetyNet: gỡ hoặc bỏ qua khối attestation, thay bằng kết quả giả.",
+          "Vô hiệu hoá kiểm tra toàn vẹn/chữ ký: sửa luồng check (MATCH_GOTO) hoặc trả true/false cố định (SET_BOOL/MATCH_ASSIGN)."
+        ],
+        "công_cụ": [
+          "patchx apply",
+          "apktool",
+          "apksigner",
+          "Frida",
+          "LSPosed"
+        ],
+        "xác_minh": [
+          "Mở tính năng VIP; xem logcat tìm log trạng thái license.",
+          "Mở ứng dụng khi không có Google Play đầy đủ; kiểm tra logcat.",
+          "Xoá báo lỗi 'signature mismatch'/'app modified' khi mở ứng dụng."
+        ]
+      },
+      "đề_xuất": [
+        "Chuỗi khối 3 còn xuất hiện ngoài target (assets/signatureHack/cc/binmt/signature/PmsHookApplication.smali, 2 lần) — cân nhắc bổ sung class-link",
+        "Khối 6 trượt target smali*/*smali — cập nhật TARGET theo class-link thật của APK"
+      ]
+    },
+    {
+      "patch": "Password_login_english",
+      "điểm": 0.535,
+      "tỷ_lệ_thành_công": 0.0,
+      "phân_tích": {
+        "tỷ_lệ": 0.0,
+        "yếu_tố": [
+          {
+            "tên": "Bao phủ quy tắc khớp 25%",
+            "điểm": 11.2
+          },
+          {
+            "tên": "Số lần khớp 2613309 (tối đa 25)",
+            "điểm": 20.0
+          },
+          {
+            "tên": "Khối khớp 3/12",
+            "điểm": 3.8
+          },
+          {
+            "tên": "Độ ưu tiên năng lực 0.70",
+            "điểm": 7.0
+          }
+        ],
+        "phạt": [
+          {
+            "loại": "tamper",
+            "điểm": 8.0
+          },
+          {
+            "loại": "emulator",
+            "điểm": 8.0
+          },
+          {
+            "loại": "signature",
+            "điểm": 20.0
+          },
+          {
+            "loại": "anti-debug",
+            "điểm": 10.0
+          }
+        ]
+      },
+      "năng_lực": [
+        "shell"
+      ],
+      "điểm_bypass": [
+        {
+          "khối": 3,
+          "loại": "MATCH_GOTO",
+          "target": "smali*/*.smali",
+          "khớp": 2613301,
+          "tệp_trúng": [
+            "smali/android/support/design/widget/TabLayout$break.smali",
+            "smali/android/support/design/widget/TabLayout$catch.smali",
+            "smali/android/support/design/widget/TabLayout$class.smali",
+            "smali/android/support/design/widget/TabLayout$instanceof.smali",
+            "smali/android/support/design/widget/TabLayout$private.smali",
+            "smali/android/support/design/widget/TabLayout$static$catch.smali",
+            "smali/android/support/design/widget/TabLayout$static$class.smali",
+            "smali/android/support/design/widget/TabLayout$strictfp.smali",
+            "smali/android/support/design/widget/TabLayout.smali",
+            "smali/android/support/design/widget/break$catch.smali"
+          ],
+          "biến_thể": []
+        },
+        {
+          "khối": 16,
+          "loại": "MATCH_REPLACE",
+          "target": "AndroidManifest.xml",
+          "khớp": 4,
+          "tệp_trúng": [
+            "AndroidManifest.xml"
+          ],
+          "biến_thể": []
+        },
+        {
+          "khối": 18,
+          "loại": "MATCH_REPLACE",
+          "target": "AndroidManifest.xml",
+          "khớp": 4,
+          "tệp_trúng": [
+            "AndroidManifest.xml"
+          ],
+          "biến_thể": []
+        }
+      ],
+      "cách_công_cụ": {
+        "cách": [
+          "Chèn khởi tạo mod qua INIT/HOOK_SCRIPT: chạy lệnh/script khi app mở để bơm biến hoặc gọi hàm nội bộ."
+        ],
+        "công_cụ": [
+          "patchx apply",
+          "apktool",
+          "Frida"
+        ],
+        "xác_minh": [
+          "Kiểm tra hiệu lực mod ngay sau khi app khởi động."
+        ]
+      },
+      "đề_xuất": [
+        "Khối 5 trượt target AndroidManifest.xml — cập nhật TARGET theo class-link thật của APK",
+        "Khối 6 trượt target AndroidManifest.xml — cập nhật TARGET theo class-link thật của APK",
+        "Khối 8 trượt target AndroidManifest.xml — cập nhật TARGET theo class-link thật của APK",
+        "Khối 10 trượt target AndroidManifest.xml — cập nhật TARGET theo class-link thật của APK",
+        "Khối 11 trượt target AndroidManifest.xml — cập nhật TARGET theo class-link thật của APK",
+        "Khối 13 trượt target AndroidManifest.xml — cập nhật TARGET theo class-link thật của APK"
+      ]
+    },
+    {
+      "patch": "GooglePlayServices",
+      "điểm": 0.5317,
+      "tỷ_lệ_thành_công": 0.0,
+      "phân_tích": {
+        "tỷ_lệ": 0.0,
+        "yếu_tố": [
+          {
+            "tên": "Bao phủ quy tắc khớp 33%",
+            "điểm": 15.0
+          },
+          {
+            "tên": "Số lần khớp 8 (tối đa 25)",
+            "điểm": 6.4
+          },
+          {
+            "tên": "Khối khớp 1/3",
+            "điểm": 5.0
+          },
+          {
+            "tên": "Độ ưu tiên năng lực 0.95",
+            "điểm": 9.5
+          }
+        ],
+        "phạt": [
+          {
+            "loại": "tamper",
+            "điểm": 8.0
+          },
+          {
+            "loại": "emulator",
+            "điểm": 8.0
+          },
+          {
+            "loại": "signature",
+            "điểm": 20.0
+          },
+          {
+            "loại": "anti-debug",
+            "điểm": 10.0
+          }
+        ]
+      },
+      "năng_lực": [
+        "google",
+        "integrity"
+      ],
+      "điểm_bypass": [
+        {
+          "khối": 5,
+          "loại": "MATCH_REPLACE",
+          "target": "smali*/*.smali",
+          "khớp": 8,
+          "tệp_trúng": [
+            "smali/org/アズピ.smali",
+            "smali/org/ィゾケ.smali",
+            "smali/org/ウィ.smali",
+            "smali_classes2/org/アオロ.smali",
+            "smali_classes2/org/アゼム.smali",
+            "smali_classes2/org/ィジリ.smali",
+            "smali_classes2/org/イヵ.smali",
+            "smali_classes2/org/ザャ.smali"
+          ],
+          "biến_thể": []
+        }
+      ],
+      "cách_công_cụ": {
+        "cách": [
+          "Bỏ kiểm tra Google Play Services/SafetyNet: gỡ hoặc bỏ qua khối attestation, thay bằng kết quả giả.",
+          "Vô hiệu hoá kiểm tra toàn vẹn/chữ ký: sửa luồng check (MATCH_GOTO) hoặc trả true/false cố định (SET_BOOL/MATCH_ASSIGN)."
+        ],
+        "công_cụ": [
+          "patchx apply",
+          "apktool",
+          "LSPosed",
+          "apksigner"
+        ],
+        "xác_minh": [
+          "Mở ứng dụng khi không có Google Play đầy đủ; kiểm tra logcat.",
+          "Xoá báo lỗi 'signature mismatch'/'app modified' khi mở ứng dụng."
+        ]
+      },
+      "đề_xuất": [
+        "Khối 3 trượt target smali*/*.smali — cập nhật TARGET theo class-link thật của APK",
+        "Khối 4 trượt target smali*/*.smali — cập nhật TARGET theo class-link thật của APK"
+      ]
+    },
+    {
+      "patch": "Permission_location",
+      "điểm": 0.51,
+      "tỷ_lệ_thành_công": 0.0,
+      "phân_tích": {
+        "tỷ_lệ": 0.0,
+        "yếu_tố": [
+          {
+            "tên": "Bao phủ quy tắc khớp 60%",
+            "điểm": 27.0
+          },
+          {
+            "tên": "Số lần khớp 3 (tối đa 25)",
+            "điểm": 2.4
+          },
+          {
+            "tên": "Khối khớp 3/5",
+            "điểm": 9.0
+          },
+          {
+            "tên": "Độ ưu tiên năng lực 0.60",
+            "điểm": 6.0
+          }
+        ],
+        "phạt": [
+          {
+            "loại": "tamper",
+            "điểm": 8.0
+          },
+          {
+            "loại": "emulator",
+            "điểm": 8.0
+          },
+          {
+            "loại": "signature",
+            "điểm": 20.0
+          },
+          {
+            "loại": "anti-debug",
+            "điểm": 10.0
+          }
+        ]
+      },
+      "năng_lực": [
+        "anonymity",
+        "permission"
+      ],
+      "điểm_bypass": [
+        {
+          "khối": 3,
+          "loại": "MATCH_REPLACE",
+          "target": "AndroidManifest.xml",
+          "khớp": 1,
+          "tệp_trúng": [
+            "AndroidManifest.xml"
+          ],
+          "biến_thể": []
+        },
+        {
+          "khối": 5,
+          "loại": "MATCH_REPLACE",
+          "target": "[LAUNCHER_ACTIVITIES]",
+          "khớp": 1,
+          "tệp_trúng": [
+            "smali/apk/tool/patcher/ui/modules/main/MainActivity.smali"
+          ],
+          "biến_thể": []
+        },
+        {
+          "khối": 6,
+          "loại": "MATCH_ASSIGN",
+          "target": "[LAUNCHER_ACTIVITIES]",
+          "khớp": 1,
+          "tệp_trúng": [
+            "smali/apk/tool/patcher/ui/modules/main/MainActivity.smali"
+          ],
+          "biến_thể": []
+        }
+      ],
+      "cách_công_cụ": {
+        "cách": [
+          "Ẩn danh: vô hiệu hoá thu thập định danh (analytics), thay chuỗi identifiers bằng giá trị giả.",
+          "Điều chỉnh quyền: sửa AndroidManifest.xml (thêm/bớt quyền, debuggable, backup)."
+        ],
+        "công_cụ": [
+          "patchx apply",
+          "apktool"
+        ],
+        "xác_minh": [
+          "Xem log/bắt mạng không còn dữ liệu định danh thật.",
+          "Cài APK, kiểm tra danh sách quyền hiển thị."
+        ]
+      },
+      "đề_xuất": [
+        "Chuỗi khối 3 còn xuất hiện ngoài target (smali/org/アェレ.smali, 4 lần) — cân nhắc bổ sung class-link",
+        "Khối 4 trượt target [LAUNCHER_ACTIVITIES] — cập nhật TARGET theo class-link thật của APK",
+        "Khối 7 trượt target [LAUNCHER_ACTIVITIES] — cập nhật TARGET theo class-link thật của APK"
+      ]
+    },
+    {
+      "patch": "Language substitution",
+      "điểm": 0.5007,
+      "tỷ_lệ_thành_công": 8.8,
+      "phân_tích": {
+        "tỷ_lệ": 8.8,
+        "yếu_tố": [
+          {
+            "tên": "Bao phủ quy tắc khớp 57%",
+            "điểm": 25.7
+          },
+          {
+            "tên": "Số lần khớp 763 (tối đa 25)",
+            "điểm": 20.0
+          },
+          {
+            "tên": "Khối khớp 4/7",
+            "điểm": 8.6
+          },
+          {
+            "tên": "Độ ưu tiên năng lực 0.05",
+            "điểm": 0.5
+          }
+        ],
+        "phạt": [
+          {
+            "loại": "tamper",
+            "điểm": 8.0
+          },
+          {
+            "loại": "emulator",
+            "điểm": 8.0
+          },
+          {
+            "loại": "signature",
+            "điểm": 20.0
+          },
+          {
+            "loại": "anti-debug",
+            "điểm": 10.0
+          }
+        ]
+      },
+      "năng_lực": [],
+      "điểm_bypass": [
+        {
+          "khối": 3,
+          "loại": "MATCH_REPLACE",
+          "target": "res/values-ru/strings.xml",
+          "khớp": 328,
+          "tệp_trúng": [
+            "res/values-ru/strings.xml"
+          ],
+          "biến_thể": []
+        },
+        {
+          "khối": 4,
+          "loại": "MATCH_ASSIGN",
+          "target": "res/values-ru/strings.xml",
+          "khớp": 1,
+          "tệp_trúng": [
+            "res/values-ru/strings.xml"
+          ],
+          "biến_thể": []
+        },
+        {
+          "khối": 5,
+          "loại": "MATCH_REPLACE",
+          "target": "res/values/strings.xml",
+          "khớp": 433,
+          "tệp_trúng": [
+            "res/values/strings.xml"
+          ],
+          "biến_thể": []
+        },
+        {
+          "khối": 6,
+          "loại": "MATCH_REPLACE",
+          "target": "res/values/strings.xml",
+          "khớp": 1,
+          "tệp_trúng": [
+            "res/values/strings.xml"
+          ],
+          "biến_thể": []
+        }
+      ],
+      "cách_công_cụ": {
+        "cách": [],
+        "công_cụ": [],
+        "xác_minh": []
+      },
+      "đề_xuất": [
+        "Chuỗi khối 4 còn xuất hiện ngoài target (res/values-h360dp-land/dimens.xml, 1 lần) — cân nhắc bổ sung class-link",
+        "Chuỗi khối 6 còn xuất hiện ngoài target (res/values-h360dp-land/dimens.xml, 1 lần) — cân nhắc bổ sung class-link",
+        "Khối 7 trượt target res/values/strings.xml — cập nhật TARGET theo class-link thật của APK",
+        "Khối 8 trượt target res/values-ru/strings.xml — cập nhật TARGET theo class-link thật của APK",
+        "Khối 9 trượt target res/values/strings.xml — cập nhật TARGET theo class-link thật của APK"
+      ]
+    },
+    {
+      "patch": "Only Ru",
+      "điểm": 0.5007,
+      "tỷ_lệ_thành_công": 8.8,
+      "phân_tích": {
+        "tỷ_lệ": 8.8,
+        "yếu_tố": [
+          {
+            "tên": "Bao phủ quy tắc khớp 57%",
+            "điểm": 25.7
+          },
+          {
+            "tên": "Số lần khớp 763 (tối đa 25)",
+            "điểm": 20.0
+          },
+          {
+            "tên": "Khối khớp 4/7",
+            "điểm": 8.6
+          },
+          {
+            "tên": "Độ ưu tiên năng lực 0.05",
+            "điểm": 0.5
+          }
+        ],
+        "phạt": [
+          {
+            "loại": "tamper",
+            "điểm": 8.0
+          },
+          {
+            "loại": "emulator",
+            "điểm": 8.0
+          },
+          {
+            "loại": "signature",
+            "điểm": 20.0
+          },
+          {
+            "loại": "anti-debug",
+            "điểm": 10.0
+          }
+        ]
+      },
+      "năng_lực": [],
+      "điểm_bypass": [
+        {
+          "khối": 3,
+          "loại": "MATCH_REPLACE",
+          "target": "res/values-ru/strings.xml",
+          "khớp": 328,
+          "tệp_trúng": [
+            "res/values-ru/strings.xml"
+          ],
+          "biến_thể": []
+        },
+        {
+          "khối": 4,
+          "loại": "MATCH_ASSIGN",
+          "target": "res/values-ru/strings.xml",
+          "khớp": 1,
+          "tệp_trúng": [
+            "res/values-ru/strings.xml"
+          ],
+          "biến_thể": []
+        },
+        {
+          "khối": 5,
+          "loại": "MATCH_REPLACE",
+          "target": "res/values/strings.xml",
+          "khớp": 433,
+          "tệp_trúng": [
+            "res/values/strings.xml"
+          ],
+          "biến_thể": []
+        },
+        {
+          "khối": 6,
+          "loại": "MATCH_REPLACE",
+          "target": "res/values/strings.xml",
+          "khớp": 1,
+          "tệp_trúng": [
+            "res/values/strings.xml"
+          ],
+          "biến_thể": []
+        }
+      ],
+      "cách_công_cụ": {
+        "cách": [],
+        "công_cụ": [],
+        "xác_minh": []
+      },
+      "đề_xuất": [
+        "Chuỗi khối 4 còn xuất hiện ngoài target (res/values-h360dp-land/dimens.xml, 1 lần) — cân nhắc bổ sung class-link",
+        "Chuỗi khối 6 còn xuất hiện ngoài target (res/values-h360dp-land/dimens.xml, 1 lần) — cân nhắc bổ sung class-link",
+        "Khối 7 trượt target res/values/strings.xml — cập nhật TARGET theo class-link thật của APK",
+        "Khối 8 trượt target res/values-ru/strings.xml — cập nhật TARGET theo class-link thật của APK",
+        "Khối 9 trượt target res/values/strings.xml — cập nhật TARGET theo class-link thật của APK"
+      ]
+    },
+    {
+      "patch": "License_hack&htc v2",
+      "điểm": 0.4938,
+      "tỷ_lệ_thành_công": 0.0,
+      "phân_tích": {
+        "tỷ_lệ": 0.0,
+        "yếu_tố": [
+          {
+            "tên": "Bao phủ quy tắc khớp 19%",
+            "điểm": 8.4
+          },
+          {
+            "tên": "Số lần khớp 10 (tối đa 25)",
+            "điểm": 8.0
+          },
+          {
+            "tên": "Khối khớp 3/16",
+            "điểm": 2.8
+          },
+          {
+            "tên": "Độ ưu tiên năng lực 1.00",
+            "điểm": 10.0
+          }
+        ],
+        "phạt": [
+          {
+            "loại": "tamper",
+            "điểm": 8.0
+          },
+          {
+            "loại": "emulator",
+            "điểm": 8.0
+          },
+          {
+            "loại": "signature",
+            "điểm": 20.0
+          },
+          {
+            "loại": "anti-debug",
+            "điểm": 10.0
+          }
+        ]
+      },
+      "năng_lực": [
+        "bypass-license",
+        "installer",
+        "integrity"
+      ],
+      "điểm_bypass": [
+        {
+          "khối": 3,
+          "loại": "MATCH_REPLACE",
+          "target": "smali*/*.smali",
+          "khớp": 8,
+          "tệp_trúng": [
+            "smali/org/アズピ.smali",
+            "smali/org/ィゾケ.smali",
+            "smali/org/ウィ.smali",
+            "smali_classes2/org/アオロ.smali",
+            "smali_classes2/org/アゼム.smali",
+            "smali_classes2/org/ィジリ.smali",
+            "smali_classes2/org/イヵ.smali",
+            "smali_classes2/org/ザャ.smali"
+          ],
+          "biến_thể": []
+        },
+        {
+          "khối": 5,
+          "loại": "MATCH_REPLACE",
+          "target": "smali*/*.smali",
+          "khớp": 1,
+          "tệp_trúng": [
+            "smali_classes2/org/ヲモ.smali"
+          ],
+          "biến_thể": []
+        },
+        {
+          "khối": 10,
+          "loại": "MATCH_ASSIGN",
+          "target": "AndroidManifest.xml",
+          "khớp": 1,
+          "tệp_trúng": [
+            "AndroidManifest.xml"
+          ],
+          "biến_thể": []
+        }
+      ],
+      "cách_công_cụ": {
+        "cách": [
+          "Vô hiệu hoá kiểm tra VIP/license: gán cờ đã mua bằng SET_BOOL, nhảy qua khối kiểm tra bằng MATCH_GOTO, hoặc hook hàm kiểm tra bằng Frida/LSPosed.",
+          "Bỏ kiểm tra nguồn cài đặt: sửa luồng kiểm tra installer (getInstallerPackageName) trả về giá trị hợp lệ.",
+          "Vô hiệu hoá kiểm tra toàn vẹn/chữ ký: sửa luồng check (MATCH_GOTO) hoặc trả true/false cố định (SET_BOOL/MATCH_ASSIGN)."
+        ],
+        "công_cụ": [
+          "patchx apply",
+          "apktool",
+          "apksigner",
+          "Frida",
+          "LSPosed"
+        ],
+        "xác_minh": [
+          "Mở tính năng VIP; xem logcat tìm log trạng thái license.",
+          "Mở app ngay sau khi cài từ file APK.",
+          "Xoá báo lỗi 'signature mismatch'/'app modified' khi mở ứng dụng."
+        ]
+      },
+      "đề_xuất": [
+        "Khối 4 trượt target smali*/*.smali — cập nhật TARGET theo class-link thật của APK",
+        "Khối 6 trượt target smali*/*.smali — cập nhật TARGET theo class-link thật của APK",
+        "Khối 7 trượt target smali*/*.smali — cập nhật TARGET theo class-link thật của APK",
+        "Khối 8 trượt target smali*/*.smali — cập nhật TARGET theo class-link thật của APK",
+        "Khối 11 trượt target smali/com/android/vending/licensing/htc600.smali — cập nhật TARGET theo class-link thật của APK",
+        "Khối 12 trượt target AndroidManifest.xml — cập nhật TARGET theo class-link thật của APK"
+      ]
+    },
+    {
+      "patch": "BinSignatureHack_with_htc",
+      "điểm": 0.4867,
+      "tỷ_lệ_thành_công": 0.0,
+      "phân_tích": {
+        "tỷ_lệ": 0.0,
+        "yếu_tố": [
+          {
+            "tên": "Bao phủ quy tắc khớp 33%",
+            "điểm": 15.0
+          },
+          {
+            "tên": "Số lần khớp 2 (tối đa 25)",
+            "điểm": 1.6
+          },
+          {
+            "tên": "Khối khớp 2/6",
+            "điểm": 5.0
+          },
+          {
+            "tên": "Độ ưu tiên năng lực 1.00",
+            "điểm": 10.0
+          }
+        ],
+        "phạt": [
+          {
+            "loại": "tamper",
+            "điểm": 8.0
+          },
+          {
+            "loại": "emulator",
+            "điểm": 8.0
+          },
+          {
+            "loại": "signature",
+            "điểm": 20.0
+          },
+          {
+            "loại": "anti-debug",
+            "điểm": 10.0
+          }
+        ]
+      },
+      "năng_lực": [
+        "bypass-license",
+        "integrity"
+      ],
+      "điểm_bypass": [
+        {
+          "khối": 5,
+          "loại": "MATCH_REPLACE",
+          "target": "AndroidManifest.xml",
+          "khớp": 1,
+          "tệp_trúng": [
+            "AndroidManifest.xml"
+          ],
+          "biến_thể": []
+        },
+        {
+          "khối": 7,
+          "loại": "MATCH_REPLACE",
+          "target": "AndroidManifest.xml",
+          "khớp": 1,
+          "tệp_trúng": [
+            "AndroidManifest.xml"
+          ],
+          "biến_thể": []
+        }
+      ],
+      "cách_công_cụ": {
+        "cách": [
+          "Vô hiệu hoá kiểm tra VIP/license: gán cờ đã mua bằng SET_BOOL, nhảy qua khối kiểm tra bằng MATCH_GOTO, hoặc hook hàm kiểm tra bằng Frida/LSPosed.",
+          "Vô hiệu hoá kiểm tra toàn vẹn/chữ ký: sửa luồng check (MATCH_GOTO) hoặc trả true/false cố định (SET_BOOL/MATCH_ASSIGN)."
+        ],
+        "công_cụ": [
+          "patchx apply",
+          "apktool",
+          "apksigner",
+          "Frida",
+          "LSPosed"
+        ],
+        "xác_minh": [
+          "Mở tính năng VIP; xem logcat tìm log trạng thái license.",
+          "Xoá báo lỗi 'signature mismatch'/'app modified' khi mở ứng dụng."
+        ]
+      },
+      "đề_xuất": [
+        "Khối 4 trượt target AndroidManifest.xml — cập nhật TARGET theo class-link thật của APK",
+        "Chuỗi khối 5 còn xuất hiện ngoài target (smali/org/アェレ.smali, 1 lần) — cân nhắc bổ sung class-link",
+        "Khối 8 trượt target [APPLICATION] — cập nhật TARGET theo class-link thật của APK",
+        "Khối 9 trượt target [APPLICATION] — cập nhật TARGET theo class-link thật của APK",
+        "Khối 10 trượt target smali/cc/binmt/signature/PmsHookApplication.smali — cập nhật TARGET theo class-link thật của APK"
+      ]
+    },
+    {
+      "patch": "Permission_readSMS",
+      "điểm": 0.48,
+      "tỷ_lệ_thành_công": 0.0,
+      "phân_tích": {
+        "tỷ_lệ": 0.0,
+        "yếu_tố": [
+          {
+            "tên": "Bao phủ quy tắc khớp 60%",
+            "điểm": 27.0
+          },
+          {
+            "tên": "Số lần khớp 3 (tối đa 25)",
+            "điểm": 2.4
+          },
+          {
+            "tên": "Khối khớp 3/5",
+            "điểm": 9.0
+          },
+          {
+            "tên": "Độ ưu tiên năng lực 0.50",
+            "điểm": 5.0
+          }
+        ],
+        "phạt": [
+          {
+            "loại": "tamper",
+            "điểm": 8.0
+          },
+          {
+            "loại": "emulator",
+            "điểm": 8.0
+          },
+          {
+            "loại": "signature",
+            "điểm": 20.0
+          },
+          {
+            "loại": "anti-debug",
+            "điểm": 10.0
+          }
+        ]
+      },
+      "năng_lực": [
+        "ads",
+        "permission"
+      ],
+      "điểm_bypass": [
+        {
+          "khối": 3,
+          "loại": "MATCH_REPLACE",
+          "target": "AndroidManifest.xml",
+          "khớp": 1,
+          "tệp_trúng": [
+            "AndroidManifest.xml"
+          ],
+          "biến_thể": []
+        },
+        {
+          "khối": 5,
+          "loại": "MATCH_REPLACE",
+          "target": "[LAUNCHER_ACTIVITIES]",
+          "khớp": 1,
+          "tệp_trúng": [
+            "smali/apk/tool/patcher/ui/modules/main/MainActivity.smali"
+          ],
+          "biến_thể": []
+        },
+        {
+          "khối": 6,
+          "loại": "MATCH_ASSIGN",
+          "target": "[LAUNCHER_ACTIVITIES]",
+          "khớp": 1,
+          "tệp_trúng": [
+            "smali/apk/tool/patcher/ui/modules/main/MainActivity.smali"
+          ],
+          "biến_thể": []
+        }
+      ],
+      "cách_công_cụ": {
+        "cách": [
+          "Chặn quảng cáo: thay URL ad network bằng chuỗi rỗng hoặc bỏ qua khối hiển thị quảng cáo.",
+          "Điều chỉnh quyền: sửa AndroidManifest.xml (thêm/bớt quyền, debuggable, backup)."
+        ],
+        "công_cụ": [
+          "patchx apply",
+          "apktool"
+        ],
+        "xác_minh": [
+          "Chạy app và xác nhận không còn banner/interstitial.",
+          "Cài APK, kiểm tra danh sách quyền hiển thị."
+        ]
+      },
+      "đề_xuất": [
+        "Chuỗi khối 3 còn xuất hiện ngoài target (smali/org/アェレ.smali, 4 lần) — cân nhắc bổ sung class-link",
+        "Khối 4 trượt target [LAUNCHER_ACTIVITIES] — cập nhật TARGET theo class-link thật của APK",
+        "Khối 7 trượt target [LAUNCHER_ACTIVITIES] — cập nhật TARGET theo class-link thật của APK"
+      ]
+    },
+    {
+      "patch": "Bin_sig&installer_fix[Amazon]",
+      "điểm": 0.4479,
+      "tỷ_lệ_thành_công": 0.0,
+      "phân_tích": {
+        "tỷ_lệ": 0.0,
+        "yếu_tố": [
+          {
+            "tên": "Bao phủ quy tắc khớp 29%",
+            "điểm": 12.9
+          },
+          {
+            "tên": "Số lần khớp 2 (tối đa 25)",
+            "điểm": 1.6
+          },
+          {
+            "tên": "Khối khớp 2/7",
+            "điểm": 4.3
+          },
+          {
+            "tên": "Độ ưu tiên năng lực 0.95",
+            "điểm": 9.5
+          }
+        ],
+        "phạt": [
+          {
+            "loại": "tamper",
+            "điểm": 8.0
+          },
+          {
+            "loại": "emulator",
+            "điểm": 8.0
+          },
+          {
+            "loại": "signature",
+            "điểm": 20.0
+          },
+          {
+            "loại": "anti-debug",
+            "điểm": 10.0
+          }
+        ]
+      },
+      "năng_lực": [
+        "installer",
+        "integrity"
+      ],
+      "điểm_bypass": [
+        {
+          "khối": 6,
+          "loại": "MATCH_REPLACE",
+          "target": "AndroidManifest.xml",
+          "khớp": 1,
+          "tệp_trúng": [
+            "AndroidManifest.xml"
+          ],
+          "biến_thể": []
+        },
+        {
+          "khối": 8,
+          "loại": "MATCH_REPLACE",
+          "target": "AndroidManifest.xml",
+          "khớp": 1,
+          "tệp_trúng": [
+            "AndroidManifest.xml"
+          ],
+          "biến_thể": []
+        }
+      ],
+      "cách_công_cụ": {
+        "cách": [
+          "Bỏ kiểm tra nguồn cài đặt: sửa luồng kiểm tra installer (getInstallerPackageName) trả về giá trị hợp lệ.",
+          "Vô hiệu hoá kiểm tra toàn vẹn/chữ ký: sửa luồng check (MATCH_GOTO) hoặc trả true/false cố định (SET_BOOL/MATCH_ASSIGN)."
+        ],
+        "công_cụ": [
+          "patchx apply",
+          "apktool",
+          "apksigner"
+        ],
+        "xác_minh": [
+          "Mở app ngay sau khi cài từ file APK.",
+          "Xoá báo lỗi 'signature mismatch'/'app modified' khi mở ứng dụng."
+        ]
+      },
+      "đề_xuất": [
+        "Khối 4 trượt target smali/cc/binmt/signature/PmsHookApplication.smali — cập nhật TARGET theo class-link thật của APK",
+        "Khối 5 trượt target AndroidManifest.xml — cập nhật TARGET theo class-link thật của APK",
+        "Chuỗi khối 6 còn xuất hiện ngoài target (smali/org/アェレ.smali, 1 lần) — cân nhắc bổ sung class-link",
+        "Khối 9 trượt target [APPLICATION] — cập nhật TARGET theo class-link thật của APK",
+        "Khối 10 trượt target [APPLICATION] — cập nhật TARGET theo class-link thật của APK",
+        "Khối 11 trượt target smali/cc/binmt/signature/PmsHookApplication.smali — cập nhật TARGET theo class-link thật của APK"
+      ]
+    },
+    {
+      "patch": "Bin_sig&installer_fix[Google]",
+      "điểm": 0.4479,
+      "tỷ_lệ_thành_công": 0.0,
+      "phân_tích": {
+        "tỷ_lệ": 0.0,
+        "yếu_tố": [
+          {
+            "tên": "Bao phủ quy tắc khớp 29%",
+            "điểm": 12.9
+          },
+          {
+            "tên": "Số lần khớp 2 (tối đa 25)",
+            "điểm": 1.6
+          },
+          {
+            "tên": "Khối khớp 2/7",
+            "điểm": 4.3
+          },
+          {
+            "tên": "Độ ưu tiên năng lực 0.95",
+            "điểm": 9.5
+          }
+        ],
+        "phạt": [
+          {
+            "loại": "tamper",
+            "điểm": 8.0
+          },
+          {
+            "loại": "emulator",
+            "điểm": 8.0
+          },
+          {
+            "loại": "signature",
+            "điểm": 20.0
+          },
+          {
+            "loại": "anti-debug",
+            "điểm": 10.0
+          }
+        ]
+      },
+      "năng_lực": [
+        "google",
+        "installer",
+        "integrity"
+      ],
+      "điểm_bypass": [
+        {
+          "khối": 6,
+          "loại": "MATCH_REPLACE",
+          "target": "AndroidManifest.xml",
+          "khớp": 1,
+          "tệp_trúng": [
+            "AndroidManifest.xml"
+          ],
+          "biến_thể": []
+        },
+        {
+          "khối": 8,
+          "loại": "MATCH_REPLACE",
+          "target": "AndroidManifest.xml",
+          "khớp": 1,
+          "tệp_trúng": [
+            "AndroidManifest.xml"
+          ],
+          "biến_thể": []
+        }
+      ],
+      "cách_công_cụ": {
+        "cách": [
+          "Bỏ kiểm tra Google Play Services/SafetyNet: gỡ hoặc bỏ qua khối attestation, thay bằng kết quả giả.",
+          "Bỏ kiểm tra nguồn cài đặt: sửa luồng kiểm tra installer (getInstallerPackageName) trả về giá trị hợp lệ.",
+          "Vô hiệu hoá kiểm tra toàn vẹn/chữ ký: sửa luồng check (MATCH_GOTO) hoặc trả true/false cố định (SET_BOOL/MATCH_ASSIGN)."
+        ],
+        "công_cụ": [
+          "patchx apply",
+          "apktool",
+          "LSPosed",
+          "apksigner"
+        ],
+        "xác_minh": [
+          "Mở ứng dụng khi không có Google Play đầy đủ; kiểm tra logcat.",
+          "Mở app ngay sau khi cài từ file APK.",
+          "Xoá báo lỗi 'signature mismatch'/'app modified' khi mở ứng dụng."
+        ]
+      },
+      "đề_xuất": [
+        "Khối 4 trượt target smali/cc/binmt/signature/PmsHookApplication.smali — cập nhật TARGET theo class-link thật của APK",
+        "Khối 5 trượt target AndroidManifest.xml — cập nhật TARGET theo class-link thật của APK",
+        "Chuỗi khối 6 còn xuất hiện ngoài target (smali/org/アェレ.smali, 1 lần) — cân nhắc bổ sung class-link",
+        "Khối 9 trượt target [APPLICATION] — cập nhật TARGET theo class-link thật của APK",
+        "Khối 10 trượt target [APPLICATION] — cập nhật TARGET theo class-link thật của APK",
+        "Khối 11 trượt target smali/cc/binmt/signature/PmsHookApplication.smali — cập nhật TARGET theo class-link thật của APK"
+      ]
+    },
+    {
+      "patch": "Permission_calendar",
+      "điểm": 0.435,
+      "tỷ_lệ_thành_công": 0.0,
+      "phân_tích": {
+        "tỷ_lệ": 0.0,
+        "yếu_tố": [
+          {
+            "tên": "Bao phủ quy tắc khớp 60%",
+            "điểm": 27.0
+          },
+          {
+            "tên": "Số lần khớp 3 (tối đa 25)",
+            "điểm": 2.4
+          },
+          {
+            "tên": "Khối khớp 3/5",
+            "điểm": 9.0
+          },
+          {
+            "tên": "Độ ưu tiên năng lực 0.35",
+            "điểm": 3.5
+          }
+        ],
+        "phạt": [
+          {
+            "loại": "tamper",
+            "điểm": 8.0
+          },
+          {
+            "loại": "emulator",
+            "điểm": 8.0
+          },
+          {
+            "loại": "signature",
+            "điểm": 20.0
+          },
+          {
+            "loại": "anti-debug",
+            "điểm": 10.0
+          }
+        ]
+      },
+      "năng_lực": [
+        "permission"
+      ],
+      "điểm_bypass": [
+        {
+          "khối": 3,
+          "loại": "MATCH_REPLACE",
+          "target": "AndroidManifest.xml",
+          "khớp": 1,
+          "tệp_trúng": [
+            "AndroidManifest.xml"
+          ],
+          "biến_thể": []
+        },
+        {
+          "khối": 5,
+          "loại": "MATCH_REPLACE",
+          "target": "[LAUNCHER_ACTIVITIES]",
+          "khớp": 1,
+          "tệp_trúng": [
+            "smali/apk/tool/patcher/ui/modules/main/MainActivity.smali"
+          ],
+          "biến_thể": []
+        },
+        {
+          "khối": 6,
+          "loại": "MATCH_ASSIGN",
+          "target": "[LAUNCHER_ACTIVITIES]",
+          "khớp": 1,
+          "tệp_trúng": [
+            "smali/apk/tool/patcher/ui/modules/main/MainActivity.smali"
+          ],
+          "biến_thể": []
+        }
+      ],
+      "cách_công_cụ": {
+        "cách": [
+          "Điều chỉnh quyền: sửa AndroidManifest.xml (thêm/bớt quyền, debuggable, backup)."
+        ],
+        "công_cụ": [
+          "patchx apply",
+          "apktool"
+        ],
+        "xác_minh": [
+          "Cài APK, kiểm tra danh sách quyền hiển thị."
+        ]
+      },
+      "đề_xuất": [
+        "Chuỗi khối 3 còn xuất hiện ngoài target (smali/org/アェレ.smali, 4 lần) — cân nhắc bổ sung class-link",
+        "Khối 4 trượt target [LAUNCHER_ACTIVITIES] — cập nhật TARGET theo class-link thật của APK",
+        "Khối 7 trượt target [LAUNCHER_ACTIVITIES] — cập nhật TARGET theo class-link thật của APK"
+      ]
+    },
+    {
+      "patch": "Permission_camera",
+      "điểm": 0.435,
+      "tỷ_lệ_thành_công": 0.0,
+      "phân_tích": {
+        "tỷ_lệ": 0.0,
+        "yếu_tố": [
+          {
+            "tên": "Bao phủ quy tắc khớp 60%",
+            "điểm": 27.0
+          },
+          {
+            "tên": "Số lần khớp 3 (tối đa 25)",
+            "điểm": 2.4
+          },
+          {
+            "tên": "Khối khớp 3/5",
+            "điểm": 9.0
+          },
+          {
+            "tên": "Độ ưu tiên năng lực 0.35",
+            "điểm": 3.5
+          }
+        ],
+        "phạt": [
+          {
+            "loại": "tamper",
+            "điểm": 8.0
+          },
+          {
+            "loại": "emulator",
+            "điểm": 8.0
+          },
+          {
+            "loại": "signature",
+            "điểm": 20.0
+          },
+          {
+            "loại": "anti-debug",
+            "điểm": 10.0
+          }
+        ]
+      },
+      "năng_lực": [
+        "permission"
+      ],
+      "điểm_bypass": [
+        {
+          "khối": 3,
+          "loại": "MATCH_REPLACE",
+          "target": "AndroidManifest.xml",
+          "khớp": 1,
+          "tệp_trúng": [
+            "AndroidManifest.xml"
+          ],
+          "biến_thể": []
+        },
+        {
+          "khối": 5,
+          "loại": "MATCH_REPLACE",
+          "target": "[LAUNCHER_ACTIVITIES]",
+          "khớp": 1,
+          "tệp_trúng": [
+            "smali/apk/tool/patcher/ui/modules/main/MainActivity.smali"
+          ],
+          "biến_thể": []
+        },
+        {
+          "khối": 6,
+          "loại": "MATCH_ASSIGN",
+          "target": "[LAUNCHER_ACTIVITIES]",
+          "khớp": 1,
+          "tệp_trúng": [
+            "smali/apk/tool/patcher/ui/modules/main/MainActivity.smali"
+          ],
+          "biến_thể": []
+        }
+      ],
+      "cách_công_cụ": {
+        "cách": [
+          "Điều chỉnh quyền: sửa AndroidManifest.xml (thêm/bớt quyền, debuggable, backup)."
+        ],
+        "công_cụ": [
+          "patchx apply",
+          "apktool"
+        ],
+        "xác_minh": [
+          "Cài APK, kiểm tra danh sách quyền hiển thị."
+        ]
+      },
+      "đề_xuất": [
+        "Chuỗi khối 3 còn xuất hiện ngoài target (smali/org/アェレ.smali, 4 lần) — cân nhắc bổ sung class-link",
+        "Khối 4 trượt target [LAUNCHER_ACTIVITIES] — cập nhật TARGET theo class-link thật của APK",
+        "Khối 7 trượt target [LAUNCHER_ACTIVITIES] — cập nhật TARGET theo class-link thật của APK"
+      ]
+    },
+    {
+      "patch": "Permission_phone",
+      "điểm": 0.435,
+      "tỷ_lệ_thành_công": 0.0,
+      "phân_tích": {
+        "tỷ_lệ": 0.0,
+        "yếu_tố": [
+          {
+            "tên": "Bao phủ quy tắc khớp 60%",
+            "điểm": 27.0
+          },
+          {
+            "tên": "Số lần khớp 3 (tối đa 25)",
+            "điểm": 2.4
+          },
+          {
+            "tên": "Khối khớp 3/5",
+            "điểm": 9.0
+          },
+          {
+            "tên": "Độ ưu tiên năng lực 0.35",
+            "điểm": 3.5
+          }
+        ],
+        "phạt": [
+          {
+            "loại": "tamper",
+            "điểm": 8.0
+          },
+          {
+            "loại": "emulator",
+            "điểm": 8.0
+          },
+          {
+            "loại": "signature",
+            "điểm": 20.0
+          },
+          {
+            "loại": "anti-debug",
+            "điểm": 10.0
+          }
+        ]
+      },
+      "năng_lực": [
+        "permission"
+      ],
+      "điểm_bypass": [
+        {
+          "khối": 3,
+          "loại": "MATCH_REPLACE",
+          "target": "AndroidManifest.xml",
+          "khớp": 1,
+          "tệp_trúng": [
+            "AndroidManifest.xml"
+          ],
+          "biến_thể": []
+        },
+        {
+          "khối": 5,
+          "loại": "MATCH_REPLACE",
+          "target": "[LAUNCHER_ACTIVITIES]",
+          "khớp": 1,
+          "tệp_trúng": [
+            "smali/apk/tool/patcher/ui/modules/main/MainActivity.smali"
+          ],
+          "biến_thể": []
+        },
+        {
+          "khối": 6,
+          "loại": "MATCH_ASSIGN",
+          "target": "[LAUNCHER_ACTIVITIES]",
+          "khớp": 1,
+          "tệp_trúng": [
+            "smali/apk/tool/patcher/ui/modules/main/MainActivity.smali"
+          ],
+          "biến_thể": []
+        }
+      ],
+      "cách_công_cụ": {
+        "cách": [
+          "Điều chỉnh quyền: sửa AndroidManifest.xml (thêm/bớt quyền, debuggable, backup)."
+        ],
+        "công_cụ": [
+          "patchx apply",
+          "apktool"
+        ],
+        "xác_minh": [
+          "Cài APK, kiểm tra danh sách quyền hiển thị."
+        ]
+      },
+      "đề_xuất": [
+        "Chuỗi khối 3 còn xuất hiện ngoài target (smali/org/アェレ.smali, 4 lần) — cân nhắc bổ sung class-link",
+        "Khối 4 trượt target [LAUNCHER_ACTIVITIES] — cập nhật TARGET theo class-link thật của APK",
+        "Khối 7 trượt target [LAUNCHER_ACTIVITIES] — cập nhật TARGET theo class-link thật của APK"
+      ]
+    },
+    {
+      "patch": "Permission_readContact",
+      "điểm": 0.435,
+      "tỷ_lệ_thành_công": 0.0,
+      "phân_tích": {
+        "tỷ_lệ": 0.0,
+        "yếu_tố": [
+          {
+            "tên": "Bao phủ quy tắc khớp 60%",
+            "điểm": 27.0
+          },
+          {
+            "tên": "Số lần khớp 3 (tối đa 25)",
+            "điểm": 2.4
+          },
+          {
+            "tên": "Khối khớp 3/5",
+            "điểm": 9.0
+          },
+          {
+            "tên": "Độ ưu tiên năng lực 0.35",
+            "điểm": 3.5
+          }
+        ],
+        "phạt": [
+          {
+            "loại": "tamper",
+            "điểm": 8.0
+          },
+          {
+            "loại": "emulator",
+            "điểm": 8.0
+          },
+          {
+            "loại": "signature",
+            "điểm": 20.0
+          },
+          {
+            "loại": "anti-debug",
+            "điểm": 10.0
+          }
+        ]
+      },
+      "năng_lực": [
+        "permission"
+      ],
+      "điểm_bypass": [
+        {
+          "khối": 3,
+          "loại": "MATCH_REPLACE",
+          "target": "AndroidManifest.xml",
+          "khớp": 1,
+          "tệp_trúng": [
+            "AndroidManifest.xml"
+          ],
+          "biến_thể": []
+        },
+        {
+          "khối": 5,
+          "loại": "MATCH_REPLACE",
+          "target": "[LAUNCHER_ACTIVITIES]",
+          "khớp": 1,
+          "tệp_trúng": [
+            "smali/apk/tool/patcher/ui/modules/main/MainActivity.smali"
+          ],
+          "biến_thể": []
+        },
+        {
+          "khối": 6,
+          "loại": "MATCH_ASSIGN",
+          "target": "[LAUNCHER_ACTIVITIES]",
+          "khớp": 1,
+          "tệp_trúng": [
+            "smali/apk/tool/patcher/ui/modules/main/MainActivity.smali"
+          ],
+          "biến_thể": []
+        }
+      ],
+      "cách_công_cụ": {
+        "cách": [
+          "Điều chỉnh quyền: sửa AndroidManifest.xml (thêm/bớt quyền, debuggable, backup)."
+        ],
+        "công_cụ": [
+          "patchx apply",
+          "apktool"
+        ],
+        "xác_minh": [
+          "Cài APK, kiểm tra danh sách quyền hiển thị."
+        ]
+      },
+      "đề_xuất": [
+        "Chuỗi khối 3 còn xuất hiện ngoài target (smali/org/アェレ.smali, 4 lần) — cân nhắc bổ sung class-link",
+        "Khối 4 trượt target [LAUNCHER_ACTIVITIES] — cập nhật TARGET theo class-link thật của APK",
+        "Khối 7 trượt target [LAUNCHER_ACTIVITIES] — cập nhật TARGET theo class-link thật của APK"
+      ]
+    },
+    {
+      "patch": "SignatureHack_arm64",
+      "điểm": 0.4311,
+      "tỷ_lệ_thành_công": 0.0,
+      "phân_tích": {
+        "tỷ_lệ": 0.0,
+        "yếu_tố": [
+          {
+            "tên": "Bao phủ quy tắc khớp 22%",
+            "điểm": 10.0
+          },
+          {
+            "tên": "Số lần khớp 2 (tối đa 25)",
+            "điểm": 1.6
+          },
+          {
+            "tên": "Khối khớp 2/9",
+            "điểm": 3.3
+          },
+          {
+            "tên": "Độ ưu tiên năng lực 1.00",
+            "điểm": 10.0
+          }
+        ],
+        "phạt": [
+          {
+            "loại": "tamper",
+            "điểm": 8.0
+          },
+          {
+            "loại": "emulator",
+            "điểm": 8.0
+          },
+          {
+            "loại": "signature",
+            "điểm": 20.0
+          },
+          {
+            "loại": "anti-debug",
+            "điểm": 10.0
+          }
+        ]
+      },
+      "năng_lực": [
+        "bypass-license",
+        "frida-hide",
+        "integrity",
+        "shell"
+      ],
+      "điểm_bypass": [
+        {
+          "khối": 8,
+          "loại": "MATCH_GOTO",
+          "target": "smali*/*.smali",
+          "khớp": 1,
+          "tệp_trúng": [
+            "smali_classes2/ru/leymoy/StubApp.smali"
+          ],
+          "biến_thể": []
+        },
+        {
+          "khối": 14,
+          "loại": "MATCH_REPLACE",
+          "target": "smali*/*.smali",
+          "khớp": 1,
+          "tệp_trúng": [
+            "smali_classes2/ru/leymoy/StubApp.smali"
+          ],
+          "biến_thể": []
+        }
+      ],
+      "cách_công_cụ": {
+        "cách": [
+          "Vô hiệu hoá kiểm tra VIP/license: gán cờ đã mua bằng SET_BOOL, nhảy qua khối kiểm tra bằng MATCH_GOTO, hoặc hook hàm kiểm tra bằng Frida/LSPosed.",
+          "Ẩn dấu vết Frida: thay chuỗi 'frida' bằng giá trị giả, comment lời gọi checkFrida/findFrida, tránh phát hiện gadget.",
+          "Vô hiệu hoá kiểm tra toàn vẹn/chữ ký: sửa luồng check (MATCH_GOTO) hoặc trả true/false cố định (SET_BOOL/MATCH_ASSIGN).",
+          "Chèn khởi tạo mod qua INIT/HOOK_SCRIPT: chạy lệnh/script khi app mở để bơm biến hoặc gọi hàm nội bộ."
+        ],
+        "công_cụ": [
+          "patchx apply",
+          "apktool",
+          "apksigner",
+          "Frida",
+          "LSPosed"
+        ],
+        "xác_minh": [
+          "Mở tính năng VIP; xem logcat tìm log trạng thái license.",
+          "Mở app khi có Frida trong bộ nhớ, xác nhận không bị chặn.",
+          "Xoá báo lỗi 'signature mismatch'/'app modified' khi mở ứng dụng.",
+          "Kiểm tra hiệu lực mod ngay sau khi app khởi động."
+        ]
+      },
+      "đề_xuất": [
+        "Khối 4 trượt target smali*/*.smali — cập nhật TARGET theo class-link thật của APK",
+        "Khối 7 trượt target [APPLICATION] — cập nhật TARGET theo class-link thật của APK",
+        "Khối 9 trượt target smali/com/unity3d/player/UnityPlayerActivity.smali — cập nhật TARGET theo class-link thật của APK",
+        "Khối 10 trượt target [LAUNCHER_ACTIVITIES] — cập nhật TARGET theo class-link thật của APK",
+        "Khối 12 trượt target smali/com/unity3d/player/UnityPlayerActivity.smali — cập nhật TARGET theo class-link thật của APK",
+        "Khối 13 trượt target [APPLICATION] — cập nhật TARGET theo class-link thật của APK"
+      ]
+    },
+    {
+      "patch": "SignatureHack_armv7",
+      "điểm": 0.4311,
+      "tỷ_lệ_thành_công": 0.0,
+      "phân_tích": {
+        "tỷ_lệ": 0.0,
+        "yếu_tố": [
+          {
+            "tên": "Bao phủ quy tắc khớp 22%",
+            "điểm": 10.0
+          },
+          {
+            "tên": "Số lần khớp 2 (tối đa 25)",
+            "điểm": 1.6
+          },
+          {
+            "tên": "Khối khớp 2/9",
+            "điểm": 3.3
+          },
+          {
+            "tên": "Độ ưu tiên năng lực 1.00",
+            "điểm": 10.0
+          }
+        ],
+        "phạt": [
+          {
+            "loại": "tamper",
+            "điểm": 8.0
+          },
+          {
+            "loại": "emulator",
+            "điểm": 8.0
+          },
+          {
+            "loại": "signature",
+            "điểm": 20.0
+          },
+          {
+            "loại": "anti-debug",
+            "điểm": 10.0
+          }
+        ]
+      },
+      "năng_lực": [
+        "bypass-license",
+        "frida-hide",
+        "integrity",
+        "shell"
+      ],
+      "điểm_bypass": [
+        {
+          "khối": 8,
+          "loại": "MATCH_GOTO",
+          "target": "smali*/*.smali",
+          "khớp": 1,
+          "tệp_trúng": [
+            "smali_classes2/ru/leymoy/StubApp.smali"
+          ],
+          "biến_thể": []
+        },
+        {
+          "khối": 14,
+          "loại": "MATCH_REPLACE",
+          "target": "smali*/*.smali",
+          "khớp": 1,
+          "tệp_trúng": [
+            "smali_classes2/ru/leymoy/StubApp.smali"
+          ],
+          "biến_thể": []
+        }
+      ],
+      "cách_công_cụ": {
+        "cách": [
+          "Vô hiệu hoá kiểm tra VIP/license: gán cờ đã mua bằng SET_BOOL, nhảy qua khối kiểm tra bằng MATCH_GOTO, hoặc hook hàm kiểm tra bằng Frida/LSPosed.",
+          "Ẩn dấu vết Frida: thay chuỗi 'frida' bằng giá trị giả, comment lời gọi checkFrida/findFrida, tránh phát hiện gadget.",
+          "Vô hiệu hoá kiểm tra toàn vẹn/chữ ký: sửa luồng check (MATCH_GOTO) hoặc trả true/false cố định (SET_BOOL/MATCH_ASSIGN).",
+          "Chèn khởi tạo mod qua INIT/HOOK_SCRIPT: chạy lệnh/script khi app mở để bơm biến hoặc gọi hàm nội bộ."
+        ],
+        "công_cụ": [
+          "patchx apply",
+          "apktool",
+          "apksigner",
+          "Frida",
+          "LSPosed"
+        ],
+        "xác_minh": [
+          "Mở tính năng VIP; xem logcat tìm log trạng thái license.",
+          "Mở app khi có Frida trong bộ nhớ, xác nhận không bị chặn.",
+          "Xoá báo lỗi 'signature mismatch'/'app modified' khi mở ứng dụng.",
+          "Kiểm tra hiệu lực mod ngay sau khi app khởi động."
+        ]
+      },
+      "đề_xuất": [
+        "Khối 4 trượt target smali*/*.smali — cập nhật TARGET theo class-link thật của APK",
+        "Khối 7 trượt target [APPLICATION] — cập nhật TARGET theo class-link thật của APK",
+        "Khối 9 trượt target smali/com/unity3d/player/UnityPlayerActivity.smali — cập nhật TARGET theo class-link thật của APK",
+        "Khối 10 trượt target [LAUNCHER_ACTIVITIES] — cập nhật TARGET theo class-link thật của APK",
+        "Khối 12 trượt target smali/com/unity3d/player/UnityPlayerActivity.smali — cập nhật TARGET theo class-link thật của APK",
+        "Khối 13 trượt target [APPLICATION] — cập nhật TARGET theo class-link thật của APK"
+      ]
+    },
+    {
+      "patch": "Dictionary+ru+uk+2",
+      "điểm": 0.3088,
+      "tỷ_lệ_thành_công": 0.0,
+      "phân_tích": {
+        "tỷ_lệ": 0.0,
+        "yếu_tố": [
+          {
+            "tên": "Bao phủ quy tắc khớp 19%",
+            "điểm": 8.4
+          },
+          {
+            "tên": "Số lần khớp 313 (tối đa 25)",
+            "điểm": 20.0
+          },
+          {
+            "tên": "Khối khớp 3/16",
+            "điểm": 2.8
+          },
+          {
+            "tên": "Độ ưu tiên năng lực 0.05",
+            "điểm": 0.5
+          }
+        ],
+        "phạt": [
+          {
+            "loại": "tamper",
+            "điểm": 8.0
+          },
+          {
+            "loại": "emulator",
+            "điểm": 8.0
+          },
+          {
+            "loại": "signature",
+            "điểm": 20.0
+          },
+          {
+            "loại": "anti-debug",
+            "điểm": 10.0
+          }
+        ]
+      },
+      "năng_lực": [],
+      "điểm_bypass": [
+        {
+          "khối": 4,
+          "loại": "MATCH_REPLACE",
+          "target": "res/values-ru/strings.xml",
+          "khớp": 1,
+          "tệp_trúng": [
+            "res/values-ru/strings.xml"
+          ],
+          "biến_thể": []
+        },
+        {
+          "khối": 5,
+          "loại": "MATCH_REPLACE",
+          "target": "res/values-ru/strings.xml",
+          "khớp": 311,
+          "tệp_trúng": [
+            "res/values-ru/strings.xml"
+          ],
+          "biến_thể": []
+        },
+        {
+          "khối": 10,
+          "loại": "MATCH_REPLACE",
+          "target": "res/values-ru/strings.xml",
+          "khớp": 1,
+          "tệp_trúng": [
+            "res/values-ru/strings.xml"
+          ],
+          "biến_thể": []
+        }
+      ],
+      "cách_công_cụ": {
+        "cách": [],
+        "công_cụ": [],
+        "xác_minh": []
+      },
+      "đề_xuất": [
+        "Khối 3 trượt target res/values-ru/strings.xml — cập nhật TARGET theo class-link thật của APK",
+        "Chuỗi khối 4 còn xuất hiện ngoài target (res/values-h360dp-land/dimens.xml, 1 lần) — cân nhắc bổ sung class-link",
+        "Chuỗi khối 5 còn xuất hiện ngoài target (res/values/strings.xml, 370 lần) — cân nhắc bổ sung class-link",
+        "Khối 6 trượt target res/values-ru/strings.xml — cập nhật TARGET theo class-link thật của APK",
+        "Khối 7 trượt target res/values-ru/strings.xml — cập nhật TARGET theo class-link thật của APK",
+        "Khối 8 trượt target res/values-ru/strings.xml — cập nhật TARGET theo class-link thật của APK"
+      ]
+    },
+    {
+      "patch": "4. DisableBillingService by VERGIL777",
+      "điểm": 0.3,
+      "tỷ_lệ_thành_công": 0.0,
+      "phân_tích": {
+        "tỷ_lệ": 0.0,
+        "yếu_tố": [
+          {
+            "tên": "Bao phủ quy tắc khớp 0%",
+            "điểm": 0.0
+          },
+          {
+            "tên": "Số lần khớp 0 (tối đa 25)",
+            "điểm": 0.0
+          },
+          {
+            "tên": "Khối khớp 0/2",
+            "điểm": 0.0
+          },
+          {
+            "tên": "Độ ưu tiên năng lực 1.00",
+            "điểm": 10.0
+          }
+        ],
+        "phạt": [
+          {
+            "loại": "tamper",
+            "điểm": 8.0
+          },
+          {
+            "loại": "emulator",
+            "điểm": 8.0
+          },
+          {
+            "loại": "signature",
+            "điểm": 20.0
+          },
+          {
+            "loại": "anti-debug",
+            "điểm": 10.0
+          }
+        ]
+      },
+      "năng_lực": [
+        "bypass-license",
+        "purchase"
+      ],
+      "điểm_bypass": [],
+      "cách_công_cụ": {
+        "cách": [
+          "Vô hiệu hoá kiểm tra VIP/license: gán cờ đã mua bằng SET_BOOL, nhảy qua khối kiểm tra bằng MATCH_GOTO, hoặc hook hàm kiểm tra bằng Frida/LSPosed.",
+          "Giả lập mua hàng trong app: vô hiệu hoá lời gọi queryPurchases/getBuyIntent (MATCH_REPLACE), hoặc trả trạng thái đã mua qua SET_BOOL/MATCH_ASSIGN như Lucky Patcher."
+        ],
+        "công_cụ": [
+          "patchx apply",
+          "apktool",
+          "apksigner",
+          "Frida",
+          "LSPosed",
+          "Lucky Patcher"
+        ],
+        "xác_minh": [
+          "Mở tính năng VIP; xem logcat tìm log trạng thái license.",
+          "Bấm mua trong app và xác nhận thành công không trừ tiền."
+        ]
+      },
+      "đề_xuất": [
+        "Khối 1 trượt target smali*/*.smali — cập nhật TARGET theo class-link thật của APK",
+        "Khối 2 trượt target AndroidManifest.xml — cập nhật TARGET theo class-link thật của APK"
+      ]
+    },
+    {
+      "patch": "AUTH_VK_AND_FB",
+      "điểm": 0.3,
+      "tỷ_lệ_thành_công": 0.0,
+      "phân_tích": {
+        "tỷ_lệ": 0.0,
+        "yếu_tố": [
+          {
+            "tên": "Bao phủ quy tắc khớp 0%",
+            "điểm": 0.0
+          },
+          {
+            "tên": "Số lần khớp 0 (tối đa 25)",
+            "điểm": 0.0
+          },
+          {
+            "tên": "Khối khớp 0/2",
+            "điểm": 0.0
+          },
+          {
+            "tên": "Độ ưu tiên năng lực 1.00",
+            "điểm": 10.0
+          }
+        ],
+        "phạt": [
+          {
+            "loại": "tamper",
+            "điểm": 8.0
+          },
+          {
+            "loại": "emulator",
+            "điểm": 8.0
+          },
+          {
+            "loại": "signature",
+            "điểm": 20.0
+          },
+          {
+            "loại": "anti-debug",
+            "điểm": 10.0
+          }
+        ]
+      },
+      "năng_lực": [
+        "bypass-license"
+      ],
+      "điểm_bypass": [],
+      "cách_công_cụ": {
+        "cách": [
+          "Vô hiệu hoá kiểm tra VIP/license: gán cờ đã mua bằng SET_BOOL, nhảy qua khối kiểm tra bằng MATCH_GOTO, hoặc hook hàm kiểm tra bằng Frida/LSPosed."
+        ],
+        "công_cụ": [
+          "patchx apply",
+          "apktool",
+          "apksigner",
+          "Frida",
+          "LSPosed"
+        ],
+        "xác_minh": [
+          "Mở tính năng VIP; xem logcat tìm log trạng thái license."
+        ]
+      },
+      "đề_xuất": [
+        "Khối 3 trượt target smali*/*.smali — cập nhật TARGET theo class-link thật của APK",
+        "Khối 4 trượt target smali*/*.smali — cập nhật TARGET theo class-link thật của APK"
+      ]
+    },
+    {
+      "patch": "Activator",
+      "điểm": 0.3,
+      "tỷ_lệ_thành_công": 0.0,
+      "phân_tích": {
+        "tỷ_lệ": 0.0,
+        "yếu_tố": [
+          {
+            "tên": "Bao phủ quy tắc khớp 0%",
+            "điểm": 0.0
+          },
+          {
+            "tên": "Số lần khớp 0 (tối đa 25)",
+            "điểm": 0.0
+          },
+          {
+            "tên": "Khối khớp 0/1",
+            "điểm": 0.0
+          },
+          {
+            "tên": "Độ ưu tiên năng lực 1.00",
+            "điểm": 10.0
+          }
+        ],
+        "phạt": [
+          {
+            "loại": "tamper",
+            "điểm": 8.0
+          },
+          {
+            "loại": "emulator",
+            "điểm": 8.0
+          },
+          {
+            "loại": "signature",
+            "điểm": 20.0
+          },
+          {
+            "loại": "anti-debug",
+            "điểm": 10.0
+          }
+        ]
+      },
+      "năng_lực": [
+        "bypass-license"
+      ],
+      "điểm_bypass": [],
+      "cách_công_cụ": {
+        "cách": [
+          "Vô hiệu hoá kiểm tra VIP/license: gán cờ đã mua bằng SET_BOOL, nhảy qua khối kiểm tra bằng MATCH_GOTO, hoặc hook hàm kiểm tra bằng Frida/LSPosed."
+        ],
+        "công_cụ": [
+          "patchx apply",
+          "apktool",
+          "apksigner",
+          "Frida",
+          "LSPosed"
+        ],
+        "xác_minh": [
+          "Mở tính năng VIP; xem logcat tìm log trạng thái license."
+        ]
+      },
+      "đề_xuất": []
+    }
+  ],
+  "top_combos": [
+    {
+      "patches": [
+        "3. GooglePlayServices by Edik1d",
+        "DexExtractor"
+      ],
+      "tỷ_lệ_thành_công": 21.3,
+      "năng_lực": [
+        "google",
+        "integrity",
+        "shell"
+      ],
+      "bổ_trợ": [
+        [
+          "integrity",
+          "shell"
+        ]
+      ]
+    },
+    {
+      "patches": [
+        "3. GooglePlayServices by Edik1d",
+        "patch_bypass_sigcheck_with_reflection"
+      ],
+      "tỷ_lệ_thành_công": 10.2,
+      "năng_lực": [
+        "bypass-license",
+        "google",
+        "integrity",
+        "shell"
+      ],
+      "bổ_trợ": [
+        [
+          "google",
+          "bypass-license"
+        ],
+        [
+          "google",
+          "integrity"
+        ],
+        [
+          "integrity",
+          "bypass-license"
+        ],
+        [
+          "integrity",
+          "shell"
+        ]
+      ]
+    },
+    {
+      "patches": [
+        "3. GooglePlayServices by Edik1d",
+        "License_hack"
+      ],
+      "tỷ_lệ_thành_công": 3.0,
+      "năng_lực": [
+        "bypass-license",
+        "google",
+        "installer",
+        "integrity"
+      ],
+      "bổ_trợ": [
+        [
+          "google",
+          "bypass-license"
+        ],
+        [
+          "google",
+          "integrity"
+        ],
+        [
+          "integrity",
+          "bypass-license"
+        ]
+      ]
+    },
+    {
+      "patches": [
+        "3. GooglePlayServices by Edik1d",
+        "License_hack(Amazon)"
+      ],
+      "tỷ_lệ_thành_công": 2.6,
+      "năng_lực": [
+        "bypass-license",
+        "google",
+        "integrity"
+      ],
+      "bổ_trợ": [
+        [
+          "google",
+          "bypass-license"
+        ],
+        [
+          "google",
+          "integrity"
+        ],
+        [
+          "integrity",
+          "bypass-license"
+        ]
+      ]
+    },
+    {
+      "patches": [
+        "3. GooglePlayServices by Edik1d",
+        "Debug_information_and_hack_signature"
+      ],
+      "tỷ_lệ_thành_công": 3.2,
+      "năng_lực": [
+        "anti-debug",
+        "bypass-license",
+        "google",
+        "integrity",
+        "trace"
+      ],
+      "bổ_trợ": [
+        [
+          "google",
+          "bypass-license"
+        ],
+        [
+          "google",
+          "integrity"
+        ],
+        [
+          "integrity",
+          "anti-debug"
+        ],
+        [
+          "integrity",
+          "bypass-license"
+        ]
+      ]
+    },
+    {
+      "patches": [
+        "3. GooglePlayServices by Edik1d",
+        "patch_bypass_sigcheck"
+      ],
+      "tỷ_lệ_thành_công": 3.2,
+      "năng_lực": [
+        "bypass-license",
+        "google",
+        "integrity"
+      ],
+      "bổ_trợ": [
+        [
+          "google",
+          "bypass-license"
+        ],
+        [
+          "google",
+          "integrity"
+        ],
+        [
+          "integrity",
+          "bypass-license"
+        ],
+        [
+          "integrity",
+          "google"
+        ]
+      ]
+    },
+    {
+      "patches": [
+        "3. GooglePlayServices by Edik1d",
+        "New. Removing the analytic tag, etc.. Inok_ZP 12.04.18"
+      ],
+      "tỷ_lệ_thành_công": 2.3,
+      "năng_lực": [
+        "api",
+        "google",
+        "integrity"
+      ],
+      "bổ_trợ": [
+        [
+          "integrity",
+          "google"
+        ]
+      ]
+    },
+    {
+      "patches": [
+        "4. DisableBillingService by VERGIL777",
+        "DexExtractor"
+      ],
+      "tỷ_lệ_thành_công": 21.3,
+      "năng_lực": [
+        "bypass-license",
+        "purchase",
+        "shell"
+      ],
+      "bổ_trợ": [
+        [
+          "bypass-license",
+          "shell"
+        ]
+      ]
+    },
+    {
+      "patches": [
+        "AUTH_VK_AND_FB",
+        "DexExtractor"
+      ],
+      "tỷ_lệ_thành_công": 21.3,
+      "năng_lực": [
+        "bypass-license",
+        "shell"
+      ],
+      "bổ_trợ": [
+        [
+          "bypass-license",
+          "shell"
+        ]
+      ]
+    },
+    {
+      "patches": [
+        "Activator",
+        "DexExtractor"
+      ],
+      "tỷ_lệ_thành_công": 21.3,
+      "năng_lực": [
+        "bypass-license",
+        "shell"
+      ],
+      "bổ_trợ": [
+        [
+          "bypass-license",
+          "shell"
+        ]
+      ]
+    },
+    {
+      "patches": [
+        "3. GooglePlayServices by Edik1d",
+        "License_hack&htc v2"
+      ],
+      "tỷ_lệ_thành_công": 2.4,
+      "năng_lực": [
+        "bypass-license",
+        "google",
+        "installer",
+        "integrity"
+      ],
+      "bổ_trợ": [
+        [
+          "google",
+          "bypass-license"
+        ],
+        [
+          "google",
+          "integrity"
+        ],
+        [
+          "integrity",
+          "bypass-license"
+        ]
+      ]
+    },
+    {
+      "patches": [
+        "3. GooglePlayServices by Edik1d",
+        "BinSignatureHack_with_htc"
+      ],
+      "tỷ_lệ_thành_công": 2.4,
+      "năng_lực": [
+        "bypass-license",
+        "google",
+        "integrity"
+      ],
+      "bổ_trợ": [
+        [
+          "google",
+          "bypass-license"
+        ],
+        [
+          "google",
+          "integrity"
+        ],
+        [
+          "integrity",
+          "bypass-license"
+        ]
+      ]
+    },
+    {
+      "patches": [
+        "4. DisableBillingService by VERGIL777",
+        "patch_bypass_sigcheck_with_reflection"
+      ],
+      "tỷ_lệ_thành_công": 10.2,
+      "năng_lực": [
+        "bypass-license",
+        "integrity",
+        "purchase",
+        "shell"
+      ],
+      "bổ_trợ": [
+        [
+          "bypass-license",
+          "integrity"
+        ],
+        [
+          "bypass-license",
+          "shell"
+        ],
+        [
+          "purchase",
+          "bypass-license"
+        ],
+        [
+          "purchase",
+          "integrity"
+        ]
+      ]
+    },
+    {
+      "patches": [
+        "3. GooglePlayServices by Edik1d",
+        "GooglePlayServices"
+      ],
+      "tỷ_lệ_thành_công": 1.6,
+      "năng_lực": [
+        "google",
+        "integrity"
+      ],
+      "bổ_trợ": [
+        [
+          "google",
+          "integrity"
+        ],
+        [
+          "integrity",
+          "google"
+        ]
+      ]
+    },
+    {
+      "patches": [
+        "3. GooglePlayServices by Edik1d",
+        "SignatureHack_arm64"
+      ],
+      "tỷ_lệ_thành_công": 3.2,
+      "năng_lực": [
+        "bypass-license",
+        "frida-hide",
+        "google",
+        "integrity",
+        "shell"
+      ],
+      "bổ_trợ": [
+        [
+          "google",
+          "bypass-license"
+        ],
+        [
+          "google",
+          "integrity"
+        ],
+        [
+          "integrity",
+          "bypass-license"
+        ],
+        [
+          "integrity",
+          "shell"
+        ]
+      ]
+    },
+    {
+      "patches": [
+        "3. GooglePlayServices by Edik1d",
+        "SignatureHack_armv7"
+      ],
+      "tỷ_lệ_thành_công": 3.2,
+      "năng_lực": [
+        "bypass-license",
+        "frida-hide",
+        "google",
+        "integrity",
+        "shell"
+      ],
+      "bổ_trợ": [
+        [
+          "google",
+          "bypass-license"
+        ],
+        [
+          "google",
+          "integrity"
+        ],
+        [
+          "integrity",
+          "bypass-license"
+        ],
+        [
+          "integrity",
+          "shell"
+        ]
+      ]
+    },
+    {
+      "patches": [
+        "3. GooglePlayServices by Edik1d",
+        "Password_login_english"
+      ],
+      "tỷ_lệ_thành_công": 0.8,
+      "năng_lực": [
+        "google",
+        "integrity",
+        "shell"
+      ],
+      "bổ_trợ": [
+        [
+          "integrity",
+          "shell"
+        ]
+      ]
+    },
+    {
+      "patches": [
+        "3. GooglePlayServices by Edik1d",
+        "Bin_sig&installer_fix[Google]"
+      ],
+      "tỷ_lệ_thành_công": 1.6,
+      "năng_lực": [
+        "google",
+        "installer",
+        "integrity"
+      ],
+      "bổ_trợ": [
+        [
+          "google",
+          "integrity"
+        ],
+        [
+          "integrity",
+          "google"
+        ]
+      ]
+    },
+    {
+      "patches": [
+        "AUTH_VK_AND_FB",
+        "patch_bypass_sigcheck_with_reflection"
+      ],
+      "tỷ_lệ_thành_công": 8.6,
+      "năng_lực": [
+        "bypass-license",
+        "integrity",
+        "shell"
+      ],
+      "bổ_trợ": [
+        [
+          "bypass-license",
+          "integrity"
+        ],
+        [
+          "bypass-license",
+          "shell"
+        ]
+      ]
+    },
+    {
+      "patches": [
+        "Activator",
+        "patch_bypass_sigcheck_with_reflection"
+      ],
+      "tỷ_lệ_thành_công": 8.6,
+      "năng_lực": [
+        "bypass-license",
+        "integrity",
+        "shell"
+      ],
+      "bổ_trợ": [
+        [
+          "bypass-license",
+          "integrity"
+        ],
+        [
+          "bypass-license",
+          "shell"
+        ]
+      ]
+    },
+    {
+      "patches": [
+        "3. GooglePlayServices by Edik1d",
+        "Bin_sig&installer_fix[Amazon]"
+      ],
+      "tỷ_lệ_thành_công": 0.8,
+      "năng_lực": [
+        "google",
+        "installer",
+        "integrity"
+      ],
+      "bổ_trợ": [
+        [
+          "google",
+          "integrity"
+        ]
+      ]
+    },
+    {
+      "patches": [
+        "4. DisableBillingService by VERGIL777",
+        "License_hack"
+      ],
+      "tỷ_lệ_thành_công": 3.0,
+      "năng_lực": [
+        "bypass-license",
+        "installer",
+        "integrity",
+        "purchase"
+      ],
+      "bổ_trợ": [
+        [
+          "bypass-license",
+          "integrity"
+        ],
+        [
+          "purchase",
+          "bypass-license"
+        ],
+        [
+          "purchase",
+          "integrity"
+        ]
+      ]
+    },
+    {
+      "patches": [
+        "4. DisableBillingService by VERGIL777",
+        "License_hack(Amazon)"
+      ],
+      "tỷ_lệ_thành_công": 2.6,
+      "năng_lực": [
+        "bypass-license",
+        "integrity",
+        "purchase"
+      ],
+      "bổ_trợ": [
+        [
+          "bypass-license",
+          "integrity"
+        ],
+        [
+          "purchase",
+          "bypass-license"
+        ],
+        [
+          "purchase",
+          "integrity"
+        ]
+      ]
+    },
+    {
+      "patches": [
+        "3. GooglePlayServices by Edik1d",
+        "4. DisableBillingService by VERGIL777"
+      ],
+      "tỷ_lệ_thành_công": 2.4,
+      "năng_lực": [
+        "bypass-license",
+        "google",
+        "integrity",
+        "purchase"
+      ],
+      "bổ_trợ": [
+        [
+          "google",
+          "bypass-license"
+        ],
+        [
+          "integrity",
+          "bypass-license"
+        ],
+        [
+          "integrity",
+          "purchase"
+        ]
+      ]
+    },
+    {
+      "patches": [
+        "4. DisableBillingService by VERGIL777",
+        "patch_bypass_sigcheck"
+      ],
+      "tỷ_lệ_thành_công": 3.2,
+      "năng_lực": [
+        "bypass-license",
+        "google",
+        "integrity",
+        "purchase"
+      ],
+      "bổ_trợ": [
+        [
+          "bypass-license",
+          "google"
+        ],
+        [
+          "bypass-license",
+          "integrity"
+        ],
+        [
+          "purchase",
+          "bypass-license"
+        ],
+        [
+          "purchase",
+          "integrity"
+        ]
+      ]
+    }
+  ],
+  "plan": {
+    "phương_án": "DexExtractor",
+    "tỷ_lệ_dự_đoán": 41.0,
+    "steps": [
+      "Chuẩn bị cây APK (apk-prepare) hoặc dùng cây đã giải mã.",
+      "Áp patch: python3 patchx apply DexExtractor <cây-apk>",
+      "Chuẩn hoá resource chứa `$`: python3 patchx_toolkit.py apk-fix-res",
+      "Build: apktool b <cây> -o out.apk --aapt <aapt2-thật>",
+      "Zipalign + ký: zipalign -f 4 && apksigner sign",
+      "Cài APK, xác minh động bằng logcat/Frida theo mục xác_minh."
+    ],
+    "rủi_ro": [
+      "APK có dấu hiệu tamper (7 lần) — trừ ~8% điểm dự đoán; ưu tiên patch integrity/token xử lý lớp này.",
+      "APK có dấu hiệu emulator (6 lần) — trừ ~8% điểm dự đoán; ưu tiên patch integrity/token xử lý lớp này.",
+      "APK có dấu hiệu signature (1 lần) — trừ ~20% điểm dự đoán; ưu tiên patch integrity/token xử lý lớp này.",
+      "APK có dấu hiệu anti-debug (1 lần) — trừ ~10% điểm dự đoán; ưu tiên patch integrity/token xử lý lớp này."
+    ],
+    "tăng_khả_năng": [
+      "Chuỗi khối 3 còn xuất hiện ngoài target (assets/signatureHack/cc/binmt/signature/PmsHookApplication.smali, 3 lần) — cân nhắc bổ sung class-link"
+    ]
+  }
+}

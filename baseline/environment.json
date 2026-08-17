@@ -1,0 +1,9 @@
+{
+  "captured_at": "2026-08-17 21:09:37",
+  "platform": "Android-16-aarch64-64bit",
+  "python": "3.14.6",
+  "cpu_count": 8,
+  "loadavg_1_5_15": [],
+  "machine": "aarch64",
+  "load_note": "Máy dùng chung có thể nhiễu; ghi lại loadavg để so sánh tương đối."
+}

@@ -1,0 +1,53 @@
+{
+  "generated": "2026-08-16 14:35:15",
+  "apk": "/storage/emulated/0/Patch/patch1/_patchx/real_apk_test/zaz_trace_out/zaz_trace_tree_patched_20260816-143511.apk",
+  "package": "com.zaz.translate",
+  "activity": "com.zaz.translate.WelcomeActivity",
+  "devices": [
+    "100.64.170.99:5555"
+  ],
+  "device": "100.64.170.99:5555",
+  "install_returncode": 0,
+  "install_output": "Serving...\nPerforming Incremental Install\nFailure [INSTALL_FAILED_MEDIA_UNAVAILABLE: Failed to prepare image.]\nPerforming Streamed Install\nSuccess",
+  "launch_returncode": 0,
+  "launch_output": "Starting: Intent { cmp=com.zaz.translate/.WelcomeActivity }",
+  "network_new_connections": [
+    {
+      "local": "0:0:0:0:65535:0:51924:1057:36256",
+      "remote": "0:0:0:0:65535:0:49946:55724:443",
+      "state": "ESTABLISHED"
+    },
+    {
+      "local": "0:0:0:0:65535:0:51924:1057:36258",
+      "remote": "0:0:0:0:65535:0:49946:55724:443",
+      "state": "ESTABLISHED"
+    },
+    {
+      "local": "0:0:0:0:65535:0:51924:1057:36286",
+      "remote": "0:0:0:0:65535:0:49946:55724:443",
+      "state": "ESTABLISHED"
+    }
+  ],
+  "network_note": "Phát hiện 3 kết nối mạng mới sau khi mở app — kiểm tra nếu là hành vi 'âm thầm' gửi dữ liệu của patch.",
+  "signature_ok": true,
+  "signature_schemes": [
+    "v1",
+    "v2",
+    "v3",
+    "v3.1",
+    "v4"
+  ],
+  "signature_note": "Play Integrity / hardware attestation cần thiết bị thật — máy ảo cloud không xác minh được (giới hạn T3).",
+  "pid": null,
+  "logcat_tail": " data save over FILE 0 false\n08-16 15:36:38.893 50728 50728 I Finsky  : [2] nqz.a(197): App states replicator found 12 unowned apps\n08-16 15:36:38.902 50728 50728 I Finsky  : [2] nre.b(23): Completed 0 account content syncs with 0 successful.\n08-16 15:36:38.902 50728 50728 I Finsky  : [2] ContentSyncJob.a(14): [ContentSync] Installation state replication succeeded.\n08-16 15:36:38.903 50728 50728 I Finsky  : [2] ahvv.q(61): SCH: jobFinished: 12-1. TimeElapsed: 3128ms.\n08-16 15:36:38.929 50728 50909 I Finsky  : [51] sgc.accept(59): SCH: Scheduling phonesky job Id: 1-1337, CT: 1786831221822, Constraints: [{ L: 43146665, D: 86346665, C: CHARGING_NONE, I: IDLE_NONE, N: NET_ANY, B: BATTERY_ANY }]\n08-16 15:36:38.929 50728 50909 I Finsky  : [51] sgc.accept(59): SCH: Scheduling phonesky job Id: 34-2, CT: 1786818595312, Constraints: [{ L: 79199923, D: 1375199923, C: CHARGING_NONE, I: IDLE_NONE, N: NET_ANY, B: BATTERY_ANY }]\n08-16 15:36:38.930 50728 50909 I Finsky  : [51] sgc.accept(59): SCH: Scheduling phonesky job Id: 34-4, CT: 1786818605640, Constraints: [{ L: 604800000, D: 2591998552, C: CHARGING_NONE, I: IDLE_NONE, N: NET_ANY, B: BATTERY_ANY }]\n08-16 15:36:38.941 50728 50914 I Finsky  : [56] nit.apply(254): SCH: Scheduling 1 system job(s)\n08-16 15:36:38.941 50728 50914 I Finsky  : [56] ahvr.b(86): SCH: Scheduling system job Id: 9063, L: 8569546, D: 51769546, C: false, I: false, N: 1\n08-16 15:36:38.948 50728 30991 I Finsky  : [841] ahxm.a(26): SCH: job service finished with id 9058.",
+  "crash_lines": [
+    "08-16 15:36:10.058 30754 30754 E AndroidRuntime: Process: com.zaz.translate, PID: 30754"
+  ],
+  "subprocess_crashes": [],
+  "m2": false,
+  "m3": false,
+  "m3_reasons": [
+    "logcat không chứa mẫu --expect"
+  ],
+  "ghi_chú": "M2 = cài + mở + process sống + không FATAL EXCEPTION. M3 = kịch bản hành vi theo app."
+}

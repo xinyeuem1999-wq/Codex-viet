@@ -1,0 +1,10 @@
+{
+  "tree": "/storage/emulated/0/Patch/patch1/_patchx/real_apk_test/kiss_tree_clean",
+  "patches": [
+    "Debug_information_and_hack_signature",
+    "patch_bypass_sigcheck_with_reflection",
+    "Debug_information"
+  ],
+  "returncode": 0,
+  "seconds": 39.0
+}

@@ -1,0 +1,79 @@
+# Combo: Bypass-VIP/License+Check-Toàn-Vẹn (2 patch)
+
+[MIN_ENGINE_VER]
+2
+
+[AUTHOR]
+Anymy
+
+[PACKAGE]
+ALL
+
+[MATCH_REPLACE]
+TARGET:
+    smali*/*
+MATCH:
+    invoke-virtual \{([vp]\d+), ([vp]\d+), ([vp]\d+)\}, Ljava\/lang\/reflect\/Method;->invoke\(Ljava\/lang\/Object;\[Ljava\/lang\/Object;\)Ljava\/lang\/Object;
+REGEX:
+    true
+REPLACE:
+    invoke-static {${GROUP1}, ${GROUP2}, ${GROUP3}}, Lcom/anymy/reflection;->invoke(Ljava/lang/Object;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    smali*/*.smali
+MATCH:
+    invoke-virtual \{([vp]\d+), ([vp]\d+), ([vp]\d+)\}, Landroid\/content\/pm\/PackageManager;->getPackageInfo\(Ljava\/lang\/String;I\)Landroid\/content\/pm\/PackageInfo;
+REGEX:
+    true
+REPLACE:
+    invoke-static {${GROUP1}, ${GROUP2}, ${GROUP3}}, Lcom/anymy/reflection;->getPackageInfo(Landroid/content/pm/PackageManager;Ljava/lang/String;I)Landroid/content/pm/PackageInfo;
+[/MATCH_REPLACE]
+
+[ADD_FILES]
+SOURCE:
+    smali.zip
+TARGET:
+    smali
+EXTRACT:
+    true
+[/ADD_FILES]
+
+[SIGNATURE_REVISE]
+TARGET:
+    smali/apkeditor/patch/signature/Fix.smali
+[/SIGNATURE_REVISE]
+
+[DUMMY]
+NAME:
+    p0_end
+[/DUMMY]
+
+[MATCH_REPLACE]
+TARGET:
+    smali*/*.smali
+MATCH:
+    .method public static(.+)\(Landroid/content/Context;\)I\n.*registers .+[\s\S]*?Google Play services missing.+[\s\S]*?end method
+REGEX:
+    true
+REPLACE:
+    .method public static${GROUP1}(Landroid/content/Context;)I
+    .registers 1
+    const/4 v0, 0x0
+    return v0
+.end method
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    smali*/*.smali
+MATCH:
+    invoke-virtual \{([pv]\d+), ([pv]\d+)\}, Ljava/security/Signature;->verify\(\[B\)Z\n\n    move-result ([pv]\d+)
+REGEX:
+    true
+REPLACE:
+    invoke-virtual {${GROUP1}, ${GROUP2}}, Ljava/security/Signature;->verify([B)Z
+
+    const/4 ${GROUP3}, 0x1
+[/MATCH_REPLACE]

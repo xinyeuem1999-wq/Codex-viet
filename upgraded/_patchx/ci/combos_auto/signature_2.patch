@@ -1,0 +1,178 @@
+# Combo tự phát hiện: signature_2 (2 patch)
+
+[MIN_ENGINE_VER]
+2
+
+[AUTHOR]
+HTC 600
+
+[PACKAGE]
+ALL
+
+[ADD_FILES]
+TARGET:
+    smali
+EXTRACT:
+    true
+SOURCE:
+    BiN.zip
+[/ADD_FILES]
+
+[MATCH_REPLACE]
+TARGET:
+    smali/cc/binmt/signature/PmsHookApplication.smali
+MATCH:
+    ### Installer ###
+REGEX:
+    true
+REPLACE:
+    com.amazon
+[/MATCH_REPLACE]
+
+[MATCH_GOTO]
+TARGET:
+    AndroidManifest.xml
+MATCH:
+    <application(.+)android:name=
+REGEX:
+    true
+GOTO:
+    p0_app1
+[/MATCH_GOTO]
+
+[MATCH_REPLACE]
+TARGET:
+    AndroidManifest.xml
+MATCH:
+    <application(.+)>
+REGEX:
+    true
+REPLACE:
+    <application${GROUP1} android:name="cc.binmt.signature.PmsHookApplication">
+[/MATCH_REPLACE]
+
+[GOTO]
+GOTO:
+    p0_end
+[/GOTO]
+
+[MATCH_REPLACE]
+NAME:
+    p0_app1
+TARGET:
+    AndroidManifest.xml
+MATCH:
+    <application (.+) android:name="([^"]+)"(.+)
+REGEX:
+    true
+REPLACE:
+    <application ${GROUP1} android:name="cc.binmt.signature.PmsHookApplication"${GROUP3}
+[/MATCH_REPLACE]
+
+[MATCH_ASSIGN]
+TARGET:
+    [APPLICATION]
+MATCH:
+    \.class (.+?)L(.+);
+REGEX:
+    true
+ASSIGN:
+    LABEL_1=L${GROUP2};
+[/MATCH_ASSIGN]
+
+[MATCH_REPLACE]
+TARGET:
+    [APPLICATION]
+MATCH:
+    \.class public (|.+)L(.+);
+REGEX:
+    true
+REPLACE:
+    .class public L${GROUP2};
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    smali/cc/binmt/signature/PmsHookApplication.smali
+MATCH:
+    Landroid/app/Application;
+REGEX:
+    false
+REPLACE:
+    ${LABEL_1}
+[/MATCH_REPLACE]
+
+[EXECUTE_DEX]
+NAME:
+    p0_end
+SCRIPT:
+    sigfix.dex
+SMALI_NEEDED:
+    true
+MAIN_CLASS:
+    anymy.BinSignatureFix
+ENTRANCE:
+    BinSignatureFix
+PARAM:
+    smali
+[/EXECUTE_DEX]
+
+[DUMMY]
+NAME:
+    p0_end2
+[/DUMMY]
+
+[MATCH_REPLACE]
+TARGET:
+    smali*/*.smali
+MATCH:
+    (\(Landroid/content/Context;\)I|\(Landroid/content/Context;I\)I)\n    \.registers (\d+)\n    \.annotation runtime Ljava/lang/Deprecated;\n    \.end annotation
+REGEX:
+    true
+REPLACE:
+    ${GROUP1}
+    .registers ${GROUP2}
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+
+    const/4 v0, 0x0
+
+#htc600
+
+    return v0
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    smali*/*.smali
+MATCH:
+    \(Landroid/content/Context;\)I\n    \.registers (\d+)\n    .param ([pv]\d+), "context"    # Landroid/content/Context;\n    \.annotation runtime Ljava/lang/Deprecated;\n    \.end annotation
+REGEX:
+    true
+REPLACE:
+    (Landroid/content/Context;)I
+    .registers ${GROUP1}
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+
+    const/4 v0, 0x0
+
+#htc600
+
+    return v0
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    smali*/*.smali
+MATCH:
+    invoke-virtual \{([pv]\d+), ([pv]\d+)\}, Ljava/security/Signature;->verify\(\[B\)Z\n\n    move-result ([pv]\d+)
+REGEX:
+    true
+REPLACE:
+    invoke-virtual {${GROUP1}, ${GROUP2}}, Ljava/security/Signature;->verify([B)Z
+
+#htc600
+
+    const/4 ${GROUP3}, 0x1
+[/MATCH_REPLACE]

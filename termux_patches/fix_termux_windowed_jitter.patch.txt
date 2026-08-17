@@ -1,0 +1,40 @@
+# Fix Termux 0.119: loạn/giật màn hình khi bật chế độ cửa sổ (floating/freeform)
+# Nguyên nhân: TermuxActivityRootView.onGlobalLayout tự căn lề dưới theo bàn phím,
+# tạo vòng lặp set-margin -> re-layout -> đổi margin khi ở cửa sổ nổi.
+# Cách sửa: bỏ qua toàn bộ căn lề khi Activity đang ở multi-window mode
+# (hệ thống đã tự xử lý bàn phím trong cửa sổ nổi).
+
+[MIN_ENGINE_VER]
+2
+
+[AUTHOR]
+patchx-termux
+
+[PACKAGE]
+*
+
+[MATCH_REPLACE]
+TARGET:
+    smali/com/termux/app/terminal/TermuxActivityRootView.smali
+MATCH:
+    \s*:cond_0\n\s*iget-object v0, p0, Lcom/termux/app/terminal/TermuxActivityRootView;->mActivity:Lcom/termux/app/TermuxActivity;\n\n\s*invoke-virtual \{v0\}, Lcom/termux/app/TermuxActivity;->getTermuxActivityBottomSpaceView\(\)Landroid/view/View;
+REGEX:
+    true
+REPLACE:
+
+    :cond_0
+    iget-object v0, p0, Lcom/termux/app/terminal/TermuxActivityRootView;->mActivity:Lcom/termux/app/TermuxActivity;
+
+    invoke-virtual {v0}, Landroid/app/Activity;->isInMultiWindowMode()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_mw
+
+    goto/16 :goto_7
+
+    :cond_mw
+    iget-object v0, p0, Lcom/termux/app/terminal/TermuxActivityRootView;->mActivity:Lcom/termux/app/TermuxActivity;
+
+    invoke-virtual {v0}, Lcom/termux/app/TermuxActivity;->getTermuxActivityBottomSpaceView()Landroid/view/View;
+[/MATCH_REPLACE]

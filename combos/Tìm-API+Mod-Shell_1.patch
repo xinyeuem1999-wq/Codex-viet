@@ -1,0 +1,660 @@
+# Combo: Tìm-API+Mod-Shell (10 patch)
+
+[MIN_ENGINE_VER]
+3
+
+[AUTHOR]
+Anh Long Đẹp Trai /[4pda]
+
+[PACKAGE]
+*
+
+[MATCH_REPLACE]
+TARGET:
+    smali*/*.smali
+MATCH:
+    \"https://graph\.%s\"|\".*api\.branch\.io\"|\".*crashlytics\.com.*\"|\".*wzrkt\.com*\"|\".*appboy\.com*\"|\".*.appsflyer\.com/.*\"|\".*google-analytics\.com.*\"|\"ssl\.google-analytics\.com.*\"|\".*.google-analytics\.com.*\"|\".*measurement\.com.*\"|\".*data.flurry\.com.*\"|\".*googletagmanager\.com.*\"|\".*hockeyapp\.net.*\"|\".*scorecardresearch\.com.*\"|\".*YandexMetricaNativeModule*\"|\".*amplitude\.com.*\"|\".*azure\.com.*\"|\".*firebaseapp\.com.*\"|\".*startappservice\.com.*\"|\".*startappexchange\.com.*\"|\".*smaato\.com.*\"|\".*api\.crittercism\.com\"|\".*appmetrica\.yandex\.ru\"|\".*app\.adjust\.com\"|\".*cloudfront\.net.*\"|\".*amazonaws\.com.*\"|\".*akamaitechnologies\.com.*\"|\"microsoft\.applications\.telemetry.*\"|\"skype\.telemetry\.com.*\"|\"skype\.android\.analytics\.com.*\"|\"skype\.android\.crash\.com.*\"|\".*chartboost\.com.*\"|\".*my\.target\.com\"|\".*umeng\.com.*\"|\".*lsdsl\.ml.*\"
+REGEX:
+    true
+REPLACE:
+    "="
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    AndroidManifest.xml
+MATCH:
+    <service android:exported="(.+)" android:name="com.google.firebase(.+)">\n			<intent-filter android:priority="(.+)">\n				<action android:name="com.google.firebase(.+)" />\n			</intent-filter>\n		</service>
+REGEX:
+    true
+REPLACE:
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    AndroidManifest.xml
+MATCH:
+    <receiver android:exported="(.+)" android:name="com.google.firebase(.+)" />
+REGEX:
+    true
+REPLACE:
+[/MATCH_REPLACE]
+
+[ADD_FILES]
+TARGET:
+    smali/com/htc/htc600/htc600for4pda/DeviceID.smali
+SOURCE:
+    DeviceID.smali
+[/ADD_FILES]
+
+[MATCH_REPLACE]
+TARGET:
+    smali*/*.smali
+MATCH:
+    invoke-virtual \{([pv]\d+)\}, Landroid/telephony/TelephonyManager;->getDeviceId\(\)Ljava/lang/String;
+REGEX:
+    true
+REPLACE:
+    invoke-static {}, Lcom/htc/htc600/htc600for4pda/DeviceID;->DevicecID()Ljava/lang/String;
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    smali*/*.smali
+MATCH:
+    invoke-virtual \{([pv]\d+)\}, Landroid/net/wifi/WifiInfo;->getMacAddress\(\)Ljava/lang/String;
+REGEX:
+    true
+REPLACE:
+    invoke-static {}, Lcom/htc/htc600/htc600for4pda/DeviceID;->DevicecID()Ljava/lang/String;
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    smali*/*.smali
+MATCH:
+    const-string ([pv]\d+), \"android_id\"\n\n    invoke-static \{([pv]\d+), ([pv]\d+)\}, Landroid/provider/Settings\$Secure;->getString\(Landroid/content/ContentResolver;Ljava/lang/String;\)Ljava/lang/String;
+REGEX:
+    true
+REPLACE:
+    invoke-static {}, Lcom/htc/htc600/htc600for4pda/DeviceID;->DevicecID()Ljava/lang/String;
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    smali*/*.smali
+MATCH:
+    const-string ([pv]\d+), "bluetooth_address"\n\n    invoke-static \{([pv]\d+), ([pv]\d+)\}, Landroid/provider/Settings\$Secure;->getString\(Landroid/content/ContentResolver;Ljava/lang/String;\)Ljava/lang/String;
+REGEX:
+    true
+REPLACE:
+    invoke-static {}, Lcom/htc/htc600/htc600for4pda/DeviceID;->DevicecID()Ljava/lang/String;
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    smali*/*.smali
+MATCH:
+    iget-object ([pv]\d+), ([pv]\d+), L(\S+);->ip:Ljava/lang/String;
+REGEX:
+    true
+REPLACE:
+    invoke-static {}, Lcom/htc/htc600/htc600for4pda/DeviceID;->DevicecID()Ljava/lang/String;
+
+    move-result-object ${GROUP1}
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    smali*/*.smali
+MATCH:
+    invoke-virtual \{([pv]\d+)\}, Landroid/net/wifi/WifiInfo;->getBSSID\(\)Ljava/lang/String;
+REGEX:
+    true
+REPLACE:
+    invoke-static {}, Lcom/htc/htc600/htc600for4pda/DeviceID;->DevicecID()Ljava/lang/String;
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    smali*/*.smali
+MATCH:
+    sget-object ([pv]\d+), Landroid/os/Build;->MODEL:Ljava/lang/String;
+REGEX:
+    true
+REPLACE:
+    invoke-static {}, Lcom/htc/htc600/htc600for4pda/DeviceID;->DevicecID()Ljava/lang/String;
+
+    move-result-object ${GROUP1}
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    smali*/*.smali
+MATCH:
+    sget-object ([pv]\d+), Landroid/os/Build;->BRAND:Ljava/lang/String;
+REGEX:
+    true
+REPLACE:
+    invoke-static {}, Lcom/htc/htc600/htc600for4pda/DeviceID;->DevicecID()Ljava/lang/String;
+
+    move-result-object ${GROUP1}
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    smali*/*.smali
+MATCH:
+    sget-object ([pv]\d+), Landroid/os/Build;->DEVICE:Ljava/lang/String;
+REGEX:
+    true
+REPLACE:
+    invoke-static {}, Lcom/htc/htc600/htc600for4pda/DeviceID;->DevicecID()Ljava/lang/String;
+
+    move-result-object ${GROUP1}
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    smali*/*.smali
+MATCH:
+    sget-object ([pv]\d+), Landroid/os/Build;->BOARD:Ljava/lang/String;
+REGEX:
+    true
+REPLACE:
+    invoke-static {}, Lcom/htc/htc600/htc600for4pda/DeviceID;->DevicecID()Ljava/lang/String;
+
+    move-result-object ${GROUP1}
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    smali*/*.smali
+MATCH:
+    sget-object ([pv]\d+), Landroid/os/Build;->SERIAL:Ljava/lang/String;
+REGEX:
+    true
+REPLACE:
+    invoke-static {}, Lcom/htc/htc600/htc600for4pda/DeviceID;->DevicecID()Ljava/lang/String;
+
+         move-result-object ${GROUP1}
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    smali*/*.smali
+MATCH:
+    sget-object ([pv]\d+), Landroid/os/Build;->MANUFACTURER:Ljava/lang/String;
+REGEX:
+    true
+REPLACE:
+    invoke-static {}, Lcom/htc/htc600/htc600for4pda/DeviceID;->DevicecID()Ljava/lang/String;
+
+         move-result-object ${GROUP1}
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    smali*/*.smali
+MATCH:
+    sget-object ([pv]\d+), Landroid/os/Build;->PRODUCT:Ljava/lang/String;
+REGEX:
+    true
+REPLACE:
+    invoke-static {}, Lcom/htc/htc600/htc600for4pda/DeviceID;->DevicecID()Ljava/lang/String;
+
+         move-result-object ${GROUP1}
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    smali*/*.smali
+MATCH:
+    invoke-virtual \{([pv]\d+)\}, Landroid/telephony/TelephonyManager;->getNetworkOperatorName\(\)Ljava/lang/String;
+REGEX:
+    true
+REPLACE:
+    invoke-static {}, Lcom/htc/htc600/htc600for4pda/DeviceID;->DevicecID()Ljava/lang/String;
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    smali*/*.smali
+MATCH:
+    invoke-virtual \{([pv]\d+)\}, Landroid/telephony/TelephonyManager;->getNetworkOperator\(\)Ljava/lang/String;
+REGEX:
+    true
+REPLACE:
+    invoke-static {}, Lcom/htc/htc600/htc600for4pda/DeviceID;->DevicecID()Ljava/lang/String;
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    smali*/*.smali
+MATCH:
+    invoke-virtual \{([pv]\d+)\}, Landroid/telephony/TelephonyManager;->getSubscriberId\(\)Ljava/lang/String;
+REGEX:
+    true
+REPLACE:
+    invoke-static {}, Lcom/htc/htc600/htc600for4pda/DeviceID;->DevicecID()Ljava/lang/String;
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    smali*/*.smali
+MATCH:
+    invoke-virtual \{([pv]\d+)\}, Landroid/telephony/TelephonyManager;->getSimSerialNumber\(\)Ljava/lang/String;
+REGEX:
+    true
+REPLACE:
+    invoke-static {}, Lcom/htc/htc600/htc600for4pda/DeviceID;->DevicecID()Ljava/lang/String;
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    smali*/*.smali
+MATCH:
+    invoke-virtual \{([pv]\d+)\}, Landroid/bluetooth/BluetoothAdapter;->getAddress\(\)Ljava/lang/String;
+REGEX:
+    true
+REPLACE:
+    invoke-static {}, Lcom/htc/htc600/htc600for4pda/DeviceID;->DevicecID()Ljava/lang/String;
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    smali*/*.smali
+MATCH:
+    \"https://graph\.%s\"|\".*api\.branch\.io\"|\".*crashlytics\.com.*\"|\".*wzrkt\.com*\"|\".*appboy\.com*\"|\".*.appsflyer\.com/.*\"|\".*google-analytics\.com.*\"|\"ssl\.google-analytics\.com.*\"|\".*.google-analytics\.com.*\"|\".*measurement\.com.*\"|\".*data.flurry\.com.*\"|\".*googletagmanager\.com.*\"|\".*hockeyapp\.net.*\"|\".*scorecardresearch\.com.*\"|\".*YandexMetricaNativeModule*\"|\".*amplitude\.com.*\"|\".*azure\.com.*\"|\".*firebaseapp\.com.*\"|\".*startappservice\.com.*\"|\".*startappexchange\.com.*\"|\".*smaato\.com.*\"|\".*api\.crittercism\.com\"|\".*appmetrica\.yandex\.ru\"|\".*app\.adjust\.com\"|\".*cloudfront\.net.*\"
+REGEX:
+    true
+REPLACE:
+    "="
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    smali*/*.smali
+MATCH:
+    \"https://graph\.%s\"|\".*api\.branch\.io\"|\".*crashlytics\.com.*\"|\".*wzrkt\.com*\"|\".*appboy\.com*\"|\".*.appsflyer\.com/.*\"|\".*google-analytics\.com.*\"|\"ssl\.google-analytics\.com.*\"|\".*.google-analytics\.com.*\"|\".*measurement\.com.*\"|\".*data.flurry\.com.*\"|\".*googletagmanager\.com.*\"|\".*hockeyapp\.net.*\"|\".*scorecardresearch\.com.*\"|\".*YandexMetricaNativeModule*\"|\".*amplitude\.com.*\"|\".*azure\.com.*\"|\".*firebaseapp\.com.*\"|\".*startappservice\.com.*\"|\".*startappexchange\.com.*\"|\".*smaato\.com.*\"|\".*api\.crittercism\.com\"|\".*appmetrica\.yandex\.ru\"|\".*app\.adjust\.com\"|\".*cloudfront\.net.*\"|\".*amazonaws\.com.*\"|\".*akamaitechnologies\.com.*\"|\"microsoft\.applications\.telemetry.*\"|\"skype\.telemetry\.com.*\"|\"skype\.android\.analytics\.com.*\"|\"skype\.android\.crash\.com.*\"|\".*chartboost\.com.*\"|\".*my\.target\.com\"|\".*umeng\.com.*\"|\".*lsdsl\.ml.*\"|
+REGEX:
+    true
+REPLACE:
+    "="
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    smali*/*
+MATCH:
+    invoke-virtual \{([vp]\d+), ([vp]\d+), ([vp]\d+)\}, Ljava\/lang\/reflect\/Method;->invoke\(Ljava\/lang\/Object;\[Ljava\/lang\/Object;\)Ljava\/lang\/Object;
+REGEX:
+    true
+REPLACE:
+    invoke-static {${GROUP1}, ${GROUP2}, ${GROUP3}}, Lcom/anymy/ref;->invoke(Ljava/lang/Object;Ljava/lang/Object;[Ljava/lang/Object;)V
+
+invoke-virtual {${GROUP1}, ${GROUP2}, ${GROUP3}}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+[/MATCH_REPLACE]
+
+[ADD_FILES]
+SOURCE:
+    smali.zip
+TARGET:
+    smali
+EXTRACT:
+    true
+[/ADD_FILES]
+
+[DUMMY]
+NAME:
+    p5_end
+[/DUMMY]
+
+[MATCH_GOTO]
+NAME:
+    p6_Support
+TARGET:
+    smali*/*.smali
+MATCH:
+    (.+?)
+REGEX:
+    true
+GOTO:
+    p6_Extract
+[/MATCH_GOTO]
+
+[ADD_FILES]
+NAME:
+    p6_Extract
+SOURCE:
+    smali.zip
+TARGET:
+    /
+EXTRACT:
+    true
+[/ADD_FILES]
+
+[MATCH_GOTO]
+NAME:
+    p6_CheckAlias
+TARGET:
+    AndroidManifest.xml
+MATCH:
+    <activity-alias[^>]+android:targetActivity="(.+?)"((?!<\/activity-alias>)[\s\S]+)<category[^>]+android:name="android.intent.category.LAUNCHER"[^>]*\/>
+REGEX:
+    true
+GOTO:
+    p6_Init2
+[/MATCH_GOTO]
+
+[MATCH_ASSIGN]
+NAME:
+    p6_Init1
+TARGET:
+    AndroidManifest.xml
+MATCH:
+    <manifest[^>]+package="(.+?)"[\s\S]+<activity[^>]+android:name="(.+?)"((?!<\/activity>)[\s\S]+)<category[^>]+android:name="android.intent.category.LAUNCHER"[^>]*\/>
+REGEX:
+    true
+ASSIGN:
+    PACKAGE=${GROUP1}
+ACTIVITY=${GROUP2}
+ALIASES=FALSE
+[/MATCH_ASSIGN]
+
+[GOTO]
+NAME:
+    p6_GoReplace1
+GOTO:
+    p6_Replace1
+[/GOTO]
+
+[MATCH_ASSIGN]
+NAME:
+    p6_Init2
+TARGET:
+    AndroidManifest.xml
+MATCH:
+    <manifest[^>]+package="(.+?)"[\s\S]+<activity-alias[^>]+android:targetActivity="(.+?)"((?!<\/activity-alias>)[\s\S]+)<category[^>]+android:name="android.intent.category.LAUNCHER"[^>]*\/>
+REGEX:
+    true
+ASSIGN:
+    PACKAGE=${GROUP1}
+ACTIVITY=${GROUP2}
+ALIASES=TRUE
+[/MATCH_ASSIGN]
+
+[GOTO]
+NAME:
+    p6_GoReplace2
+GOTO:
+    p6_Replace2
+[/GOTO]
+
+[MATCH_REPLACE]
+NAME:
+    p6_Replace1
+TARGET:
+    AndroidManifest.xml
+MATCH:
+    <category[^>]+android:name="android.intent.category.LAUNCHER"[^>]*\/>
+REGEX:
+    true
+REPLACE:
+[/MATCH_REPLACE]
+
+[MATCH_GOTO]
+NAME:
+    p6_CheckReplace1
+TARGET:
+    AndroidManifest.xml
+MATCH:
+    <category[^>]+android:name="android.intent.category.LAUNCHER"[^>]*\/>
+REGEX:
+    true
+GOTO:
+    p6_Replace1
+[/MATCH_GOTO]
+
+[GOTO]
+NAME:
+    p6_GoReplace3
+GOTO:
+    p6_Replace3
+[/GOTO]
+
+[MATCH_REPLACE]
+NAME:
+    p6_Replace2
+TARGET:
+    AndroidManifest.xml
+MATCH:
+    android:targetActivity="${ACTIVITY}"
+REGEX:
+    true
+REPLACE:
+    android:targetActivity="password_login.login_passwordbyrioo.MainActivity"
+[/MATCH_REPLACE]
+
+[MATCH_GOTO]
+NAME:
+    p6_CheckReplace2
+TARGET:
+    AndroidManifest.xml
+MATCH:
+    <activity-alias[^>]+android:targetActivity="${ACTIVITY}"((?!<\/activity-alias>)[\s\S]+)<category[^>]+android:name="android.intent.category.LAUNCHER"[^>]*\/>
+REGEX:
+    true
+GOTO:
+    p6_Replace2
+[/MATCH_GOTO]
+
+[GOTO]
+NAME:
+    p6_GoReplace4
+GOTO:
+    p6_Replace4
+[/GOTO]
+
+[MATCH_REPLACE]
+NAME:
+    p6_Replace3
+TARGET:
+    AndroidManifest.xml
+MATCH:
+    </activity>
+REPLACE:
+    </activity>
+<activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="password_login.login_passwordbyrioo.MainActivity">
+	<intent-filter>
+		<action android:name="android.intent.action.MAIN" />
+		<category android:name="android.intent.category.LAUNCHER" />
+	</intent-filter>
+</activity>
+[/MATCH_REPLACE]
+
+[GOTO]
+NAME:
+    p6_GoReplace5
+GOTO:
+    p6_Replace5
+[/GOTO]
+
+[MATCH_REPLACE]
+NAME:
+    p6_Replace4
+TARGET:
+    AndroidManifest.xml
+MATCH:
+    </activity>
+REPLACE:
+    </activity>
+<activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="password_login.login_passwordbyrioo.MainActivity" />
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+NAME:
+    p6_Replace5
+TARGET:
+    smali/password_login/login_passwordbyrioo/MainActivity.smali
+MATCH:
+    const-string v(\d+), "\{PACKAGE\}"
+REGEX:
+    true
+REPLACE:
+    const-string v${GROUP1}, "${PACKAGE}"
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+NAME:
+    p6_Replace6
+TARGET:
+    smali/password_login/login_passwordbyrioo/MainActivity.smali
+MATCH:
+    const-string v(\d+), "\{ACTIVITY\}"
+REGEX:
+    true
+REPLACE:
+    const-string v${GROUP1}, "${ACTIVITY}"
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    smali*/*.smali
+MATCH:
+    invoke-static(.+)YandexMetrica;->(activate.+|reportEvent.+)
+REGEX:
+    true
+REPLACE:
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    smali*/*.smali
+MATCH:
+    invoke-static(.+)YandexMetrica;->enableActivityAutoTracking.+
+REGEX:
+    true
+REPLACE:
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    smali*/*.smali
+MATCH:
+    "com.yandex.metrica.IMetricaService
+REGEX:
+    true
+REPLACE:
+    "disabled_com.yandex.metrica.IMetricaService
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    AndroidManifest.xml
+MATCH:
+    "com.yandex.metrica.IMetricaService"
+REGEX:
+    true
+REPLACE:
+    "disabled_com.yandex.metrica.IMetricaService"
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    AndroidManifest.xml
+MATCH:
+    "com.yandex.metrica.MetricaService"
+REGEX:
+    true
+REPLACE:
+    "disabled_com.yandex.metrica.MetricaService"
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    AndroidManifest.xml
+MATCH:
+    "com.yandex.metrica.ConfigurationService"
+REGEX:
+    true
+REPLACE:
+    "disabled_com.yandex.metrica.ConfigurationService"
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    AndroidManifest.xml
+MATCH:
+    "com.yandex.metrica.ConfigurationJobService"
+REGEX:
+    true
+REPLACE:
+    "disabled_com.yandex.metrica.ConfigurationJobService"
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    AndroidManifest.xml
+MATCH:
+    "com.yandex.metrica.MetricaEventHandler"
+REGEX:
+    true
+REPLACE:
+    "disabled_com.yandex.metrica.MetricaEventHandler"
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    AndroidManifest.xml
+MATCH:
+    "com.yandex.metrica.push.firebase.MetricaMessagingService"
+REGEX:
+    true
+REPLACE:
+    "disabled_com.yandex.metrica.push.firebase.MetricaMessagingService"
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    AndroidManifest.xml
+MATCH:
+    "com.yandex.metrica.push.firebase.MetricaInstanceIdService"
+REGEX:
+    true
+REPLACE:
+    "disabled_com.yandex.metrica.push.firebase.MetricaInstanceIdService"
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    AndroidManifest.xml
+MATCH:
+    "com.yandex.metrica.push.core.notification.MetricaPushBroadcastReceiver"
+REGEX:
+    true
+REPLACE:
+    "disabled_com.yandex.metrica.push.core.notification.MetricaPushBroadcastReceiver"
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    AndroidManifest.xml
+MATCH:
+    "com.yandex.metrica.push.PushService"
+REGEX:
+    true
+REPLACE:
+    "disabled_com.yandex.metrica.push.PushService"
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    AndroidManifest.xml
+MATCH:
+    "com.yandex.metrica.push.core.notification.MetricaPushNotificationStatusChangeHandler"
+REGEX:
+    true
+REPLACE:
+    "disabled_com.yandex.metrica.push.core.notification.MetricaPushNotificationStatusChangeHandler"
+[/MATCH_REPLACE]

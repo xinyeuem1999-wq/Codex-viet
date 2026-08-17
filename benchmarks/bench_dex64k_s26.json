@@ -1,0 +1,67 @@
+{
+  "name": "bench_dex64k",
+  "results": [
+    {
+      "target_methods": 20000,
+      "made": 20000,
+      "scan_seconds": 1.147,
+      "gen_seconds": 3.227,
+      "analyzed": {
+        "classes": 500,
+        "methods": 20001,
+        "fields": 0,
+        "strings": 20000,
+        "files": 500
+      },
+      "level": "SAFE",
+      "total": 20001,
+      "remaining": 45535,
+      "max_refs": 65536,
+      "ok": true
+    },
+    {
+      "target_methods": 56000,
+      "made": 56000,
+      "scan_seconds": 3.606,
+      "gen_seconds": 9.018,
+      "analyzed": {
+        "classes": 1400,
+        "methods": 56001,
+        "fields": 0,
+        "strings": 56000,
+        "files": 1400
+      },
+      "level": "HIGH",
+      "total": 56001,
+      "remaining": 9535,
+      "max_refs": 65536,
+      "ok": true
+    },
+    {
+      "target_methods": 70000,
+      "made": 70000,
+      "scan_seconds": 3.489,
+      "gen_seconds": 10.973,
+      "analyzed": {
+        "classes": 1750,
+        "methods": 70001,
+        "fields": 0,
+        "strings": 70000,
+        "files": 1750
+      },
+      "level": "BLOCK",
+      "total": 70001,
+      "remaining": -4465,
+      "max_refs": 65536,
+      "ok": true
+    }
+  ],
+  "checks": {
+    "small_safe": true,
+    "medium_high": true,
+    "large_block": true,
+    "large_over_64k": true,
+    "gen_du": true
+  },
+  "ok": true
+}

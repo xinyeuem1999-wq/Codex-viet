@@ -1,0 +1,8 @@
+{
+  "generated": "2026-08-17 16:08:23",
+  "tree": "/storage/emulated/0/Patch/patch1/_patchx/apk_trees/ApkToolPatcher v5.0",
+  "patches": [
+    "patch_bypass_sigcheck_with_reflection"
+  ],
+  "output": "ApkToolPatcher v5.0_patched_20260817-160823.apk"
+}

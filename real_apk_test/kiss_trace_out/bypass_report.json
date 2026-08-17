@@ -1,0 +1,115 @@
+{
+  "tree": "/storage/emulated/0/Patch/patch1/_patchx/real_apk_test/kiss_trace_tree",
+  "protections": [
+    {
+      "loại": "tamper",
+      "tên": "tamper",
+      "lần": 7,
+      "tệp": [
+        "smali/androidx/collection/internal/Lock.smali",
+        "smali/androidx/core/provider/FontProvider.smali",
+        "smali/androidx/emoji2/text/DefaultEmojiCompatConfig$DefaultEmojiCompatConfigHelper_API28.smali",
+        "smali/androidx/profileinstaller/Encoding.smali",
+        "smali/androidx/profileinstaller/ProfileInstallReceiver.smali"
+      ]
+    }
+  ],
+  "top_patches": [
+    {
+      "patch": "hook_remote_data_control",
+      "điểm": 0.27,
+      "tỷ_lệ_thành_công": 4.1,
+      "phân_tích": {
+        "tỷ_lệ": 4.1,
+        "yếu_tố": [
+          {
+            "tên": "Bao phủ quy tắc khớp 0%",
+            "điểm": 0.0
+          },
+          {
+            "tên": "Số lần khớp 0 (tối đa 25)",
+            "điểm": 0.0
+          },
+          {
+            "tên": "Khối khớp 0/8",
+            "điểm": 0.0
+          },
+          {
+            "tên": "Độ ưu tiên năng lực 0.90",
+            "điểm": 9.0
+          },
+          {
+            "tên": "Tỷ lệ khối hiện đại 31%",
+            "điểm": 3.1
+          }
+        ],
+        "phạt": [
+          {
+            "loại": "tamper",
+            "điểm": 8.0
+          }
+        ]
+      },
+      "năng_lực": [
+        "api",
+        "google",
+        "shell",
+        "trace"
+      ],
+      "điểm_bypass": [],
+      "cách_công_cụ": {
+        "cách": [
+          "Tìm API thật bằng log API_LOG/TRACE, sau đó thay domain/endpoint trong MATCH_REPLACE hoặc chặn tại class xử lý mạng.",
+          "Bỏ kiểm tra Google Play Services/SafetyNet: gỡ hoặc bỏ qua khối attestation, thay bằng kết quả giả.",
+          "Chèn khởi tạo mod qua INIT/HOOK_SCRIPT: chạy lệnh/script khi app mở để bơm biến hoặc gọi hàm nội bộ.",
+          "Bật truy vết dữ liệu: chèn TRACE/API_LOG vào method mục tiêu để đọc tham số và phản hồi trước khi quyết định patch."
+        ],
+        "công_cụ": [
+          "patchx apply",
+          "Frida",
+          "logcat",
+          "apktool",
+          "LSPosed"
+        ],
+        "xác_minh": [
+          "Theo dõi log chứa endpoint sau khi kích hoạt chức năng.",
+          "Mở ứng dụng khi không có Google Play đầy đủ; kiểm tra logcat.",
+          "Kiểm tra hiệu lực mod ngay sau khi app khởi động.",
+          "Đọc logcat thấy dữ liệu mong muốn in ra."
+        ]
+      },
+      "đề_xuất": [
+        "Khối 4 trượt target smali*/com/zaz/translate/ui/tool/ConfigKt.smali — cập nhật TARGET theo class-link thật của APK",
+        "Khối 8 trượt target smali*/*.smali — cập nhật TARGET theo class-link thật của APK",
+        "Khối 9 trượt target smali*/*.smali — cập nhật TARGET theo class-link thật của APK",
+        "Khối 10 trượt target smali*/*.smali — cập nhật TARGET theo class-link thật của APK",
+        "Khối 11 trượt target smali*/*.smali — cập nhật TARGET theo class-link thật của APK",
+        "Khối 12 trượt target smali*/*.smali — cập nhật TARGET theo class-link thật của APK"
+      ]
+    }
+  ],
+  "top_combos": [],
+  "plan": {
+    "phương_án": "hook_remote_data_control",
+    "tỷ_lệ_dự_đoán": 4.1,
+    "steps": [
+      "Chuẩn bị cây APK (apk-prepare) hoặc dùng cây đã giải mã.",
+      "Áp patch: python3 patchx apply hook_remote_data_control <cây-apk>",
+      "Chuẩn hoá resource chứa `$`: python3 patchx_toolkit.py apk-fix-res",
+      "Build: apktool b <cây> -o out.apk --aapt <aapt2-thật>",
+      "Zipalign + ký: zipalign -f 4 && apksigner sign",
+      "Cài APK, xác minh động bằng logcat/Frida theo mục xác_minh."
+    ],
+    "rủi_ro": [
+      "APK có dấu hiệu tamper (7 lần) — trừ ~8% điểm dự đoán; ưu tiên patch integrity/token xử lý lớp này."
+    ],
+    "tăng_khả_năng": [
+      "Khối 4 trượt target smali*/com/zaz/translate/ui/tool/ConfigKt.smali — cập nhật TARGET theo class-link thật của APK",
+      "Khối 8 trượt target smali*/*.smali — cập nhật TARGET theo class-link thật của APK",
+      "Khối 9 trượt target smali*/*.smali — cập nhật TARGET theo class-link thật của APK",
+      "Khối 10 trượt target smali*/*.smali — cập nhật TARGET theo class-link thật của APK",
+      "Khối 11 trượt target smali*/*.smali — cập nhật TARGET theo class-link thật của APK",
+      "Khối 12 trượt target smali*/*.smali — cập nhật TARGET theo class-link thật của APK"
+    ]
+  }
+}

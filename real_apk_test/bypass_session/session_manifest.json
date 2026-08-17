@@ -1,0 +1,20 @@
+{
+  "generated": "2026-08-14 16:51:17",
+  "input": "/storage/emulated/0/patch/1. PATCH others/_patchx/upgraded",
+  "tree": "/storage/emulated/0/patch/1. PATCH others/_patchx/real_apk_test/app_tree",
+  "patches": [
+    "SignatureHack_arm64",
+    "IsPremium"
+  ],
+  "conflicts": [],
+  "capabilities": {
+    "SignatureHack_arm64": [
+      "bypass-license",
+      "integrity",
+      "shell"
+    ],
+    "IsPremium": [
+      "bypass-license"
+    ]
+  }
+}

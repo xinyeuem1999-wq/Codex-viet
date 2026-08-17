@@ -1,0 +1,1790 @@
+# Gộp tối ưu bởi patchx: Tiện-ích
+
+[MIN_ENGINE_VER]
+2
+
+[AUTHOR]
+HTC 600
+
+[PACKAGE]
+*
+
+[ADD_FILES]
+TARGET:
+    smali
+EXTRACT:
+    true
+SOURCE:
+    BiN.zip
+[/ADD_FILES]
+
+[MATCH_REPLACE]
+TARGET:
+    smali/cc/binmt/signature/PmsHookApplication.smali
+MATCH:
+    ### Installer ###
+REGEX:
+    true
+REPLACE:
+    com.amazon
+[/MATCH_REPLACE]
+
+[MATCH_GOTO]
+TARGET:
+    AndroidManifest.xml
+MATCH:
+    <application(.+)android:name=
+REGEX:
+    true
+GOTO:
+    p0_app1
+[/MATCH_GOTO]
+
+[MATCH_REPLACE]
+TARGET:
+    AndroidManifest.xml
+MATCH:
+    <application(.+)>
+REGEX:
+    true
+REPLACE:
+    <application${GROUP1} android:name="cc.binmt.signature.PmsHookApplication">
+[/MATCH_REPLACE]
+
+[GOTO]
+GOTO:
+    p0_end
+[/GOTO]
+
+[MATCH_REPLACE]
+NAME:
+    p0_app1
+TARGET:
+    AndroidManifest.xml
+MATCH:
+    <application (.+) android:name="([^"]+)"(.+)
+REGEX:
+    true
+REPLACE:
+    <application ${GROUP1} android:name="cc.binmt.signature.PmsHookApplication"${GROUP3}
+[/MATCH_REPLACE]
+
+[MATCH_ASSIGN]
+TARGET:
+    [APPLICATION]
+MATCH:
+    \.class (.+?)L(.+);
+REGEX:
+    true
+ASSIGN:
+    LABEL_1=L${GROUP2};
+[/MATCH_ASSIGN]
+
+[MATCH_REPLACE]
+TARGET:
+    [APPLICATION]
+MATCH:
+    \.class public (|.+)L(.+);
+REGEX:
+    true
+REPLACE:
+    .class public L${GROUP2};
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    smali/cc/binmt/signature/PmsHookApplication.smali
+MATCH:
+    Landroid/app/Application;
+REGEX:
+    false
+REPLACE:
+    ${LABEL_1}
+[/MATCH_REPLACE]
+
+[EXECUTE_DEX]
+NAME:
+    p0_end
+SCRIPT:
+    sigfix.dex
+SMALI_NEEDED:
+    true
+MAIN_CLASS:
+    anymy.BinSignatureFix
+ENTRANCE:
+    BinSignatureFix
+PARAM:
+    smali
+[/EXECUTE_DEX]
+
+[DUMMY]
+NAME:
+    p0_end2
+[/DUMMY]
+
+[MATCH_REPLACE]
+TARGET:
+    AndroidManifest.xml
+MATCH:
+    <application
+REGEX:
+    false
+REPLACE:
+    <uses-permission android:name="android.permission.CAMERA" />
+<application
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    [LAUNCHER_ACTIVITIES]
+MATCH:
+    \.method (.+) onCreate\(Landroid/os/Bundle;\)V\n    \.registers (\d+)
+REGEX:
+    true
+REPLACE:
+    .method ${GROUP1} onCreate(Landroid/os/Bundle;)V
+    .registers ${GROUP2}
+
+    invoke-virtual {p0}, xxx111xxx->isCameraPermission()Z
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    [LAUNCHER_ACTIVITIES]
+MATCH:
+    \# virtual methods
+REGEX:
+    true
+REPLACE:
+    # virtual methods
+.method public isCameraPermission()Z
+    .registers 5
+
+    const/4 v3, 0x1
+
+    const/4 v2, 0x0
+
+    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    const/16 v1, 0x17
+
+    if-lt v0, v1, :cond_10
+
+    const-string v0, "android.permission.CAMERA"
+
+    invoke-virtual {p0, v0}, xxx111xxx->checkSelfPermission(Ljava/lang/String;)I
+
+    move-result v0
+
+    if-nez v0, :cond_11
+
+    :cond_10
+    :goto_10
+    return v2
+
+    :cond_11
+    new-array v0, v3, [Ljava/lang/String;
+
+    const-string v1, "android.permission.CAMERA"
+
+    aput-object v1, v0, v2
+
+    invoke-static {p0, v0, v3}, Landroid/support/v4/app/ActivityCompat;->requestPermissions(Landroid/app/Activity;[Ljava/lang/String;I)V
+
+    goto :goto_10
+.end method
+[/MATCH_REPLACE]
+
+[MATCH_ASSIGN]
+TARGET:
+    [LAUNCHER_ACTIVITIES]
+MATCH:
+    \.class public (.+)
+REGEX:
+    true
+ASSIGN:
+    LABEL_1=${GROUP1}
+[/MATCH_ASSIGN]
+
+[MATCH_REPLACE]
+TARGET:
+    [LAUNCHER_ACTIVITIES]
+MATCH:
+    xxx111xxx
+REGEX:
+    false
+REPLACE:
+    ${LABEL_1}
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    smali*/*.smali
+MATCH:
+    iget-object ([pv]\d+), ([pv]\d+), Landroid/content/pm/PackageInfo;->signatures:\[Landroid/content/pm/Signature;
+REGEX:
+    true
+REPLACE:
+    invoke-static {${GROUP2}}, Lapkeditor/patch/signature/Fix;->getSignatures(Landroid/content/pm/PackageInfo;)[Landroid/content/pm/Signature;
+    move-result-object ${GROUP1}
+[/MATCH_REPLACE]
+
+[ADD_FILES]
+SOURCE:
+    Fix.smali
+TARGET:
+    smali/apkeditor/patch/signature/Fix.smali
+[/ADD_FILES]
+
+[SIGNATURE_REVISE]
+TARGET:
+    smali/apkeditor/patch/signature/Fix.smali
+[/SIGNATURE_REVISE]
+
+[MATCH_REPLACE]
+TARGET:
+    smali*/*smali
+MATCH:
+    const-string ([pv]\d+), ".+"\n\n    invoke-static \{([pv]\d+), ([pv]\d+)\}, Lcom/google/android/getGPS;->checkGPS\(Landroid/content/Context;Ljava/lang/String;\)V
+REGEX:
+    true
+REPLACE:
+    #  HTC 600 - ubivaet :-)
+[/MATCH_REPLACE]
+
+[REMOVE_FILES]
+TARGET:
+    res/raw-ar
+res/raw-bg
+res/raw-ca
+res/raw-cs
+res/raw-da
+res/raw-de
+res/raw-el
+res/raw-en-rGB
+res/raw-es-rUS
+res/raw-es
+res/raw-fa
+res/raw-fi
+res/raw-fr
+res/raw-hi
+res/raw-hr
+res/raw-hu
+res/raw-id
+res/raw-it
+res/raw-iw
+res/raw-ja
+res/raw-ko
+res/raw-lt
+res/raw-lv
+res/raw-nb
+res/raw-nl
+res/raw-pl
+res/raw-pt-rBR
+res/raw-pt-rPT
+res/raw-pt
+res/raw-rm
+res/raw-ro
+res/raw-sk
+res/raw-sl
+res/raw-sr
+res/raw-sv
+res/raw-th
+res/raw-tl
+res/raw-tr
+res/raw-vi
+res/raw-zh-rCN
+res/raw-zh-rTW
+res/raw-an
+res/raw-as
+res/raw-ast
+res/raw-az
+res/raw-be
+res/raw-bn-rIN
+res/raw-br
+res/raw-cak
+res/raw-cy
+res/raw-dsb
+res/raw-en-rZA
+res/raw-eo
+res/raw-es-rAR
+res/raw-es-rCL
+res/raw-es-rES
+res/raw-es-rMX
+res/raw-et
+res/raw-eu
+res/raw-ff
+res/raw-fy-rNL
+res/raw-ga-rIE
+res/raw-gd
+res/raw-gl
+res/raw-gn
+res/raw-gu-rIN
+res/raw-hi-rIN
+res/raw-hsb
+res/raw-hy-rAM
+res/raw-in
+res/raw-is
+res/raw-ka
+res/raw-kab
+res/raw-kk
+res/raw-kn
+res/raw-lo
+res/raw-mai
+res/raw-ml
+res/raw-mr
+res/raw-ms
+res/raw-my
+res/raw-nb-rNO
+res/raw-nn-rNO
+res/raw-or
+res/raw-pa-rIN
+res/raw-son
+res/raw-sq
+res/raw-sv-rSE
+res/raw-ta
+res/raw-te
+res/raw-ur
+res/raw-uz
+res/raw-wo
+res/raw-xh
+res/raw-zam
+    res/values-cb
+    res/values-tt
+    res/values-mn
+    res/values-be-rBY
+    res/values-lo
+    res/values-ky
+    res/values-af
+    res/values-af_NA
+    res/values-af_ZA
+    res/values-agq
+    res/values-agq_CM
+    res/values-ak
+    res/values-ak_GH
+    res/values-am
+    res/values-am_ET
+    res/values-an
+    res/values-ar
+    res/values-ar_001
+    res/values-ar_AE
+    res/values-ar_BH
+    res/values-ar_DZ
+    res/values-ar_EG
+    res/values-ar_IQ
+    res/values-ar_JO
+    res/values-ar_KW
+    res/values-ar_LB
+    res/values-ar_LY
+    res/values-ar_MA
+    res/values-ar_OM
+    res/values-ar_QA
+    res/values-ar_SA
+    res/values-ar_SD
+    res/values-ar_SY
+    res/values-ar_TN
+    res/values-ar_YE
+    res/values-as
+    res/values-as_IN
+    res/values-asa
+    res/values-asa_TZ
+    res/values-ast
+    res/values-az
+    res/values-az_Cyrl
+    res/values-az_Cyrl_AZ
+    res/values-az_Latn
+    res/values-az_Latn_AZ
+    res/values-bas
+    res/values-bas_CM
+    res/values-be
+    res/values-be_BY
+    res/values-bem
+    res/values-bem_ZM
+    res/values-bez
+    res/values-bez_TZ
+    res/values-bg
+    res/values-bg_BG
+    res/values-bm
+    res/values-bm_ML
+    res/values-bn
+    res/values-bn_BD
+    res/values-bn_IN
+    res/values-bn-rIN
+    res/values-bo
+    res/values-bo_CN
+    res/values-bo_IN
+    res/values-br
+    res/values-br_FR
+    res/values-brx
+    res/values-brx_IN
+    res/values-bs
+    res/values-bs_BA
+    res/values-ca
+    res/values-cak
+    res/values-ca_ES
+    res/values-cgg
+    res/values-cgg_UG
+    res/values-chr
+    res/values-chr_US
+    res/values-cs
+    res/values-cs_CZ
+    res/values-cy
+    res/values-cy_GB
+    res/values-da
+    res/values-da_DK
+    res/values-dav
+    res/values-dav_KE
+    res/values-de
+    res/values-de_AT
+    res/values-de_BE
+    res/values-de_CH
+    res/values-de_DE
+    res/values-de_LI
+    res/values-de_LU
+    res/values-dje
+    res/values-dje_NE
+    res/values-dsb
+    res/values-dua
+    res/values-dua_CM
+    res/values-dyo
+    res/values-dyo_SN
+    res/values-ebu
+    res/values-ebu_KE
+    res/values-ee
+    res/values-ee_GH
+    res/values-ee_TG
+    res/values-el
+    res/values-el_CY
+    res/values-el_GR
+    res/values-en
+    res/values-en_AS
+    res/values-en_AU
+    res/values-en_BB
+    res/values-en_BE
+    res/values-en_BM
+    res/values-en_BW
+    res/values-en_BZ
+    res/values-en_CA
+    res/values-en_GB
+    res/values-en_GU
+    res/values-en_GY
+    res/values-en_HK
+    res/values-en_IE
+    res/values-en_IN
+    res/values-en_JM
+    res/values-en_MH
+    res/values-en_MP
+    res/values-en_MT
+    res/values-en_MU
+    res/values-en_NA
+    res/values-en_NZ
+    res/values-en_PH
+    res/values-en_PK
+    res/values-en_SG
+    res/values-en_TT
+    res/values-en_UM
+    res/values-en_US
+    res/values-en_US_POSIX
+    res/values-en_VI
+    res/values-en_ZA
+    res/values-en_ZW
+    res/values-eo
+    res/values-es
+    res/values-es_419
+    res/values-es_AR
+    res/values-es_BO
+    res/values-es_CL
+    res/values-es_CO
+    res/values-es_CR
+    res/values-es_DO
+    res/values-es_EC
+    res/values-es_ES
+    res/values-es_GQ
+    res/values-es_GT
+    res/values-es_HN
+    res/values-es_MX
+    res/values-es_NI
+    res/values-es_PA
+    res/values-es_PE
+    res/values-es_PR
+    res/values-es_PY
+    res/values-es-rAR
+    res/values-es-rCL
+    res/values-es-rMX
+    res/values-es_SV
+    res/values-es_US
+    res/values-es_UY
+    res/values-es_VE
+    res/values-et
+    res/values-et_EE
+    res/values-eu
+    res/values-eu_ES
+    res/values-ewo
+    res/values-ewo_CM
+    res/values-fa
+    res/values-fa_AF
+    res/values-fa_IR
+    res/values-ff
+    res/values-ff_SN
+    res/values-fi
+    res/values-fi_FI
+    res/values-fil
+    res/values-fil_PH
+    res/values-fo
+    res/values-fo_FO
+    res/values-fr
+    res/values-fr_BE
+    res/values-fr_BF
+    res/values-fr_BI
+    res/values-fr_BJ
+    res/values-fr_BL
+    res/values-fr_CA
+    res/values-fr_CD
+    res/values-fr_CF
+    res/values-fr_CG
+    res/values-fr_CH
+    res/values-fr_CI
+    res/values-fr_CM
+    res/values-fr_DJ
+    res/values-fr_FR
+    res/values-fr_GA
+    res/values-fr_GF
+    res/values-fr_GN
+    res/values-fr_GP
+    res/values-fr_GQ
+    res/values-fr_KM
+    res/values-fr_LU
+    res/values-fr_MC
+    res/values-fr_MF
+    res/values-fr_MG
+    res/values-fr_ML
+    res/values-fr_MQ
+    res/values-fr_NE
+    res/values-fr_RE
+    res/values-fr_RW
+    res/values-fr_SN
+    res/values-fr_TD
+    res/values-fr_TG
+    res/values-fr_YT
+    res/values-fy-rNL
+    res/values-ga
+    res/values-ga_IE
+    res/values-ga-rIE
+    res/values-gd
+    res/values-gl
+    res/values-gl_ES
+    res/values-gn
+    res/values-gsw
+    res/values-gsw_CH
+    res/values-gu
+    res/values-gu_IN
+    res/values-guz
+    res/values-guz_KE
+    res/values-gv
+    res/values-gv_GB
+    res/values-ha
+    res/values-ha_Latn
+    res/values-ha_Latn_GH
+    res/values-ha_Latn_NE
+    res/values-ha_Latn_NG
+    res/values-haw
+    res/values-haw_US
+    res/values-he
+    res/values-he_IL
+    res/values-hi
+    res/values-hi_IN
+    res/values-hr
+    res/values-hr_HR
+    res/values-hsb
+    res/values-hu
+    res/values-hu_HU
+    res/values-hy
+    res/values-hy_AM
+    res/values-id
+    res/values-id_ID
+    res/values-ig
+    res/values-ig_NG
+    res/values-ii
+    res/values-ii_CN
+    res/values-is
+    res/values-is_IS
+    res/values-it
+    res/values-it_CH
+    res/values-it_IT
+    res/values-ja
+    res/values-ja_JP
+    res/values-jmc
+    res/values-jmc_TZ
+    res/values-ka
+    res/values-ka_GE
+    res/values-kab
+    res/values-kab_DZ
+    res/values-kam
+    res/values-kam_KE
+    res/values-kde
+    res/values-kde_TZ
+    res/values-kea
+    res/values-kea_CV
+    res/values-khq
+    res/values-khq_ML
+    res/values-ki
+    res/values-ki_KE
+    res/values-kk
+    res/values-kk_Cyrl
+    res/values-kk_Cyrl_KZ
+    res/values-kl
+    res/values-kl_GL
+    res/values-kln
+    res/values-kln_KE
+    res/values-km
+    res/values-km_KH
+    res/values-kn
+    res/values-kn_IN
+    res/values-ko
+    res/values-ko_KR
+    res/values-kok
+    res/values-kok_IN
+    res/values-ksb
+    res/values-ksb_TZ
+    res/values-ksf
+    res/values-ksf_CM
+    res/values-kw
+    res/values-kw_GB
+    res/values-lag
+    res/values-lag_TZ
+    res/values-lg
+    res/values-lg_UG
+    res/values-ln
+    res/values-ln_CD
+    res/values-ln_CG
+    res/values-lt
+    res/values-lt_LT
+    res/values-lu
+    res/values-lu_CD
+    res/values-luo
+    res/values-luo_KE
+    res/values-luy
+    res/values-luy_KE
+    res/values-lv
+    res/values-lv_LV
+    res/values-mai
+    res/values-mas
+    res/values-mas_KE
+    res/values-mas_TZ
+    res/values-mer
+    res/values-mer_KE
+    res/values-mfe
+    res/values-mfe_MU
+    res/values-mg
+    res/values-mg_MG
+    res/values-mgh
+    res/values-mgh_MZ
+    res/values-mk
+    res/values-mk_MK
+    res/values-ml
+    res/values-ml_IN
+    res/values-mr
+    res/values-mr_IN
+    res/values-ms
+    res/values-ms_BN
+    res/values-ms_MY
+    res/values-mt
+    res/values-mt_MT
+    res/values-mua
+    res/values-mua_CM
+    res/values-my
+    res/values-my_MM
+    res/values-naq
+    res/values-naq_NA
+    res/values-nb
+    res/values-nb_NO
+    res/values-nd
+    res/values-nd_ZW
+    res/values-ne
+    res/values-ne_IN
+    res/values-ne_NP
+    res/values-nl
+    res/values-nl_AW
+    res/values-nl_BE
+    res/values-nl_CW
+    res/values-nl_NL
+    res/values-nl_SX
+    res/values-nmg
+    res/values-nmg_CM
+    res/values-nn
+    res/values-nn_NO
+    res/values-nn-rNO
+    res/values-nus
+    res/values-nus_SD
+    res/values-nyn
+    res/values-nyn_UG
+    res/values-om
+    res/values-om_ET
+    res/values-om_KE
+    res/values-or
+    res/values-or_IN
+    res/values-pa
+    res/values-pa_Arab
+    res/values-pa_Arab_PK
+    res/values-pa_Guru
+    res/values-pa_Guru_IN
+    res/values-pl
+    res/values-pl_PL
+    res/values-ps
+    res/values-ps_AF
+    res/values-pt
+    res/values-pt_AO
+    res/values-pt_BR
+    res/values-pt_GW
+    res/values-pt_MZ
+    res/values-pt_PT
+    res/values-pt_ST
+    res/values-rm
+    res/values-rm_CH
+    res/values-rn
+    res/values-rn_BI
+    res/values-ro
+    res/values-ro_MD
+    res/values-ro_RO
+    res/values-rof
+    res/values-rof_TZ
+    res/values-rw
+    res/values-rw_RW
+    res/values-rwk
+    res/values-rwk_TZ
+    res/values-saq
+    res/values-saq_KE
+    res/values-sbp
+    res/values-sbp_TZ
+    res/values-seh
+    res/values-seh_MZ
+    res/values-ses
+    res/values-ses_ML
+    res/values-sg
+    res/values-sg_CF
+    res/values-shi
+    res/values-shi_Latn
+    res/values-shi_Latn_MA
+    res/values-shi_Tfng
+    res/values-shi_Tfng_MA
+    res/values-si
+    res/values-si_LK
+    res/values-sk
+    res/values-sk_SK
+    res/values-sl
+    res/values-sl_SI
+    res/values-sn
+    res/values-sn_ZW
+    res/values-so
+    res/values-so_DJ
+    res/values-so_ET
+    res/values-so_KE
+    res/values-so_SO
+    res/values-son
+    res/values-sq
+    res/values-sq_AL
+    res/values-sr
+    res/values-sr_Cyrl
+    res/values-sr_Cyrl_BA
+    res/values-sr_Cyrl_ME
+    res/values-sr_Cyrl_RS
+    res/values-sr_Latn
+    res/values-sr_Latn_BA
+    res/values-sr_Latn_ME
+    res/values-sr_Latn_RS
+    res/values-sv
+    res/values-sv_FI
+    res/values-sv_SE
+    res/values-sw
+    res/values-sw_KE
+    res/values-sw_TZ
+    res/values-swc
+    res/values-swc_CD
+    res/values-ta
+    res/values-ta_IN
+    res/values-ta_LK
+    res/values-te
+    res/values-te_IN
+    res/values-teo
+    res/values-teo_KE
+    res/values-teo_UG
+    res/values-th
+    res/values-th_TH
+    res/values-ti
+    res/values-ti_ER
+    res/values-ti_ET
+    res/values-to
+    res/values-to_TO
+    res/values-tr
+    res/values-tr_TR
+    res/values-twq
+    res/values-twq_NE
+    res/values-tzm
+    res/values-tzm_Latn
+    res/values-tzm_Latn_MA
+    res/values-ur
+    res/values-ur_IN
+    res/values-ur_PK
+    res/values-uz
+    res/values-uz_Arab
+    res/values-uz_Arab_AF
+    res/values-uz_Cyrl
+    res/values-uz_Cyrl_UZ
+    res/values-uz_Latn
+    res/values-uz_Latn_UZ
+    res/values-vai
+    res/values-vai_Latn
+    res/values-vai_Latn_LR
+    res/values-vai_Vaii
+    res/values-vai_Vaii_LR
+    res/values-vi
+    res/values-vi_VN
+    res/values-vun
+    res/values-vun_TZ
+    res/values-wo
+    res/values-xh
+    res/values-xog
+    res/values-xog_UG
+    res/values-yav
+    res/values-yav_CM
+    res/values-yo
+    res/values-yo_NG
+    res/values-zam
+    res/values-zh
+    res/values-zh_Hans
+    res/values-zh_Hans_CN
+    res/values-zh_Hans_HK
+    res/values-zh_Hans_MO
+    res/values-zh_Hans_SG
+    res/values-zh_Hant
+    res/values-zh_Hant_HK
+    res/values-zh_Hant_MO
+    res/values-zh_Hant_TW
+    res/values-zu
+    res/values-zu_ZA
+        res/values-af-watch
+    res/values-af
+    res/values-am-rET
+    res/values-am-watch
+    res/values-am
+    res/values-ar-rEG
+    res/values-ar-rIL
+    res/values-ar-watch
+    res/values-ar
+    res/values-az-rAZ-watch
+    res/values-az-rAZ
+    res/values-b+sr+Latn-watch
+    res/values-b+sr+Latn
+    res/values-bg-rBG
+    res/values-bg-watch
+    res/values-bg
+    res/values-bn-rBD-watch
+    res/values-bn-rBD
+    res/values-bs-rBA
+    res/values-ca-rES
+    res/values-ca-watch
+    res/values-ca
+    res/values-cs-rCZ
+    res/values-cs-watch
+    res/values-cs
+    res/values-da-rDK
+    res/values-da-watch
+    res/values-da
+    res/values-de-rAT
+    res/values-de-rCH
+    res/values-de-rDE
+    res/values-de-rLI
+    res/values-de-watch
+    res/values-de
+    res/values-el-rGR
+    res/values-el-watch
+    res/values-el
+    res/values-en-rAU-watch
+    res/values-en-rAU
+    res/values-en-rCA
+    res/values-en-rGB-watch
+    res/values-en-rGB
+    res/values-en-rIE
+    res/values-en-rIN-watch
+    res/values-en-rIN
+    res/values-en-rNZ
+    res/values-en-rSG
+    res/values-en-rUS
+    res/values-en-rZA
+    res/values-es-rES
+    res/values-es-rUS-watch
+    res/values-es-rUS
+    res/values-es-watch
+    res/values-es
+    res/values-et-rEE-watch
+    res/values-et-rEE
+    res/values-eu-rES-watch
+    res/values-eu-rES
+    res/values-fa-rIR
+    res/values-fa-watch
+    res/values-fa
+    res/values-fi-rFI
+    res/values-fi-watch
+    res/values-fi
+    res/values-fr-rBE
+    res/values-fr-rCA-watch
+    res/values-fr-rCA
+    res/values-fr-rCH
+    res/values-fr-rFR
+    res/values-fr-watch
+    res/values-fr
+    res/values-gl-rES-watch
+    res/values-gl-rES
+    res/values-gu-rIN-watch
+    res/values-gu-rIN
+    res/values-hi-rIN
+    res/values-hi-watch
+    res/values-hi
+    res/values-hr-rHR
+    res/values-hr-watch
+    res/values-hr
+    res/values-hu-rHU
+    res/values-hu-watch
+    res/values-hu
+    res/values-hy-rAM-watch
+    res/values-hy-rAM
+    res/values-in-rID
+    res/values-in-watch
+    res/values-in
+    res/values-is-rIS-watch
+    res/values-is-rIS
+    res/values-it-rCH
+    res/values-it-rIT
+    res/values-it-watch
+    res/values-it
+    res/values-iw-rIL
+    res/values-iw-watch
+    res/values-iw
+    res/values-ja-rJP
+    res/values-ja-watch
+    res/values-ja
+    res/values-ka-rGE-watch
+    res/values-ka-rGE
+    res/values-kk-rKZ-watch
+    res/values-kk-rKZ
+    res/values-km-rKH-watch
+    res/values-km-rKH
+    res/values-kn-rIN-watch
+    res/values-kn-rIN
+    res/values-ko-rKR
+    res/values-ko-watch
+    res/values-ko
+    res/values-ky-rKG-watch
+    res/values-ky-rKG
+    res/values-land
+    res/values-large
+    res/values-ldrtl-television
+    res/values-ldrtl
+    res/values-lo-rLA-watch
+    res/values-lo-rLA
+    res/values-lt-rLT
+    res/values-lt-watch
+    res/values-lt
+    res/values-lv-rLV
+    res/values-lv-watch
+    res/values-lv
+    res/values-mk-rMK-watch
+    res/values-mk-rMK
+    res/values-ml-rIN-watch
+    res/values-ml-rIN
+    res/values-mn-rMN-watch
+    res/values-mn-rMN
+    res/values-mr-rIN-watch
+    res/values-mr-rIN
+    res/values-ms-rMY-watch
+    res/values-ms-rMY
+    res/values-my-rMM-watch
+    res/values-my-rMM
+    res/values-nb-rNO
+    res/values-nb-watch
+    res/values-nb
+    res/values-ne-rNP-watch
+    res/values-ne-rNP
+    res/values-nl-rBE
+    res/values-nl-rNL
+    res/values-nl-watch
+    res/values-nl
+    res/values-pa-rIN-watch
+    res/values-pa-rIN
+    res/values-pl-rPL
+    res/values-pl-watch
+    res/values-pl
+    res/values-port-mdpi
+    res/values-port
+    res/values-pt-rBR-watch
+    res/values-pt-rBR
+    res/values-pt-rPT-watch
+    res/values-pt-rPT
+    res/values-pt-watch
+    res/values-pt
+    res/values-rm-rCH
+    res/values-ro-rRO
+    res/values-ro-watch
+    res/values-ro
+    res/values-round-watch
+    res/values-si-rLK-watch
+    res/values-si-rLK
+    res/values-sk-rSK
+    res/values-sk-watch
+    res/values-sk
+    res/values-sl-rSI
+    res/values-sl-watch
+    res/values-sl
+    res/values-sq-rAL-watch
+    res/values-sq-rAL
+    res/values-sr-rRS
+    res/values-sr-watch
+    res/values-sr
+    res/values-sv-rSE
+    res/values-sv-watch
+    res/values-sv
+    res/values-sw-rTZ
+    res/values-sw-watch
+    res/values-sw
+    res/values-ta-rIN-watch
+    res/values-ta-rIN
+    res/values-te-rIN-watch
+    res/values-te-rIN
+    res/values-television
+    res/values-th-rTH
+    res/values-th-watch
+    res/values-th
+    res/values-tl-rPH
+    res/values-tl-watch
+    res/values-tl
+    res/values-tr-rTR
+    res/values-tr-watch
+    res/values-tr
+    res/values-ur-rPK-watch
+    res/values-ur-rPK
+    res/values-uz-rUZ-watch
+    res/values-uz-rUZ
+    res/values-vi-rVN
+    res/values-vi-watch
+    res/values-vi
+    res/values-zh-rCN-watch
+    res/values-zh-rCN
+    res/values-zh-rHK-watch
+    res/values-zh-rHK
+    res/values-zh-rTW-watch
+    res/values-zh-rTW
+    res/values-zu-rZA
+    res/values-zu-watch
+    res/values-zu
+[/REMOVE_FILES]
+
+[REMOVE_FILES]
+TARGET:
+    res/values-tt
+    res/values-mn
+    res/values-be-rBY
+    res/values-lo
+    res/values-ky
+    res/values-af
+    res/values-af_NA
+    res/values-af_ZA
+    res/values-agq
+    res/values-agq_CM
+    res/values-ak
+    res/values-ak_GH
+    res/values-am
+    res/values-am_ET
+    res/values-ar
+    res/values-ar_001
+    res/values-ar_AE
+    res/values-ar_BH
+    res/values-ar_DZ
+    res/values-ar_EG
+    res/values-ar_IQ
+    res/values-ar_JO
+    res/values-ar_KW
+    res/values-ar_LB
+    res/values-ar_LY
+    res/values-ar_MA
+    res/values-ar_OM
+    res/values-ar_QA
+    res/values-ar_SA
+    res/values-ar_SD
+    res/values-ar_SY
+    res/values-ar_TN
+    res/values-ar_YE
+    res/values-as
+    res/values-as_IN
+    res/values-asa
+    res/values-asa_TZ
+    res/values-az
+    res/values-az_Cyrl
+    res/values-az_Cyrl_AZ
+    res/values-az_Latn
+    res/values-az_Latn_AZ
+    res/values-bas
+    res/values-bas_CM
+    res/values-be
+    res/values-be_BY
+    res/values-bem
+    res/values-bem_ZM
+    res/values-bez
+    res/values-bez_TZ
+    res/values-bg
+    res/values-bg_BG
+    res/values-bm
+    res/values-bm_ML
+    res/values-bn
+    res/values-bn_BD
+    res/values-bn_IN
+    res/values-bo
+    res/values-bo_CN
+    res/values-bo_IN
+    res/values-br
+    res/values-br_FR
+    res/values-brx
+    res/values-brx_IN
+    res/values-bs
+    res/values-bs_BA
+    res/values-ca
+    res/values-ca_ES
+    res/values-cgg
+    res/values-cgg_UG
+    res/values-chr
+    res/values-chr_US
+    res/values-cs
+    res/values-cs_CZ
+    res/values-cy
+    res/values-cy_GB
+    res/values-da
+    res/values-da_DK
+    res/values-dav
+    res/values-dav_KE
+    res/values-de
+    res/values-de_AT
+    res/values-de_BE
+    res/values-de_CH
+    res/values-de_DE
+    res/values-de_LI
+    res/values-de_LU
+    res/values-dje
+    res/values-dje_NE
+    res/values-dua
+    res/values-dua_CM
+    res/values-dyo
+    res/values-dyo_SN
+    res/values-ebu
+    res/values-ebu_KE
+    res/values-ee
+    res/values-ee_GH
+    res/values-ee_TG
+    res/values-el
+    res/values-el_CY
+    res/values-el_GR
+    res/values-en
+    res/values-en_AS
+    res/values-en_AU
+    res/values-en_BB
+    res/values-en_BE
+    res/values-en_BM
+    res/values-en_BW
+    res/values-en_BZ
+    res/values-en_CA
+    res/values-en_GB
+    res/values-en_GU
+    res/values-en_GY
+    res/values-en_HK
+    res/values-en_IE
+    res/values-en_IN
+    res/values-en_JM
+    res/values-en_MH
+    res/values-en_MP
+    res/values-en_MT
+    res/values-en_MU
+    res/values-en_NA
+    res/values-en_NZ
+    res/values-en_PH
+    res/values-en_PK
+    res/values-en_SG
+    res/values-en_TT
+    res/values-en_UM
+    res/values-en_US
+    res/values-en_US_POSIX
+    res/values-en_VI
+    res/values-en_ZA
+    res/values-en_ZW
+    res/values-eo
+    res/values-es
+    res/values-es_419
+    res/values-es_AR
+    res/values-es_BO
+    res/values-es_CL
+    res/values-es_CO
+    res/values-es_CR
+    res/values-es_DO
+    res/values-es_EC
+    res/values-es_ES
+    res/values-es_GQ
+    res/values-es_GT
+    res/values-es_HN
+    res/values-es_MX
+    res/values-es_NI
+    res/values-es_PA
+    res/values-es_PE
+    res/values-es_PR
+    res/values-es_PY
+    res/values-es_SV
+    res/values-es_US
+    res/values-es_UY
+    res/values-es_VE
+    res/values-et
+    res/values-et_EE
+    res/values-eu
+    res/values-eu_ES
+    res/values-ewo
+    res/values-ewo_CM
+    res/values-fa
+    res/values-fa_AF
+    res/values-fa_IR
+    res/values-ff
+    res/values-ff_SN
+    res/values-fi
+    res/values-fi_FI
+    res/values-fil
+    res/values-fil_PH
+    res/values-fo
+    res/values-fo_FO
+    res/values-fr
+    res/values-fr_BE
+    res/values-fr_BF
+    res/values-fr_BI
+    res/values-fr_BJ
+    res/values-fr_BL
+    res/values-fr_CA
+    res/values-fr_CD
+    res/values-fr_CF
+    res/values-fr_CG
+    res/values-fr_CH
+    res/values-fr_CI
+    res/values-fr_CM
+    res/values-fr_DJ
+    res/values-fr_FR
+    res/values-fr_GA
+    res/values-fr_GF
+    res/values-fr_GN
+    res/values-fr_GP
+    res/values-fr_GQ
+    res/values-fr_KM
+    res/values-fr_LU
+    res/values-fr_MC
+    res/values-fr_MF
+    res/values-fr_MG
+    res/values-fr_ML
+    res/values-fr_MQ
+    res/values-fr_NE
+    res/values-fr_RE
+    res/values-fr_RW
+    res/values-fr_SN
+    res/values-fr_TD
+    res/values-fr_TG
+    res/values-fr_YT
+    res/values-ga
+    res/values-ga_IE
+    res/values-gl
+    res/values-gl_ES
+    res/values-gsw
+    res/values-gsw_CH
+    res/values-gu
+    res/values-gu_IN
+    res/values-guz
+    res/values-guz_KE
+    res/values-gv
+    res/values-gv_GB
+    res/values-ha
+    res/values-ha_Latn
+    res/values-ha_Latn_GH
+    res/values-ha_Latn_NE
+    res/values-ha_Latn_NG
+    res/values-haw
+    res/values-haw_US
+    res/values-he
+    res/values-he_IL
+    res/values-hi
+    res/values-hi_IN
+    res/values-hr
+    res/values-hr_HR
+    res/values-hu
+    res/values-hu_HU
+    res/values-hy
+    res/values-hy_AM
+    res/values-id
+    res/values-id_ID
+    res/values-ig
+    res/values-ig_NG
+    res/values-ii
+    res/values-ii_CN
+    res/values-is
+    res/values-is_IS
+    res/values-it
+    res/values-it_CH
+    res/values-it_IT
+    res/values-ja
+    res/values-ja_JP
+    res/values-jmc
+    res/values-jmc_TZ
+    res/values-ka
+    res/values-ka_GE
+    res/values-kab
+    res/values-kab_DZ
+    res/values-kam
+    res/values-kam_KE
+    res/values-kde
+    res/values-kde_TZ
+    res/values-kea
+    res/values-kea_CV
+    res/values-khq
+    res/values-khq_ML
+    res/values-ki
+    res/values-ki_KE
+    res/values-kk
+    res/values-kk_Cyrl
+    res/values-kk_Cyrl_KZ
+    res/values-kl
+    res/values-kl_GL
+    res/values-kln
+    res/values-kln_KE
+    res/values-km
+    res/values-km_KH
+    res/values-kn
+    res/values-kn_IN
+    res/values-ko
+    res/values-ko_KR
+    res/values-kok
+    res/values-kok_IN
+    res/values-ksb
+    res/values-ksb_TZ
+    res/values-ksf
+    res/values-ksf_CM
+    res/values-kw
+    res/values-kw_GB
+    res/values-lag
+    res/values-lag_TZ
+    res/values-lg
+    res/values-lg_UG
+    res/values-ln
+    res/values-ln_CD
+    res/values-ln_CG
+    res/values-lt
+    res/values-lt_LT
+    res/values-lu
+    res/values-lu_CD
+    res/values-luo
+    res/values-luo_KE
+    res/values-luy
+    res/values-luy_KE
+    res/values-lv
+    res/values-lv_LV
+    res/values-mas
+    res/values-mas_KE
+    res/values-mas_TZ
+    res/values-mer
+    res/values-mer_KE
+    res/values-mfe
+    res/values-mfe_MU
+    res/values-mg
+    res/values-mg_MG
+    res/values-mgh
+    res/values-mgh_MZ
+    res/values-mk
+    res/values-mk_MK
+    res/values-ml
+    res/values-ml_IN
+    res/values-mr
+    res/values-mr_IN
+    res/values-ms
+    res/values-ms_BN
+    res/values-ms_MY
+    res/values-mt
+    res/values-mt_MT
+    res/values-mua
+    res/values-mua_CM
+    res/values-my
+    res/values-my_MM
+    res/values-naq
+    res/values-naq_NA
+    res/values-nb
+    res/values-nb_NO
+    res/values-nd
+    res/values-nd_ZW
+    res/values-ne
+    res/values-ne_IN
+    res/values-ne_NP
+    res/values-nl
+    res/values-nl_AW
+    res/values-nl_BE
+    res/values-nl_CW
+    res/values-nl_NL
+    res/values-nl_SX
+    res/values-nmg
+    res/values-nmg_CM
+    res/values-nn
+    res/values-nn_NO
+    res/values-nus
+    res/values-nus_SD
+    res/values-nyn
+    res/values-nyn_UG
+    res/values-om
+    res/values-om_ET
+    res/values-om_KE
+    res/values-or
+    res/values-or_IN
+    res/values-pa
+    res/values-pa_Arab
+    res/values-pa_Arab_PK
+    res/values-pa_Guru
+    res/values-pa_Guru_IN
+    res/values-pl
+    res/values-pl_PL
+    res/values-ps
+    res/values-ps_AF
+    res/values-pt
+    res/values-pt_AO
+    res/values-pt_BR
+    res/values-pt_GW
+    res/values-pt_MZ
+    res/values-pt_PT
+    res/values-pt_ST
+    res/values-rm
+    res/values-rm_CH
+    res/values-rn
+    res/values-rn_BI
+    res/values-ro
+    res/values-ro_MD
+    res/values-ro_RO
+    res/values-rof
+    res/values-rof_TZ
+    res/values-rw
+    res/values-rw_RW
+    res/values-rwk
+    res/values-rwk_TZ
+    res/values-saq
+    res/values-saq_KE
+    res/values-sbp
+    res/values-sbp_TZ
+    res/values-seh
+    res/values-seh_MZ
+    res/values-ses
+    res/values-ses_ML
+    res/values-sg
+    res/values-sg_CF
+    res/values-shi
+    res/values-shi_Latn
+    res/values-shi_Latn_MA
+    res/values-shi_Tfng
+    res/values-shi_Tfng_MA
+    res/values-si
+    res/values-si_LK
+    res/values-sk
+    res/values-sk_SK
+    res/values-sl
+    res/values-sl_SI
+    res/values-sn
+    res/values-sn_ZW
+    res/values-so
+    res/values-so_DJ
+    res/values-so_ET
+    res/values-so_KE
+    res/values-so_SO
+    res/values-sq
+    res/values-sq_AL
+    res/values-sr
+    res/values-sr_Cyrl
+    res/values-sr_Cyrl_BA
+    res/values-sr_Cyrl_ME
+    res/values-sr_Cyrl_RS
+    res/values-sr_Latn
+    res/values-sr_Latn_BA
+    res/values-sr_Latn_ME
+    res/values-sr_Latn_RS
+    res/values-sv
+    res/values-sv_FI
+    res/values-sv_SE
+    res/values-sw
+    res/values-sw_KE
+    res/values-sw_TZ
+    res/values-swc
+    res/values-swc_CD
+    res/values-ta
+    res/values-ta_IN
+    res/values-ta_LK
+    res/values-te
+    res/values-te_IN
+    res/values-teo
+    res/values-teo_KE
+    res/values-teo_UG
+    res/values-th
+    res/values-th_TH
+    res/values-ti
+    res/values-ti_ER
+    res/values-ti_ET
+    res/values-to
+    res/values-to_TO
+    res/values-tr
+    res/values-tr_TR
+    res/values-twq
+    res/values-twq_NE
+    res/values-tzm
+    res/values-tzm_Latn
+    res/values-tzm_Latn_MA
+    res/values-ur
+    res/values-ur_IN
+    res/values-ur_PK
+    res/values-uz
+    res/values-uz_Arab
+    res/values-uz_Arab_AF
+    res/values-uz_Cyrl
+    res/values-uz_Cyrl_UZ
+    res/values-uz_Latn
+    res/values-uz_Latn_UZ
+    res/values-vai
+    res/values-vai_Latn
+    res/values-vai_Latn_LR
+    res/values-vai_Vaii
+    res/values-vai_Vaii_LR
+    res/values-vi
+    res/values-vi_VN
+    res/values-vun
+    res/values-vun_TZ
+    res/values-xog
+    res/values-xog_UG
+    res/values-yav
+    res/values-yav_CM
+    res/values-yo
+    res/values-yo_NG
+    res/values-zh
+    res/values-zh_Hans
+    res/values-zh_Hans_CN
+    res/values-zh_Hans_HK
+    res/values-zh_Hans_MO
+    res/values-zh_Hans_SG
+    res/values-zh_Hant
+    res/values-zh_Hant_HK
+    res/values-zh_Hant_MO
+    res/values-zh_Hant_TW
+    res/values-zu
+    res/values-zu_ZA
+        res/values-af-watch
+    res/values-af
+    res/values-am-rET
+    res/values-am-watch
+    res/values-am
+    res/values-ar-rEG
+    res/values-ar-rIL
+    res/values-ar-watch
+    res/values-ar
+    res/values-az-rAZ-watch
+    res/values-az-rAZ
+    res/values-b+sr+Latn-watch
+    res/values-b+sr+Latn
+    res/values-bg-rBG
+    res/values-bg-watch
+    res/values-bg
+    res/values-bn-rBD-watch
+    res/values-bn-rBD
+    res/values-bs-rBA
+    res/values-ca-rES
+    res/values-ca-watch
+    res/values-ca
+    res/values-cs-rCZ
+    res/values-cs-watch
+    res/values-cs
+    res/values-da-rDK
+    res/values-da-watch
+    res/values-da
+    res/values-de-rAT
+    res/values-de-rCH
+    res/values-de-rDE
+    res/values-de-rLI
+    res/values-de-watch
+    res/values-de
+    res/values-el-rGR
+    res/values-el-watch
+    res/values-el
+    res/values-en-rAU-watch
+    res/values-en-rAU
+    res/values-en-rCA
+    res/values-en-rGB-watch
+    res/values-en-rGB
+    res/values-en-rIE
+    res/values-en-rIN-watch
+    res/values-en-rIN
+    res/values-en-rNZ
+    res/values-en-rSG
+    res/values-en-rUS
+    res/values-en-rZA
+    res/values-es-rES
+    res/values-es-rUS-watch
+    res/values-es-rUS
+    res/values-es-watch
+    res/values-es
+    res/values-et-rEE-watch
+    res/values-et-rEE
+    res/values-eu-rES-watch
+    res/values-eu-rES
+    res/values-fa-rIR
+    res/values-fa-watch
+    res/values-fa
+    res/values-fi-rFI
+    res/values-fi-watch
+    res/values-fi
+    res/values-fr-rBE
+    res/values-fr-rCA-watch
+    res/values-fr-rCA
+    res/values-fr-rCH
+    res/values-fr-rFR
+    res/values-fr-watch
+    res/values-fr
+    res/values-gl-rES-watch
+    res/values-gl-rES
+    res/values-gu-rIN-watch
+    res/values-gu-rIN
+    res/values-hi-rIN
+    res/values-hi-watch
+    res/values-hi
+    res/values-hr-rHR
+    res/values-hr-watch
+    res/values-hr
+    res/values-hu-rHU
+    res/values-hu-watch
+    res/values-hu
+    res/values-hy-rAM-watch
+    res/values-hy-rAM
+    res/values-in-rID
+    res/values-in-watch
+    res/values-in
+    res/values-is-rIS-watch
+    res/values-is-rIS
+    res/values-it-rCH
+    res/values-it-rIT
+    res/values-it-watch
+    res/values-it
+    res/values-iw-rIL
+    res/values-iw-watch
+    res/values-iw
+    res/values-ja-rJP
+    res/values-ja-watch
+    res/values-ja
+    res/values-ka-rGE-watch
+    res/values-ka-rGE
+    res/values-kk-rKZ-watch
+    res/values-kk-rKZ
+    res/values-km-rKH-watch
+    res/values-km-rKH
+    res/values-kn-rIN-watch
+    res/values-kn-rIN
+    res/values-ko-rKR
+    res/values-ko-watch
+    res/values-ko
+    res/values-ky-rKG-watch
+    res/values-ky-rKG
+    res/values-land
+    res/values-large
+    res/values-ldrtl-television
+    res/values-ldrtl
+    res/values-lo-rLA-watch
+    res/values-lo-rLA
+    res/values-lt-rLT
+    res/values-lt-watch
+    res/values-lt
+    res/values-lv-rLV
+    res/values-lv-watch
+    res/values-lv
+    res/values-mk-rMK-watch
+    res/values-mk-rMK
+    res/values-ml-rIN-watch
+    res/values-ml-rIN
+    res/values-mn-rMN-watch
+    res/values-mn-rMN
+    res/values-mr-rIN-watch
+    res/values-mr-rIN
+    res/values-ms-rMY-watch
+    res/values-ms-rMY
+    res/values-my-rMM-watch
+    res/values-my-rMM
+    res/values-nb-rNO
+    res/values-nb-watch
+    res/values-nb
+    res/values-ne-rNP-watch
+    res/values-ne-rNP
+    res/values-nl-rBE
+    res/values-nl-rNL
+    res/values-nl-watch
+    res/values-nl
+    res/values-pa-rIN-watch
+    res/values-pa-rIN
+    res/values-pl-rPL
+    res/values-pl-watch
+    res/values-pl
+    res/values-port-mdpi
+    res/values-port
+    res/values-pt-rBR-watch
+    res/values-pt-rBR
+    res/values-pt-rPT-watch
+    res/values-pt-rPT
+    res/values-pt-watch
+    res/values-pt
+    res/values-rm-rCH
+    res/values-ro-rRO
+    res/values-ro-watch
+    res/values-ro
+    res/values-round-watch
+    res/values-si-rLK-watch
+    res/values-si-rLK
+    res/values-sk-rSK
+    res/values-sk-watch
+    res/values-sk
+    res/values-sl-rSI
+    res/values-sl-watch
+    res/values-sl
+    res/values-sq-rAL-watch
+    res/values-sq-rAL
+    res/values-sr-rRS
+    res/values-sr-watch
+    res/values-sr
+    res/values-sv-rSE
+    res/values-sv-watch
+    res/values-sv
+    res/values-sw-rTZ
+    res/values-sw-watch
+    res/values-sw
+    res/values-ta-rIN-watch
+    res/values-ta-rIN
+    res/values-te-rIN-watch
+    res/values-te-rIN
+    res/values-television
+    res/values-th-rTH
+    res/values-th-watch
+    res/values-th
+    res/values-tl-rPH
+    res/values-tl-watch
+    res/values-tl
+    res/values-tr-rTR
+    res/values-tr-watch
+    res/values-tr
+    res/values-ur-rPK-watch
+    res/values-ur-rPK
+    res/values-uz-rUZ-watch
+    res/values-uz-rUZ
+    res/values-vi-rVN
+    res/values-vi-watch
+    res/values-vi
+    res/values-zh-rCN-watch
+    res/values-zh-rCN
+    res/values-zh-rHK-watch
+    res/values-zh-rHK
+    res/values-zh-rTW-watch
+    res/values-zh-rTW
+    res/values-zu-rZA
+    res/values-zu-watch
+    res/values-zu
+[/REMOVE_FILES]

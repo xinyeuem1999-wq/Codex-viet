@@ -1,0 +1,15 @@
+{
+  "generated": "2026-08-15 18:28:21",
+  "tree": "/storage/emulated/0/Patch/patch1/_patchx/apk_trees/KISS launcher_3.26.0",
+  "patches": [
+    "upgraded/2. disable_google_analytics by VERGIL777.zip"
+  ],
+  "output": "KISS launcher_3.26.0_patched_20260815-182821.apk",
+  "apply_returncode": 0,
+  "resource_fixes": 0,
+  "build_seconds": 19.2,
+  "build_returncode": 0,
+  "zipalign_returncode": 0,
+  "signed": true,
+  "size_bytes": 2318975
+}

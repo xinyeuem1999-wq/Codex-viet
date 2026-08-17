@@ -1,0 +1,62 @@
+# Gộp tối ưu bởi patchx: Mạng
+
+[MIN_ENGINE_VER]
+2
+
+[AUTHOR]
+*
+
+[PACKAGE]
+*
+
+[MATCH_REPLACE]
+TARGET:
+    AndroidManifest.xml
+MATCH:
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+REGEX:
+    false
+REPLACE:
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    AndroidManifest.xml
+MATCH:
+    <uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION" />
+REGEX:
+    false
+REPLACE:
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    AndroidManifest.xml
+MATCH:
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+REGEX:
+    false
+REPLACE:
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    smali*/*.smali
+MATCH:
+    const-string ([pv]\d+), "com.google.android.gms.auth.NO_IMPL"\s*(.*)\s*invoke-virtual \{([pv]\d+), ([pv]\d+)\}, Ljava/lang/String;->equals(.+)\s*(.*)\s*move-result ([pv]\d+)
+REGEX:
+    true
+REPLACE:
+    const/4 ${GROUP1}, 0x1
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    smali*/*.smali
+MATCH:
+    com.google.android.gms.auth.api.signin.service.START
+REGEX:
+    true
+REPLACE:
+    com.google.android.gms.auth.api.signin.service.STOP
+[/MATCH_REPLACE]

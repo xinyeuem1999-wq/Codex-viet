@@ -1,0 +1,28 @@
+{
+  "thời_gian": "2026-08-17 20:20:04",
+  "thu_muc": "/storage/emulated/0/Patch/patch1/_patchx/upgraded",
+  "tổng_giây": 35.4,
+  "trước": {
+    "files": 60,
+    "size": 11542920,
+    "audit_lỗi": 0,
+    "nhóm_trùng": 4
+  },
+  "sau_nâng_cấp": {
+    "files": 60,
+    "size": 11539368,
+    "audit_lỗi": 0,
+    "nhóm_trùng": 4
+  },
+  "số_patch_nâng_cấp": 60,
+  "số_tệp_optimize": 12,
+  "số_combo_tự_động": 13,
+  "simulate": {
+    "đạt": 51,
+    "thất_bại": 0,
+    "bỏ_qua": 9,
+    "lỗi": 0,
+    "tỷ_lệ_đạt": 85.0
+  },
+  "golden_gate": null
+}

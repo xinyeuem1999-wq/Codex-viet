@@ -1,0 +1,23 @@
+{
+  "test_pass": 345,
+  "test_total": 345,
+  "test_ratio": 100.0,
+  "simulate_pass": 51,
+  "simulate_total": 60,
+  "simulate_ratio": 85.0,
+  "simulate_time_s": 1.04,
+  "golden_build_pass": 14,
+  "golden_build_total": 14,
+  "scan_time_s": null,
+  "plan_time_s": null,
+  "apply_time_s": null,
+  "validate_time_s": null,
+  "build_time_s": 160.4,
+  "method_refs": null,
+  "method_count": null,
+  "file_count": null,
+  "changed_files": null,
+  "new_refs": null,
+  "errors": 0,
+  "warnings": null
+}

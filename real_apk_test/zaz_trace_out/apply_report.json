@@ -1,0 +1,10 @@
+{
+  "tree": "/storage/emulated/0/Patch/patch1/_patchx/real_apk_test/zaz_trace_tree",
+  "patches": [
+    "hook_remote_data_control",
+    "zaz_force",
+    "pro_unlock_vip"
+  ],
+  "returncode": 0,
+  "seconds": 534.0
+}

@@ -1,0 +1,35 @@
+{
+  "generated": "2026-08-15 23:54:11",
+  "tree": "/storage/emulated/0/Patch/patch1/_patchx/real_apk_test/kiss_tree_clean",
+  "input": "/storage/emulated/0/Patch/patch1/_patchx/upgraded",
+  "dry_run": false,
+  "plan_seconds": 225.7,
+  "patches_selected": [
+    "Debug_information_and_hack_signature",
+    "patch_bypass_sigcheck_with_reflection",
+    "Debug_information"
+  ],
+  "apply_returncode": 0,
+  "apply_seconds": 39.0,
+  "resource_fixes": 0,
+  "build_seconds": 17.9,
+  "build_returncode": 0,
+  "output_apk": "kiss_tree_clean_patched_20260815-235855.apk",
+  "zipalign_returncode": 0,
+  "signed": true,
+  "sign_returncode": 0,
+  "verify_returncode": 0,
+  "verify_schemes": [
+    "Verified using v1 scheme (JAR signing): true",
+    "Verified using v2 scheme (APK Signature Scheme v2): true",
+    "Verified using v3 scheme (APK Signature Scheme v3): true"
+  ],
+  "size_bytes": 2323071,
+  "exercises": [
+    {
+      "title": "Rebuild thành công — cần kiểm tra động tiếp",
+      "root_cause": "APK đã build lại nhưng chưa chứng minh hành vi mod đúng.",
+      "suggested_fix": "Ký APK, cài lên emulator/device, chạy logcat/mạng để đạt M2/M3."
+    }
+  ]
+}

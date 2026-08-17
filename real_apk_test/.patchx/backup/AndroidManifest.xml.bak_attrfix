@@ -1,0 +1,937 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:compileSdkVersion="36" android:compileSdkVersionCodename="16" package="com.zaz.translate" platformBuildVersionCode="36" platformBuildVersionName="16">
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="com.google.android.gms.permission.AD_ID"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <permission android:name="com.zaz.translate.permission.REMOTE_SERVICE"/>
+    <permission android:name="com.zaz.translate.permission.ISLAND_SERVICE" android:protectionLevel="signature"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
+    <permission android:name="hitranslate.hls.service.permission"/>
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT"/>
+    <uses-permission android:name="com.android.launcher.permission.UNINSTALL_SHORTCUT"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MICROPHONE"/>
+    <permission android:name="com.zaz.translate.permission.AI_CAPTION_SERVICE_READ"/>
+    <permission android:name="com.zaz.translate.permission.AI_CAPTION_SERVICE_WRITE" android:protectionLevel="signature|privileged"/>
+    <queries>
+        <intent>
+            <action android:name="android.speech.action.RECOGNIZE_SPEECH"/>
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.TTS_SERVICE"/>
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.VIEW"/>
+            <data android:scheme="https"/>
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.VIEW"/>
+        </intent>
+        <package android:name="com.sec.android.app.samsungapps"/>
+        <package android:name="com.xiaomi.market"/>
+        <package android:name="com.oppo.market"/>
+        <package android:name="com.bbk.appstore"/>
+        <package android:name="com.huawei.appmarket"/>
+        <package android:name="com.android.vending"/>
+        <intent>
+            <action android:name="android.intent.action.PROCESS_TEXT"/>
+        </intent>
+        <package android:name="com.zaz.translate"/>
+        <intent>
+            <action android:name="android.intent.action.MAIN"/>
+        </intent>
+        <intent>
+            <action android:name="intent.action.PALM_ACCOUNT_AUTH"/>
+        </intent>
+        <package android:name="tech.palm.id"/>
+        <package android:name="com.rlk.mi"/>
+        <intent>
+            <action android:name="android.intent.action.VIEW"/>
+            <category android:name="android.intent.category.BROWSABLE"/>
+            <data android:scheme="https"/>
+        </intent>
+        <intent>
+            <action android:name="android.support.customtabs.action.CustomTabsService"/>
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.INSERT"/>
+            <data android:mimeType="vnd.android.cursor.dir/event"/>
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.VIEW"/>
+            <data android:scheme="sms"/>
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.DIAL"/>
+            <data android:path="tel:"/>
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.VIEW"/>
+            <category android:name="android.intent.category.BROWSABLE"/>
+            <data android:scheme="http"/>
+        </intent>
+        <package android:name="com.transsion.launcher3"/>
+        <package android:name="com.android.systemui"/>
+        <package android:name="com.transsion.atomiccore"/>
+        <package android:name="com.transsion.atomicbrain"/>
+        <intent>
+            <action android:name="com.android.vending.billing.InAppBillingService.BIND"/>
+        </intent>
+        <intent>
+            <action android:name="com.google.android.apps.play.billingtestcompanion.BillingOverrideService.BIND"/>
+        </intent>
+    </queries>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-feature android:name="android.hardware.camera" android:required="false"/>
+    <uses-feature android:name="android.hardware.camera.autofocus" android:required="false"/>
+    <uses-feature android:name="android.hardware.camera.front" android:required="false"/>
+    <uses-feature android:name="android.hardware.microphone" android:required="false"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PROJECTION"/>
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT"/>
+    <uses-permission android:name="com.transsion.aicore.main.permission.MM_PROVIDER"/>
+    <uses-permission android:name="com.transsion.aicore.main.permission.LM_RECEIVER"/>
+    <uses-permission android:name="com.transsion.aicore.main.permission.MM_RECEIVER"/>
+    <uses-permission android:name="com.palm.id.READ_ACCOUNT_PROVIDER"/>
+    <uses-permission android:name="com.palm.id.old.READ_ACCOUNT_PROVIDER"/>
+    <uses-permission android:name="hyperion.permission.USE_SECURE_STORAGE"/>
+    <uses-permission android:name="hyperion.permission.USE_SECURE_CRYPTO"/>
+    <uses-permission android:name="android.permission.ACCESS_ADSERVICES_AD_ID"/>
+    <uses-permission android:name="android.permission.ACCESS_ADSERVICES_ATTRIBUTION"/>
+    <uses-permission android:name="android.permission.ACCESS_ADSERVICES_TOPICS"/>
+    <uses-permission android:name="com.transsion.tpush.permission.WRITE_PROVIDER"/>
+    <uses-permission android:name="com.transsion.tpush.permission.READ_PROVIDER"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <meta-data android:name="tran_widgets_version" android:value="15.0.1.4-alpha04"/>
+    <meta-data android:name="tran_widgets_widgets_themes_version" android:value="15.0.1.4-alpha04"/>
+    <meta-data android:name="tran_gdpr_version" android:value="1.0.34.24"/>
+    <uses-permission android:name="com.android.vending.BILLING"/>
+    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_DATA_SYNC"/>
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES"/>
+    <permission android:name="com.zaz.translate.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" android:protectionLevel="signature"/>
+    <uses-permission android:name="com.zaz.translate.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"/>
+    <meta-data android:name="tran_http_version" android:value="1.0.53.01"/>
+    <uses-permission android:name="com.transsion.dataservice.permission.READ"/>
+    <uses-permission android:name="com.transsion.dataservice.permission.WRITE"/>
+    <meta-data android:name="tran_athena_version" android:value="2.3.3.9"/>
+    <meta-data android:name="tran_gslb_version" android:value="1.0.1.4"/>
+    <meta-data android:name="tran_coreutil_version" android:value="1.0.61.07"/>
+    <uses-feature android:name="android.hardware.camera.flash" android:required="false"/>
+    <uses-feature android:name="android.hardware.screen.landscape" android:required="false"/>
+    <uses-feature android:name="android.hardware.wifi" android:required="false"/>
+    <meta-data android:name="tran_json_version" android:value="1.0.5.01"/>
+    <meta-data android:name="tran_widgets_core_version" android:value="15.0.1.4-alpha04"/>
+    <application android:allowBackup="true" android:appComponentFactory="androidx.core.app.CoreComponentFactory" android:dataExtractionRules="@xml/data_extraction_rules" android:enableOnBackInvokedCallback="true" android:extractNativeLibs="true" android:fullBackupContent="@xml/backup_rules" android:icon="@mipmap/ic_launcher" android:label="@string/hi_translate" android:largeHeap="true" android:name="com.zaz.translate.App" android:resizeableActivity="true" android:roundIcon="@mipmap/ic_launcher_round" android:supportsRtl="true" android:theme="@style/Theme.HiTranslate">
+        <meta-data android:name="com.zaz.translate.SYSTEM_PREDICTIVE_BACK_ENABLED" android:value="true"/>
+        <meta-data android:name="com.zaz.translate.HOME_SYSTEM_PREDICTIVE_BACK_ENABLED" android:value="false"/>
+        <activity android:excludeFromRecents="true" android:exported="false" android:label="@string/text_selection_title" android:name="com.zaz.translate.ui.dashboard.language.TranscribeLanguageActivity" android:screenOrientation="unspecified" android:theme="@style/ActivityDialogStyleUserGuide"/>
+        <activity android:excludeFromRecents="true" android:exported="false" android:name="com.zaz.translate.thinkmap.ThinkMapActivity" android:screenOrientation="unspecified" android:theme="@style/Theme.FloatingVoiceTheme"/>
+        <meta-data android:name="atomicSwitchConfig" android:resource="@xml/atomic_switch_config"/>
+        <meta-data android:name="com.transsion.dynamic.enable" android:value="true"/>
+        <meta-data android:name="com.transsion.smartpanel.aicaption.enable" android:value="true"/>
+        <meta-data android:name="com.transsion.texai.aicaption.enable" android:value="true"/>
+        <meta-data android:name="com.zaz.translate.aidl" android:value="2"/>
+        <meta-data android:name="com.google.mlkit.vision.DEPENDENCIES" android:value="ocr,ocr_chinese,ocr_devanagari,ocr_japanese,ocr_korean,langid,ica"/>
+        <meta-data android:name="com.google.android.gms.ads.APPLICATION_ID" android:value="ca-app-pub-2817623114947037~8562976446"/>
+        <meta-data android:name="com.transsion.appkey" android:value="Mx/DlQeKXxK1IdwNyRRc5MlLZdmTMqpSGk9w4xVI1QxPOfOdqSfg73tPRfLIYsEJEhGmTTNECIguMpxiV01JQhsp4e4GCGIM/kzB98EzqyazXM/b0nojCj4BSNIGWWjXZUX4M2/xa9QgFaIrUlhSAb2Un3i4eu74JuQzHm7dk0k="/>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <meta-data android:name="com.google.firebase.ml.vision.DEPENDENCIES" android:value="ocr,langid"/>
+        <provider android:authorities="com.zaz.translate.androidx-startup" android:exported="false" android:name="androidx.startup.InitializationProvider">
+            <meta-data android:name="com.zaz.translate.initializer.FeaturesInitializer" android:value="androidx.startup"/>
+            <meta-data android:name="com.zaz.translate.initializer.PrivacyInitializer" android:value="androidx.startup"/>
+            <meta-data android:name="com.zaz.translate.initializer.BaseModuleInitializer" android:value="androidx.startup"/>
+            <meta-data android:name="com.zaz.translate.initializer.SubscriptionInitializer" android:value="androidx.startup"/>
+            <meta-data android:name="com.zaz.translate.initializer.TranscribeInitializer" android:value="androidx.startup"/>
+            <meta-data android:name="com.zaz.translate.initializer.CameraInitializer" android:value="androidx.startup"/>
+            <meta-data android:name="com.zaz.translate.lockscreen.LockscreenSetupProvider" android:value="androidx.startup"/>
+            <meta-data android:name="com.zaz.subscription.BillingInitializer" android:value="androidx.startup"/>
+            <meta-data android:name="com.zaz.account.AccountInitializer" android:value="androidx.startup"/>
+            <meta-data android:name="com.zaz.lib.base.config.RemoteConfigInitializer" android:value="androidx.startup"/>
+            <meta-data android:name="com.zaz.lib.base.config.HiSPInitializer" android:value="androidx.startup"/>
+            <meta-data android:name="com.zaz.translate.report.work.workmanager.ReportWorkInitializer" android:value="androidx.startup"/>
+            <meta-data android:name="androidx.emoji2.text.EmojiCompatInitializer" android:value="androidx.startup"/>
+            <meta-data android:name="androidx.lifecycle.ProcessLifecycleInitializer" android:value="androidx.startup"/>
+            <meta-data android:name="com.transsion.networkperformance.android.NetworkPerformanceInitializer" android:value="androidx.startup"/>
+            <meta-data android:name="androidx.profileinstaller.ProfileInstallerInitializer" android:value="androidx.startup"/>
+            <meta-data android:name="okhttp3.internal.platform.PlatformInitializer" android:value="androidx.startup"/>
+        </provider>
+        <provider android:authorities="com.zaz.translate.mobileadsInitProvider" android:enabled="false" android:exported="false" android:initOrder="100" android:name="com.google.android.gms.ads.MobileAdsInitProvider"/>
+        <activity android:exported="true" android:name="com.talpa.translate.MainActivity" android:screenOrientation="unspecified" android:theme="@style/Theme.HiLauncher"/>
+        <activity android:exported="true" android:launchMode="singleTop" android:name="com.zaz.translate.WelcomeActivity" android:screenOrientation="unspecified" android:theme="@style/Theme.HiLauncher">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <intent-filter android:label="@string/hi_translate">
+                <action android:name="android.intent.action.SEND"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="image/*"/>
+            </intent-filter>
+            <intent-filter android:label="@string/title_speech">
+                <action android:name="android.intent.action.SEND"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="audio/*"/>
+            </intent-filter>
+            <meta-data android:name="flutter_deeplinking_enabled" android:value="true"/>
+            <meta-data android:name="io.flutter.InitialRoute" android:value="/"/>
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="com.zaz.translate" android:path="/dictionary_details" android:scheme="hitranslate"/>
+                <data android:host="com.zaz.translate" android:path="/dictionary/history" android:scheme="hitranslate"/>
+                <data android:host="com.zaz.translate" android:path="/translate" android:scheme="hitranslate"/>
+                <data android:host="com.zaz.translate" android:path="/collect" android:scheme="hitranslate"/>
+                <data android:host="com.zaz.translate" android:path="/learn" android:scheme="hitranslate"/>
+                <data android:host="com.zaz.translate" android:path="/dictionary_result" android:scheme="hitranslate"/>
+                <data android:host="com.zaz.translate" android:path="/dictionary_builder" android:scheme="hitranslate"/>
+                <data android:host="com.zaz.translate" android:path="/floating" android:scheme="hitranslate"/>
+                <data android:host="com.zaz.translate" android:path="/notification/setting" android:scheme="hitranslate"/>
+                <data android:host="com.zaz.translate" android:path="/notification/home" android:scheme="hitranslate"/>
+                <data android:host="com.zaz.translate" android:path="/notification/floating/true" android:scheme="hitranslate"/>
+                <data android:host="com.zaz.translate" android:path="/notification/floating/false" android:scheme="hitranslate"/>
+                <data android:host="com.zaz.translate" android:path="/update" android:scheme="hitranslate"/>
+                <data android:host="com.zaz.translate" android:path="/file_translate" android:scheme="hitranslate"/>
+            </intent-filter>
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="hitranslate.ai" android:path="/" android:scheme="https"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.talpa.translate.ACTION_FOR_GUIDE_PERMISSION"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.talpa.translate.ACTION_FOR_PERMISSION"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.talpa.translate.ACTION_FOR_MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.talpa.translate.ACTION_FOR_AD"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.talpa.translate.ACTION_FOR_MENU"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.talpa.translate.ACTION_FOR_DICTIONARY"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.talpa.translate.ACTION_FOR_SETTING"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.talpa.translate.ACTION_FOR_NOTIFICATION"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.talpa.translate.ACTION_FOR_NOTIFICATION_OPEN_FLOATING"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="com.talpa.translate" android:path="/launcher" android:scheme="hitranslate"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.zaz.translate.ACTION_FOR_SHORTCUT_DICTIONARY"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <meta-data android:name="android.app.shortcuts" android:resource="@xml/shortcuts"/>
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE_PREFERENCES"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="orientation|uiMode|screenSize" android:exported="true" android:launchMode="singleTask" android:name="com.talpa.translate.activity.HistoryCameraActivity" android:screenOrientation="unspecified" android:theme="@style/Camera"/>
+        <activity android:configChanges="locale|orientation|uiMode|screenSize|layoutDirection" android:exported="true" android:launchMode="singleTask" android:name="com.talpa.translate.activity.CameraActivity" android:screenOrientation="unspecified" android:theme="@style/Camera">
+            <intent-filter>
+                <action android:name="com.talpa.translate.CAMERA"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.talpa.translate.CAMERA_PENDING"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="com.zaz.translate" android:path="/camera" android:scheme="hitranslate"/>
+                <data android:host="com.zaz.translate" android:path="/private_camera" android:scheme="hitranslate"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="orientation|uiMode|screenSize" android:exported="true" android:name="com.zaz.translate.ui.dashboard.AgentCameraActivity" android:screenOrientation="unspecified"/>
+        <activity android:configChanges="screenSize" android:exported="true" android:hardwareAccelerated="true" android:launchMode="singleTask" android:name="com.zaz.translate.ui.main.MainActivity" android:screenOrientation="unspecified" android:theme="@style/Theme.MainTab" android:windowSoftInputMode="adjustNothing">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="com.zaz.translate" android:path="/dictionary" android:scheme="hitranslate"/>
+            </intent-filter>
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="hitranslate.ai" android:pathPattern=".*share.*" android:scheme="https"/>
+                <data android:host="test.hitranslate.ai" android:pathPattern=".*share.*" android:scheme="https"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.transsion.ACTION_ZEROSCREEN_AI"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <meta-data android:name="zs_ai_id" android:value="2"/>
+            <meta-data android:name="zs_ai_icon" android:resource="@drawable/zs_ai_translate"/>
+            <meta-data android:name="zs_ai_title" android:value="hi_translate"/>
+        </activity>
+        <activity android:excludeFromRecents="true" android:exported="true" android:name="com.zaz.translate.ui.dictionary.transcribe.permission.AccessGuideActivity" android:screenOrientation="unspecified" android:taskAffinity=".access" android:theme="@style/Theme.AccessGuide">
+            <intent-filter>
+                <action android:name="com.talpa.translate.ui.permission.ACTION_ACCESSIBILITY_GUIDE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize" android:exported="true" android:launchMode="singleTask" android:name="com.zaz.translate.ui.guide.HiGuideActivity" android:screenOrientation="unspecified" android:theme="@style/Theme.HiGuide"/>
+        <activity android:excludeFromRecents="true" android:exported="false" android:name="com.zaz.translate.ui.privacy.PrivacyActivity" android:screenOrientation="unspecified" android:theme="@style/Theme.Privacy">
+            <intent-filter>
+                <action android:name="com.zaz.translate.privacy"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:excludeFromRecents="true" android:exported="false" android:label="@string/text_selection_title" android:name="com.zaz.translate.ui.guide.UserGuideActivity" android:screenOrientation="unspecified" android:theme="@style/ActivityDialogStyleUserGuide" android:windowSoftInputMode="stateHidden"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize" android:excludeFromRecents="true" android:exported="false" android:label="@string/text_selection_title" android:name="com.zaz.translate.ui.dictionary.RecordVoiceActivity" android:screenOrientation="unspecified" android:theme="@style/RecordPageTheme" android:windowSoftInputMode="adjustResize"/>
+        <service android:exported="false" android:label="@string/accessibility_service_name" android:name="com.talpa.overlay.service.AccessService" android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE">
+            <intent-filter>
+                <action android:name="android.accessibilityservice.AccessibilityService"/>
+            </intent-filter>
+            <meta-data android:name="android.accessibilityservice" android:resource="@xml/accessibility_service_config"/>
+        </service>
+        <activity android:excludeFromRecents="true" android:exported="false" android:label="@string/text_selection_title" android:name="com.zaz.translate.ui.guide.UserGuideAllowFailedActivity" android:screenOrientation="unspecified" android:theme="@style/ActivityDialogStyleUserGuide" android:windowSoftInputMode="stateHidden"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize" android:excludeFromRecents="true" android:exported="false" android:label="@string/text_selection_title" android:name="com.zaz.translate.ui.guide.UserGuideAllowSuccessActivity" android:screenOrientation="unspecified" android:theme="@style/ActivityDialogStyleUserGuideSuccess" android:windowSoftInputMode="stateHidden"/>
+        <activity android:excludeFromRecents="true" android:exported="false" android:label="@string/text_selection_title" android:name="com.zaz.translate.ui.dictionary.transcribe.guide.UserGuideAudioActivity" android:theme="@style/ActivityDialogStyleUserGuide" android:windowSoftInputMode="stateHidden"/>
+        <activity android:excludeFromRecents="true" android:exported="false" android:hardwareAccelerated="true" android:label="@string/text_selection_title" android:name="com.zaz.translate.ui.dictionary.transcribe.InputSpeakerActivity" android:screenOrientation="unspecified" android:theme="@style/InputSpeakerTheme" android:windowSoftInputMode="adjustResize"/>
+        <activity android:excludeFromRecents="true" android:exported="false" android:label="@string/text_selection_title" android:name="com.zaz.translate.ui.guide.DownloadNoticeActivity" android:screenOrientation="unspecified" android:theme="@style/ActivityDialogStyleUserGuideSuccess" android:windowSoftInputMode="stateHidden"/>
+        <activity android:exported="false" android:name="com.zaz.translate.ui.webview.WebActivity" android:screenOrientation="unspecified" android:theme="@style/Theme.Web"/>
+        <activity android:exported="false" android:name="com.zaz.translate.ui.webview.FeedbackWebActivity" android:screenOrientation="unspecified" android:theme="@style/Theme.Web"/>
+        <activity android:exported="false" android:name="com.zaz.translate.ui.feedback.FeedbackHelpActivity" android:screenOrientation="unspecified" android:theme="@style/Theme.Web"/>
+        <activity android:exported="false" android:name="com.zaz.translate.ui.feedback.FeedbackHelpAllQuestionActivity" android:screenOrientation="unspecified" android:theme="@style/Theme.Web"/>
+        <activity android:exported="false" android:name="com.zaz.translate.ui.wordpk.WordPkIntroActivity" android:screenOrientation="unspecified" android:theme="@style/Theme.HiTranslate"/>
+        <activity android:exported="false" android:name="com.zaz.translate.ui.wordpk.WordPkLanguageActivity" android:screenOrientation="unspecified" android:theme="@style/Theme.HiTranslate"/>
+        <activity android:exported="false" android:name="com.zaz.translate.ui.wordpk.WordBookSelectActivity" android:screenOrientation="unspecified" android:theme="@style/Theme.HiTranslate"/>
+        <activity android:exported="false" android:name="com.zaz.translate.ui.wordpk.WordStudyPlanActivity" android:screenOrientation="unspecified" android:theme="@style/Theme.HiTranslate"/>
+        <activity android:exported="false" android:name="com.zaz.translate.ui.wordpk.WordPkMatchActivity" android:screenOrientation="unspecified" android:theme="@style/Theme.HiTranslate"/>
+        <activity android:exported="false" android:name="com.zaz.translate.ui.wordpk.battle.WordPkBattleActivity" android:screenOrientation="unspecified" android:theme="@style/Theme.HiTranslate"/>
+        <activity android:exported="false" android:name="com.zaz.translate.ui.wordpk.WordPkResultActivity" android:screenOrientation="unspecified" android:theme="@style/Theme.HiTranslate"/>
+        <activity android:exported="false" android:name="com.zaz.translate.ui.speak.SpeakChatActivity" android:screenOrientation="unspecified" android:theme="@style/Theme.HiTranslate"/>
+        <activity android:exported="false" android:name="com.zaz.translate.ui.speak.SpeakResultActivity" android:screenOrientation="unspecified" android:theme="@style/Theme.HiTranslate"/>
+        <activity android:exported="false" android:name="com.zaz.translate.ui.speak.SpeakLanguageActivity" android:screenOrientation="unspecified" android:theme="@style/Theme.SecondaryPage"/>
+        <activity android:exported="false" android:name="com.zaz.translate.ui.speak.SpeakLevelActivity" android:screenOrientation="unspecified" android:theme="@style/Theme.SecondaryPage"/>
+        <activity android:exported="false" android:name="com.zaz.translate.ui.speak.SpeakSceneTopicActivity" android:screenOrientation="unspecified" android:theme="@style/Theme.SecondaryPage"/>
+        <activity android:exported="false" android:name="com.zaz.translate.ui.speak.SpeakChooseSceneTopicActivity" android:screenOrientation="unspecified" android:theme="@style/Theme.SecondaryPage"/>
+        <activity android:exported="false" android:name="com.zaz.translate.ui.speak.SpeakVoiceChooseActivity" android:screenOrientation="unspecified" android:theme="@style/Theme.SecondaryPage"/>
+        <activity android:exported="false" android:name="com.zaz.translate.ui.speak.SpeakStartActivity" android:screenOrientation="unspecified" android:theme="@style/Theme.SecondaryPage"/>
+        <activity android:exported="false" android:name="com.zaz.translate.ui.speak.SpeakHomeActivity" android:screenOrientation="unspecified" android:theme="@style/Theme.SecondaryPage"/>
+        <activity android:exported="false" android:name="com.zaz.translate.ui.speak.SpeakPracticeActivity" android:screenOrientation="unspecified" android:theme="@style/Theme.SecondaryPage"/>
+        <activity android:exported="false" android:name="com.zaz.translate.ui.feedback.FeedbackDialogActivity" android:screenOrientation="unspecified" android:windowSoftInputMode="stateAlwaysVisible|adjustResize"/>
+        <activity android:exported="true" android:label="@string/translate_web" android:name="com.zaz.translate.ui.webview.trans.TransWebActivity" android:screenOrientation="unspecified" android:theme="@style/TransWebTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.SEND"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="text/plain"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize" android:excludeFromRecents="true" android:exported="false" android:launchMode="standard" android:name="com.zaz.translate.ui.dictionary.transcribe.language.SheetActivity" android:screenOrientation="unspecified" android:theme="@style/Theme.NoActionBarCommonTheme">
+            <intent-filter>
+                <action android:name="com.talpa.translate.ui.main.ACTION_LANGUAGE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize" android:excludeFromRecents="true" android:exported="false" android:launchMode="standard" android:name="com.zaz.translate.ui.dictionary.transcribe.language.SheetDialogActivity" android:screenOrientation="unspecified" android:theme="@style/LoginPageTheme"/>
+        <activity android:configChanges="orientation" android:exported="false" android:launchMode="singleTop" android:name="com.zaz.translate.ui.dashboard.language.FloatOverlayModeChooseActivity" android:screenOrientation="unspecified" android:theme="@style/Theme.Sheet"/>
+        <activity android:configChanges="orientation" android:excludeFromRecents="true" android:exported="false" android:launchMode="singleTop" android:name="com.zaz.translate.ui.dashboard.language.FloatOverlayModeChooseActivityOut" android:screenOrientation="unspecified" android:taskAffinity=".Sheet" android:theme="@style/Theme.Sheet"/>
+        <activity android:configChanges="orientation" android:exported="false" android:launchMode="singleTop" android:name="com.talpa.overlay.ui.FloatOverlayStyleSettingActivity" android:theme="@style/Theme.Sheet.forceDark"/>
+        <activity android:configChanges="orientation" android:exported="false" android:launchMode="singleTop" android:name="com.zaz.translate.ui.dashboard.DashboardTutorialActivity" android:taskAffinity=".Sheet" android:theme="@style/Theme.Sheet.forceDark"/>
+        <activity android:configChanges="orientation" android:excludeFromRecents="true" android:exported="false" android:launchMode="singleTop" android:name="com.zaz.translate.ui.dashboard.IntelligenceFloatingGuidActivity" android:taskAffinity=".Sheet" android:theme="@style/IntelligenceFloatingGuidStyle"/>
+        <activity android:configChanges="orientation" android:exported="false" android:launchMode="singleTop" android:name="com.talpa.overlay.ui.FloatWritingAndTranslatingGuidActivity" android:taskAffinity=".Sheet" android:theme="@style/Theme.Sheet.forceDark"/>
+        <activity android:configChanges="orientation" android:exported="false" android:launchMode="singleTop" android:name="com.zaz.translate.ui.setting.update.UpdateAppTipsActivity" android:screenOrientation="unspecified" android:taskAffinity=".Sheet" android:theme="@style/Theme.FloatingVoiceTheme"/>
+        <activity android:configChanges="orientation" android:excludeFromRecents="true" android:exported="false" android:launchMode="standard" android:name="com.zaz.translate.ui.dashboard.language.PermissionsActivity" android:screenOrientation="unspecified" android:taskAffinity=".Sheet" android:theme="@style/Theme.Sheet.forceDark"/>
+        <activity android:configChanges="orientation" android:excludeFromRecents="true" android:exported="false" android:launchMode="singleTop" android:name="com.zaz.translate.ui.dashboard.permission.AccessibilityPermissionActivity" android:screenOrientation="unspecified" android:taskAffinity=".Sheet" android:theme="@style/Theme.Sheet.forceDark"/>
+        <activity android:configChanges="orientation" android:excludeFromRecents="true" android:exported="false" android:launchMode="singleTop" android:name="com.zaz.translate.ui.dashboard.permission.AccessibilityPermissionAgreementActivity" android:screenOrientation="unspecified" android:taskAffinity=".Sheet" android:theme="@style/Theme.Sheet.forceDark"/>
+        <activity android:configChanges="orientation|screenLayout|screenSize" android:exported="true" android:launchMode="singleTask" android:name="com.zaz.translate.ui.dictionary.DictionaryTranslateResultActivity" android:screenOrientation="unspecified" android:theme="@style/Theme.ResultPage" android:windowSoftInputMode="adjustNothing">
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="com.zaz.translate" android:path="/dictionaryv2" android:scheme="hitranslate"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="orientation|screenLayout|screenSize" android:excludeFromRecents="true" android:exported="true" android:launchMode="singleTask" android:name="com.zaz.translate.ui.dictionary.DictionaryTranslateResultActivityEx" android:screenOrientation="unspecified" android:taskAffinity="com.zaz.translate.ui.dictionary.DictionaryTranslateResultActivityEx" android:theme="@style/Theme.ResultPage" android:windowSoftInputMode="adjustNothing"/>
+        <activity android:exported="false" android:name="com.zaz.translate.ui.favorites.FavoritesActivity" android:screenOrientation="unspecified"/>
+        <activity android:exported="true" android:launchMode="singleTask" android:name="com.zaz.translate.ui.dictionary.face2face.Face2faceActivity" android:screenOrientation="unspecified">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="com.zaz.translate" android:path="/face2face" android:scheme="hitranslate"/>
+            </intent-filter>
+        </activity>
+        <activity android:exported="false" android:name="com.zaz.translate.ui.dictionary.face2face.Face2faceEditActivity" android:screenOrientation="unspecified" android:theme="@style/Theme.Transparent" android:windowSoftInputMode="adjustResize"/>
+        <activity android:configChanges="orientation|uiMode|screenSize" android:exported="true" android:launchMode="singleTask" android:name="com.zaz.translate.ui.dictionary.speech2text.Speech2TextActivity" android:screenOrientation="unspecified">
+            <intent-filter>
+                <action android:name="com.zaz.translate.VOICE"/>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="com.zaz.translate" android:path="/interpreter" android:scheme="hitranslate"/>
+            </intent-filter>
+        </activity>
+        <activity android:exported="true" android:launchMode="singleTask" android:name="com.zaz.translate.ui.dictionary.converseFragment.VoiceHistoryActivity" android:screenOrientation="unspecified"/>
+        <activity android:exported="true" android:launchMode="singleTask" android:name="com.zaz.translate.ui.dictionary.ConversationHistory" android:screenOrientation="unspecified"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize" android:exported="true" android:launchMode="singleTask" android:name="com.zaz.translate.ui.dictionary.transcribe.history.history.TranscribeHistoryActivity" android:screenOrientation="unspecified" android:windowSoftInputMode="adjustNothing"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize" android:exported="true" android:launchMode="singleTask" android:name="com.zaz.translate.ui.dictionary.transcribe.voip.VoipDetailActivity" android:screenOrientation="unspecified" android:windowSoftInputMode="adjustNothing"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize" android:exported="false" android:launchMode="singleTask" android:name="com.zaz.translate.ui.dictionary.transcribe.voip.VoipHistoryDetailActivity" android:screenOrientation="unspecified" android:windowSoftInputMode="adjustNothing"/>
+        <activity android:exported="false" android:name="com.zaz.translate.ui.dictionary.transcribe.EarphoneModeActivity" android:screenOrientation="unspecified" android:theme="@style/Theme.HiTranslate"/>
+        <activity android:exported="false" android:launchMode="singleTask" android:name="com.zaz.translate.ui.dictionary.transcribe.EarphoneHistoryActivity" android:theme="@style/Theme.SecondPage"/>
+        <activity android:exported="false" android:launchMode="singleTask" android:name="com.zaz.translate.ui.dictionary.transcribe.CallHistoryActivity" android:theme="@style/Theme.SecondPage"/>
+        <activity android:exported="true" android:launchMode="singleTask" android:name="com.zaz.translate.ui.dictionary.transcribe.TranscribeActivity" android:screenOrientation="unspecified" android:windowSoftInputMode="adjustNothing">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="com.zaz.translate" android:path="/transcribe" android:scheme="hitranslate"/>
+            </intent-filter>
+        </activity>
+        <activity android:excludeFromRecents="true" android:launchMode="singleTask" android:name="com.zaz.translate.ui.dictionary.transcribe.permission.TranscribePermissionActivity" android:screenOrientation="unspecified" android:taskAffinity=".TranscribePermissionActivity" android:theme="@style/TransparentActivityTheme"/>
+        <activity android:configChanges="orientation|screenSize" android:exported="true" android:hardwareAccelerated="true" android:launchMode="singleTask" android:name="com.zaz.translate.ui.dictionary.converse.TranslateEnlargeActivity" android:screenOrientation="unspecified" android:theme="@style/Theme.Enlarge"/>
+        <activity android:configChanges="orientation|screenSize" android:excludeFromRecents="true" android:exported="true" android:hardwareAccelerated="true" android:launchMode="singleTask" android:name="com.zaz.translate.ui.dictionary.converse.TranslateEnlargeActivityOut" android:screenOrientation="unspecified" android:taskAffinity=".overlay_window_translate" android:theme="@style/Theme.Enlarge">
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="com.zaz.translate" android:path="/dictionary_enlarge" android:scheme="hitranslate"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize" android:excludeFromRecents="true" android:exported="true" android:hardwareAccelerated="true" android:launchMode="singleTask" android:name="com.zaz.translate.ui.float.OverlayTranslateFlutterActivity" android:screenOrientation="unspecified" android:taskAffinity=".overlay_window_translate" android:theme="@style/Theme.FloatingWindowTheme">
+            <meta-data android:name="flutter_deeplinking_enabled" android:value="true"/>
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="com.zaz.translate" android:path="/overlay_window" android:scheme="hitranslate"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize" android:excludeFromRecents="true" android:exported="true" android:hardwareAccelerated="true" android:launchMode="singleTask" android:name="com.zaz.translate.ui.float.OverlayVoiceTranslateActivity" android:screenOrientation="unspecified" android:taskAffinity=".overlay_voice_translate" android:theme="@style/Theme.FloatingVoiceTheme"/>
+        <activity android:excludeFromRecents="true" android:exported="true" android:hardwareAccelerated="true" android:launchMode="singleTask" android:name="com.zaz.translate.ui.dictionary.transcribe.securityPolicy.SecurityPolicyActivity" android:screenOrientation="unspecified" android:theme="@style/Theme.FloatingVoiceTheme"/>
+        <activity android:excludeFromRecents="true" android:exported="false" android:hardwareAccelerated="true" android:launchMode="singleTask" android:name="com.zaz.translate.ui.dictionary.transcribe.securityPolicy.LoginBottomDialogActivity" android:screenOrientation="unspecified" android:theme="@style/Theme.FloatingVoiceTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize" android:excludeFromRecents="true" android:exported="false" android:hardwareAccelerated="true" android:launchMode="singleTask" android:name="com.zaz.translate.ui.dictionary.transcribe.gainMoreTime.GainMoreTimeActivity" android:screenOrientation="unspecified" android:taskAffinity=".GainMoreTime" android:theme="@style/Theme.FloatingVoiceTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize" android:exported="false" android:hardwareAccelerated="true" android:launchMode="singleTask" android:name="com.zaz.translate.ui.dictionary.transcribe.gainMoreTime.CoinRateActivity" android:screenOrientation="unspecified"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize" android:exported="false" android:hardwareAccelerated="true" android:launchMode="singleTask" android:name="com.zaz.translate.ui.vocabulary.v2.coin.activity.CoinDetailActivity" android:screenOrientation="unspecified"/>
+        <activity android:excludeFromRecents="true" android:exported="true" android:hardwareAccelerated="true" android:launchMode="singleTask" android:name="com.zaz.translate.ui.dictionary.transcribe.summary.SummaryActivity" android:screenOrientation="unspecified" android:theme="@style/Theme.FloatingVoiceTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize" android:excludeFromRecents="true" android:exported="true" android:hardwareAccelerated="true" android:launchMode="singleTask" android:name="com.zaz.translate.ui.dictionary.transcribe.history.history.ExportActivity" android:screenOrientation="unspecified" android:theme="@style/Theme.FloatingVoiceTheme"/>
+        <activity android:excludeFromRecents="true" android:exported="true" android:hardwareAccelerated="true" android:name="com.zaz.translate.ui.dictionary.transcribe.ai.AiAskActivity" android:screenOrientation="unspecified" android:theme="@style/Theme.FloatingVoiceTheme" android:windowSoftInputMode="stateHidden|adjustResize"/>
+        <activity android:exported="false" android:name="com.zaz.translate.ui.dictionary.transcribe.ai.TranscribeIntroActivity" android:screenOrientation="unspecified" android:theme="@style/Theme.SecondaryPage"/>
+        <activity android:excludeFromRecents="true" android:exported="true" android:hardwareAccelerated="true" android:launchMode="singleTask" android:name="com.zaz.translate.ui.dictionary.transcribe.tips.TranscribeBottomTipsActivity" android:screenOrientation="unspecified" android:theme="@style/TransparentActivityTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize" android:excludeFromRecents="true" android:exported="true" android:hardwareAccelerated="true" android:launchMode="singleTask" android:name="com.zaz.translate.ui.dictionary.transcribe.tips.SaveContentTipsActivity" android:screenOrientation="unspecified" android:theme="@style/Theme.FloatingVoiceTheme"/>
+        <activity android:excludeFromRecents="true" android:exported="true" android:hardwareAccelerated="true" android:launchMode="singleTask" android:name="com.zaz.translate.ui.dictionary.transcribe.securityPolicy.OutSecurityPolicyActivity" android:screenOrientation="unspecified" android:taskAffinity=".overlay_voice_translate" android:theme="@style/Theme.FloatingVoiceTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize" android:excludeFromRecents="true" android:exported="true" android:hardwareAccelerated="true" android:launchMode="singleTask" android:name="com.zaz.translate.ui.float.OverlayGrammarCheckActivity" android:screenOrientation="unspecified" android:taskAffinity=".overlay_grammar_check" android:theme="@style/Theme.FloatingVoiceTheme"/>
+        <activity android:excludeFromRecents="true" android:exported="true" android:hardwareAccelerated="true" android:launchMode="singleTask" android:name="com.zaz.translate.ui.dictionary.transcribe.UsageInstructionActivity" android:screenOrientation="unspecified" android:theme="@style/Theme.FloatingVoiceTheme"/>
+        <service android:enabled="true" android:exported="true" android:icon="@drawable/ic_notification_tile" android:label="@string/hi_translate" android:name="com.talpa.translate.system.quicksettings.FloatingTileService" android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE"/>
+            </intent-filter>
+        </service>
+        <service android:enabled="true" android:exported="true" android:icon="@drawable/ic_notification_transcribe" android:label="@string/shortcuts_transcribe_title" android:name="com.talpa.translate.system.quicksettings.TranscribeFloatingTileService" android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE"/>
+            </intent-filter>
+        </service>
+        <activity android:excludeFromRecents="true" android:exported="true" android:label="@string/hi_translate" android:name="com.zaz.translate.platformview.ActionActivity" android:screenOrientation="unspecified" android:taskAffinity=".action_activity" android:theme="@style/Theme.AppCompat.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.PROCESS_TEXT"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="text/plain"/>
+            </intent-filter>
+        </activity>
+        <activity android:exported="true" android:name="com.zaz.translate.pages.BrowserActivity" android:screenOrientation="unspecified">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:host="com.zaz.translate" android:path="/word_every_day" android:scheme="hitranslate"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:host="com.talpa.translate" android:path="/word_every_day" android:scheme="hitranslate"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize" android:name="com.zaz.translate.ui.dictionary.transcribe.grammar.GrammarActivity" android:screenOrientation="unspecified"/>
+        <activity android:name="com.zaz.translate.ui.grammar.CameraPickerActivity" android:screenOrientation="unspecified"/>
+        <activity android:name="com.zaz.translate.ui.grammar.GalleryPickerActivity" android:screenOrientation="unspecified"/>
+        <activity android:name="com.zaz.translate.ui.vocabulary.v2.VocabularyActivityV2" android:screenOrientation="unspecified"/>
+        <activity android:name="com.zaz.translate.ui.vocabulary.v2.LearningWordsActivity" android:screenOrientation="unspecified"/>
+        <activity android:name="com.zaz.translate.ui.vocabulary.v2.VocabularyCourseActivity" android:screenOrientation="unspecified"/>
+        <activity android:name="com.zaz.translate.ui.vocabulary.v2.VocabularyWidgetsActivity" android:screenOrientation="unspecified"/>
+        <activity android:launchMode="singleTask" android:name="com.zaz.translate.ui.dashboard.DashboardActivity" android:screenOrientation="unspecified"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize" android:name="com.zaz.translate.ui.setting.SettingActivity" android:screenOrientation="unspecified" android:theme="@style/Theme.SecondaryPage"/>
+        <activity android:configChanges="orientation" android:exported="false" android:launchMode="singleTop" android:name="com.zaz.translate.ui.file.FileDecryptInputPasswordActivity" android:theme="@style/Theme.Sheet.forceDark"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize" android:excludeFromRecents="true" android:name="com.zaz.translate.ui.file.FileCreditsPurchaseActivity" android:screenOrientation="unspecified" android:theme="@style/Theme.FloatingVoiceTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize" android:exported="true" android:launchMode="singleTask" android:name="com.zaz.translate.ui.file.FileTranslateActivity" android:screenOrientation="unspecified" android:theme="@style/Theme.FileTranslate" android:windowSoftInputMode="adjustNothing">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:scheme="content"/>
+                <data android:scheme="file"/>
+                <data android:mimeType="application/pdf"/>
+                <data android:mimeType="application/msword"/>
+                <data android:mimeType="application/vnd.openxmlformats-officedocument.wordprocessingml.document"/>
+                <data android:mimeType="text/plain"/>
+                <data android:mimeType="application/vnd.ms-powerpoint"/>
+                <data android:mimeType="application/vnd.openxmlformats-officedocument.presentationml.presentation"/>
+                <data android:mimeType="application/vnd.ms-excel"/>
+                <data android:mimeType="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize" android:exported="true" android:hardwareAccelerated="true" android:launchMode="singleTask" android:name="com.zaz.translate.offline.OfflineModeActivity" android:screenOrientation="unspecified" android:theme="@style/Theme.NoActionBarCommonTheme"/>
+        <activity android:configChanges="orientation|screenSize" android:exported="true" android:launchMode="singleTask" android:name="com.zaz.translate.ui.dashboard.IntelligenceAgentActivity" android:screenOrientation="unspecified" android:theme="@style/Theme.IntelligenceAgent"/>
+        <activity android:configChanges="orientation" android:exported="true" android:launchMode="singleTask" android:name="com.zaz.translate.ui.dashboard.IntelligenceHistoryActivity" android:screenOrientation="unspecified" android:theme="@style/Theme.SecondaryPage"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize" android:exported="true" android:launchMode="singleTask" android:name="com.talpa.translate.discover.DiscoverActivity" android:screenOrientation="unspecified" android:theme="@style/Theme.SecondaryPage"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize" android:launchMode="singleTask" android:name="com.zaz.translate.ui.file.DocTransPrevActivity" android:screenOrientation="unspecified" android:theme="@style/Theme.NoActionBarPageTheme"/>
+        <activity android:name="com.zaz.translate.ui.setting.StudyActivity" android:screenOrientation="unspecified"/>
+        <activity android:name="com.zaz.translate.ui.vocabulary.v2.study.VocabularyDoQuestionActivityV2" android:screenOrientation="unspecified" android:theme="@style/Theme.Vocabulary"/>
+        <activity android:name="com.zaz.translate.ui.vocabulary.v2.setting.VocabularyPlanSettingV2" android:screenOrientation="unspecified"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize" android:name="com.zaz.translate.ui.vocabulary.v2.congratulate.CongratulateActivity" android:screenOrientation="unspecified" android:theme="@style/Theme.ColorPrimaryPage"/>
+        <activity android:name="com.zaz.translate.ui.study.StudySettingActivity" android:screenOrientation="unspecified"/>
+        <activity android:name="com.zaz.translate.ui.study.incentive.ScoreRankActivity" android:screenOrientation="unspecified" android:theme="@style/Theme.WhiteBar"/>
+        <activity android:configChanges="orientation|screenLayout|screenSize|smallestScreenSize" android:excludeFromRecents="true" android:exported="true" android:hardwareAccelerated="true" android:launchMode="singleTask" android:name="com.zaz.translate.ui.dictionary.transcribe.chooseVoice.VoiceChooseActivity" android:screenOrientation="unspecified" android:theme="@style/Theme.FloatingVoiceTheme" android:windowSoftInputMode="stateHidden|adjustResize"/>
+        <activity android:configChanges="orientation|screenLayout|screenSize|smallestScreenSize" android:excludeFromRecents="true" android:exported="false" android:hardwareAccelerated="true" android:name="com.zaz.translate.ui.dictionary.transcribe.chooseVoice.CloneVoiceActivity" android:screenOrientation="unspecified" android:theme="@style/Theme.FloatingVoiceTheme" android:windowSoftInputMode="stateHidden|adjustResize"/>
+        <activity android:excludeFromRecents="true" android:exported="false" android:name="com.zaz.translate.ui.guide.TranslateFunctionGuideActivity" android:screenOrientation="unspecified" android:taskAffinity=".access" android:theme="@style/Theme.AccessGuide"/>
+        <activity android:excludeFromRecents="true" android:exported="true" android:hardwareAccelerated="true" android:launchMode="singleTask" android:name="com.talpa.translate.camera.CameraProModeActivity" android:screenOrientation="unspecified" android:theme="@style/Theme.FloatingVoiceTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize" android:exported="false" android:launchMode="singleTask" android:name="com.zaz.translate.ui.history.view.activity.HistoryActivity" android:screenOrientation="unspecified"/>
+        <activity android:exported="false" android:launchMode="singleTask" android:name="com.zaz.translate.ui.history.view.activity.HistorySecondActivity"/>
+        <activity android:enabled="false" android:exported="false" android:launchMode="singleTask" android:name="com.zaz.translate.ui.developer.DeveloperActivity"/>
+        <activity android:enabled="false" android:exported="false" android:launchMode="singleTask" android:name="com.zaz.translate.ui.developer.ASRTestActivity"/>
+        <activity android:enabled="false" android:exported="false" android:launchMode="singleTask" android:name="com.zaz.translate.ui.developer.GlassButtonTestActivity"/>
+        <activity android:exported="true" android:launchMode="singleTask" android:name="com.zaz.translate.ui.dictionary.transcribe.TemplatePreviewActivity" android:screenOrientation="unspecified"/>
+        <activity android:exported="false" android:launchMode="singleTask" android:name="com.zaz.translate.ui.dictionary.transcribe.voip.VoipCallingActivity"/>
+        <activity android:exported="true" android:launchMode="singleTask" android:name="com.zaz.translate.ui.dictionary.transcribe.voip.VoipDailPadActivity" android:windowSoftInputMode="stateAlwaysHidden|adjustNothing"/>
+        <activity android:exported="false" android:launchMode="singleTask" android:name="com.zaz.translate.ui.dictionary.transcribe.voip.VoipVoiceSettingActivity"/>
+        <activity android:exported="false" android:launchMode="singleTask" android:name="com.zaz.translate.ui.dictionary.transcribe.voip.VoipSettingActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize" android:excludeFromRecents="true" android:exported="false" android:launchMode="standard" android:name="com.zaz.translate.ui.dictionary.transcribe.voip.VoipCountryChooseActivity" android:screenOrientation="unspecified" android:theme="@style/Theme.NoActionBarCommonTheme"/>
+        <receiver android:name="com.zaz.translate.ui.dictionary.transcribe.receiver.ShortcutReceiver"/>
+        <receiver android:exported="true" android:label="@string/ai_powered_input" android:name="com.talpa.translate.widget.QuickStartInputWidget">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/quick_input_widget_info"/>
+        </receiver>
+        <service android:enabled="true" android:exported="true" android:name="com.zaz.translate.hlsconnection.service.HLSConnectionHTService" android:permission="hitranslate.hls.service.permission">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </service>
+        <receiver android:exported="true" android:name="com.zaz.translate.global.LocaleChangeReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.LOCALE_CHANGED"/>
+            </intent-filter>
+        </receiver>
+        <service android:enabled="true" android:exported="true" android:icon="@drawable/ic_float_vision" android:label="@string/title_vision" android:name="com.talpa.translate.system.quicksettings.VisionTileService" android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE"/>
+            </intent-filter>
+        </service>
+        <service android:enabled="true" android:exported="true" android:icon="@drawable/svg_learn" android:label="@string/explore" android:name="com.talpa.translate.system.quicksettings.LearnTileService" android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE"/>
+            </intent-filter>
+        </service>
+        <service android:enabled="true" android:exported="false" android:foregroundServiceType="microphone" android:name="com.zaz.translate.ui.dictionary.transcribe.service.TranscribeService"/>
+        <activity android:excludeFromRecents="true" android:exported="true" android:name="com.zaz.translate.ui.dictionary.transcribe.service.OutAICaptionActivity" android:taskAffinity="ui.dictionary.transcribe.service.OutAICaptionActivity" android:theme="@style/Theme.AccessGuide">
+            <intent-filter>
+                <action android:name="com.transsion.smartpanel.aicaption.action"/>
+                <action android:name="com.transsion.texai.aicaption.action"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <service android:enabled="true" android:exported="true" android:foregroundServiceType="0x800" android:name="com.zaz.translate.ui.dictionary.transcribe.service.OutAICaptionService">
+            <intent-filter>
+                <action android:name="com.transsion.smartpanel.aicaption.action"/>
+                <action android:name="com.transsion.texai.aicaption.action"/>
+            </intent-filter>
+        </service>
+        <provider android:authorities="com.zaz.translate.out.provider" android:exported="true" android:name="com.zaz.translate.ui.dictionary.transcribe.service.OutAICaptionProvider" android:readPermission="com.zaz.translate.permission.AI_CAPTION_SERVICE_READ" android:writePermission="com.zaz.translate.permission.AI_CAPTION_SERVICE_WRITE"/>
+        <service android:enabled="true" android:exported="false" android:foregroundServiceType="microphone" android:name="com.zaz.translate.island.asr.IslandService"/>
+        <service android:enabled="true" android:exported="true" android:name="com.zaz.translate.island.asr.IslandClickService" android:permission="com.zaz.translate.permission.ISLAND_SERVICE">
+            <intent-filter>
+                <action android:name="ht_island_action_close"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="ht_island_action_start_record"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="ht_island_action_stop_record"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="ht_island_action_start_play"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="ht_island_action_stop_play"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="ht_island_action_net_error"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="ht_island_action_click_island_capsule"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="com.talpa.translate.notification.MyFirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="com.talpa.translate.notification.NotificationCancelService">
+            <intent-filter>
+                <action android:name="ht_action_cancel_notification_main"/>
+            </intent-filter>
+        </service>
+        <provider android:authorities="com.zaz.translate.tpkclient.HTClientProvider" android:enabled="true" android:exported="false" android:name="com.zaz.translate.island.asr.atomic.provider.HTClientProvider" android:permission="com.transsion.permission.atomiccore.safe">
+            <intent-filter>
+                <action android:name="com.transsion.atomiccore.action.ATOMIC_CARD"/>
+            </intent-filter>
+        </provider>
+        <service android:enabled="true" android:exported="false" android:foregroundServiceType="microphone" android:name="com.zaz.translate.voip.call.VOIPService"/>
+        <activity android:excludeFromRecents="true" android:exported="true" android:launchMode="singleTask" android:name="com.talpa.overlay.speech.SpeechWillowPermissionActivity" android:noHistory="true" android:taskAffinity=".SpeechWillowPermissionActivity" android:theme="@style/TransparentActivityTheme"/>
+        <activity android:configChanges="orientation" android:excludeFromRecents="true" android:exported="false" android:launchMode="singleTop" android:name="com.talpa.overlay.ui.FloatingTranslateGameGuidActivity" android:taskAffinity=".Sheet" android:theme="@style/IntelligenceFloatingGuidStyle"/>
+        <activity android:configChanges="orientation" android:excludeFromRecents="true" android:exported="false" android:launchMode="singleTop" android:name="com.talpa.overlay.ui.FloatingTranslateImageGuidActivity" android:taskAffinity=".Sheet" android:theme="@style/Theme.Sheet.forceDark"/>
+        <service android:enabled="true" android:exported="true" android:name="com.talpa.overlay.service.FloatingService"/>
+        <service android:enabled="true" android:exported="false" android:foregroundServiceType="microphone" android:name="com.talpa.overlay.speech.SpeechWillowService"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize" android:name="com.talpa.translate.ocr.result.ContrastActivity" android:theme="@style/ContrastStyle"/>
+        <provider android:authorities="com.zaz.translate.fileProvider" android:exported="false" android:grantUriPermissions="true" android:name="androidx.core.content.FileProvider">
+            <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/file_paths"/>
+        </provider>
+        <meta-data android:name="com.huawei.hms.ml.DEPENDENCY" android:value="ocr"/>
+        <meta-data android:name="android.max_aspect" android:value="2.4"/>
+        <meta-data android:name="android.notch_support" android:value="true"/>
+        <meta-data android:name="notch.config" android:value="portrait|landscape"/>
+        <activity android:excludeFromRecents="true" android:exported="true" android:name="com.talpa.inner.media.projection.ui.MultiTranslateActivity" android:noHistory="true" android:taskAffinity=".MultiTranslate" android:theme="@style/GT_OverlayResultTheme" android:windowSoftInputMode="adjustResize"/>
+        <activity android:excludeFromRecents="true" android:exported="false" android:launchMode="singleTop" android:name="com.talpa.inner.media.projection.ui.MultiTranslateLoadViewActivity" android:noHistory="true" android:taskAffinity=".MultiTranslate" android:theme="@style/GT_OverlayTranslucentTheme"/>
+        <activity android:excludeFromRecents="true" android:exported="false" android:launchMode="singleTop" android:name="com.talpa.inner.media.projection.ui.MultiTranslateOverlayActivity" android:noHistory="true" android:taskAffinity=".MultiTranslate" android:theme="@style/GT_OverlayTranslucentTheme"/>
+        <service android:enabled="true" android:exported="true" android:name="com.talpa.inner.overlay.service.FloatingService"/>
+        <service android:enabled="true" android:exported="true" android:name="com.talpa.inner.overlay.aidl.FullTranslateService">
+            <intent-filter>
+                <action android:name="com.zaz.translate.overlay"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </service>
+        <receiver android:exported="true" android:label="@string/smart_transcribe" android:name="com.zaz.translate.ui.dictionary.transcribe.widget.TranscribeWidgetProvider">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/transcribe_widget_info"/>
+        </receiver>
+        <activity android:excludeFromRecents="true" android:exported="true" android:launchMode="singleInstance" android:name="com.zaz.translate.ui.dictionary.transcribe.widget.TranscribeWidgetHandlerActivity" android:taskAffinity="" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:exported="true" android:name="com.zaz.translate.ui.dictionary.transcribe.interphone.InterphoneActivity" android:theme="@style/InterphoneTheme"/>
+        <activity android:exported="false" android:name="com.zaz.translate.ui.dictionary.transcribe.history.meeting.MeetingHistoryActivity"/>
+        <activity android:exported="false" android:name="com.zaz.translate.ui.dictionary.transcribe.history.meeting.MeetingSearchActivity" android:windowSoftInputMode="adjustNothing"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize" android:launchMode="singleTask" android:name="com.zaz.translate.ui.qrcode.GenerateQRCodeActivity" android:theme="@style/Theme.SecondaryPage"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize" android:launchMode="singleTask" android:name="com.zaz.translate.ui.qrcode.ScanQRCodeActivity"/>
+        <activity android:configChanges="orientation|uiMode|screenSize" android:exported="false" android:name="com.zaz.translate.ui.dictionary.transcribe.camera.TranscribeCameraActivity" android:theme="@style/Camera"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize" android:exported="false" android:launchMode="singleTask" android:name="com.zaz.translate.ui.dictionary.transcribe.voiceprint.VoiceprintManageActivity" android:theme="@style/Theme.SecondaryPage"/>
+        <activity android:configChanges="orientation|uiMode|screenSize" android:exported="false" android:name="com.zaz.lib.camera.HTCameraActivity" android:theme="@style/Camera"/>
+        <activity android:exported="false" android:name="com.zaz.lib.camera.ImagePreviewActivity" android:theme="@style/Camera"/>
+        <activity android:excludeFromRecents="true" android:exported="false" android:name="com.zaz.translate.lib.overlay.activity.ProjectionPermissionActivity" android:noHistory="true" android:taskAffinity=".ProjectionPermission" android:theme="@style/MedioProjectionPermissionTheme"/>
+        <service android:enabled="true" android:exported="true" android:foregroundServiceType="mediaProjection" android:name="com.zaz.translate.lib.overlay.service.MediaProjectionService"/>
+        <activity android:excludeFromRecents="true" android:exported="true" android:launchMode="singleTask" android:name="com.zaz.translate.lockscreen.LockScreenActivity" android:taskAffinity=".lock_screen" android:theme="@style/Theme.Lock_screen.NoActionBar"/>
+        <activity android:excludeFromRecents="true" android:exported="true" android:launchMode="singleTask" android:name="com.zaz.translate.lockscreen.v2.LockScreenV2Activity" android:taskAffinity=".lock_screen" android:theme="@style/Theme.Lock_screen.NoActionBar">
+            <intent-filter>
+                <action android:name="com.zaz.translate.lockscreen"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:exported="false" android:name="com.zaz.translate.lockscreen.setting.LockScreenSettingV3Activity" android:theme="@style/Lock_screen_V2">
+            <intent-filter>
+                <action android:name="com.zaz.translate.LockScreenSettingActivity"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:excludeFromRecents="true" android:exported="false" android:name="com.talpa.livecaption.open.LiveCaptionActivity" android:noHistory="true" android:taskAffinity="com.zaz.translate.open.LiveCaptionPermissionActivity" android:theme="@style/LCTranslucentTheme"/>
+        <activity android:excludeFromRecents="true" android:exported="false" android:name="com.talpa.livecaption.open.GmsAsrDownloadAdapterActivity" android:noHistory="true" android:taskAffinity="com.zaz.translate.open.GmsAsrDownloadAdapterActivity" android:theme="@style/LCTranslucentTheme"/>
+        <activity android:excludeFromRecents="true" android:exported="false" android:name="com.talpa.livecaption.open.LiveCaptionPermissionActivity" android:taskAffinity="com.zaz.translate.open.LiveCaptionPermissionActivity" android:theme="@style/LCTranslucentTheme"/>
+        <service android:enabled="true" android:exported="false" android:foregroundServiceType="mediaProjection" android:name="com.talpa.livecaption.open.LiveCaptionService"/>
+        <activity android:excludeFromRecents="true" android:exported="false" android:launchMode="singleTop" android:name="com.zaz.subscription.SubscriptionActivity" android:taskAffinity=".Subscription" android:theme="@style/sub_activity">
+            <intent-filter>
+                <action android:name="com.talpa.billing.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:exported="false" android:launchMode="singleTop" android:name="com.zaz.subscription.dialog.TryLimitDialogActivity" android:theme="@style/SubTransparentActivityTheme"/>
+        <activity android:exported="false" android:launchMode="singleTop" android:name="com.zaz.subscription.dialog.NoLimitDialogActivity" android:taskAffinity=".NoLimitDialogActivity" android:theme="@style/NoLimitDialogActivityTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize" android:exported="false" android:launchMode="singleTop" android:name="com.zaz.account.MailLoginActivity" android:theme="@style/Theme.Sheet.MailLoginThem"/>
+        <provider android:authorities="com.zaz.translate.asr.translate.audioprovider" android:exported="false" android:grantUriPermissions="true" android:name="com.hiservice.endspeech2text.stt.AudioPipeContentProvider"/>
+        <service android:exported="true" android:name="com.transsion.palmsdk.auth.PalmAuthService">
+            <intent-filter>
+                <action android:name="intent.action.PALM_ACCOUNT_AUTH"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </service>
+        <provider android:authorities="com.zaz.translate.PalmAccProvider" android:exported="false" android:name="com.transsion.palmsdk.account.PalmAccProvider"/>
+        <meta-data android:name="palm_sdk_version" android:value="2.0.0.48"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" android:enableOnBackInvokedCallback="false" android:exported="false" android:name="com.google.android.gms.ads.AdActivity" android:theme="@android:style/Theme.Translucent"/>
+        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.ads.AdService"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" android:exported="false" android:name="com.google.android.gms.ads.OutOfContextTestingActivity"/>
+        <activity android:excludeFromRecents="true" android:exported="false" android:launchMode="singleTask" android:name="com.google.android.gms.ads.NotificationHandlerActivity" android:taskAffinity="" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <meta-data android:name="com.google.android.gms.ads.flag.OPTIMIZE_AD_LOADING" android:value="true"/>
+        <meta-data android:name="com.google.android.gms.ads.flag.OPTIMIZE_INITIALIZATION" android:value="true"/>
+        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_application_id"/>
+        <activity android:exported="false" android:label="" android:name="com.firebase.ui.auth.KickoffActivity" android:theme="@style/FirebaseUI.Transparent"/>
+        <activity android:exported="false" android:label="" android:name="com.firebase.ui.auth.ui.idp.SingleSignInActivity" android:theme="@style/FirebaseUI.Transparent"/>
+        <activity android:exported="false" android:label="" android:name="com.firebase.ui.auth.ui.credentials.CredentialSaveActivity" android:theme="@style/FirebaseUI.Transparent"/>
+        <activity android:exported="false" android:label="@string/fui_title_recover_password_activity" android:name="com.firebase.ui.auth.ui.email.RecoverPasswordActivity" android:windowSoftInputMode="adjustResize"/>
+        <activity android:exported="false" android:label="@string/fui_sign_in_default" android:name="com.firebase.ui.auth.ui.email.EmailActivity" android:windowSoftInputMode="adjustResize"/>
+        <activity android:exported="false" android:label="@string/fui_sign_in_with_phone_number" android:name="com.firebase.ui.auth.ui.phone.PhoneActivity" android:windowSoftInputMode="stateAlwaysVisible|adjustResize"/>
+        <activity android:exported="false" android:label="@string/fui_title_welcome_back_idp_prompt" android:name="com.firebase.ui.auth.ui.idp.WelcomeBackIdpPrompt" android:windowSoftInputMode="adjustResize"/>
+        <activity android:exported="false" android:label="@string/fui_title_welcome_back_password_prompt" android:name="com.firebase.ui.auth.ui.email.WelcomeBackPasswordPrompt" android:windowSoftInputMode="adjustResize"/>
+        <activity android:exported="false" android:label="@string/fui_title_welcome_back_password_prompt" android:name="com.firebase.ui.auth.ui.email.WelcomeBackEmailLinkPrompt" android:windowSoftInputMode="adjustResize"/>
+        <activity android:exported="false" android:label="" android:name="com.firebase.ui.auth.ui.email.EmailLinkCatcherActivity" android:theme="@style/FirebaseUI.Transparent" android:windowSoftInputMode="adjustResize"/>
+        <activity android:exported="false" android:label="@string/fui_sign_in_default" android:name="com.firebase.ui.auth.ui.email.EmailLinkErrorRecoveryActivity" android:windowSoftInputMode="adjustResize"/>
+        <activity android:exported="false" android:label="@string/fui_default_toolbar_title" android:name="com.firebase.ui.auth.ui.idp.AuthMethodPickerActivity"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize" android:label="@string/app_name" android:name="com.facebook.FacebookActivity"/>
+        <activity android:exported="true" android:name="com.facebook.CustomTabActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="fb_your_app_id"/>
+            </intent-filter>
+        </activity>
+        <provider android:authorities="com.zaz.translate.authuiinitprovider" android:exported="false" android:initOrder="90" android:name="com.firebase.ui.auth.data.client.AuthUiInitProvider"/>
+        <service android:directBootAware="true" android:exported="false" android:name="com.google.firebase.components.ComponentDiscoveryService">
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.crashlytics.ndk.CrashlyticsNdkRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.crashlytics.FirebaseCrashlyticsKtxRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.crashlytics.CrashlyticsRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.sessions.FirebaseSessionsRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.inappmessaging.display.FirebaseInAppMessagingDisplayKtxRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.inappmessaging.display.FirebaseInAppMessagingDisplayRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.remoteconfig.FirebaseRemoteConfigKtxRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.remoteconfig.RemoteConfigRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.messaging.FirebaseMessagingKtxRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.messaging.FirebaseMessagingRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.iid.Registrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.inappmessaging.FirebaseInAppMessagingKtxRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.inappmessaging.FirebaseInAppMessagingRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsKtxRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.FirebaseCommonKtxRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.abt.component.AbtRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.datatransport.TransportRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+        </service>
+        <service android:enabled="false" android:exported="false" android:name="com.google.firebase.sessions.SessionLifecycleService"/>
+        <activity android:excludeFromRecents="true" android:exported="false" android:name="com.transsion.pushui.activity.TransparentActivity" android:taskAffinity="com.transsion.pushui" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:exported="true" android:name="com.transsion.pushui.activity.PushActivity">
+            <intent-filter>
+                <action android:name="tpush.intent.action.TPUSH"/>
+            </intent-filter>
+        </activity>
+        <receiver android:exported="true" android:name="com.transsion.push.broadcast.FCMMessageReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter android:priority="999">
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION"/>
+                <category android:name="com.zaz.translate"/>
+            </intent-filter>
+        </receiver>
+        <service android:exported="true" android:name="com.transsion.push.service.PushJobIntentService" android:permission="android.permission.BIND_JOB_SERVICE"/>
+        <receiver android:enabled="true" android:exported="false" android:name="com.transsion.push.broadcast.HandlerBroadcastReceiver">
+            <intent-filter android:priority="999">
+                <action android:name="tpush.intent.action.TPUSH_MSG_RECEIVER"/>
+            </intent-filter>
+        </receiver>
+        <meta-data android:name="tran_push_version" android:value="1.8.5.02"/>
+        <meta-data android:name="tpush_app_id" android:value="638666897fc84ee6888cd17144247148"/>
+        <meta-data android:name="tpush_app_key" android:value="f4ab397e5683495998899ddc288d1a0f"/>
+        <receiver android:exported="true" android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+            </intent-filter>
+            <meta-data android:name="com.google.android.gms.cloudmessaging.FINISHED_AFTER_HANDLED" android:value="true"/>
+        </receiver>
+        <service android:directBootAware="true" android:exported="false" android:name="com.google.firebase.messaging.FirebaseMessagingService">
+            <intent-filter android:priority="-500">
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+        <activity android:excludeFromRecents="true" android:exported="true" android:launchMode="singleTask" android:name="com.google.firebase.auth.internal.GenericIdpActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="firebase.auth" android:path="/" android:scheme="genericidp"/>
+            </intent-filter>
+        </activity>
+        <activity android:excludeFromRecents="true" android:exported="true" android:launchMode="singleTask" android:name="com.google.firebase.auth.internal.RecaptchaActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="firebase.auth" android:path="/" android:scheme="recaptcha"/>
+            </intent-filter>
+        </activity>
+        <provider android:authorities="com.zaz.translate.firebaseinitprovider" android:directBootAware="true" android:exported="false" android:initOrder="100" android:name="com.google.firebase.provider.FirebaseInitProvider"/>
+        <meta-data android:name="islandSDKCode" android:value="200020022"/>
+        <service android:enabled="true" android:exported="true" android:name="com.transsion.island.sdk.IslandAliveService">
+            <intent-filter>
+                <action android:name="com.transsion.island.action.ALIVE_SERVICE"/>
+                <action android:name="com.transsion.island.action.ANIMATION_START"/>
+                <action android:name="com.transsion.island.action.ANIMATION_END"/>
+            </intent-filter>
+        </service>
+        <provider android:authorities="com.zaz.translate.FileShareProvider" android:enabled="true" android:exported="false" android:grantUriPermissions="true" android:name="com.transsion.atomiccore.hostsdk.file.provider.FileShareProvider" android:readPermission="com.transsion.permission.atomiccore.safe">
+            <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/tr_provider_file_paths"/>
+        </provider>
+        <service android:enabled="true" android:exported="true" android:name="com.transsion.atomiccore.sdk.islandanim.IslandAnimService">
+            <intent-filter>
+                <action android:name="com.transsion.atomiccore.island.action.ANIMATION_START"/>
+                <action android:name="com.transsion.atomiccore.island.action.ANIMATION_END"/>
+            </intent-filter>
+        </service>
+        <service android:enabled="false" android:exported="false" android:name="androidx.camera.core.impl.MetadataHolderService">
+            <meta-data android:name="androidx.camera.core.impl.MetadataHolderService.DEFAULT_CONFIG_PROVIDER" android:value="androidx.camera.camera2.Camera2Config$DefaultProvider"/>
+        </service>
+        <service android:directBootAware="true" android:exported="false" android:name="com.google.mlkit.common.internal.MlKitComponentDiscoveryService">
+            <meta-data android:name="com.google.firebase.components:com.google.mlkit.nl.languageid.thin.internal.ThinLanguageIdRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.mlkit.nl.languageid.bundled.internal.ThickLanguageIdRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.mlkit.nl.languageid.internal.LanguageIdRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.mlkit.vision.text.internal.TextRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.mlkit.vision.common.internal.VisionCommonRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.mlkit.common.internal.CommonComponentRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+        </service>
+        <provider android:authorities="com.zaz.translate.mlkitinitprovider" android:exported="false" android:initOrder="99" android:name="com.google.mlkit.common.internal.MlKitInitProvider"/>
+        <service android:enabled="true" android:exported="false" android:name="androidx.credentials.playservices.CredentialProviderMetadataHolder">
+            <meta-data android:name="androidx.credentials.CREDENTIAL_PROVIDER_KEY" android:value="androidx.credentials.playservices.CredentialProviderPlayServicesImpl"/>
+        </service>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize" android:enabled="true" android:exported="false" android:fitsSystemWindows="true" android:name="androidx.credentials.playservices.HiddenActivity" android:theme="@style/Theme.Hidden"/>
+        <activity android:excludeFromRecents="true" android:exported="false" android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <service android:exported="true" android:name="com.google.android.gms.auth.api.signin.RevocationBoundService" android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION" android:visibleToInstantApps="true"/>
+        <service android:directBootAware="false" android:enabled="@bool/enable_system_alarm_service_default" android:exported="false" android:name="androidx.work.impl.background.systemalarm.SystemAlarmService"/>
+        <service android:directBootAware="false" android:enabled="@bool/enable_system_job_service_default" android:exported="true" android:name="androidx.work.impl.background.systemjob.SystemJobService" android:permission="android.permission.BIND_JOB_SERVICE"/>
+        <service android:directBootAware="false" android:enabled="@bool/enable_system_foreground_service_default" android:exported="false" android:name="androidx.work.impl.foreground.SystemForegroundService"/>
+        <receiver android:directBootAware="false" android:enabled="true" android:exported="false" android:name="androidx.work.impl.utils.ForceStopRunnable$BroadcastReceiver"/>
+        <receiver android:directBootAware="false" android:enabled="false" android:exported="false" android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryChargingProxy">
+            <intent-filter>
+                <action android:name="android.intent.action.ACTION_POWER_CONNECTED"/>
+                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:directBootAware="false" android:enabled="false" android:exported="false" android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryNotLowProxy">
+            <intent-filter>
+                <action android:name="android.intent.action.BATTERY_OKAY"/>
+                <action android:name="android.intent.action.BATTERY_LOW"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:directBootAware="false" android:enabled="false" android:exported="false" android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$StorageNotLowProxy">
+            <intent-filter>
+                <action android:name="android.intent.action.DEVICE_STORAGE_LOW"/>
+                <action android:name="android.intent.action.DEVICE_STORAGE_OK"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:directBootAware="false" android:enabled="false" android:exported="false" android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$NetworkStateProxy">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:directBootAware="false" android:enabled="false" android:exported="false" android:name="androidx.work.impl.background.systemalarm.RescheduleReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.TIME_SET"/>
+                <action android:name="android.intent.action.TIMEZONE_CHANGED"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:directBootAware="false" android:enabled="@bool/enable_system_alarm_service_default" android:exported="false" android:name="androidx.work.impl.background.systemalarm.ConstraintProxyUpdateReceiver">
+            <intent-filter>
+                <action android:name="androidx.work.impl.background.systemalarm.UpdateProxies"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:directBootAware="false" android:enabled="true" android:exported="true" android:name="androidx.work.impl.diagnostics.DiagnosticsReceiver" android:permission="android.permission.DUMP">
+            <intent-filter>
+                <action android:name="androidx.work.diagnostics.REQUEST_DIAGNOSTICS"/>
+            </intent-filter>
+        </receiver>
+        <service android:directBootAware="true" android:exported="false" android:name="androidx.room.MultiInstanceInvalidationService"/>
+        <meta-data android:name="com.google.android.play.billingclient.version" android:value="8.0.0"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize" android:exported="false" android:name="com.android.billingclient.api.ProxyBillingActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize" android:exported="false" android:name="com.android.billingclient.api.ProxyBillingActivityV2" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <receiver android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementReceiver"/>
+        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementService"/>
+        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementJobService" android:permission="android.permission.BIND_JOB_SERVICE"/>
+        <activity android:exported="false" android:name="com.google.android.gms.common.api.GoogleApiActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <service android:enabled="false" android:exported="true" android:name="com.google.android.play.core.assetpacks.AssetPackExtractionService">
+            <meta-data android:name="com.google.android.play.core.assetpacks.versionCode" android:value="20202"/>
+        </service>
+        <service android:enabled="false" android:exported="false" android:foregroundServiceType="dataSync" android:name="com.google.android.play.core.assetpacks.ExtractionForegroundService"/>
+        <uses-library android:name="androidx.window.extensions" android:required="false"/>
+        <uses-library android:name="androidx.window.sidecar" android:required="false"/>
+        <activity android:exported="true" android:name="androidx.compose.ui.tooling.PreviewActivity"/>
+        <uses-library android:name="android.ext.adservices" android:required="false"/>
+        <service android:exported="false" android:name="com.google.android.datatransport.runtime.backends.TransportBackendDiscovery">
+            <meta-data android:name="backend:com.google.android.datatransport.cct.CctBackendFactory" android:value="cct"/>
+        </service>
+        <receiver android:directBootAware="false" android:enabled="true" android:exported="true" android:name="androidx.profileinstaller.ProfileInstallReceiver" android:permission="android.permission.DUMP">
+            <intent-filter>
+                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="androidx.profileinstaller.action.SKIP_FILE"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION"/>
+            </intent-filter>
+        </receiver>
+        <provider android:authorities="com.zaz.translate.jlatexmathinitprovider" android:exported="false" android:name="ru.noties.jlatexmath.JLatexMathInitProvider"/>
+        <provider android:authorities="com.zaz.translate.tray" android:exported="false" android:multiprocess="false" android:name="net.grandcentrix.tray.provider.TrayContentProvider"/>
+        <service android:exported="false" android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService" android:permission="android.permission.BIND_JOB_SERVICE"/>
+        <receiver android:exported="false" android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver"/>
+        <provider android:authorities="com.zaz.translate.adjust-lifecycle-provider" android:exported="false" android:name="com.adjust.sdk.SystemLifecycleContentProvider"/>
+        <activity android:clearTaskOnLaunch="true" android:name="com.journeyapps.barcodescanner.CaptureActivity" android:screenOrientation="sensorLandscape" android:stateNotNeeded="true" android:theme="@style/zxing_CaptureTheme" android:windowSoftInputMode="stateAlwaysHidden"/>
+        <activity android:exported="false" android:name="com.google.android.play.core.common.PlayCoreDialogWrapperActivity" android:stateNotNeeded="true" android:theme="@style/Theme.PlayCore.Transparent"/>
+        <meta-data android:name="trans_crypto_sdk_version" android:value="1.0.9.01"/>
+        <activity android:exported="true" android:name="com.zaz.translate.handbook.HandbookActivity">
+            <intent-filter>
+                <action android:name="com.zaz.translate.handbook"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <meta-data android:name="com.android.stamp.source" android:value="https://play.google.com/store"/>
+        <meta-data android:name="com.android.stamp.type" android:value="STAMP_TYPE_DISTRIBUTION_APK"/>
+        <meta-data android:name="com.android.vending.splits" android:resource="@xml/splits0"/>
+        <meta-data android:name="com.android.vending.derived.apk.id" android:value="3"/>
+        <meta-data android:name="com.android.dynamic.apk.fused.modules" android:value="DynamicHandBook,DynamicOfflineTranslate,asset_pack_pk_sounds,base"/>
+        <activity android:exported="true" android:name="com.zaz.translate.handbook.HandbookActivity">
+            <intent-filter>
+                <action android:name="com.zaz.translate.handbook"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <meta-data android:name="com.android.vending.derived.apk.id" android:value="3"/>
+    </application>
+</manifest>

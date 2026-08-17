@@ -1,0 +1,865 @@
+ để hoàn thành mục tiêu của bạn là thoát khỏi kiểu “patch bằng mẫu văn bản cứng”, thì mình nghĩ hướng hiện tại của PATCHX cần đổi khá mạnh ở tầng lõi, chứ không chỉ thêm nhiều patch mới.
+
+Tài liệu của chính toolkit đã chỉ ra hướng này: T1 hiện đã có phân tích ngữ nghĩa Smali, T2 có khả năng sinh patch từ khác biệt, T3 có kiểm thử động, và T6 đặt mục tiêu hiện đại hóa apktool/aapt2, D8/R8 để xử lý mã hiện đại. 
+
+1. Vấn đề cốt lõi của kiến trúc hiện tại
+
+Hiện PATCHX vẫn xoay quanh mô hình:
+
+patch.txt
+   ↓
+parser
+   ↓
+tìm mẫu
+   ↓
+replace / insert
+   ↓
+build
+
+Trong toolkit hiện có parser.py, engine.py, smali_lib.py; riêng engine.py đã có glob target, transaction, idempotent, fixpoint và provenance. 
+
+Đây là nền tốt, nhưng không nên tiếp tục coi tệp patch văn bản là đơn vị cơ bản nhất.
+
+Với ứng dụng hiện đại, một phương thức có thể bị:
+
+đổi tên bởi R8/ProGuard;
+
+thay đổi thanh ghi;
+
+inline;
+
+tối ưu nhánh;
+
+chia nhỏ hoặc hợp nhất phương thức;
+
+chuyển sang Kotlin/Java hiện đại;
+
+thay đổi cấu trúc DEX giữa các phiên bản.
+
+
+Vì vậy:
+
+> Đừng tìm “đoạn văn bản giống nhau”; hãy tìm “ý nghĩa và vị trí của hành vi cần tác động”.
+
+
+
+Đây cũng chính là hướng T1 mà tài liệu của bạn đã đặt ra: chuyển từ khớp chuỗi → hiểu mã, có cây cú pháp, nhận diện R8/ProGuard và xây dựng đồ thị gọi. 
+
+
+---
+
+2. Kiến trúc mới mình đề xuất
+
+Mình sẽ chuyển PATCHX thành:
+
+APK
+                  │
+                  ▼
+          ┌───────────────┐
+          │  BỘ PHÂN TÍCH │
+          └───────┬───────┘
+                  │
+        ┌─────────┼──────────┐
+        ▼         ▼          ▼
+      DEX       RES        NATIVE
+        │         │          │
+        └─────────┼──────────┘
+                  ▼
+          MÔ HÌNH ỨNG DỤNG
+                  │
+        ┌─────────┼──────────┐
+        ▼         ▼          ▼
+     Lớp       Phương thức   Luồng
+     mã        & cấu trúc    dữ liệu
+        │         │          │
+        └─────────┼──────────┘
+                  ▼
+           NHẬN DIỆN MỤC TIÊU
+                  │
+                  ▼
+          KẾ HOẠCH THAY ĐỔI
+                  │
+                  ▼
+        CHUYỂN ĐỔI CÓ KIỂM CHỨNG
+                  │
+                  ▼
+          KIỂM TRA SAU THAY ĐỔI
+                  │
+                  ▼
+             XÂY DỰNG APK
+                  │
+                  ▼
+          KIỂM THỬ THỰC TẾ
+
+Patch chỉ trở thành “cách thực hiện” ở tầng cuối, không còn là trung tâm của hệ thống.
+
+
+---
+
+3. Thay patch cứng bằng “mục tiêu + điều kiện”
+
+Thay vì:
+
+Tìm đúng chuỗi này:
+invoke-virtual {...}
+
+mô tả mục tiêu:
+
+Mục tiêu:
+    phương thức trả về giá trị boolean
+
+Điều kiện:
+    kết quả phụ thuộc vào cờ cấu hình
+
+Đặc điểm:
+    có nhánh điều kiện
+    có lời gọi phương thức kiểm tra
+    có giá trị trả về
+
+Phạm vi:
+    lớp thuộc gói X
+
+Sau đó hệ thống tự tìm vị trí phù hợp.
+
+Đây là bước chuyển rất lớn:
+
+PATCH CŨ
+"tìm đoạn văn bản"
+
+        ↓
+
+PATCH MỚI
+"tìm cấu trúc + ngữ nghĩa + ngữ cảnh"
+
+
+---
+
+4. Tách “nhận diện” khỏi “thay đổi”
+
+Đây là thay đổi mình ưu tiên nhất.
+
+Hiện tại:
+
+Tìm → Patch
+
+Nên chuyển thành:
+
+Tìm
+ ↓
+Xác minh
+ ↓
+Hiểu ngữ cảnh
+ ↓
+Lập kế hoạch
+ ↓
+Mô phỏng
+ ↓
+Mới cho phép thay đổi
+
+Ví dụ:
+
+Mục tiêu #17
+
+Lớp:       ...
+Phương thức: ...
+DEX:       classes4.dex
+
+Đặc điểm:
+✓ đúng kiểu trả về
+✓ đúng cấu trúc
+✓ đúng luồng gọi
+✓ đúng ngữ cảnh
+
+Độ tin cậy: 94%
+
+Sau đó mới tạo kế hoạch.
+
+
+---
+
+5. Dùng ba lớp nhận diện đồng thời
+
+Lớp 1 — Văn bản
+
+Nhanh:
+
+chuỗi
+tên lớp
+tên phương thức
+
+Lớp 2 — Cấu trúc
+
+cây cú pháp
+chuỗi lệnh
+tham số
+giá trị trả về
+
+Lớp 3 — Ngữ nghĩa
+
+phương thức này làm gì?
+nó được gọi từ đâu?
+kết quả được sử dụng ở đâu?
+nó ảnh hưởng tới hành vi nào?
+
+Toolkit của bạn đã có smali_sem.py để đi theo hướng này. 
+
+Lớp 1 chỉ dùng để tìm nhanh. Lớp 2–3 quyết định có được phép thay đổi hay không.
+
+
+---
+
+6. Không phụ thuộc tên phương thức
+
+Đây là điểm cực kỳ quan trọng với ứng dụng hiện đại.
+
+Không nên:
+
+isPremium()
+
+là điều kiện duy nhất.
+
+Nên:
+
+Tên
+ +
+Kiểu tham số
+ +
+Kiểu trả về
+ +
+Cấu trúc lệnh
+ +
+Lời gọi liên quan
+ +
+Chuỗi dữ liệu
+ +
+Ngữ cảnh gọi
+
+Ví dụ:
+
+┌─────────────────────────┐
+│ Dấu vân tay hành vi     │
+├─────────────────────────┤
+│ kiểu trả về             │
+│ tham số                 │
+│ chuỗi lệnh              │
+│ phương thức được gọi    │
+│ phương thức gọi nó      │
+│ hằng số                  │
+│ cấu trúc nhánh          │
+└─────────────────────────┘
+
+Như vậy đổi tên bởi R8 cũng không nhất thiết làm mất mục tiêu.
+
+
+---
+
+7. Đưa đồ thị gọi vào trung tâm
+
+Tài liệu của bạn đã đặt mục tiêu call-graph từ entry trong T1. 
+
+Mình sẽ nâng nó thành:
+
+Điểm vào
+   ↓
+A
+   ↓
+B ─────→ D
+   ↓
+C ─────→ E
+   ↓
+F
+
+Khi một mục tiêu nằm ở D, hệ thống biết:
+
+Ai gọi D?
+D gọi ai?
+D nhận dữ liệu gì?
+D trả kết quả cho ai?
+
+Đây chính là thứ patch văn bản không thể hiểu tốt.
+
+
+---
+
+8. Đưa “luồng dữ liệu” thành đối tượng hạng nhất
+
+Bạn đang muốn xử lý các luồng dữ liệu phức tạp, vì vậy đừng chỉ theo dõi phương thức.
+
+Mô hình nên là:
+
+Nguồn
+ ↓
+Biến đổi
+ ↓
+Mã hóa
+ ↓
+Truyền
+ ↓
+Nhận
+ ↓
+Giải mã
+ ↓
+Phân tích
+ ↓
+Quyết định
+ ↓
+Hành vi
+
+Mỗi nút có:
+
+nguồn
+đích
+kiểu dữ liệu
+phương thức
+đường gọi
+độ tin cậy
+
+remote_map.py hiện mới là bản đồ cờ điều khiển hành vi từ xa; nên phát triển nó thành bản đồ luồng dữ liệu + luồng quyết định, thay vì chỉ danh sách cờ. 
+
+
+---
+
+9. Bỏ dần patch thủ công, chuyển sang sinh kế hoạch
+
+Bạn đã có diffapk.py để sinh patch từ khác biệt giữa APK gốc và APK đã chỉnh sửa. 
+
+Đây là hướng rất tốt.
+
+Mình sẽ làm:
+
+APK gốc
+    +
+APK mẫu đã thay đổi
+        ↓
+Bộ so sánh
+        ↓
+Tìm thay đổi
+        ↓
+Tìm nguyên nhân cấu trúc
+        ↓
+Sinh dấu vân tay
+        ↓
+Sinh kế hoạch thay đổi
+        ↓
+Kiểm thử trên APK khác
+
+Tức là:
+
+> APK mẫu trở thành dữ liệu huấn luyện cho bộ máy nhận diện, không chỉ là nguồn để sao chép patch.
+
+
+
+
+---
+
+10. Đừng xóa toàn bộ phụ thuộc ngay
+
+Mình không khuyên bỏ tất cả phụ thuộc một lần.
+
+Nên chia thành 3 nhóm:
+
+Nhóm A — Giữ
+
+Những thứ thực sự là nền tảng:
+
+DEX
+Smali
+AAPT2
+D8/R8
+APK signing
+
+Tài liệu của bạn cũng đã xác định hướng hiện đại hóa apktool 2.x + aapt2 + D8/R8 để xử lý values-v31+, lambda, Kotlin metadata và UTF-8. 
+
+Nhóm B — Bao bọc
+
+Các công cụ bên ngoài vẫn dùng nhưng không để chúng quyết định kiến trúc.
+
+PATCHX
+  ↓
+Lớp trừu tượng
+  ↓
+Công cụ bên ngoài
+
+Sau này có thể thay công cụ mà không phải viết lại toàn bộ PATCHX.
+
+Nhóm C — Loại bỏ dần
+
+Các thành phần:
+
+chỉ dựa trên dòng
+chỉ dựa trên tên
+patch cứng
+patch trùng
+patch không có kiểm thử
+patch phụ thuộc phiên bản
+
+Đây mới là thứ cần giảm mạnh.
+
+
+---
+
+11. Thay “kho patch” bằng “kho tri thức”
+
+Hiện toolkit có patchx_index.json, combos_success.json, failure_db, learn... 
+
+Mình sẽ chuyển tư duy:
+
+KHO PATCH
+      ↓
+KHO TRI THỨC
+
+Mỗi bản ghi:
+
+Ứng dụng
+Phiên bản
+Mục tiêu hành vi
+Dấu vân tay
+Cấu trúc
+Điểm thay đổi
+Cách thay đổi
+Kết quả
+Lỗi
+Phiên bản tương thích
+
+Khi gặp APK mới:
+
+APK mới
+ ↓
+Tìm trường hợp tương tự
+ ↓
+So sánh dấu vân tay
+ ↓
+Đề xuất kế hoạch
+ ↓
+Kiểm thử
+
+Như vậy hệ thống học từ kết quả, chứ không đơn giản là tích thêm hàng nghìn file patch.
+
+
+---
+
+12. Thêm “bộ chuyển đổi phiên bản”
+
+Đây là phần rất đáng làm.
+
+Ví dụ:
+
+Ứng dụng A
+1.0 → 1.1 → 1.2 → 2.0
+
+Thay vì:
+
+patch_1.0
+patch_1.1
+patch_1.2
+patch_2.0
+
+hãy lưu:
+
+Mục tiêu hành vi
+       ↓
+Dấu vân tay
+       ↓
+Bộ thích nghi phiên bản
+       ↓
+Kế hoạch phù hợp
+
+Khi cấu trúc thay đổi:
+
+Không tìm thấy chính xác
+        ↓
+Tìm tương đồng
+        ↓
+Kiểm tra ngữ nghĩa
+        ↓
+Đề xuất vị trí mới
+        ↓
+Kiểm thử
+
+Đây mới là cách giảm phụ thuộc vào patch cũ.
+
+
+---
+
+13. Đưa lỗi thật vào vòng cải tiến
+
+Bạn đã có failure_db.py, được thiết kế để lưu ERROR_ID và sinh kiểm thử hồi quy. 
+
+Hãy biến nó thành vòng lặp:
+
+Patch thất bại
+      ↓
+Phân tích nguyên nhân
+      ↓
+Phân loại
+ ├─ Không tìm thấy mục tiêu
+ ├─ Nhận diện sai
+ ├─ Thay đổi sai
+ ├─ DEX lỗi
+ ├─ Tài nguyên lỗi
+ ├─ Chữ ký lỗi
+ └─ Hành vi hồi quy
+      ↓
+Lưu trường hợp
+      ↓
+Sinh bài kiểm thử
+      ↓
+Cải thiện bộ nhận diện
+
+Không sửa bằng cách thêm một patch đặc biệt cho từng lỗi.
+
+Đó là điểm mấu chốt.
+
+
+---
+
+14. Kiến trúc mới cuối cùng
+
+Mình sẽ hướng PATCHX tới:
+
+┌──────────────┐
+                 │     APK      │
+                 └──────┬───────┘
+                        ↓
+                ┌───────────────┐
+                │  Phân tích    │
+                └───────┬───────┘
+                        ↓
+              ┌──────────────────┐
+              │ Mô hình ứng dụng │
+              ├──────────────────┤
+              │ lớp              │
+              │ phương thức      │
+              │ luồng gọi        │
+              │ luồng dữ liệu    │
+              │ tài nguyên       │
+              └────────┬─────────┘
+                       ↓
+              ┌──────────────────┐
+              │ Nhận diện mục tiêu│
+              ├──────────────────┤
+              │ văn bản           │
+              │ cấu trúc          │
+              │ ngữ nghĩa         │
+              │ dấu vân tay       │
+              └────────┬─────────┘
+                       ↓
+               ┌───────────────┐
+               │ Kế hoạch      │
+               │ thay đổi      │
+               └───────┬───────┘
+                       ↓
+                 KIỂM TRA TRƯỚC
+                       ↓
+                    MÔ PHỎNG
+                       ↓
+                 NGƯỜI DÙNG DUYỆT
+                       ↓
+                CHUYỂN ĐỔI MÃ
+                       ↓
+                    KIỂM TRA
+                       ↓
+                 XÂY DỰNG APK
+                       ↓
+               KIỂM THỬ THỰC TẾ
+                       ↓
+                    ĐO LƯỜNG
+                       ↓
+                 HỌC TỪ KẾT QUẢ
+                       │
+                       └──────────→ KHO TRI THỨC
+
+Thứ tự mình khuyên bạn làm
+
+Đợt A — thay lõi
+
+1. Giữ engine.py làm bộ thực thi.
+
+
+2. Xây lớp mô hình trung gian của mã.
+
+
+3. Nâng smali_sem.py thành bộ phân tích cấu trúc/ngữ nghĩa thực sự.
+
+
+4. Xây dấu vân tay hành vi.
+
+
+5. Xây đồ thị gọi và luồng dữ liệu.
+
+
+
+Đợt B — bỏ patch cứng
+
+6. patch.txt chỉ còn là định dạng tương thích cũ.
+
+
+7. Định dạng chính chuyển sang mục tiêu + điều kiện + thao tác + kiểm chứng.
+
+
+8. diffapk.py trở thành bộ sinh kế hoạch.
+
+
+9. failure_db.py trở thành bộ học từ thất bại.
+
+
+
+Đợt C — hiện đại hóa
+
+10. Cập nhật chuỗi xây dựng theo T6.
+
+
+11. Kiểm thử Kotlin/R8/ProGuard/giá trị tài nguyên hiện đại.
+
+
+12. Kiểm thử nhiều phiên bản cùng một ứng dụng.
+
+
+
+Đợt D — tự động hóa
+
+13. Hệ thống tự tìm mục tiêu.
+
+
+14. Tự xếp hạng.
+
+
+15. Tự tạo kế hoạch.
+
+
+16. Tự chạy thử.
+
+
+17. Chỉ đề xuất, không tự vượt qua các cổng kiểm tra.
+
+
+
+Điểm này hoàn toàn phù hợp với nguyên tắc đã có trong tài liệu của bạn: AI chỉ được đề xuất/giải thích/chẩn đoán, không được vượt qua kiểm tra trước, xác thực hay ghi nhận thành công. 
+
+Kết luận
+
+Mình không nghĩ bạn cần thêm hàng trăm patch mới.
+
+Bạn cần biến PATCHX từ:
+
+> “bộ sưu tập patch + công cụ áp patch”
+
+
+
+thành:
+
+> “hệ thống hiểu cấu trúc ứng dụng → hiểu luồng dữ liệu → nhận diện mục tiêu → lập kế hoạch thay đổi → kiểm chứng → học từ kết quả”.
+
+
+
+Khi đó các patch cũ vẫn có thể giữ lại làm tầng tương thích, nhưng không còn là nền tảng của hệ thống. Đây cũng là cách giải quyết trực tiếp vấn đề bạn nêu: patch cũ dễ lỗi khi logic ứng dụng hiện đại thay đổi.
+
+
+---
+
+15. Đánh giá khoảng cách so với mã hiện có
+
+Không cần viết lại từ đầu. Các khối đầu tiên của kiến trúc mới đã tồn tại:
+
+| Năng lực | Hiện có | Giới hạn hiện tại | Bước nâng cấp |
+|---|---|---|---|
+| Mô hình ứng dụng | `smali_sem.build_app_model` | Mô hình chủ yếu ở cấp method, dữ liệu liên-thủ tục còn mỏng | bổ sung định danh ổn định, cạnh gọi có kiểu và provenance |
+| Dấu vân tay | `fingerprint` trong model | đang đòi khớp tuyệt đối ở nhiều đường đi | tách fingerprint cứng/mềm và tính điểm tương đồng |
+| Kế hoạch ngữ nghĩa | `semantic_plan.py` | điều kiện là tập AND đơn giản; chưa mô tả quan hệ đồ thị | thêm điều kiện về caller/callee, dominator và luồng dữ liệu |
+| Kho tri thức | `knowledge.py` | tra cứu theo fingerprint khớp 100% | lập chỉ mục nhiều đặc trưng, lưu cả bằng chứng âm và độ tin cậy |
+| So sánh APK | `diffapk.py` | khác biệt theo tệp/method cùng định danh | ghép method đổi tên bằng đặc trưng cấu trúc rồi mới sinh plan |
+| Bảo vệ thực thi | preflight, validate, simulate, build, runtime | các cổng chưa nhận “hợp đồng” của semantic plan | liên kết evidence của plan với từng gate và report cuối |
+
+Kết luận quan trọng: giai đoạn đầu chỉ cần mở rộng các hợp đồng dữ liệu giữa
+những mô-đun này. Không nên thay `engine.py`, parser patch cũ hay luồng
+`apk-full` khi chưa có dữ liệu chứng minh tầng mới tìm đúng mục tiêu.
+
+
+---
+
+16. Mô hình trung gian cần có định danh ổn định
+
+Không dùng tên lớp hay tên method làm khóa chính. Một method trong model V2
+nên có ba loại định danh:
+
+```json
+{
+  "id": "Lcom/example/a;->b(I)Z",
+  "identity": {
+    "exact": "sha256:...",
+    "structural": "sha256:...",
+    "semantic": "sha256:..."
+  },
+  "features": {
+    "return_type": "Z",
+    "parameters": ["I"],
+    "opcode_histogram": {"if-eqz": 2, "invoke-virtual": 3},
+    "branch_count": 2,
+    "strings": ["premium"],
+    "calls": ["..."],
+    "field_reads": ["..."]
+  },
+  "relations": {
+    "callers": ["..."],
+    "callees": ["..."],
+    "entry_distance": 3
+  },
+  "evidence": {
+    "source_file": "smali_classes2/...smali",
+    "line": 81,
+    "extractor_version": "model/v2"
+  }
+}
+```
+
+- `exact`: thân Smali chuẩn hóa; dùng phát hiện thay đổi chính xác.
+- `structural`: opcode, CFG đơn giản, kiểu và lời gọi; chịu được đổi thanh ghi,
+  `.line` hoặc tên bị obfuscate.
+- `semantic`: đặc trưng có trọng số như kiểu trả về, API, string, vị trí từ
+  entry và quan hệ gọi; chỉ dùng để xếp hạng, không đủ để tự thay đổi.
+
+Mỗi extractor phải có phiên bản. Khi thuật toán fingerprint thay đổi, dữ liệu
+cũ vẫn truy nguyên được và có thể tái lập chỉ mục có kiểm soát.
+
+
+---
+
+17. Kế hoạch ngữ nghĩa V2: chỉ mô tả ý định, không chứa patch ẩn
+
+Giữ `patchx.semantic-plan/v1` để tương thích. Tạo schema V2 song song, không
+đổi nghĩa V1. V2 cần phân biệt rõ ba phần:
+
+1. `selector`: điều kiện tìm ứng viên.
+2. `policy`: ngưỡng, số lượng ứng viên được phép và cách xử lý mơ hồ.
+3. `operation_intent`: ý định thao tác, không mang Smali có thể thực thi trực
+   tiếp.
+
+Ví dụ tối thiểu:
+
+```json
+{
+  "schema": "patchx.semantic-plan/v2",
+  "goal": "Bổ sung truy vết cho điểm quyết định đã được phê duyệt",
+  "targets": [{
+    "name": "decision_gate",
+    "selector": {
+      "all": [
+        {"return_type": "Z"},
+        {"min_branch_count": 1},
+        {"requires_call": "Landroid/content/SharedPreferences;->getBoolean"}
+      ],
+      "near_entry": {"max_distance": 5}
+    },
+    "policy": {"min_score": 92, "max_accepted": 1, "on_ambiguous": "STOP"}
+  }],
+  "operation_intent": [{"type": "TRACE", "target": "decision_gate"}],
+  "verification": ["preflight", "validate", "build", "runtime"]
+}
+```
+
+`semantic-plan` phải trả thêm các verdict rõ ràng:
+
+- `READY_FOR_PREFLIGHT`: đúng một ứng viên đạt chính sách.
+- `AMBIGUOUS_TARGET`: có nhiều ứng viên tốt; dừng và trình người dùng chọn.
+- `INSUFFICIENT_EVIDENCE`: thiếu dữ liệu cần thiết.
+- `NO_CONFIDENT_TARGET`: không có ứng viên đạt ngưỡng.
+
+Không verdict nào được phép gọi `apply`. Chỉ lệnh chuyển đổi riêng, sau khi
+người dùng duyệt, mới tạo patch tương thích hoặc transaction engine.
+
+
+---
+
+18. Thứ tự triển khai thực tế, nhỏ và có thể hoàn nguyên
+
+Giai đoạn 1 — quan sát (không ghi APK)
+
+1. Thêm `model/v2` cạnh `build_app_model` hiện tại; JSON V1 không đổi.
+2. Sinh `callers`, `callees`, `entry_distance`, `opcode_histogram` và ba
+   fingerprint; lưu provenance đến tệp/dòng.
+3. Tạo fixture obfuscation: đổi tên lớp/method, đổi thanh ghi, chèn `.line` và
+   thay đổi vô nghĩa. Đo khả năng ghép lại method trước/sau.
+
+Giai đoạn 2 — chọn mục tiêu (chỉ đọc)
+
+4. Mở rộng evaluator thành V2 với điều kiện quan hệ và verdict mơ hồ.
+5. Viết report evidence có cả điều kiện đạt, không đạt, điểm thành phần và
+   lý do loại từng ứng viên.
+6. Cho `diff-apk --semantic-plan` sinh V2 ở chế độ thử nghiệm; tuyệt đối chưa
+   tự tạo patch thực thi từ khớp tương đồng.
+
+Giai đoạn 3 — tri thức và thích nghi phiên bản
+
+7. Nâng `knowledge.py` để lưu identity, evidence, phiên bản extractor và kết
+   quả từng gate thay vì chỉ outcome tổng.
+8. Query theo nhiều đặc trưng, nhưng kết quả chỉ là ứng viên; luôn chạy lại
+   selector trên APK mới.
+9. Xây bộ đánh giá giữa hai phiên bản cùng ứng dụng: exact match, structural
+   match, semantic candidate và unknown. `unknown` là kết quả hợp lệ, không
+   được cưỡng ép ghép.
+
+Giai đoạn 4 — cầu nối thực thi có kiểm chứng
+
+10. Tạo lệnh `plan-compile` chỉ nhận semantic-plan đã duyệt + evidence đã
+    khóa, tạo patch/transaction nháp có provenance.
+11. Preflight kiểm tra evidence còn đúng với hash cây APK; khác hash phải
+    đánh giá lại plan.
+12. Giữ nguyên thứ tự gate hiện có: preflight → apply transaction → validate
+    → build/sign → M2 → M3. Kết quả phải quay lại knowledge store chỉ khi đủ
+    bằng chứng verified.
+
+
+---
+
+19. Tiêu chí nghiệm thu theo số liệu
+
+Không đo bằng số patch mới. Mỗi giai đoạn chỉ được đưa vào đường mặc định khi
+đạt các tiêu chí sau trên fixture và APK đã được người dùng đặt trong phạm vi:
+
+| Hạng mục | Cách đo | Ngưỡng ban đầu |
+|---|---|---|
+| Tái nhận diện sau obfuscation nhẹ | số method ghép đúng / fixture có nhãn | ≥ 95% |
+| Dương tính giả selector | ứng viên sai / toàn bộ ứng viên được nhận | 0% ở ngưỡng `READY_FOR_PREFLIGHT` |
+| Xử lý mơ hồ | trường hợp nhiều ứng viên bị chặn / tổng trường hợp mơ hồ | 100% |
+| Tái lập model | model cùng cây, chạy hai lần, identity giống nhau | 100% |
+| Thời gian model APK lớn | `model` trên cây 477–553M, cache lạnh | không vượt mốc quét hiện có nếu chưa có tối ưu riêng; ghi số đo thực tế |
+| Hồi quy toolkit | `tests/run_tests.py` | không giảm so với baseline hiện hành |
+| An toàn thực thi | plan V2 tự gọi apply | 0 lần; kiểm thử bắt buộc |
+| Kết quả sau thay đổi | validate/build/M2/M3 | báo riêng từng gate, không gộp thành “thành công” |
+
+Đặc biệt, score 92% không phải bằng chứng an toàn. Điều kiện quyết định là
+score đạt ngưỡng, đúng số lượng ứng viên và đầy đủ evidence bắt buộc.
+
+
+---
+
+20. Những việc không nên làm ở đợt này
+
+- Không xóa `patch.txt`, parser hay kho `upgraded/`; chúng là baseline và tầng
+  tương thích cần để so sánh.
+- Không dùng mô hình ngôn ngữ để tự sinh rồi tự áp Smali. AI chỉ có thể sinh
+  đề xuất plan và phải qua schema, evidence, preflight cùng toàn bộ gate.
+- Không coi tên, một chuỗi string hoặc một fingerprint đơn lẻ là bằng chứng
+  đủ mạnh.
+- Không gộp “không tìm thấy” với “nhận diện không chắc”. Hai trạng thái này
+  dẫn đến hành động khác nhau và phải lưu riêng trong failure database.
+- Không tối ưu tốc độ trước khi có fixture đúng/sai có nhãn; nếu nhanh hơn mà
+  selector sai, số đo đó không có giá trị vận hành.
+
+
+---
+
+21. Quyết định đề xuất cho vòng phát triển kế tiếp
+
+Ưu tiên một lát cắt hoàn chỉnh thay vì xây toàn bộ data-flow liên-thủ tục ngay:
+
+1. `model/v2` với identity ổn định và quan hệ caller/callee.
+2. `semantic-plan/v2` với ambiguity gate.
+3. Fixture đổi tên/đổi thanh ghi và các test âm.
+4. Report evidence có thể đọc được trong CLI/Web UI.
+5. Chỉ sau khi đạt số liệu mới nối `diff-apk` và knowledge store.
+
+Lát cắt này giải quyết trực tiếp rủi ro lớn nhất của patch theo mẫu: lựa nhầm
+vị trí khi APK bị đổi tên hoặc thay đổi bố cục. Nó giữ được engine/build/runtime
+đã được nghiệm thu, tạo đường nâng cấp tuần tự và luôn có thể quay về luồng
+patch tương thích cũ nếu số liệu chưa đạt.

@@ -1,0 +1,37 @@
+# Combo: Check-Toàn-Vẹn+Mod-Shell (1 patch)
+
+[MIN_ENGINE_VER]
+2
+
+[AUTHOR]
+Anymy
+
+[PACKAGE]
+ALL
+
+[MATCH_REPLACE]
+TARGET:
+    smali*/*
+MATCH:
+    invoke-virtual \{([vp]\d+), ([vp]\d+), ([vp]\d+)\}, Ljava\/lang\/reflect\/Method;->invoke\(Ljava\/lang\/Object;\[Ljava\/lang\/Object;\)Ljava\/lang\/Object;
+REGEX:
+    true
+REPLACE:
+    invoke-static {${GROUP1}, ${GROUP2}, ${GROUP3}}, Lcom/anymy/ref;->invoke(Ljava/lang/Object;Ljava/lang/Object;[Ljava/lang/Object;)V
+
+invoke-virtual {${GROUP1}, ${GROUP2}, ${GROUP3}}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+[/MATCH_REPLACE]
+
+[ADD_FILES]
+SOURCE:
+    smali.zip
+TARGET:
+    smali
+EXTRACT:
+    true
+[/ADD_FILES]
+
+[DUMMY]
+NAME:
+    end
+[/DUMMY]

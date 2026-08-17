@@ -1,0 +1,51 @@
+# Combo: Bypass-VIP/License+Quét-Token (1 patch)
+
+[MIN_ENGINE_VER]
+2
+
+[AUTHOR]
+Anymy
+
+[PACKAGE]
+ALL
+
+[MATCH_REPLACE]
+TARGET:
+    smali*/*
+MATCH:
+    invoke-virtual \{([vp]\d+), ([vp]\d+), ([vp]\d+)\}, Ljava\/lang\/reflect\/Method;->invoke\(Ljava\/lang\/Object;\[Ljava\/lang\/Object;\)Ljava\/lang\/Object;
+REGEX:
+    true
+REPLACE:
+    invoke-static {${GROUP1}, ${GROUP2}, ${GROUP3}}, Lcom/anymy/reflection;->invoke(Ljava/lang/Object;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    smali*/*.smali
+MATCH:
+    invoke-virtual \{([vp]\d+), ([vp]\d+), ([vp]\d+)\}, Landroid\/content\/pm\/PackageManager;->getPackageInfo\(Ljava\/lang\/String;I\)Landroid\/content\/pm\/PackageInfo;
+REGEX:
+    true
+REPLACE:
+    invoke-static {${GROUP1}, ${GROUP2}, ${GROUP3}}, Lcom/anymy/reflection;->getPackageInfo(Landroid/content/pm/PackageManager;Ljava/lang/String;I)Landroid/content/pm/PackageInfo;
+[/MATCH_REPLACE]
+
+[ADD_FILES]
+SOURCE:
+    smali.zip
+TARGET:
+    smali
+EXTRACT:
+    true
+[/ADD_FILES]
+
+[SIGNATURE_REVISE]
+TARGET:
+    smali/apkeditor/patch/signature/Fix.smali
+[/SIGNATURE_REVISE]
+
+[DUMMY]
+NAME:
+    end
+[/DUMMY]

@@ -1,0 +1,281 @@
+# Combo tự phát hiện: shell (5 patch)
+
+[MIN_ENGINE_VER]
+3
+
+[AUTHOR]
+Anymy
+
+[PACKAGE]
+*
+
+[MATCH_REPLACE]
+TARGET:
+    smali*/*
+MATCH:
+    invoke-virtual \{([vp]\d+), ([vp]\d+), ([vp]\d+)\}, Ljava\/lang\/reflect\/Method;->invoke\(Ljava\/lang\/Object;\[Ljava\/lang\/Object;\)Ljava\/lang\/Object;
+REGEX:
+    true
+REPLACE:
+    invoke-static {${GROUP1}, ${GROUP2}, ${GROUP3}}, Lcom/anymy/ref;->invoke(Ljava/lang/Object;Ljava/lang/Object;[Ljava/lang/Object;)V
+
+invoke-virtual {${GROUP1}, ${GROUP2}, ${GROUP3}}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+[/MATCH_REPLACE]
+
+[ADD_FILES]
+SOURCE:
+    smali.zip
+TARGET:
+    smali
+EXTRACT:
+    true
+[/ADD_FILES]
+
+[DUMMY]
+NAME:
+    p0_end
+[/DUMMY]
+
+[HOOK_SCRIPT]
+SOURCE:
+    DataGuard.smali
+TARGET:
+    [LAUNCHER_ACTIVITIES]
+METHOD:
+    onCreate
+ENTRY:
+    onCreate
+[/HOOK_SCRIPT]
+
+[REMOTE_CONFIG]
+CONFIG_URL:
+    https://patchx.local/remote-data-control.json
+TARGET:
+    [LAUNCHER_ACTIVITIES]
+METHOD:
+    onCreate
+[/REMOTE_CONFIG]
+
+[MATCH_REPLACE]
+TARGET:
+    smali*/*.smali
+MATCH:
+    invoke-static\s*\{[^}]*\},\s*Lcom/yandex/metrica/YandexMetrica;->(activate|reportEvent|enableActivityAutoTracking|reportError)\([^)]*\)V
+REGEX:
+    true
+REPLACE:
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    smali*/*.smali
+MATCH:
+    invoke-virtual\s*\{[^}]*\},\s*Lcom/google/firebase/analytics/FirebaseAnalytics;->logEvent\([^)]*\)V
+REGEX:
+    true
+REPLACE:
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    smali*/*.smali
+MATCH:
+    invoke-virtual\s*\{[^}]*\},\s*Lcom/google/android/gms/analytics/Tracker;->send\([^)]*\)V
+REGEX:
+    true
+REPLACE:
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    smali*/*.smali
+MATCH:
+    invoke-static\s*\{[^}]*\},\s*Lcom/appsflyer/AppsFlyerLib;->(trackEvent|logEvent|trackCrossPromotionImpression)\([^)]*\)V
+REGEX:
+    true
+REPLACE:
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    smali*/*.smali
+MATCH:
+    invoke-static\s*\{[^}]*\},\s*Lcom/flurry/android/FlurryAgent;->(logEvent|onStartSession|onEndSession)\([^)]*\)V
+REGEX:
+    true
+REPLACE:
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    smali*/*.smali
+MATCH:
+    invoke-static\s*\{[^}]*\},\s*Lcom/amplitude/api/Amplitude;->logEvent\([^)]*\)V
+REGEX:
+    true
+REPLACE:
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    smali*/*.smali
+MATCH:
+    invoke-virtual\s*\{[^}]*\},\s*Lcom/mixpanel/android/mpmetrics/MixpanelAPI;->track\([^)]*\)V
+REGEX:
+    true
+REPLACE:
+[/MATCH_REPLACE]
+
+[API_LOG]
+TARGET:
+    smali*/*.smali
+MATCH:
+    https?://[^\s"]+
+REGEX:
+    true
+TAG:
+    RemoteDataControl
+AFTER:
+    true
+[/API_LOG]
+
+[MATCH_REPLACE]
+TARGET:
+    smali*/*.smali
+MATCH:
+    invoke-static(.+)YandexMetrica;->(activate.+|reportEvent.+)
+REGEX:
+    true
+REPLACE:
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    smali*/*.smali
+MATCH:
+    invoke-static(.+)YandexMetrica;->enableActivityAutoTracking.+
+REGEX:
+    true
+REPLACE:
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    smali*/*.smali
+MATCH:
+    "com.yandex.metrica.IMetricaService
+REGEX:
+    true
+REPLACE:
+    "disabled_com.yandex.metrica.IMetricaService
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    AndroidManifest.xml
+MATCH:
+    "com.yandex.metrica.IMetricaService"
+REGEX:
+    true
+REPLACE:
+    "disabled_com.yandex.metrica.IMetricaService"
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    AndroidManifest.xml
+MATCH:
+    "com.yandex.metrica.MetricaService"
+REGEX:
+    true
+REPLACE:
+    "disabled_com.yandex.metrica.MetricaService"
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    AndroidManifest.xml
+MATCH:
+    "com.yandex.metrica.ConfigurationService"
+REGEX:
+    true
+REPLACE:
+    "disabled_com.yandex.metrica.ConfigurationService"
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    AndroidManifest.xml
+MATCH:
+    "com.yandex.metrica.ConfigurationJobService"
+REGEX:
+    true
+REPLACE:
+    "disabled_com.yandex.metrica.ConfigurationJobService"
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    AndroidManifest.xml
+MATCH:
+    "com.yandex.metrica.MetricaEventHandler"
+REGEX:
+    true
+REPLACE:
+    "disabled_com.yandex.metrica.MetricaEventHandler"
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    AndroidManifest.xml
+MATCH:
+    "com.yandex.metrica.push.firebase.MetricaMessagingService"
+REGEX:
+    true
+REPLACE:
+    "disabled_com.yandex.metrica.push.firebase.MetricaMessagingService"
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    AndroidManifest.xml
+MATCH:
+    "com.yandex.metrica.push.firebase.MetricaInstanceIdService"
+REGEX:
+    true
+REPLACE:
+    "disabled_com.yandex.metrica.push.firebase.MetricaInstanceIdService"
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    AndroidManifest.xml
+MATCH:
+    "com.yandex.metrica.push.core.notification.MetricaPushBroadcastReceiver"
+REGEX:
+    true
+REPLACE:
+    "disabled_com.yandex.metrica.push.core.notification.MetricaPushBroadcastReceiver"
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    AndroidManifest.xml
+MATCH:
+    "com.yandex.metrica.push.PushService"
+REGEX:
+    true
+REPLACE:
+    "disabled_com.yandex.metrica.push.PushService"
+[/MATCH_REPLACE]
+
+[MATCH_REPLACE]
+TARGET:
+    AndroidManifest.xml
+MATCH:
+    "com.yandex.metrica.push.core.notification.MetricaPushNotificationStatusChangeHandler"
+REGEX:
+    true
+REPLACE:
+    "disabled_com.yandex.metrica.push.core.notification.MetricaPushNotificationStatusChangeHandler"
+[/MATCH_REPLACE]

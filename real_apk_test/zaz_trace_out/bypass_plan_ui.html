@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="vi"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kế hoạch vượt chặn — chọn bản vá</title>
+<style>
+  :root{--bg:#0f1420;--card:#161d2e;--card2:#1c2538;--tx:#e8edf7;--mut:#8b96ad;
+        --acc:#4da3ff;--ok:#37c07c;--warn:#ffb454;--bad:#ff6b6b;}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--tx);font:14px/1.5 system-ui,sans-serif}
+  header{padding:12px 16px;background:linear-gradient(135deg,#14213d,#0f1420);
+        border-bottom:1px solid #26304a}
+  h1{margin:0 0 2px;font-size:clamp(16px,4.5vw,20px);line-height:1.25}
+  h3{margin:14px 0 6px}
+  .mut{color:var(--mut)}
+  #meta{font-size:11px;word-break:break-all}
+  main{padding:12px 16px;max-width:1100px;margin:0 auto}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:12px 0}
+  .stat{background:var(--card);border:1px solid #26304a;border-radius:10px;padding:8px 10px}
+  .stat b{display:block;font-size:19px}
+  .stat span{color:var(--mut);font-size:12px}
+  .badge{display:inline-block;padding:2px 8px;border-radius:999px;font-size:11px;
+        color:#fff;margin:2px 2px 0 0}
+  .chip{padding:4px 10px;border-radius:999px;border:1px solid #39445f;cursor:pointer;
+        background:var(--card2);font-size:12px;user-select:none}
+  .chip.on{background:var(--acc);border-color:var(--acc);color:#04121f}
+  .toolbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:12px 0}
+  input[type=search],select{background:var(--card2);border:1px solid #39445f;color:var(--tx);
+        border-radius:8px;padding:7px 10px;font-size:13px}
+  table{width:100%;border-collapse:collapse;background:var(--card);border-radius:10px;overflow:hidden}
+  th,td{padding:7px 8px;text-align:left;border-bottom:1px solid #232d45;vertical-align:top}
+  th{background:var(--card2);font-size:12px;color:var(--mut);position:sticky;top:0}
+  .bar{height:6px;background:#2a3450;border-radius:4px;overflow:hidden;min-width:60px}
+  .bar i{display:block;height:100%;background:linear-gradient(90deg,#4da3ff,#37c07c)}
+  .score{font-weight:700}
+  .ok{color:var(--ok)} .warn{color:var(--warn)} .bad{color:var(--bad)}
+  .selbar{position:sticky;bottom:0;background:#10172a;border-top:1px solid #26304a;
+        padding:10px 16px;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+  button{background:var(--acc);border:0;color:#04121f;font-weight:700;padding:8px 14px;
+        border-radius:8px;cursor:pointer;font-size:13px}
+  button.ghost{background:var(--card2);color:var(--tx);border:1px solid #39445f}
+  .mono{font-family:ui-monospace,Menlo,monospace;font-size:11px;background:#0b1120;
+        border:1px solid #26304a;border-radius:8px;padding:8px 10px;white-space:pre-wrap;
+        word-break:break-all;color:#9ecbff}
+  .cap{font-size:11px;color:var(--mut)}
+  details summary{cursor:pointer;color:var(--acc)}
+  .prot{border:1px solid #26304a;border-radius:8px;padding:6px 10px;margin:4px 0;
+        background:var(--card);font-size:12px}
+  @media (max-width:640px){
+    header{padding:10px 12px}
+    main{padding:10px 12px}
+    .grid{grid-template-columns:repeat(2,1fr);gap:8px;margin:10px 0}
+    th,td{padding:6px}
+    table{font-size:12px}
+    .hide-sm{display:none}
+    .toolbar{flex-direction:column;align-items:stretch}
+    input[type=search],select{width:100%}
+    .selbar{padding:8px 10px}
+    button{padding:7px 10px;font-size:12px}
+    .prot{font-size:11px;padding:5px 8px}
+    .badge{font-size:10px;padding:1px 6px}
+  }
+</style></head><body>
+<header><h1>🎯 Kế hoạch vượt chặn — chọn bản vá</h1>
+  <div class="mut" id="meta"></div></header>
+<main>
+  <div class="grid" id="stats"></div>
+  <div id="prots"></div>
+  <div class="toolbar">
+    <input type="search" id="q" placeholder="🔍 Tìm bản vá..." style="flex:1">
+    <select id="sort">
+      <option value="score">Sắp: điểm cao</option>
+      <option value="success">Sắp: thành công %</option>
+      <option value="name">Sắp: tên A–Z</option>
+    </select>
+  </div>
+  <div class="toolbar" id="caps"></div>
+  <table><thead><tr>
+    <th style="width:34px"></th><th>Bản vá</th><th>Điểm</th><th>Phủ</th>
+    <th class="hide-sm">Số khớp</th><th>Thành công %</th><th>Khả năng</th><th></th>
+  </tr></thead><tbody id="tbody"></tbody></table>
+  <h3>📋 Phương án + rủi ro</h3>
+  <div id="plan"></div>
+  <h3>🔗 Tổ hợp bổ trợ</h3>
+  <div id="combos"></div>
+</main>
+<div class="selbar">
+  <b id="selcount">Đã chọn: 0</b>
+  <button id="btn_suggest">Chọn theo đề xuất</button>
+  <button id="btn_copy" class="ghost">📋 Sao chép lệnh</button>
+  <button id="btn_save">💾 Lưu chọn</button>
+  <span class="mono" id="cmdline" style="flex:1 1 100%"></span>
+</div>
+<script>
+const DATA = {"rows": [{"name": "pro_unlock_vip", "score": 0.83, "coverage": 100.0, "matches": 3, "caps": ["bypass-license"], "success": 0.0, "phan_tich": {"tỷ_lệ": 0.0, "yếu_tố": [{"tên": "Bao phủ quy tắc khớp 100%", "điểm": 45.0}, {"tên": "Số lần khớp 3 (tối đa 25)", "điểm": 2.4}, {"tên": "Khối khớp 3/3", "điểm": 15.0}, {"tên": "Độ ưu tiên năng lực 1.00", "điểm": 10.0}], "phạt": [{"loại": "tamper", "điểm": 8.0}, {"loại": "pinning", "điểm": 15.0}, {"loại": "emulator", "điểm": 8.0}, {"loại": "safetynet", "điểm": 18.0}, {"loại": "root", "điểm": 12.0}, {"loại": "frida", "điểm": 10.0}, {"loại": "anti-debug", "điểm": 10.0}]}, "chi_tiet": [{"khối": 3, "loại": "MATCH_REPLACE", "target": "smali_classes4/com/zaz/account/uc.smali", "khớp": 1, "tệp_trúng": ["smali_classes4/com/zaz/account/uc.smali"], "tệp_trượt": [], "biến_thể": [], "ngoài_target": [], "ước_lượng": false, "lọc_hint": true}, {"khối": 4, "loại": "MATCH_REPLACE", "target": "smali_classes4/com/zaz/subscription/manager/ua.smali", "khớp": 1, "tệp_trúng": ["smali_classes4/com/zaz/subscription/manager/ua.smali"], "tệp_trượt": [], "biến_thể": [], "ngoài_target": [], "ước_lượng": false, "lọc_hint": true}, {"khối": 5, "loại": "MATCH_REPLACE", "target": "smali_classes4/com/zaz/subscription/manager/ua.smali", "khớp": 1, "tệp_trúng": ["smali_classes4/com/zaz/subscription/manager/ua.smali"], "tệp_trượt": [], "biến_thể": [], "ngoài_target": [], "ước_lượng": false, "lọc_hint": true}], "cach": ["Vô hiệu hoá kiểm tra VIP/license: gán cờ đã mua bằng SET_BOOL, nhảy qua khối kiểm tra bằng MATCH_GOTO, hoặc hook hàm kiểm tra bằng Frida/LSPosed."], "cong_cu": ["patchx apply", "apktool", "apksigner", "Frida", "LSPosed"], "de_xuat": []}, {"name": "hook_remote_data_control", "score": 0.425, "coverage": 25.0, "matches": 3, "caps": ["api", "google", "shell", "trace"], "success": 0.0, "phan_tich": {"tỷ_lệ": 0.0, "yếu_tố": [{"tên": "Bao phủ quy tắc khớp 25%", "điểm": 11.2}, {"tên": "Số lần khớp 3 (tối đa 25)", "điểm": 2.4}, {"tên": "Khối khớp 2/8", "điểm": 3.8}, {"tên": "Độ ưu tiên năng lực 0.90", "điểm": 9.0}, {"tên": "Tỷ lệ khối hiện đại 31%", "điểm": 3.1}], "phạt": [{"loại": "tamper", "điểm": 8.0}, {"loại": "pinning", "điểm": 15.0}, {"loại": "emulator", "điểm": 8.0}, {"loại": "safetynet", "điểm": 18.0}, {"loại": "root", "điểm": 12.0}, {"loại": "frida", "điểm": 10.0}, {"loại": "anti-debug", "điểm": 10.0}]}, "chi_tiet": [{"khối": 4, "loại": "MATCH_REPLACE", "target": "smali*/com/zaz/translate/ui/tool/ConfigKt.smali", "khớp": 1, "tệp_trúng": ["smali_classes5/com/zaz/translate/ui/tool/ConfigKt.smali"], "tệp_trượt": [], "biến_thể": [], "ngoài_target": [], "ước_lượng": false, "lọc_hint": true}, {"khối": 8, "loại": "MATCH_REPLACE", "target": "smali*/*.smali", "khớp": 0, "tệp_trúng": [], "tệp_trượt": ["smali/WordDetailsPopupWindow$show$3$1.smali", "smali/a00.smali", "smali/a02.smali", "smali/a03.smali", "smali/a08.smali", "smali/a15.smali", "smali/a16.smali", "smali/a17.smali", "smali/a19.smali", "smali/a1a.smali", "smali/a2.smali", "smali/a22.smali", "smali/a28.smali", "smali/a29.smali", "smali/a32.smali", "smali/a33.smali", "smali/a37.smali", "smali/a39.smali", "smali/a3b.smali", "smali/a46.smali"], "biến_thể": [], "ngoài_target": [], "ước_lượng": false, "lọc_hint": true}, {"khối": 9, "loại": "MATCH_REPLACE", "target": "smali*/*.smali", "khớp": 2, "tệp_trúng": ["smali_classes4/com/zaz/translate/analysis/DataAnalysisHelperKt$logFirebaseEvent$1.smali", "smali_classes4/com/zaz/translate/analysis/DataAnalysisHelperKt$logFirebaseEvent$2.smali"], "tệp_trượt": ["smali/WordDetailsPopupWindow$show$3$1.smali", "smali/a00.smali", "smali/a02.smali", "smali/a03.smali", "smali/a08.smali", "smali/a15.smali", "smali/a16.smali", "smali/a17.smali", "smali/a19.smali", "smali/a1a.smali", "smali/a2.smali", "smali/a22.smali", "smali/a28.smali", "smali/a29.smali", "smali/a32.smali", "smali/a33.smali", "smali/a37.smali", "smali/a39.smali", "smali/a3b.smali", "smali/a46.smali"], "biến_thể": [], "ngoài_target": [], "ước_lượng": false, "lọc_hint": true}, {"khối": 10, "loại": "MATCH_REPLACE", "target": "smali*/*.smali", "khớp": 0, "tệp_trúng": [], "tệp_trượt": ["smali/WordDetailsPopupWindow$show$3$1.smali", "smali/a00.smali", "smali/a02.smali", "smali/a03.smali", "smali/a08.smali", "smali/a15.smali", "smali/a16.smali", "smali/a17.smali", "smali/a19.smali", "smali/a1a.smali", "smali/a2.smali", "smali/a22.smali", "smali/a28.smali", "smali/a29.smali", "smali/a32.smali", "smali/a33.smali", "smali/a37.smali", "smali/a39.smali", "smali/a3b.smali", "smali/a46.smali"], "biến_thể": [], "ngoài_target": [], "ước_lượng": false, "lọc_hint": true}, {"khối": 11, "loại": "MATCH_REPLACE", "target": "smali*/*.smali", "khớp": 0, "tệp_trúng": [], "tệp_trượt": ["smali/WordDetailsPopupWindow$show$3$1.smali", "smali/a00.smali", "smali/a02.smali", "smali/a03.smali", "smali/a08.smali", "smali/a15.smali", "smali/a16.smali", "smali/a17.smali", "smali/a19.smali", "smali/a1a.smali", "smali/a2.smali", "smali/a22.smali", "smali/a28.smali", "smali/a29.smali", "smali/a32.smali", "smali/a33.smali", "smali/a37.smali", "smali/a39.smali", "smali/a3b.smali", "smali/a46.smali"], "biến_thể": [], "ngoài_target": [], "ước_lượng": false, "lọc_hint": true}, {"khối": 12, "loại": "MATCH_REPLACE", "target": "smali*/*.smali", "khớp": 0, "tệp_trúng": [], "tệp_trượt": ["smali/WordDetailsPopupWindow$show$3$1.smali", "smali/a00.smali", "smali/a02.smali", "smali/a03.smali", "smali/a08.smali", "smali/a15.smali", "smali/a16.smali", "smali/a17.smali", "smali/a19.smali", "smali/a1a.smali", "smali/a2.smali", "smali/a22.smali", "smali/a28.smali", "smali/a29.smali", "smali/a32.smali", "smali/a33.smali", "smali/a37.smali", "smali/a39.smali", "smali/a3b.smali", "smali/a46.smali"], "biến_thể": [], "ngoài_target": [], "ước_lượng": false, "lọc_hint": true}, {"khối": 13, "loại": "MATCH_REPLACE", "target": "smali*/*.smali", "khớp": 0, "tệp_trúng": [], "tệp_trượt": ["smali/WordDetailsPopupWindow$show$3$1.smali", "smali/a00.smali", "smali/a02.smali", "smali/a03.smali", "smali/a08.smali", "smali/a15.smali", "smali/a16.smali", "smali/a17.smali", "smali/a19.smali", "smali/a1a.smali", "smali/a2.smali", "smali/a22.smali", "smali/a28.smali", "smali/a29.smali", "smali/a32.smali", "smali/a33.smali", "smali/a37.smali", "smali/a39.smali", "smali/a3b.smali", "smali/a46.smali"], "biến_thể": [], "ngoài_target": [], "ước_lượng": false, "lọc_hint": true}, {"khối": 14, "loại": "MATCH_REPLACE", "target": "smali*/*.smali", "khớp": 0, "tệp_trúng": [], "tệp_trượt": ["smali/WordDetailsPopupWindow$show$3$1.smali", "smali/a00.smali", "smali/a02.smali", "smali/a03.smali", "smali/a08.smali", "smali/a15.smali", "smali/a16.smali", "smali/a17.smali", "smali/a19.smali", "smali/a1a.smali", "smali/a2.smali", "smali/a22.smali", "smali/a28.smali", "smali/a29.smali", "smali/a32.smali", "smali/a33.smali", "smali/a37.smali", "smali/a39.smali", "smali/a3b.smali", "smali/a46.smali"], "biến_thể": [], "ngoài_target": [], "ước_lượng": false, "lọc_hint": true}], "cach": ["Tìm API thật bằng log API_LOG/TRACE, sau đó thay domain/endpoint trong MATCH_REPLACE hoặc chặn tại class xử lý mạng.", "Bỏ kiểm tra Google Play Services/SafetyNet: gỡ hoặc bỏ qua khối attestation, thay bằng kết quả giả.", "Chèn khởi tạo mod qua INIT/HOOK_SCRIPT: chạy lệnh/script khi app mở để bơm biến hoặc gọi hàm nội bộ.", "Bật truy vết dữ liệu: chèn TRACE/API_LOG vào method mục tiêu để đọc tham số và phản hồi trước khi quyết định patch."], "cong_cu": ["patchx apply", "Frida", "logcat", "apktool", "LSPosed"], "de_xuat": ["Khối 8 trượt target smali*/*.smali — cập nhật TARGET theo class-link thật của APK", "Khối 10 trượt target smali*/*.smali — cập nhật TARGET theo class-link thật của APK", "Khối 11 trượt target smali*/*.smali — cập nhật TARGET theo class-link thật của APK", "Khối 12 trượt target smali*/*.smali — cập nhật TARGET theo class-link thật của APK", "Khối 13 trượt target smali*/*.smali — cập nhật TARGET theo class-link thật của APK", "Khối 14 trượt target smali*/*.smali — cập nhật TARGET theo class-link thật của APK"]}, {"name": "zaz_force", "score": 0.24, "coverage": 0, "matches": 0, "caps": ["api"], "success": 0.0, "phan_tich": {"tỷ_lệ": 0.0, "yếu_tố": [{"tên": "Bao phủ quy tắc khớp 0%", "điểm": 0.0}, {"tên": "Số lần khớp 0 (tối đa 25)", "điểm": 0.0}, {"tên": "Khối khớp 0/1", "điểm": 0.0}, {"tên": "Độ ưu tiên năng lực 0.80", "điểm": 8.0}, {"tên": "Tỷ lệ khối hiện đại 25%", "điểm": 2.5}], "phạt": [{"loại": "tamper", "điểm": 8.0}, {"loại": "pinning", "điểm": 15.0}, {"loại": "emulator", "điểm": 8.0}, {"loại": "safetynet", "điểm": 18.0}, {"loại": "root", "điểm": 12.0}, {"loại": "frida", "điểm": 10.0}, {"loại": "anti-debug", "điểm": 10.0}]}, "chi_tiet": [], "cach": ["Tìm API thật bằng log API_LOG/TRACE, sau đó thay domain/endpoint trong MATCH_REPLACE hoặc chặn tại class xử lý mạng."], "cong_cu": ["patchx apply", "Frida", "logcat"], "de_xuat": []}], "protections": [{"loại": "tamper", "tên": "tamper", "lần": 94, "tệp": ["smali/a4b.smali", "smali/androidx/credentials/playservices/controllers/BeginSignIn/ua.smali", "smali/androidx/profileinstaller/ProfileInstallReceiver.smali", "smali/as3.smali", "smali/ce7.smali"]}, {"loại": "pinning", "tên": "pinning", "lần": 27, "tệp": ["smali/mq6.smali", "smali/ya0.smali", "smali_classes3/com/google/api/client/json/webtoken/JsonWebSignature.smali", "smali_classes3/com/google/api/client/testing/json/webtoken/TestCertificates$CertData.smali", "smali_classes3/com/google/api/client/util/SecurityUtils.smali"]}, {"loại": "emulator", "tên": "emulator", "lần": 22, "tệp": ["AndroidManifest.xml", "smali/ai/onnxruntime/OnnxRuntime.smali", "smali/com/firebase/ui/auth/ui/idp/AuthMethodPickerActivity.smali", "smali/com/firebase/ui/auth/ui/idp/SingleSignInActivity.smali", "smali/com/firebase/ui/auth/ui/idp/WelcomeBackIdpPrompt.smali"]}, {"loại": "safetynet", "tên": "safetynet", "lần": 4, "tệp": ["smali/com/google/android/gms/fido/fido2/api/common/AuthenticatorAttestationResponse.smali", "smali/com/google/android/gms/fido/fido2/api/common/PublicKeyCredentialCreationOptions.smali", "smali_classes3/com/google/android/gms/internal/ads/zzbie.smali", "smali_classes3/com/google/android/gms/internal/ads/zzbkd.smali"]}, {"loại": "root", "tên": "root", "lần": 1, "tệp": ["smali_classes3/e60.smali"]}, {"loại": "frida", "tên": "frida", "lần": 1, "tệp": ["unknown/mozilla/public-suffix-list.txt"]}, {"loại": "anti-debug", "tên": "anti-debug", "lần": 1, "tệp": ["smali_classes3/ab1.smali"]}], "phan_an": {"phương_án": "pro_unlock_vip", "tỷ_lệ_dự_đoán": 0.0, "steps": ["Chuẩn bị cây APK (apk-prepare) hoặc dùng cây đã giải mã.", "Áp patch: python3 patchx apply pro_unlock_vip <cây-apk>", "Chuẩn hoá resource chứa `$`: python3 patchx_toolkit.py apk-fix-res", "Build: apktool b <cây> -o out.apk --aapt <aapt2-thật>", "Zipalign + ký: zipalign -f 4 && apksigner sign", "Cài APK, xác minh động bằng logcat/Frida theo mục xác_minh."], "rủi_ro": ["APK có dấu hiệu tamper (94 lần) — trừ ~8% điểm dự đoán; ưu tiên patch integrity/token xử lý lớp này.", "APK có dấu hiệu pinning (27 lần) — trừ ~15% điểm dự đoán; ưu tiên patch integrity/token xử lý lớp này.", "APK có dấu hiệu emulator (22 lần) — trừ ~8% điểm dự đoán; ưu tiên patch integrity/token xử lý lớp này.", "APK có dấu hiệu safetynet (4 lần) — trừ ~18% điểm dự đoán; ưu tiên patch integrity/token xử lý lớp này."], "tăng_khả_năng": []}, "combos": [{"patches": ["hook_remote_data_control", "pro_unlock_vip"], "score": 0.6775, "capabilities": ["api", "bypass-license", "google", "shell", "trace"], "support": [["google", "bypass-license"], ["shell", "bypass-license"]]}, {"patches": ["hook_remote_data_control", "zaz_force"], "score": 0.3825, "capabilities": ["api", "google", "shell", "trace"], "support": [["shell", "api"], ["trace", "api"]]}], "apk": "", "apk_name": "", "apk_size": 0, "output": "/storage/emulated/0/Patch/patch1/_patchx/real_apk_test/zaz_trace_out", "tree": "/storage/emulated/0/Patch/patch1/_patchx/real_apk_test/zaz_trace_tree", "package": "", "generated": "2026-08-16 14:21:51"};
+const CAPS = {"bypass-license": "#e8590c", "integrity": "#0b7285", "shell": "#5f3dc4", "trace": "#2b8a3e", "token": "#c2255c", "root": "#e03131", "network": "#1971c2", "ads": "#f08c00", "debug": "#495057"};
+const VN_CAP={"bypass-license":"Bỏ giấy phép","integrity":"Toàn vẹn","shell":"Lệnh","trace":"Theo dõi","token":"Mã thẻ","root":"Root","network":"Mạng","ads":"Quảng cáo","debug":"Gỡ lỗi"};
+const VN_PROT={"pinning":"Chống đổi chứng chỉ","emulator":"Máy ảo","safetynet":"Safetynet","root":"Root","anti-debug":"Chống gỡ lỗi"};
+const sel = new Set(JSON.parse(localStorage.getItem("plan_sel")||"[]"));
+let capFilter = new Set();
+function esc(s){return String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
+function badge(c){const col=CAPS[c]||"#555";return `<span class="badge" style="background:${col}">${esc(VN_CAP[c]||c)}</span>`;}
+function renderMeta(){
+  const mb=DATA.apk_size>0?` • Dung lượng: ${(DATA.apk_size/1048576).toFixed(1)} MB`:"";
+  document.getElementById("meta").textContent =
+    `Tên: ${DATA.apk_name||"—"} • Gói: ${DATA.package||"—"} • Nơi: ${DATA.tree||"—"}${mb}${DATA.generated?" • Lúc: "+DATA.generated:""}`;
+  const all = DATA.rows;
+  const capsAll = new Set(); all.forEach(r=>r.caps.forEach(c=>capsAll.add(c)));
+  document.getElementById("stats").innerHTML = [
+    ["Bản vá", all.length], ["Khả năng", capsAll.size],
+    ["Khớp nhiều nhất", Math.max(0,...all.map(r=>r.matches))],
+    ["Lớp bảo vệ", DATA.protections.length],
+  ].map(s=>`<div class="stat"><b>${s[1]}</b><span>${s[0]}</span></div>`).join("");
+  document.getElementById("prots").innerHTML =
+    DATA.protections.map(p=>`<div class="prot">🛡 <b>${esc(VN_PROT[p.loại||p.tên]||p.loại||p.tên)}</b> × ${p.lần||0} — ${esc((p.tệp||[]).slice(0,3).join(", "))}</div>`).join("");
+  const capDiv = document.getElementById("caps");
+  capDiv.innerHTML = [...capsAll].sort().map(c=>
+    `<span class="chip${capFilter.has(c)?" on":""}" data-c="${esc(c)}">${esc(VN_CAP[c]||c)}</span>`).join("");
+  capDiv.querySelectorAll(".chip").forEach(ch=>ch.onclick=()=>{
+    const c=ch.dataset.c; capFilter.has(c)?capFilter.delete(c):capFilter.add(c);
+    ch.classList.toggle("on"); renderRows();
+  });
+}
+function renderPlan(){
+  const p = DATA.phan_an||{};
+  document.getElementById("plan").innerHTML =
+    `<div class="prot">✅ Phương án: <b>${esc(p.phương_án||"—")}</b> — tỷ lệ dự đoán `+
+    `<b class="ok">${p.tỷ_lệ_dự_đoán??"—"}%</b></div>`+
+    (p.steps||[]).map((s,i)=>`<div class="prot">${i+1}. ${esc(s)}</div>`).join("")+
+    (p.rủi_ro||[]).map(r=>`<div class="prot warn">⚠ ${esc(r)}</div>`).join("");
+  const cb = DATA.combos||[];
+  document.getElementById("combos").innerHTML = cb.length?
+    `<table><tr><th>Bản vá 1</th><th>Bản vá 2</th><th>Điểm</th><th>Khả năng</th></tr>`+
+    cb.map(c=>`<tr><td>${esc(c.patch1||"")}</td><td>${esc(c.patch2||"")}</td>`+
+    `<td class="score">${(c.score??0).toFixed(3)}</td>`+
+    `<td>${(c.capabilities||[]).map(badge).join("")}</td></tr>`).join("")+
+    `</table>`:"<div class='mut'>Không có tổ hợp.</div>";
+}
+function renderRows(){
+  const q=(document.getElementById("q").value||"").toLowerCase();
+  const sort=document.getElementById("sort").value;
+  let rows=DATA.rows.filter(r=>
+    (!q||r.name.toLowerCase().includes(q)||r.caps.some(c=>c.includes(q)))&&
+    (capFilter.size===0||r.caps.some(c=>capFilter.has(c))));
+  if(sort==="success")rows.sort((a,b)=>(b.success??-1)-(a.success??-1));
+  else if(sort==="name")rows.sort((a,b)=>a.name.localeCompare(b.name));
+  else rows.sort((a,b)=>b.score-a.score);
+  const tb=document.getElementById("tbody");
+  tb.innerHTML=rows.map(r=>{
+    const pt=r.phan_tich||{};
+    const fines=(pt.phạt||[]).map(f=>`<div class="warn">trừ ${esc(VN_PROT[f.loại]||f.loại)} −${f.điểm}đ</div>`).join("");
+    const detail=(r.chi_tiet||[]).map(b=>`<div>▪ khối ${b.khối??"—"} ${esc(b.loại||"")} → ${esc(b.target||"")}: `+
+      `<b>${b.khớp??0} khớp</b> — ${esc((b.tệp_trúng||[]).slice(0,2).join(", "))}</div>`).join("");
+    const cach=(r.cach||[]).map(c=>`<div class="ok">✔ ${esc(c)}</div>`).join("");
+    const tools=(r.cong_cu||[]).map(t=>`<span class="badge" style="background:#364fc7">${esc(t)}</span>`).join("");
+    const dx=(r.de_xuat||[]).map(x=>`<div class="mut">➤ ${esc(x)}</div>`).join("");
+    return `<tr>
+      <td><input type="checkbox" data-n="${esc(r.name)}" ${sel.has(r.name)?"checked":""}></td>
+      <td><b>${esc(r.name)}</b><div class="cap">${(pt.yếu_tố||[]).map(y=>esc(y.tên)).join(" • ")}</div></td>
+      <td class="score">${r.score.toFixed(3)}</td>
+      <td><div class="bar"><i style="width:${Math.min(100,r.coverage)}%"></i></div>${r.coverage.toFixed(0)}%</td>
+      <td class="hide-sm">${r.matches.toLocaleString("vi-VN")}</td>
+      <td>${r.success!=null?`<b class="${r.success>=50?"ok":r.success>=25?"warn":"bad"}">${r.success}%</b>`:"—"}</td>
+      <td>${r.caps.map(badge).join("")}</td>
+      <td><details><summary>chi tiết</summary><div>
+        ${cach}${tools}<div style="margin:4px 0"></div>${detail||"<span class='mut'>không có</span>"}${fines}${dx}
+      </div></details></td>
+    </tr>`;
+  }).join("")||"<tr><td colspan=8 class='mut'>Không có bản vá phù hợp.</td></tr>";
+  tb.querySelectorAll("input[type=checkbox]").forEach(ch=>ch.onchange=()=>{
+    ch.checked?sel.add(ch.dataset.n):sel.delete(ch.dataset.n);
+    localStorage.setItem("plan_sel",JSON.stringify([...sel]));
+    renderSel();
+  });
+}
+function renderSel(){
+  document.getElementById("selcount").textContent=`Đã chọn: ${sel.size}`;
+  document.getElementById("cmdline").textContent=sel.size?
+    `python3 patchx_toolkit.py apk-full "${DATA.apk}" --output "${DATA.output}" --patches-file "${DATA.output}/selected_patches.json"`
+    :"(chưa chọn patch nào)";
+}
+document.getElementById("q").addEventListener("input",renderRows);
+document.getElementById("sort").addEventListener("change",renderRows);
+document.getElementById("btn_suggest").onclick=()=>{
+  sel.clear();
+  if(DATA.phan_an&&DATA.phan_an.phương_án)sel.add(DATA.phan_an.phương_án);
+  DATA.rows.filter(r=>!sel.has(r.name)).slice(0,1).forEach(r=>sel.add(r.name));
+  localStorage.setItem("plan_sel",JSON.stringify([...sel]));
+  renderRows(); renderSel();
+};
+document.getElementById("btn_copy").onclick=()=>{
+  const cmd=`python3 patchx_toolkit.py apk-full "${DATA.apk}" --output "${DATA.output}" --patches-file "${DATA.output}/selected_patches.json"`;
+  navigator.clipboard.writeText(cmd).then(()=>alert("Đã sao chép lệnh!")).catch(()=>alert(cmd));
+};
+document.getElementById("btn_save").onclick=()=>{
+  const blob=new Blob([JSON.stringify({patches:[...sel]},null,2)],{type:"application/json"});
+  const a=document.createElement("a");a.href=URL.createObjectURL(blob);
+  a.download="selected_patches.json";a.click();
+  alert("Đã tải selected_patches.json — đặt vào thư mục đầu ra rồi chạy lệnh đã sao chép.");
+};
+renderMeta();renderPlan();renderRows();renderSel();
+</script></body></html>

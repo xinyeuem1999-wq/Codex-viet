@@ -1,0 +1,14 @@
+{
+  "tree": "/storage/emulated/0/Patch/patch1/_patchx/real_apk_test/zaz_trace_tree",
+  "returncode": 0,
+  "seconds": 162.0,
+  "unsigned_apk": "apk_full.unsigned.apk",
+  "manifest_fix": [
+    "android:enableOnBackInvokedCallback",
+    "android:foregroundServiceType",
+    "res/layout/fragment_transcribe_permission.xml:hyphenationFrequency",
+    "res/layout/intelligence_floating_guid_531.xml:hyphenationFrequency",
+    "res/layout/permissions_fragment.xml:hyphenationFrequency"
+  ],
+  "output_tail": "I: Using Apktool 3.0.3-dirty on app.apk with 8 threads\nI: smali_classes7 has not changed.\nI: smali_classes6 has not changed.\nI: smali_classes2 has not changed.\nI: Building resources with aapt2...\nI: smali_classes4 has not changed.\nI: smali_classes5 has not changed.\nI: smali_classes3 has not changed.\nI: smali has not changed.\nI: Building apk file...\nI: Importing assets...\nI: Importing lib...\nI: Importing unknown files...\nI: Built apk into: /storage/emulated/0/Patch/patch1/_patchx/real_apk_test/zaz_trace_out/apk_full.unsigned.apk"
+}

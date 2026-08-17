@@ -1,0 +1,1516 @@
+{
+  "generated": "2026-08-14 12:11:00",
+  "root": "..",
+  "total": 59,
+  "recursive": false,
+  "patches": [
+    {
+      "name": "1. New.  Metrics, analytics, statistics collection, Deletion.  from Inok_ZP 12.04.18g",
+      "path": "1. New.  Metrics, analytics, statistics collection, Deletion.  from Inok_ZP 12.04.18g.zip",
+      "size": 754,
+      "sha256": "aa14f3047998884e46993d5fbb391e85f457526a428338f94a39c5e6cb499b4d",
+      "dupe_id": null,
+      "tag": "Khác",
+      "engine_ver": null,
+      "author": "Anh Long Đẹp Trai /[4pda]",
+      "package": null,
+      "sections": {
+        "AUTHOR": 1,
+        "MATCH_REPLACE": 3
+      },
+      "assets": [],
+      "targets": [
+        "AndroidManifest.xml",
+        "smali*/*.smali"
+      ],
+      "issues": [],
+      "parse_error": null
+    },
+    {
+      "name": "2. disable_google_analytics by VERGIL777",
+      "path": "2. disable_google_analytics by VERGIL777.zip",
+      "size": 275,
+      "sha256": "62e2e0fe7b4c142d78a00039ba901658f2ea627f80f93e038463bc9ca4da4695",
+      "dupe_id": null,
+      "tag": "Khác",
+      "engine_ver": null,
+      "author": "VERGIL777",
+      "package": null,
+      "sections": {
+        "AUTHOR": 1,
+        "MATCH_REPLACE": 4
+      },
+      "assets": [],
+      "targets": [
+        "smali*/*.smali"
+      ],
+      "issues": [],
+      "parse_error": null
+    },
+    {
+      "name": "3. GooglePlayServices by Edik1d",
+      "path": "3. GooglePlayServices by Edik1d.zip",
+      "size": 482,
+      "sha256": "0c726cfb01b01c59191a1efd691e004b05611fe82c0328823aa39e0ea06f4122",
+      "dupe_id": null,
+      "tag": "Khác",
+      "engine_ver": null,
+      "author": null,
+      "package": null,
+      "sections": {
+        "MATCH_REPLACE": 2
+      },
+      "assets": [],
+      "targets": [
+        "smali*/*.smali"
+      ],
+      "issues": [],
+      "parse_error": null
+    },
+    {
+      "name": "4. DisableBillingService by VERGIL777",
+      "path": "4. DisableBillingService by VERGIL777.zip",
+      "size": 366,
+      "sha256": "bf7c94f2649c792709e1169b761056d1f67b154673b42d339de664b6ba606268",
+      "dupe_id": null,
+      "tag": "Khác",
+      "engine_ver": null,
+      "author": "VERGIL777",
+      "package": null,
+      "sections": {
+        "AUTHOR": 1,
+        "MATCH_REPLACE": 2
+      },
+      "assets": [],
+      "targets": [
+        "AndroidManifest.xml",
+        "smali*/*.smali"
+      ],
+      "issues": [],
+      "parse_error": null
+    },
+    {
+      "name": "AUTH_VK_AND_FB",
+      "path": "AUTH_VK_AND_FB.zip",
+      "size": 347,
+      "sha256": "d3aa26a2788bc976bc06074be10152fb08faf77448769b05a1f332979efcb3cb",
+      "dupe_id": null,
+      "tag": "Khác",
+      "engine_ver": "2",
+      "author": "HTC 600",
+      "package": "all",
+      "sections": {
+        "MIN_ENGINE_VER": 1,
+        "AUTHOR": 1,
+        "PACKAGE": 1,
+        "MATCH_REPLACE": 2
+      },
+      "assets": [],
+      "targets": [
+        "smali*/*.smali"
+      ],
+      "issues": [],
+      "parse_error": null
+    },
+    {
+      "name": "Activator",
+      "path": "Activator.zip",
+      "size": 1496,
+      "sha256": "452217acfac0e478795a3dbc2f040fdf598c64ec773b6bb7b94cc6ac1d91c04d",
+      "dupe_id": null,
+      "tag": "Khác",
+      "engine_ver": "2",
+      "author": "Anymy",
+      "package": "*",
+      "sections": {
+        "MIN_ENGINE_VER": 1,
+        "AUTHOR": 1,
+        "PACKAGE": 1,
+        "EXECUTE_DEX": 1
+      },
+      "assets": [
+        "activator.dex"
+      ],
+      "targets": [],
+      "issues": [],
+      "parse_error": null
+    },
+    {
+      "name": "AddSave Debug_Information Toast",
+      "path": "AddSave Debug_Information Toast.zip",
+      "size": 3638,
+      "sha256": "27799efc08e5c3c6eb921aecf00e566f879427e27049d70150697a53925759d8",
+      "dupe_id": null,
+      "tag": "Lưu-trữ",
+      "engine_ver": "2",
+      "author": "NoName",
+      "package": "*",
+      "sections": {
+        "MIN_ENGINE_VER": 1,
+        "AUTHOR": 1,
+        "PACKAGE": 1,
+        "MATCH_REPLACE": 3,
+        "ADD_FILES": 2
+      },
+      "assets": [
+        "Utils.smali",
+        "save.smali"
+      ],
+      "targets": [
+        "[LAUNCHER_ACTIVITIES]",
+        "smali*/*.smali",
+        "smali/apkeditor/Utils.smali",
+        "smali/save.smali"
+      ],
+      "issues": [],
+      "parse_error": null
+    },
+    {
+      "name": "Anonymous[Auto_Generate]",
+      "path": "Anonymous[Auto_Generate].zip",
+      "size": 1367,
+      "sha256": "88bdec379925f2c3b33feb1f29ead56936ff0e1e8f6ddbe7910f17f875e553f9",
+      "dupe_id": null,
+      "tag": "Khác",
+      "engine_ver": "2",
+      "author": "HTC 600",
+      "package": "*",
+      "sections": {
+        "MIN_ENGINE_VER": 1,
+        "AUTHOR": 1,
+        "PACKAGE": 1,
+        "ADD_FILES": 1,
+        "MATCH_REPLACE": 18
+      },
+      "assets": [
+        "DeviceID.smali"
+      ],
+      "targets": [
+        "smali*/*.smali",
+        "smali/com/htc/htc600/htc600for4pda/DeviceID.smali"
+      ],
+      "issues": [],
+      "parse_error": null
+    },
+    {
+      "name": "Anti_analytics2",
+      "path": "Anti_analytics2.zip",
+      "size": 667,
+      "sha256": "03ce42a2d36aaedf72f868ba073b4ff851aec4d24717cf53260340e1b7be868d",
+      "dupe_id": 1,
+      "tag": "Khác",
+      "engine_ver": null,
+      "author": "inok_ZP [4pda]",
+      "package": null,
+      "sections": {
+        "AUTHOR": 1,
+        "MATCH_REPLACE": 3
+      },
+      "assets": [],
+      "targets": [
+        "AndroidManifest.xml",
+        "smali*/*.smali"
+      ],
+      "issues": [],
+      "parse_error": null
+    },
+    {
+      "name": "Anti_analytics2_22-41-11",
+      "path": "Anti_analytics2_22-41-11.zip",
+      "size": 667,
+      "sha256": "03ce42a2d36aaedf72f868ba073b4ff851aec4d24717cf53260340e1b7be868d",
+      "dupe_id": 1,
+      "tag": "Khác",
+      "engine_ver": null,
+      "author": "inok_ZP [4pda]",
+      "package": null,
+      "sections": {
+        "AUTHOR": 1,
+        "MATCH_REPLACE": 3
+      },
+      "assets": [],
+      "targets": [
+        "AndroidManifest.xml",
+        "smali*/*.smali"
+      ],
+      "issues": [],
+      "parse_error": null
+    },
+    {
+      "name": "BinSignatureHack_with_htc",
+      "path": "BinSignatureHack_with_htc.zip",
+      "size": 220628,
+      "sha256": "25c0c6c22af05670ca2d01c80b383c5e90fb73764f91d65df955ca98852a7ba4",
+      "dupe_id": null,
+      "tag": "Khác",
+      "engine_ver": "2",
+      "author": "HTC 600",
+      "package": "ALL",
+      "sections": {
+        "MIN_ENGINE_VER": 1,
+        "AUTHOR": 1,
+        "PACKAGE": 1,
+        "ADD_FILES": 1,
+        "MATCH_GOTO": 1,
+        "MATCH_REPLACE": 4,
+        "GOTO": 1,
+        "MATCH_ASSIGN": 1,
+        "EXECUTE_DEX": 1,
+        "DUMMY": 1
+      },
+      "assets": [
+        "BiN.zip",
+        "sigfix.dex"
+      ],
+      "targets": [
+        "AndroidManifest.xml",
+        "[APPLICATION]",
+        "smali",
+        "smali/cc/binmt/signature/PmsHookApplication.smali"
+      ],
+      "issues": [],
+      "parse_error": null
+    },
+    {
+      "name": "Bin_sig&installer_fix[Amazon]",
+      "path": "Bin_sig&installer_fix[Amazon].zip",
+      "size": 291091,
+      "sha256": "e2e0bbdcf71a397767741f368a62fc5fb1305b52b33002815b3ee2016eb9acef",
+      "dupe_id": null,
+      "tag": "Tiện-ích",
+      "engine_ver": "2",
+      "author": "HTC 600",
+      "package": "ALL",
+      "sections": {
+        "MIN_ENGINE_VER": 1,
+        "AUTHOR": 1,
+        "PACKAGE": 1,
+        "ADD_FILES": 1,
+        "MATCH_REPLACE": 5,
+        "MATCH_GOTO": 1,
+        "GOTO": 1,
+        "MATCH_ASSIGN": 1,
+        "EXECUTE_DEX": 1,
+        "DUMMY": 1
+      },
+      "assets": [
+        "BiN.zip",
+        "sigfix.dex"
+      ],
+      "targets": [
+        "AndroidManifest.xml",
+        "[APPLICATION]",
+        "smali",
+        "smali/cc/binmt/signature/PmsHookApplication.smali"
+      ],
+      "issues": [],
+      "parse_error": null
+    },
+    {
+      "name": "Bin_sig&installer_fix[Google]",
+      "path": "Bin_sig&installer_fix[Google].zip",
+      "size": 291094,
+      "sha256": "b7c9dffaf99fdee95b47510ab259b08ab5273d0bae9f380e2a2ace17b4bf0c4b",
+      "dupe_id": null,
+      "tag": "Tiện-ích",
+      "engine_ver": "2",
+      "author": "HTC 600",
+      "package": "ALL",
+      "sections": {
+        "MIN_ENGINE_VER": 1,
+        "AUTHOR": 1,
+        "PACKAGE": 1,
+        "ADD_FILES": 1,
+        "MATCH_REPLACE": 5,
+        "MATCH_GOTO": 1,
+        "GOTO": 1,
+        "MATCH_ASSIGN": 1,
+        "EXECUTE_DEX": 1,
+        "DUMMY": 1
+      },
+      "assets": [
+        "BiN.zip",
+        "sigfix.dex"
+      ],
+      "targets": [
+        "AndroidManifest.xml",
+        "[APPLICATION]",
+        "smali",
+        "smali/cc/binmt/signature/PmsHookApplication.smali"
+      ],
+      "issues": [],
+      "parse_error": null
+    },
+    {
+      "name": "Commenting on untranslated lines",
+      "path": "Commenting on untranslated lines.zip",
+      "size": 1980,
+      "sha256": "4237ea493db7c30f22e8e5f0523f79459315ab3a748a11b6332e66b49947cbe6",
+      "dupe_id": null,
+      "tag": "Khác",
+      "engine_ver": "2",
+      "author": "t1046",
+      "package": "*",
+      "sections": {
+        "MIN_ENGINE_VER": 1,
+        "AUTHOR": 1,
+        "PACKAGE": 1,
+        "MATCH_REPLACE": 12
+      },
+      "assets": [],
+      "targets": [
+        "res/values-ru/strings.xml",
+        "res/values-uk/strings.xml"
+      ],
+      "issues": [],
+      "parse_error": null
+    },
+    {
+      "name": "Debug_information",
+      "path": "Debug_information.zip",
+      "size": 309,
+      "sha256": "1755010ef2474c433a7594f662e4fc787724926338eb074ac44476dc1d606501",
+      "dupe_id": null,
+      "tag": "Khác",
+      "engine_ver": "2",
+      "author": "HTC 600",
+      "package": "Debug information",
+      "sections": {
+        "MIN_ENGINE_VER": 1,
+        "AUTHOR": 1,
+        "PACKAGE": 1,
+        "MATCH_REPLACE": 1
+      },
+      "assets": [],
+      "targets": [
+        "smali*/*.smali"
+      ],
+      "issues": [],
+      "parse_error": null
+    },
+    {
+      "name": "Debug_information_and_hack_signature",
+      "path": "Debug_information_and_hack_signature.zip",
+      "size": 8301,
+      "sha256": "aac00a6d29b8ee3d744c9d07d28c3176936f11052b5769d39a2f5a42c7c1e22d",
+      "dupe_id": null,
+      "tag": "Khác",
+      "engine_ver": "2",
+      "author": "HTC 600",
+      "package": "Debug information",
+      "sections": {
+        "MIN_ENGINE_VER": 1,
+        "AUTHOR": 1,
+        "PACKAGE": 1,
+        "MATCH_REPLACE": 2,
+        "ADD_FILES": 1,
+        "SIGNATURE_REVISE": 1
+      },
+      "assets": [
+        "Fix.smali"
+      ],
+      "targets": [
+        "smali*/*.smali",
+        "smali/apkeditor/patch/signature/Fix.smali"
+      ],
+      "issues": [],
+      "parse_error": null
+    },
+    {
+      "name": "Decoder_ID_Resource",
+      "path": "Decoder_ID_Resource.zip",
+      "size": 4839,
+      "sha256": "c89bcf46b2fcf7475a1df4da80eacd55cf4576e319ad8e0f47ab09dba6826774",
+      "dupe_id": 2,
+      "tag": "Khác",
+      "engine_ver": "2",
+      "author": "HTC600 and 7lexer7",
+      "package": "*",
+      "sections": {
+        "MIN_ENGINE_VER": 1,
+        "AUTHOR": 1,
+        "PACKAGE": 1,
+        "EXECUTE_DEX": 1
+      },
+      "assets": [
+        "script.dex"
+      ],
+      "targets": [],
+      "issues": [],
+      "parse_error": null
+    },
+    {
+      "name": "DexExtractor",
+      "path": "DexExtractor.zip",
+      "size": 4864,
+      "sha256": "5bd68cd99e1850f02a69ba2e7aa880d6bf2c94f22d7621f1fb968cf457451a71",
+      "dupe_id": null,
+      "tag": "Tiện-ích",
+      "engine_ver": "2",
+      "author": "Anymy",
+      "package": "ALL",
+      "sections": {
+        "MIN_ENGINE_VER": 1,
+        "AUTHOR": 1,
+        "PACKAGE": 1,
+        "MATCH_REPLACE": 1,
+        "ADD_FILES": 1,
+        "DUMMY": 1
+      },
+      "assets": [
+        "smali.zip"
+      ],
+      "targets": [
+        "smali",
+        "smali*/*"
+      ],
+      "issues": [],
+      "parse_error": null
+    },
+    {
+      "name": "Dictionary+ru+uk+2",
+      "path": "Dictionary+ru+uk+2.zip",
+      "size": 3487,
+      "sha256": "799751f675deff72e2523b610862e6ca559be498a39abc39ff81ef5057a29d90",
+      "dupe_id": null,
+      "tag": "Khác",
+      "engine_ver": "2",
+      "author": "t1046",
+      "package": "*",
+      "sections": {
+        "MIN_ENGINE_VER": 1,
+        "AUTHOR": 1,
+        "PACKAGE": 1,
+        "MATCH_REPLACE": 16
+      },
+      "assets": [],
+      "targets": [
+        "res/values-ru/strings.xml",
+        "res/values-uk/strings.xml"
+      ],
+      "issues": [],
+      "parse_error": null
+    },
+    {
+      "name": "FakeGPS",
+      "path": "FakeGPS.zip",
+      "size": 422,
+      "sha256": "401bc258e764cb0bddaa42b20cf6c37c38b5e860c1659bf1acdd9f3cc6f9b477",
+      "dupe_id": null,
+      "tag": "Khác",
+      "engine_ver": "2",
+      "author": "HTC 600",
+      "package": "ALL",
+      "sections": {
+        "MIN_ENGINE_VER": 1,
+        "AUTHOR": 1,
+        "PACKAGE": 1,
+        "MATCH_REPLACE": 2
+      },
+      "assets": [],
+      "targets": [
+        "smali*/*.smali"
+      ],
+      "issues": [],
+      "parse_error": null
+    },
+    {
+      "name": "FakeGpsAutoGenerate",
+      "path": "FakeGpsAutoGenerate.zip",
+      "size": 2119,
+      "sha256": "7e5c89412f0e59145feebde2c058f8fe4a0da0508613a8fbba7769d41a372373",
+      "dupe_id": null,
+      "tag": "Khác",
+      "engine_ver": "2",
+      "author": "HTC 600",
+      "package": "*",
+      "sections": {
+        "MIN_ENGINE_VER": 1,
+        "AUTHOR": 1,
+        "PACKAGE": 1,
+        "MATCH_REPLACE": 2,
+        "ADD_FILES": 3
+      },
+      "assets": [
+        "AndroidID.smali",
+        "AndroidID2.smali",
+        "generatE.smali"
+      ],
+      "targets": [
+        "smali*/*.smali",
+        "smali/com/htc/htc600/htc600for4pda/AndroidID.smali",
+        "smali/com/htc/htc600/htc600for4pda/AndroidID2.smali",
+        "smali/com/htc/htc600/htc600for4pda/generatE.smali"
+      ],
+      "issues": [],
+      "parse_error": null
+    },
+    {
+      "name": "FakeIP",
+      "path": "FakeIP.zip",
+      "size": 399,
+      "sha256": "c8db41b0417d93851548a5de97a42fe1d6e18eaa8e019691b77acff75d16186a",
+      "dupe_id": null,
+      "tag": "Khác",
+      "engine_ver": "2",
+      "author": "HTC 600",
+      "package": "All",
+      "sections": {
+        "MIN_ENGINE_VER": 1,
+        "AUTHOR": 1,
+        "PACKAGE": 1,
+        "MATCH_REPLACE": 1
+      },
+      "assets": [],
+      "targets": [
+        "smali*/*.smali"
+      ],
+      "issues": [],
+      "parse_error": null
+    },
+    {
+      "name": "GooglePlayServices",
+      "path": "GooglePlayServices.zip",
+      "size": 583,
+      "sha256": "3e5617b09a1b5bd9c2b2d4c535a8c12222037d7227313b2a78b79c77b30d1ce6",
+      "dupe_id": null,
+      "tag": "Khác",
+      "engine_ver": "2",
+      "author": "HTC 600",
+      "package": "GooglePlayServices",
+      "sections": {
+        "MIN_ENGINE_VER": 1,
+        "AUTHOR": 1,
+        "PACKAGE": 1,
+        "MATCH_REPLACE": 3
+      },
+      "assets": [],
+      "targets": [
+        "smali*/*.smali"
+      ],
+      "issues": [],
+      "parse_error": null
+    },
+    {
+      "name": "IsPremium",
+      "path": "IsPremium.zip",
+      "size": 3575,
+      "sha256": "fc00d4509e8af64718531404333caecbad3467d4b0a485e02e48d9b4db20fd64",
+      "dupe_id": null,
+      "tag": "Khác",
+      "engine_ver": "2",
+      "author": "SaWSeM",
+      "package": "*",
+      "sections": {
+        "MIN_ENGINE_VER": 1,
+        "AUTHOR": 1,
+        "PACKAGE": 1,
+        "MATCH_REPLACE": 4,
+        "ADD_FILES": 3
+      },
+      "assets": [
+        "Fuck.smali",
+        "Fuck1.smali",
+        "Premium.smali"
+      ],
+      "targets": [
+        "[LAUNCHER_ACTIVITIES]",
+        "smali*/*.smali",
+        "smali/Premium.smali",
+        "smali/com/fuck/Fuck.smali",
+        "smali/com/fuck/Fuck1.smali"
+      ],
+      "issues": [],
+      "parse_error": null
+    },
+    {
+      "name": "Language substitution",
+      "path": "Language substitution.zip",
+      "size": 1100,
+      "sha256": "a94a29f586aea8ef37154dbc51ea0b8e54141ed79549d6fd04541145a2179d8a",
+      "dupe_id": 3,
+      "tag": "Khác",
+      "engine_ver": "2",
+      "author": "t1046",
+      "package": "*",
+      "sections": {
+        "MIN_ENGINE_VER": 1,
+        "AUTHOR": 1,
+        "PACKAGE": 1,
+        "MATCH_REPLACE": 6,
+        "MATCH_ASSIGN": 1
+      },
+      "assets": [],
+      "targets": [
+        "res/values-ru/strings.xml",
+        "res/values/strings.xml"
+      ],
+      "issues": [],
+      "parse_error": null
+    },
+    {
+      "name": "License_hack&htc v2",
+      "path": "License_hack&htc v2.zip",
+      "size": 3725,
+      "sha256": "32640086029abd6a783484c210c603eceffac6e6b6ebf3ed9b8bec73a0b47c1e",
+      "dupe_id": null,
+      "tag": "Khác",
+      "engine_ver": "2",
+      "author": "HTC 600",
+      "package": "*",
+      "sections": {
+        "MIN_ENGINE_VER": 1,
+        "AUTHOR": 1,
+        "PACKAGE": 1,
+        "MATCH_REPLACE": 14,
+        "ADD_FILES": 1,
+        "MATCH_ASSIGN": 2
+      },
+      "assets": [
+        "htc600.smali"
+      ],
+      "targets": [
+        "AndroidManifest.xml",
+        "smali*/*.smali",
+        "smali/com/android/vending/licensing/htc600.smali"
+      ],
+      "issues": [],
+      "parse_error": null
+    },
+    {
+      "name": "License_hack(Amazon)",
+      "path": "License_hack(Amazon).zip",
+      "size": 483,
+      "sha256": "59c1c03e82e1135f2bfd3999af9558e840d4c7a3d9b59e528c2e60b29920579e",
+      "dupe_id": null,
+      "tag": "Khác",
+      "engine_ver": "2",
+      "author": "HTC 600",
+      "package": "*",
+      "sections": {
+        "MIN_ENGINE_VER": 1,
+        "AUTHOR": 1,
+        "PACKAGE": 1,
+        "MATCH_REPLACE": 2
+      },
+      "assets": [],
+      "targets": [
+        "smali*/*.smali"
+      ],
+      "issues": [],
+      "parse_error": null
+    },
+    {
+      "name": "License_hack",
+      "path": "License_hack.zip",
+      "size": 685,
+      "sha256": "2c26bcef071ea7996f1cac5821976842e8b81cfd18fe4c9c049a9dc399374f82",
+      "dupe_id": null,
+      "tag": "Khác",
+      "engine_ver": "2",
+      "author": "HTC 600",
+      "package": "*",
+      "sections": {
+        "MIN_ENGINE_VER": 1,
+        "AUTHOR": 1,
+        "PACKAGE": 1,
+        "MATCH_REPLACE": 4
+      },
+      "assets": [],
+      "targets": [
+        "smali*/*.smali"
+      ],
+      "issues": [],
+      "parse_error": null
+    },
+    {
+      "name": "MockLocation",
+      "path": "MockLocation.zip",
+      "size": 427,
+      "sha256": "fc319cf4035f797ca73648c1d0634e9064dc80727d11d6fd84ea15e6f34d01f7",
+      "dupe_id": null,
+      "tag": "Khác",
+      "engine_ver": "2",
+      "author": "HTC 600",
+      "package": "ALL",
+      "sections": {
+        "MIN_ENGINE_VER": 1,
+        "AUTHOR": 1,
+        "PACKAGE": 1,
+        "MATCH_REPLACE": 1
+      },
+      "assets": [],
+      "targets": [
+        "smali*/*.smali"
+      ],
+      "issues": [],
+      "parse_error": null
+    },
+    {
+      "name": "New. Removing the analytic tag, etc.. Inok_ZP 12.04.18",
+      "path": "New. Removing the analytic tag, etc.. Inok_ZP 12.04.18.zip",
+      "size": 777,
+      "sha256": "11e19ae6fb44bb46d83c284895a238e1442dddf03889428170f04c6f56ee5aaf",
+      "dupe_id": null,
+      "tag": "Khác",
+      "engine_ver": null,
+      "author": "htc 600 and inok_ZP /[4pda]",
+      "package": null,
+      "sections": {
+        "AUTHOR": 1,
+        "MATCH_REPLACE": 3
+      },
+      "assets": [],
+      "targets": [
+        "AndroidManifest.xml",
+        "smali*/*.smali"
+      ],
+      "issues": [],
+      "parse_error": null
+    },
+    {
+      "name": "NoLocation",
+      "path": "NoLocation.zip",
+      "size": 368,
+      "sha256": "52dbff56accfbda8e935d59888348d1f77c46e5416597d7457f30ff8ae83259c",
+      "dupe_id": null,
+      "tag": "Mạng",
+      "engine_ver": "1",
+      "author": "*",
+      "package": "*",
+      "sections": {
+        "MIN_ENGINE_VER": 1,
+        "AUTHOR": 1,
+        "PACKAGE": 1,
+        "MATCH_REPLACE": 3
+      },
+      "assets": [],
+      "targets": [
+        "AndroidManifest.xml"
+      ],
+      "issues": [],
+      "parse_error": null
+    },
+    {
+      "name": "NoPlayGames",
+      "path": "NoPlayGames.zip",
+      "size": 400,
+      "sha256": "ca5d22b388411e652d7f5ca336d27948a500b9534b9da703d267446c53f360ee",
+      "dupe_id": null,
+      "tag": "Mạng",
+      "engine_ver": "2",
+      "author": "ErrorMacro",
+      "package": "GG",
+      "sections": {
+        "MIN_ENGINE_VER": 1,
+        "AUTHOR": 1,
+        "PACKAGE": 1,
+        "MATCH_REPLACE": 2
+      },
+      "assets": [],
+      "targets": [
+        "smali*/*.smali"
+      ],
+      "issues": [],
+      "parse_error": null
+    },
+    {
+      "name": "Only Ru",
+      "path": "Only Ru.zip",
+      "size": 1100,
+      "sha256": "a94a29f586aea8ef37154dbc51ea0b8e54141ed79549d6fd04541145a2179d8a",
+      "dupe_id": 3,
+      "tag": "Khác",
+      "engine_ver": "2",
+      "author": "t1046",
+      "package": "*",
+      "sections": {
+        "MIN_ENGINE_VER": 1,
+        "AUTHOR": 1,
+        "PACKAGE": 1,
+        "MATCH_REPLACE": 6,
+        "MATCH_ASSIGN": 1
+      },
+      "assets": [],
+      "targets": [
+        "res/values-ru/strings.xml",
+        "res/values/strings.xml"
+      ],
+      "issues": [],
+      "parse_error": null
+    },
+    {
+      "name": "Password_login_english",
+      "path": "Password_login_english.zip",
+      "size": 9255,
+      "sha256": "ce5c0c5f8b1dba0a6ae95a938fa79c7c14532ea0aedc5a5b6ba5b50f681bc08b",
+      "dupe_id": null,
+      "tag": "Khác",
+      "engine_ver": "3",
+      "author": "Login_passwordbyrioo",
+      "package": "*",
+      "sections": {
+        "MIN_ENGINE_VER": 1,
+        "AUTHOR": 1,
+        "PACKAGE": 1,
+        "MATCH_GOTO": 4,
+        "ADD_FILES": 1,
+        "MATCH_ASSIGN": 2,
+        "GOTO": 5,
+        "MATCH_REPLACE": 6
+      },
+      "assets": [
+        "smali.zip"
+      ],
+      "targets": [
+        "/",
+        "AndroidManifest.xml",
+        "smali*/*.smali",
+        "smali/password_login/login_passwordbyrioo/MainActivity.smali"
+      ],
+      "issues": [],
+      "parse_error": null
+    },
+    {
+      "name": "Permission_calendar",
+      "path": "Permission_calendar.zip",
+      "size": 786,
+      "sha256": "12f106bf42bf2da5259f9b3b930db1ad406a87f618f75f015490bea02d6ce695",
+      "dupe_id": null,
+      "tag": "Khác",
+      "engine_ver": "1",
+      "author": "Open Source",
+      "package": "*",
+      "sections": {
+        "MIN_ENGINE_VER": 1,
+        "AUTHOR": 1,
+        "PACKAGE": 1,
+        "MATCH_REPLACE": 4,
+        "MATCH_ASSIGN": 1
+      },
+      "assets": [],
+      "targets": [
+        "AndroidManifest.xml",
+        "[LAUNCHER_ACTIVITIES]"
+      ],
+      "issues": [],
+      "parse_error": null
+    },
+    {
+      "name": "Permission_camera",
+      "path": "Permission_camera.zip",
+      "size": 779,
+      "sha256": "3d1e319be8c4196defbcc45df5ffbb9fc39d3bc5e00017d90c568b6f4f3678a6",
+      "dupe_id": null,
+      "tag": "Tiện-ích",
+      "engine_ver": "1",
+      "author": "Open Source",
+      "package": "*",
+      "sections": {
+        "MIN_ENGINE_VER": 1,
+        "AUTHOR": 1,
+        "PACKAGE": 1,
+        "MATCH_REPLACE": 4,
+        "MATCH_ASSIGN": 1
+      },
+      "assets": [],
+      "targets": [
+        "AndroidManifest.xml",
+        "[LAUNCHER_ACTIVITIES]"
+      ],
+      "issues": [],
+      "parse_error": null
+    },
+    {
+      "name": "Permission_location",
+      "path": "Permission_location.zip",
+      "size": 790,
+      "sha256": "b4ee1c70bf174653b05148d0d4b53578fb9efdbd5024cf15cfbfe1e1678df197",
+      "dupe_id": null,
+      "tag": "Khác",
+      "engine_ver": "1",
+      "author": "Open Source",
+      "package": "*",
+      "sections": {
+        "MIN_ENGINE_VER": 1,
+        "AUTHOR": 1,
+        "PACKAGE": 1,
+        "MATCH_REPLACE": 4,
+        "MATCH_ASSIGN": 1
+      },
+      "assets": [],
+      "targets": [
+        "AndroidManifest.xml",
+        "[LAUNCHER_ACTIVITIES]"
+      ],
+      "issues": [],
+      "parse_error": null
+    },
+    {
+      "name": "Permission_phone",
+      "path": "Permission_phone.zip",
+      "size": 787,
+      "sha256": "ae6a600bfb1f83b4214971346b13ff128f98f31ce4ebf5bce0caf97597814a93",
+      "dupe_id": null,
+      "tag": "Khác",
+      "engine_ver": "1",
+      "author": "Open Source",
+      "package": "*",
+      "sections": {
+        "MIN_ENGINE_VER": 1,
+        "AUTHOR": 1,
+        "PACKAGE": 1,
+        "MATCH_REPLACE": 4,
+        "MATCH_ASSIGN": 1
+      },
+      "assets": [],
+      "targets": [
+        "AndroidManifest.xml",
+        "[LAUNCHER_ACTIVITIES]"
+      ],
+      "issues": [],
+      "parse_error": null
+    },
+    {
+      "name": "Permission_readContact",
+      "path": "Permission_readContact.zip",
+      "size": 781,
+      "sha256": "832f3f5d5db4b8d1b5beb28de32db35acf301396566438533d11a55daf0fa5fd",
+      "dupe_id": null,
+      "tag": "Khác",
+      "engine_ver": "1",
+      "author": "Open Source",
+      "package": "*",
+      "sections": {
+        "MIN_ENGINE_VER": 1,
+        "AUTHOR": 1,
+        "PACKAGE": 1,
+        "MATCH_REPLACE": 4,
+        "MATCH_ASSIGN": 1
+      },
+      "assets": [],
+      "targets": [
+        "AndroidManifest.xml",
+        "[LAUNCHER_ACTIVITIES]"
+      ],
+      "issues": [],
+      "parse_error": null
+    },
+    {
+      "name": "Permission_readSMS",
+      "path": "Permission_readSMS.zip",
+      "size": 779,
+      "sha256": "77c6a4630ae289af35f52772b68a8f05019a80c0ed031c9d9c89e86dcb92d2b4",
+      "dupe_id": null,
+      "tag": "Khác",
+      "engine_ver": "1",
+      "author": "Open Source",
+      "package": "*",
+      "sections": {
+        "MIN_ENGINE_VER": 1,
+        "AUTHOR": 1,
+        "PACKAGE": 1,
+        "MATCH_REPLACE": 4,
+        "MATCH_ASSIGN": 1
+      },
+      "assets": [],
+      "targets": [
+        "AndroidManifest.xml",
+        "[LAUNCHER_ACTIVITIES]"
+      ],
+      "issues": [],
+      "parse_error": null
+    },
+    {
+      "name": "RES-ID",
+      "path": "RES-ID.zip",
+      "size": 1892430,
+      "sha256": "ca342598eae12fb00316ea849141ad64e5442798693e06298f698054d78f95f4",
+      "dupe_id": null,
+      "tag": "Khác",
+      "engine_ver": "2",
+      "author": "t1046",
+      "package": "*",
+      "sections": {
+        "MIN_ENGINE_VER": 1,
+        "AUTHOR": 1,
+        "PACKAGE": 1,
+        "MATCH_GOTO": 6450,
+        "GOTO": 6050,
+        "MATCH_REPLACE": 454,
+        "MATCH_ASSIGN": 6502
+      },
+      "assets": [],
+      "targets": [
+        "res/values/public.xml"
+      ],
+      "issues": [],
+      "parse_error": null
+    },
+    {
+      "name": "SignatureHack_arm64",
+      "path": "SignatureHack_arm64.zip",
+      "size": 5519706,
+      "sha256": "d6b56918fb00d88f2d1a5d2dfeb4c6fb7ab4bc2a9e0a732dd0a19e194cd248c0",
+      "dupe_id": null,
+      "tag": "Khác",
+      "engine_ver": "2",
+      "author": "HTC 600 and angel",
+      "package": "ALL",
+      "sections": {
+        "MIN_ENGINE_VER": 1,
+        "AUTHOR": 1,
+        "PACKAGE": 1,
+        "ADD_FILES": 2,
+        "MATCH_GOTO": 4,
+        "SIGNATURE_REVISE": 1,
+        "MATCH_REPLACE": 5,
+        "GOTO": 3,
+        "DUMMY": 1
+      },
+      "assets": [
+        "libfrida-gadget.so",
+        "smali.zip"
+      ],
+      "targets": [
+        "[APPLICATION]",
+        "[LAUNCHER_ACTIVITIES]",
+        "lib/arm64-v8a/libfrida-gadget.so",
+        "smali",
+        "smali*/*.smali",
+        "smali/com/frida/Fix.smali",
+        "smali/com/frida/injector.smali",
+        "smali/com/unity3d/player/UnityPlayerActivity.smali"
+      ],
+      "issues": [],
+      "parse_error": null
+    },
+    {
+      "name": "SignatureHack_armv7",
+      "path": "SignatureHack_armv7.zip",
+      "size": 4985373,
+      "sha256": "a41c2554f1089ef2574e0e6750c394282147025020a2405dfaffd3439935aaee",
+      "dupe_id": null,
+      "tag": "Khác",
+      "engine_ver": "2",
+      "author": "HTC 600 and angel",
+      "package": "ALL",
+      "sections": {
+        "MIN_ENGINE_VER": 1,
+        "AUTHOR": 1,
+        "PACKAGE": 1,
+        "ADD_FILES": 2,
+        "MATCH_GOTO": 4,
+        "SIGNATURE_REVISE": 1,
+        "MATCH_REPLACE": 5,
+        "GOTO": 3,
+        "DUMMY": 1
+      },
+      "assets": [
+        "libfrida-gadget.so",
+        "smali.zip"
+      ],
+      "targets": [
+        "[APPLICATION]",
+        "[LAUNCHER_ACTIVITIES]",
+        "lib/armeabi-v7a/libfrida-gadget.so",
+        "smali",
+        "smali*/*.smali",
+        "smali/com/frida/Fix.smali",
+        "smali/com/frida/injector.smali",
+        "smali/com/unity3d/player/UnityPlayerActivity.smali"
+      ],
+      "issues": [],
+      "parse_error": null
+    },
+    {
+      "name": "Unicode text",
+      "path": "Unicode text.zip",
+      "size": 6857,
+      "sha256": "edba235c583d305fffc699a701060986f4d743ca27bc868ec0bf4a3975f0c7a9",
+      "dupe_id": null,
+      "tag": "Khác",
+      "engine_ver": "2",
+      "author": "t1046 (4PDA)",
+      "package": "*",
+      "sections": {
+        "MIN_ENGINE_VER": 1,
+        "AUTHOR": 1,
+        "PACKAGE": 1,
+        "MATCH_REPLACE": 70
+      },
+      "assets": [],
+      "targets": [
+        "smali/*.smali"
+      ],
+      "issues": [],
+      "parse_error": null
+    },
+    {
+      "name": "UnicodeToUTF",
+      "path": "UnicodeToUTF.zip",
+      "size": 4624,
+      "sha256": "c89bcf46b2fcf7475a1df4da80eacd55cf4576e319ad8e0f47ab09dba6826774",
+      "dupe_id": 2,
+      "tag": "Khác",
+      "engine_ver": "2",
+      "author": "HTC600 and 7lexer7",
+      "package": "*",
+      "sections": {
+        "MIN_ENGINE_VER": 1,
+        "AUTHOR": 1,
+        "PACKAGE": 1,
+        "EXECUTE_DEX": 1
+      },
+      "assets": [
+        "script.dex"
+      ],
+      "targets": [],
+      "issues": [],
+      "parse_error": null
+    },
+    {
+      "name": "Wrap non-translated strings",
+      "path": "Wrap non-translated strings.zip",
+      "size": 4845,
+      "sha256": "a49619bdceee2ecfe5f5afbbf5944064799d2dad1f08bf5abce5e8476beb7084",
+      "dupe_id": null,
+      "tag": "Khác",
+      "engine_ver": "2",
+      "author": "t1046",
+      "package": "*",
+      "sections": {
+        "MIN_ENGINE_VER": 1,
+        "AUTHOR": 1,
+        "PACKAGE": 1,
+        "MATCH_REPLACE": 34,
+        "MATCH_ASSIGN": 2
+      },
+      "assets": [],
+      "targets": [
+        "res/values-ru/strings.xml",
+        "res/values-uk/strings.xml"
+      ],
+      "issues": [],
+      "parse_error": null
+    },
+    {
+      "name": "Yandex_Metrica 1",
+      "path": "Yandex_Metrica 1.zip",
+      "size": 327,
+      "sha256": "70b1866bfc4df5317c79c91c1a55bc6e72776c7cf852b8e68da45fa0208274bd",
+      "dupe_id": 4,
+      "tag": "Khác",
+      "engine_ver": "3",
+      "author": "HTC 600",
+      "package": "Yandex",
+      "sections": {
+        "MIN_ENGINE_VER": 1,
+        "AUTHOR": 1,
+        "PACKAGE": 1,
+        "MATCH_REPLACE": 2
+      },
+      "assets": [],
+      "targets": [
+        "smali*/*.smali"
+      ],
+      "issues": [],
+      "parse_error": null
+    },
+    {
+      "name": "Yandex_Metrica",
+      "path": "Yandex_Metrica.zip",
+      "size": 327,
+      "sha256": "70b1866bfc4df5317c79c91c1a55bc6e72776c7cf852b8e68da45fa0208274bd",
+      "dupe_id": 4,
+      "tag": "Khác",
+      "engine_ver": "3",
+      "author": "HTC 600",
+      "package": "Yandex",
+      "sections": {
+        "MIN_ENGINE_VER": 1,
+        "AUTHOR": 1,
+        "PACKAGE": 1,
+        "MATCH_REPLACE": 2
+      },
+      "assets": [],
+      "targets": [
+        "smali*/*.smali"
+      ],
+      "issues": [],
+      "parse_error": null
+    },
+    {
+      "name": "accounts_hack",
+      "path": "accounts_hack.zip",
+      "size": 361,
+      "sha256": "56ab3acfd80ccfbca043d815812c60dfd224a439dced8ec7bc21d5a86c2b85c1",
+      "dupe_id": null,
+      "tag": "Khác",
+      "engine_ver": "2",
+      "author": "HTC 600",
+      "package": "HD Video Box",
+      "sections": {
+        "MIN_ENGINE_VER": 1,
+        "AUTHOR": 1,
+        "PACKAGE": 1,
+        "MATCH_REPLACE": 1
+      },
+      "assets": [],
+      "targets": [
+        "smali*/*.smali"
+      ],
+      "issues": [],
+      "parse_error": null
+    },
+    {
+      "name": "delete_languages",
+      "path": "delete_languages.zip",
+      "size": 2417,
+      "sha256": "8857c4ce1247d360f680074c128f779d80c49843f9c47b5bf66bee1eb762cfce",
+      "dupe_id": null,
+      "tag": "Khác",
+      "engine_ver": "2",
+      "author": "VERGIL777",
+      "package": "*",
+      "sections": {
+        "MIN_ENGINE_VER": 1,
+        "AUTHOR": 1,
+        "PACKAGE": 1,
+        "REMOVE_FILES": 1
+      },
+      "assets": [],
+      "targets": [
+        "res/values-aa\nres/values-ab\nres/values-ae\nres/values-af-watch\nres/values-af\nres/values-af_NA\nres/values-af_ZA\nres/values-ai\nres/values-ak\nres/values-ak_GH\nres/values-al\nres/values-am-rET\nres/values-am-watch\nres/values-am\nres/values-am_ET\nres/values-an\nres/values-ao\nres/values-ar-rEG\nres/values-ar-rIL\nres/values-ar-watch\nres/values-ar\nres/values-ar_001\nres/values-ar_AE\nres/values-ar_BH\nres/values-ar_DZ\nres/values-ar_EG\nres/values-ar_IQ\nres/values-ar_JO\nres/values-ar_KW\nres/values-ar_LB\nres/values-ar_LY\nres/values-ar_MA\nres/values-ar_OM\nres/values-ar_QA\nres/values-ar_SA\nres/values-ar_SD\nres/values-ar_SY\nres/values-ar_TN\nres/values-ar_YE\nres/values-as\nres/values-as_IN\nres/values-as_rBN\nres/values-ast\nres/values-au\nres/values-av\nres/values-ay\nres/values-az-rAZ-watch\nres/values-az-rAZ\nres/values-az\nres/values-az_Cyrl\nres/values-az_Cyrl_AZ\nres/values-az_Latn\nres/values-az_Latn_AZ\nres/values-b+sr+Latn\nres/values-ba\nres/values-bb\nres/values-bd\nres/values-be-rBY\nres/values-be\nres/values-be_BY\nres/values-bg-rBG\nres/values-bg-watch\nres/values-bg\nres/values-bg_BG\nres/values-bh\nres/values-bi\nres/values-bm\nres/values-bm_ML\nres/values-bn-rBD-watch\nres/values-bn-rBD\nres/values-bn\nres/values-bn_BD\nres/values-bn_IN\nres/values-bn_rAS\nres/values-bo\nres/values-bo_CN\nres/values-bo_IN\nres/values-br\nres/values-br_FR\nres/values-bs-rBA\nres/values-bs\nres/values-bs_BA\nres/values-bu\nres/values-by\nres/values-ca-rES\nres/values-ca-watch\nres/values-ca\nres/values-ca_ES\nres/values-cc\nres/values-ce\nres/values-ch\nres/values-ci\nres/values-cmn\nres/values-cn\nres/values-co\nres/values-cr\nres/values-cs-rCZ\nres/values-cs-watch\nres/values-cs\nres/values-cs_CZ\nres/values-cu\nres/values-cv\nres/values-cy\nres/values-cy_GB\nres/values-cz\nres/values-da-rDK\nres/values-da-watch\nres/values-da\nres/values-da_DK\nres/values-dd\nres/values-de-rAT\nres/values-de-rCH\nres/values-de-rDE\nres/values-de-rLI\nres/values-de-watch\nres/values-de\nres/values-de_AT\nres/values-de_BE\nres/values-de_CH\nres/values-de_DE\nres/values-de_LI\nres/values-de_LU\nres/values-dg\nres/values-di\nres/values-dk\nres/values-do\nres/values-du\nres/values-dv\nres/values-dz\nres/values-ee\nres/values-ee_GH\nres/values-ee_TG\nres/values-ei\nres/values-el-rGR\nres/values-el-watch\nres/values-el\nres/values-el_CY\nres/values-el_GR\nres/values-en-rAU-watch\nres/values-en-rAU\nres/values-en-rCA\nres/values-en-rGB-watch\nres/values-en-rGB\nres/values-en-rIE\nres/values-en-rIN-watch\nres/values-en-rIN\nres/values-en-rNZ\nres/values-en-rSG\nres/values-en-rUS\nres/values-en-rZA\nres/values-en\nres/values-en_AS\nres/values-en_AU\nres/values-en_BB\nres/values-en_BE\nres/values-en_BM\nres/values-en_BW\nres/values-en_BZ\nres/values-en_CA\nres/values-en_GB\nres/values-en_GU\nres/values-en_GY\nres/values-en_HK\nres/values-en_IE\nres/values-en_IN\nres/values-en_JM\nres/values-en_MH\nres/values-en_MP\nres/values-en_MT\nres/values-en_MU\nres/values-en_NA\nres/values-en_NZ\nres/values-en_PH\nres/values-en_PK\nres/values-en_SG\nres/values-en_TT\nres/values-en_UM\nres/values-en_US\nres/values-en_US_POSIX\nres/values-en_VI\nres/values-en_ZA\nres/values-en_ZW\nres/values-en_rAU\nres/values-en_rGB\nres/values-en_rUS\nres/values-en-rXC\nres/values-eo\nres/values-er\nres/values-es-rES\nres/values-es-rUS-watch\nres/values-es-rUS\nres/values-es-watch\nres/values-es\nres/values-es_419\nres/values-es_AR\nres/values-es_BO\nres/values-es_CL\nres/values-es_CO\nres/values-es_CR\nres/values-es_DO\nres/values-es_EC\nres/values-es_ES\nres/values-es_GQ\nres/values-es_GT\nres/values-es_HN\nres/values-es_MX\nres/values-es_NI\nres/values-es_PA\nres/values-es_PE\nres/values-es_PR\nres/values-es_PY\nres/values-es_SV\nres/values-es_US\nres/values-es_UY\nres/values-es_VE\nres/values-es_rES\nres/values-es_rUS\nres/values-et-rEE-watch\nres/values-et-rEE\nres/values-et\nres/values-et_EE\nres/values-eu-rES-watch\nres/values-eu-rES\nres/values-eu\nres/values-eu_ES\nres/values-fa-rIR\nres/values-fa-watch\nres/values-fa\nres/values-fa_AF\nres/values-fa_IR\nres/values-fe\nres/values-ff\nres/values-ff_SN\nres/values-fi-rFI\nres/values-fi-watch\nres/values-fi\nres/values-fi_FI\nres/values-fil\nres/values-fj\nres/values-fo\nres/values-fo_FO\nres/values-fr-rBE\nres/values-fr-rCA-watch\nres/values-fr-rCA\nres/values-fr-rCH\nres/values-fr-rFR\nres/values-fr-watch\nres/values-fr\nres/values-fr_BE\nres/values-fr_BF\nres/values-fr_BI\nres/values-fr_BJ\nres/values-fr_BL\nres/values-fr_CA\nres/values-fr_CD\nres/values-fr_CF\nres/values-fr_CG\nres/values-fr_CH\nres/values-fr_CI\nres/values-fr_CM\nres/values-fr_DJ\nres/values-fr_FR\nres/values-fr_GA\nres/values-fr_GF\nres/values-fr_GN\nres/values-fr_GP\nres/values-fr_GQ\nres/values-fr_KM\nres/values-fr_LU\nres/values-fr_MC\nres/values-fr_MF\nres/values-fr_MG\nres/values-fr_ML\nres/values-fr_MQ\nres/values-fr_NE\nres/values-fr_RE\nres/values-fr_RW\nres/values-fr_SN\nres/values-fr_TD\nres/values-fr_TG\nres/values-fr_YT\nres/values-fr_rCA\nres/values-fr_rFR\nres/values-fu\nres/values-fy\nres/values-ga\nres/values-ga_IE\nres/values-gb\nres/values-gd\nres/values-ge\nres/values-gg\nres/values-gi\nres/values-gl-rES-watch\nres/values-gl-rES\nres/values-gl\nres/values-gl_ES\nres/values-gn\nres/values-go\nres/values-gr\nres/values-gu-rIN-watch\nres/values-gu-rIN\nres/values-gu\nres/values-gu_IN\nres/values-gv\nres/values-gv_GB\nres/values-ha\nres/values-ha_Latn\nres/values-ha_Latn_GH\nres/values-ha_Latn_NE\nres/values-ha_Latn_NG\nres/values-he\nres/values-he_IL\nres/values-hg_rIN\nres/values-hh\nres/values-hi-rIN\nres/values-hi-watch\nres/values-hi\nres/values-hi_IN\nres/values-hk\nres/values-hl  \nres/values-ho\nres/values-hr-rHR\nres/values-hr-watch\nres/values-hr\nres/values-hr_HR\nres/values-ht\nres/values-hu-rHU\nres/values-hu-watch\nres/values-hu\nres/values-hu_HU\nres/values-hy-rAM-watch\nres/values-hy-rAM\nres/values-hy\nres/values-hy_AM\nres/values-hz\nres/values-ia\nres/values-id\nres/values-id_ID\nres/values-ie\nres/values-ig\nres/values-ig_NG\nres/values-ii\nres/values-ii_CN\nres/values-ik\nres/values-il\nres/values-in-rID\nres/values-in-watch\nres/values-in\nres/values-io\nres/values-ir\nres/values-is-rIS-watch\nres/values-is-rIS\nres/values-is\nres/values-is_IS\nres/values-it-rCH\nres/values-it-rIT\nres/values-it-watch\nres/values-it\nres/values-it_CH\nres/values-it_IT\nres/values-iu\nres/values-iw-rIL\nres/values-iw-watch\nres/values-iw\nres/values-ja-rJP\nres/values-ja-watch\nres/values-ja\nres/values-ja_JP\nres/values-je\nres/values-ji\nres/values-jj\nres/values-jo\nres/values-jp\nres/values-ju\nres/values-jv\nres/values-jv_rID\nres/values-jw\nres/values-ka-rGE-watch\nres/values-ka-rGE\nres/values-ka\nres/values-ka_GE\nres/values-kab\nres/values-ke\nres/values-kg\nres/values-ki\nres/values-ki_KE\nres/values-ki_rLT\nres/values-kj\nres/values-kk-rKZ-watch\nres/values-kk-rKZ\nres/values-kk\nres/values-kk_Cyrl\nres/values-kk_Cyrl_KZ\nres/values-kl\nres/values-kl_GL\nres/values-km-rKH-watch\nres/values-km-rKH\nres/values-km\nres/values-km_KH\nres/values-kn-rIN-watch\nres/values-kn-rIN\nres/values-kn\nres/values-kn_IN\nres/values-ko-rKR\nres/values-ko-watch\nres/values-ko\nres/values-ko_KR\nres/values-kr\nres/values-ks\nres/values-ku\nres/values-kv\nres/values-kw\nres/values-kw_GB\nres/values-ky-rKG-watch\nres/values-ky-rKG\nres/values-ky\nres/values-kz\nres/values-la\nres/values-lb\nres/values-le\nres/values-lg\nres/values-lg_UG\nres/values-li\nres/values-ll\nres/values-ln\nres/values-ln_CD\nres/values-ln_CG\nres/values-lo-rLA-watch\nres/values-lo-rLA\nres/values-lo\nres/values-lt-rLT\nres/values-lt-watch\nres/values-lt\nres/values-lt_LT\nres/values-lu\nres/values-lu_CD\nres/values-lv-rLV\nres/values-lv-watch\nres/values-lv\nres/values-lv_LV\nres/values-ma\nres/values-me\nres/values-mg\nres/values-mg_MG\nres/values-mh\nres/values-mi\nres/values-mi_rAS\nres/values-mi_rBN\nres/values-mk-rMK-watch\nres/values-mk-rMK\nres/values-mk\nres/values-mk_MK\nres/values-ml-rIN-watch\nres/values-ml-rIN\nres/values-ml\nres/values-ml_IN\nres/values-mm\nres/values-mn-rMN-watch\nres/values-mn-rMN\nres/values-mn\nres/values-mo\nres/values-mr-rIN-watch\nres/values-mr-rIN\nres/values-mr\nres/values-mr_IN\nres/values-ms-rMY-watch\nres/values-ms-rMY\nres/values-ms\nres/values-ms_BN\nres/values-ms_MY\nres/values-mt\nres/values-mt_MT\nres/values-mu\nres/values-my-rMM-watch\nres/values-my-rMM\nres/values-my\nres/values-my_MM\nres/values-my_rMM\nres/values-na\nres/values-nb-rNO\nres/values-nb-watch\nres/values-nb\nres/values-nb_NO\nres/values-nc\nres/values-nd\nres/values-nd_ZW\nres/values-ne-rNP-watch\nres/values-ne-rNP\nres/values-ne\nres/values-ne_IN\nres/values-ne_NP\nres/values-nf\nres/values-ng\nres/values-nh\nres/values-ni\nres/values-nj\nres/values-nk\nres/values-nl-rBE\nres/values-nl-rNL\nres/values-nl-watch\nres/values-nl\nres/values-nl_AW\nres/values-nl_BE\nres/values-nl_CW\nres/values-nl_NL\nres/values-nl_SX\nres/values-nm\nres/values-nn\nres/values-nn_NO\nres/values-no\nres/values-np\nres/values-nq\nres/values-nr\nres/values-ns\nres/values-nt\nres/values-nu\nres/values-nv\nres/values-nw\nres/values-nx\nres/values-ny\nres/values-nz\nres/values-oc\nres/values-oj\nres/values-om\nres/values-om_ET\nres/values-om_KE\nres/values-or\nres/values-or_IN\nres/values-os\nres/values-ou\nres/values-pa-rIN-watch\nres/values-pa-rIN\nres/values-pa\nres/values-pa_Arab\nres/values-pa_Arab_PK\nres/values-pa_Guru\nres/values-pa_Guru_IN\nres/values-pe\nres/values-pi\nres/values-pk\nres/values-pl-rPL\nres/values-pl-watch\nres/values-pl\nres/values-pl_PL\nres/values-po\nres/values-pp\nres/values-ps\nres/values-ps_AF\nres/values-pt-rBR-watch\nres/values-pt-rBR\nres/values-pt-rPT-watch\nres/values-pt-rPT\nres/values-pt-watch\nres/values-pt\nres/values-pt_AO\nres/values-pt_BR\nres/values-pt_GW\nres/values-pt_MZ\nres/values-pt_PT\nres/values-pt_ST\nres/values-pt_rBR\nres/values-pt_rPT\nres/values-pu\nres/values-qa\nres/values-qe\nres/values-qi\nres/values-qo\nres/values-qq\nres/values-qu\nres/values-ra\nres/values-re\nres/values-ri\nres/values-rm-rCH\nres/values-rm\nres/values-rm_CH\nres/values-rn\nres/values-rn_BI\nres/values-ro-rRO\nres/values-ro-watch\nres/values-ro\nres/values-ro_MD\nres/values-ro_RO\nres/values-rr\nres/values-rs\nres/values-rw\nres/values-rw_RW\nres/values-sa\nres/values-sc\nres/values-sd\nres/values-se\nres/values-sg\nres/values-sg_CF\nres/values-si-rLK-watch\nres/values-si-rLK\nres/values-si\nres/values-si_LK\nres/values-sk-rSK\nres/values-sk-watch\nres/values-sk\nres/values-sk_SK\nres/values-sl-rSI\nres/values-sl-watch\nres/values-sl\nres/values-sl_SI\nres/values-sm\nres/values-sn\nres/values-sn_ZW\nres/values-so\nres/values-so_DJ\nres/values-so_ET\nres/values-so_KE\nres/values-so_SO\nres/values-sp\nres/values-sq-rAL-watch\nres/values-sq-rAL\nres/values-sq\nres/values-sq_AL\nres/values-sr-rRS\nres/values-sr-watch\nres/values-sr\nres/values-sr_Cyrl\nres/values-sr_Cyrl_BA\nres/values-sr_Cyrl_ME\nres/values-sr_Cyrl_RS\nres/values-sr_Latn\nres/values-sr_Latn_BA\nres/values-sr_Latn_ME\nres/values-sr_Latn_RS\nres/values-ss\nres/values-st\nres/values-st_rOC\nres/values-su\nres/values-su_rID\nres/values-sv-rSE\nres/values-sv-watch\nres/values-sv\nres/values-sv_FI\nres/values-sv_SE\nres/values-sw-rTZ\nres/values-sw-watch\nres/values-sw\nres/values-sw_KE\nres/values-sw_TZ\nres/values-sz\nres/values-ta-rIN-watch\nres/values-ta-rIN\nres/values-ta\nres/values-ta_IN\nres/values-ta_LK\nres/values-te-rIN-watch\nres/values-te-rIN\nres/values-te\nres/values-te_IN\nres/values-tg\nres/values-th-rTH\nres/values-th-watch\nres/values-th\nres/values-th_TH\nres/values-ti\nres/values-ti_ER\nres/values-ti_ET\nres/values-tk\nres/values-tl-rPH\nres/values-tl-watch\nres/values-tl\nres/values-tn\nres/values-to\nres/values-to_TO\nres/values-tr-rTR\nres/values-tr-watch\nres/values-tr\nres/values-tr_TR\nres/values-ts\nres/values-tt\nres/values-tu\nres/values-tw\nres/values-ty\nres/values-ua\nres/values-ug\nres/values-ur-rPK-watch\nres/values-ur-rPK\nres/values-ur\nres/values-ur_IN\nres/values-ur_PK\nres/values-us\nres/values-uz-rUZ-watch\nres/values-uz-rUZ\nres/values-uz\nres/values-uz_Arab\nres/values-uz_Arab_AF\nres/values-uz_Cyrl\nres/values-uz_Cyrl_UZ\nres/values-uz_Latn\nres/values-uz_Latn_UZ\nres/values-va\nres/values-ve\nres/values-vi    \nres/values-vi-rVN\nres/values-vi-watch\nres/values-vi\nres/values-vi_VN\nres/values-vn\nres/values-vo\nres/values-vu\nres/values-vv\nres/values-wa\nres/values-we\nres/values-wi\nres/values-wo\nres/values-wu\nres/values-ww\nres/values-xa\nres/values-xe\nres/values-xh\nres/values-xi\nres/values-xn\nres/values-xo\nres/values-xu\nres/values-xx\nres/values-ya\nres/values-ye\nres/values-yi\nres/values-yo\nres/values-yo_NG\nres/values-yu\nres/values-yy\nres/values-z1_rMM\nres/values-za\nres/values-ze\nres/values-zh-rCN-watch\nres/values-zh-rCN\nres/values-zh-rHK-watch\nres/values-zh-rHK\nres/values-zh-rTW-watch\nres/values-zh-rTW\nres/values-zh\nres/values-zh_Hans\nres/values-zh_Hans_CN\nres/values-zh_Hans_HK\nres/values-zh_Hans_MO\nres/values-zh_Hans_SG\nres/values-zh_Hant\nres/values-zh_Hant_HK\nres/values-zh_Hant_MO\nres/values-zh_Hant_TW\nres/values-zh_rCN\nres/values-zh_rHK\nres/values-zh_rTW\nres/values-zi\nres/values-zo\nres/values-zu-rZA\nres/values-zu-watch\nres/values-zu\nres/values-zu_ZA\nres/values-zy\nres/values-zz"
+      ],
+      "issues": [],
+      "parse_error": null
+    },
+    {
+      "name": "patch_bypass_sigcheck",
+      "path": "patch_bypass_sigcheck.zip",
+      "size": 2164,
+      "sha256": "e311e769a1721e9c0541ec8cf124d74aab8e74828161ca105f651e0d0e73e24c",
+      "dupe_id": null,
+      "tag": "Tiện-ích",
+      "engine_ver": "2",
+      "author": "apkeditor",
+      "package": "*",
+      "sections": {
+        "MIN_ENGINE_VER": 1,
+        "AUTHOR": 1,
+        "PACKAGE": 1,
+        "MATCH_REPLACE": 2,
+        "ADD_FILES": 1,
+        "SIGNATURE_REVISE": 1
+      },
+      "assets": [
+        "Fix.smali"
+      ],
+      "targets": [
+        "smali*/*.smali",
+        "smali*/*smali",
+        "smali/apkeditor/patch/signature/Fix.smali"
+      ],
+      "issues": [],
+      "parse_error": null
+    },
+    {
+      "name": "patch_bypass_sigcheck_with_reflection",
+      "path": "patch_bypass_sigcheck_with_reflection.zip",
+      "size": 5757,
+      "sha256": "e43faaa1c1c865dfdc9025053b3e54351e1f7a521422cc310258746abd058ab1",
+      "dupe_id": null,
+      "tag": "Tiện-ích",
+      "engine_ver": "2",
+      "author": "Anymy",
+      "package": "ALL",
+      "sections": {
+        "MIN_ENGINE_VER": 1,
+        "AUTHOR": 1,
+        "PACKAGE": 1,
+        "MATCH_REPLACE": 2,
+        "ADD_FILES": 1,
+        "SIGNATURE_REVISE": 1,
+        "DUMMY": 1
+      },
+      "assets": [
+        "smali.zip"
+      ],
+      "targets": [
+        "smali",
+        "smali*/*",
+        "smali*/*.smali",
+        "smali/apkeditor/patch/signature/Fix.smali"
+      ],
+      "issues": [],
+      "parse_error": null
+    },
+    {
+      "name": "patch_delete_translation_raw-values_xxx",
+      "path": "patch_delete_translation_raw-values_xxx.zip",
+      "size": 3463,
+      "sha256": "23edb3a83180410c300e32980c087a834d5fea90de99bcc464ea02147f9c5815",
+      "dupe_id": null,
+      "tag": "Tiện-ích",
+      "engine_ver": "1",
+      "author": "Evgeniy_Krupeskiy",
+      "package": "*",
+      "sections": {
+        "MIN_ENGINE_VER": 1,
+        "AUTHOR": 1,
+        "PACKAGE": 1,
+        "REMOVE_FILES": 1
+      },
+      "assets": [],
+      "targets": [
+        "res/raw-ar\nres/raw-bg\nres/raw-ca\nres/raw-cs\nres/raw-da\nres/raw-de\nres/raw-el\nres/raw-en-rGB\nres/raw-es-rUS\nres/raw-es\nres/raw-fa\nres/raw-fi\nres/raw-fr\nres/raw-hi\nres/raw-hr\nres/raw-hu\nres/raw-id\nres/raw-it\nres/raw-iw\nres/raw-ja\nres/raw-ko\nres/raw-lt\nres/raw-lv\nres/raw-nb\nres/raw-nl\nres/raw-pl\nres/raw-pt-rBR\nres/raw-pt-rPT\nres/raw-pt\nres/raw-rm\nres/raw-ro\nres/raw-sk\nres/raw-sl\nres/raw-sr\nres/raw-sv\nres/raw-th\nres/raw-tl\nres/raw-tr\nres/raw-vi\nres/raw-zh-rCN\nres/raw-zh-rTW\nres/raw-an\nres/raw-as\nres/raw-ast\nres/raw-az\nres/raw-be\nres/raw-bn-rIN\nres/raw-br\nres/raw-cak\nres/raw-cy\nres/raw-dsb\nres/raw-en-rZA\nres/raw-eo\nres/raw-es-rAR\nres/raw-es-rCL\nres/raw-es-rES\nres/raw-es-rMX\nres/raw-et\nres/raw-eu\nres/raw-ff\nres/raw-fy-rNL\nres/raw-ga-rIE\nres/raw-gd\nres/raw-gl\nres/raw-gn\nres/raw-gu-rIN\nres/raw-hi-rIN\nres/raw-hsb\nres/raw-hy-rAM\nres/raw-in\nres/raw-is\nres/raw-ka\nres/raw-kab\nres/raw-kk\nres/raw-kn\nres/raw-lo\nres/raw-mai\nres/raw-ml\nres/raw-mr\nres/raw-ms\nres/raw-my\nres/raw-nb-rNO\nres/raw-nn-rNO\nres/raw-or\nres/raw-pa-rIN\nres/raw-son\nres/raw-sq\nres/raw-sv-rSE\nres/raw-ta\nres/raw-te\nres/raw-ur\nres/raw-uz\nres/raw-wo\nres/raw-xh\nres/raw-zam\n    res/values-cb\n    res/values-tt\n    res/values-mn\n    res/values-be-rBY\n    res/values-lo\n    res/values-ky\n    res/values-af\n    res/values-af_NA\n    res/values-af_ZA\n    res/values-agq\n    res/values-agq_CM\n    res/values-ak\n    res/values-ak_GH\n    res/values-am\n    res/values-am_ET\n    res/values-an\n    res/values-ar\n    res/values-ar_001\n    res/values-ar_AE\n    res/values-ar_BH\n    res/values-ar_DZ\n    res/values-ar_EG\n    res/values-ar_IQ\n    res/values-ar_JO\n    res/values-ar_KW\n    res/values-ar_LB\n    res/values-ar_LY\n    res/values-ar_MA\n    res/values-ar_OM\n    res/values-ar_QA\n    res/values-ar_SA\n    res/values-ar_SD\n    res/values-ar_SY\n    res/values-ar_TN\n    res/values-ar_YE\n    res/values-as\n    res/values-as_IN\n    res/values-asa\n    res/values-asa_TZ\n    res/values-ast\n    res/values-az\n    res/values-az_Cyrl\n    res/values-az_Cyrl_AZ\n    res/values-az_Latn\n    res/values-az_Latn_AZ\n    res/values-bas\n    res/values-bas_CM\n    res/values-be\n    res/values-be_BY\n    res/values-bem\n    res/values-bem_ZM\n    res/values-bez\n    res/values-bez_TZ\n    res/values-bg\n    res/values-bg_BG\n    res/values-bm\n    res/values-bm_ML\n    res/values-bn\n    res/values-bn_BD\n    res/values-bn_IN\n    res/values-bn-rIN\n    res/values-bo\n    res/values-bo_CN\n    res/values-bo_IN\n    res/values-br\n    res/values-br_FR\n    res/values-brx\n    res/values-brx_IN\n    res/values-bs\n    res/values-bs_BA\n    res/values-ca\n    res/values-cak\n    res/values-ca_ES\n    res/values-cgg\n    res/values-cgg_UG\n    res/values-chr\n    res/values-chr_US\n    res/values-cs\n    res/values-cs_CZ\n    res/values-cy\n    res/values-cy_GB\n    res/values-da\n    res/values-da_DK\n    res/values-dav\n    res/values-dav_KE\n    res/values-de\n    res/values-de_AT\n    res/values-de_BE\n    res/values-de_CH\n    res/values-de_DE\n    res/values-de_LI\n    res/values-de_LU\n    res/values-dje\n    res/values-dje_NE\n    res/values-dsb\n    res/values-dua\n    res/values-dua_CM\n    res/values-dyo\n    res/values-dyo_SN\n    res/values-ebu\n    res/values-ebu_KE\n    res/values-ee\n    res/values-ee_GH\n    res/values-ee_TG\n    res/values-el\n    res/values-el_CY\n    res/values-el_GR\n    res/values-en\n    res/values-en_AS\n    res/values-en_AU\n    res/values-en_BB\n    res/values-en_BE\n    res/values-en_BM\n    res/values-en_BW\n    res/values-en_BZ\n    res/values-en_CA\n    res/values-en_GB\n    res/values-en_GU\n    res/values-en_GY\n    res/values-en_HK\n    res/values-en_IE\n    res/values-en_IN\n    res/values-en_JM\n    res/values-en_MH\n    res/values-en_MP\n    res/values-en_MT\n    res/values-en_MU\n    res/values-en_NA\n    res/values-en_NZ\n    res/values-en_PH\n    res/values-en_PK\n    res/values-en_SG\n    res/values-en_TT\n    res/values-en_UM\n    res/values-en_US\n    res/values-en_US_POSIX\n    res/values-en_VI\n    res/values-en_ZA\n    res/values-en_ZW\n    res/values-eo\n    res/values-es\n    res/values-es_419\n    res/values-es_AR\n    res/values-es_BO\n    res/values-es_CL\n    res/values-es_CO\n    res/values-es_CR\n    res/values-es_DO\n    res/values-es_EC\n    res/values-es_ES\n    res/values-es_GQ\n    res/values-es_GT\n    res/values-es_HN\n    res/values-es_MX\n    res/values-es_NI\n    res/values-es_PA\n    res/values-es_PE\n    res/values-es_PR\n    res/values-es_PY\n    res/values-es-rAR\n    res/values-es-rCL\n    res/values-es-rMX\n    res/values-es_SV\n    res/values-es_US\n    res/values-es_UY\n    res/values-es_VE\n    res/values-et\n    res/values-et_EE\n    res/values-eu\n    res/values-eu_ES\n    res/values-ewo\n    res/values-ewo_CM\n    res/values-fa\n    res/values-fa_AF\n    res/values-fa_IR\n    res/values-ff\n    res/values-ff_SN\n    res/values-fi\n    res/values-fi_FI\n    res/values-fil\n    res/values-fil_PH\n    res/values-fo\n    res/values-fo_FO\n    res/values-fr\n    res/values-fr_BE\n    res/values-fr_BF\n    res/values-fr_BI\n    res/values-fr_BJ\n    res/values-fr_BL\n    res/values-fr_CA\n    res/values-fr_CD\n    res/values-fr_CF\n    res/values-fr_CG\n    res/values-fr_CH\n    res/values-fr_CI\n    res/values-fr_CM\n    res/values-fr_DJ\n    res/values-fr_FR\n    res/values-fr_GA\n    res/values-fr_GF\n    res/values-fr_GN\n    res/values-fr_GP\n    res/values-fr_GQ\n    res/values-fr_KM\n    res/values-fr_LU\n    res/values-fr_MC\n    res/values-fr_MF\n    res/values-fr_MG\n    res/values-fr_ML\n    res/values-fr_MQ\n    res/values-fr_NE\n    res/values-fr_RE\n    res/values-fr_RW\n    res/values-fr_SN\n    res/values-fr_TD\n    res/values-fr_TG\n    res/values-fr_YT\n    res/values-fy-rNL\n    res/values-ga\n    res/values-ga_IE\n    res/values-ga-rIE\n    res/values-gd\n    res/values-gl\n    res/values-gl_ES\n    res/values-gn\n    res/values-gsw\n    res/values-gsw_CH\n    res/values-gu\n    res/values-gu_IN\n    res/values-guz\n    res/values-guz_KE\n    res/values-gv\n    res/values-gv_GB\n    res/values-ha\n    res/values-ha_Latn\n    res/values-ha_Latn_GH\n    res/values-ha_Latn_NE\n    res/values-ha_Latn_NG\n    res/values-haw\n    res/values-haw_US\n    res/values-he\n    res/values-he_IL\n    res/values-hi\n    res/values-hi_IN\n    res/values-hr\n    res/values-hr_HR\n    res/values-hsb\n    res/values-hu\n    res/values-hu_HU\n    res/values-hy\n    res/values-hy_AM\n    res/values-id\n    res/values-id_ID\n    res/values-ig\n    res/values-ig_NG\n    res/values-ii\n    res/values-ii_CN\n    res/values-is\n    res/values-is_IS\n    res/values-it\n    res/values-it_CH\n    res/values-it_IT\n    res/values-ja\n    res/values-ja_JP\n    res/values-jmc\n    res/values-jmc_TZ\n    res/values-ka\n    res/values-ka_GE\n    res/values-kab\n    res/values-kab_DZ\n    res/values-kam\n    res/values-kam_KE\n    res/values-kde\n    res/values-kde_TZ\n    res/values-kea\n    res/values-kea_CV\n    res/values-khq\n    res/values-khq_ML\n    res/values-ki\n    res/values-ki_KE\n    res/values-kk\n    res/values-kk_Cyrl\n    res/values-kk_Cyrl_KZ\n    res/values-kl\n    res/values-kl_GL\n    res/values-kln\n    res/values-kln_KE\n    res/values-km\n    res/values-km_KH\n    res/values-kn\n    res/values-kn_IN\n    res/values-ko\n    res/values-ko_KR\n    res/values-kok\n    res/values-kok_IN\n    res/values-ksb\n    res/values-ksb_TZ\n    res/values-ksf\n    res/values-ksf_CM\n    res/values-kw\n    res/values-kw_GB\n    res/values-lag\n    res/values-lag_TZ\n    res/values-lg\n    res/values-lg_UG\n    res/values-ln\n    res/values-ln_CD\n    res/values-ln_CG\n    res/values-lt\n    res/values-lt_LT\n    res/values-lu\n    res/values-lu_CD\n    res/values-luo\n    res/values-luo_KE\n    res/values-luy\n    res/values-luy_KE\n    res/values-lv\n    res/values-lv_LV\n    res/values-mai\n    res/values-mas\n    res/values-mas_KE\n    res/values-mas_TZ\n    res/values-mer\n    res/values-mer_KE\n    res/values-mfe\n    res/values-mfe_MU\n    res/values-mg\n    res/values-mg_MG\n    res/values-mgh\n    res/values-mgh_MZ\n    res/values-mk\n    res/values-mk_MK\n    res/values-ml\n    res/values-ml_IN\n    res/values-mr\n    res/values-mr_IN\n    res/values-ms\n    res/values-ms_BN\n    res/values-ms_MY\n    res/values-mt\n    res/values-mt_MT\n    res/values-mua\n    res/values-mua_CM\n    res/values-my\n    res/values-my_MM\n    res/values-naq\n    res/values-naq_NA\n    res/values-nb\n    res/values-nb_NO\n    res/values-nd\n    res/values-nd_ZW\n    res/values-ne\n    res/values-ne_IN\n    res/values-ne_NP\n    res/values-nl\n    res/values-nl_AW\n    res/values-nl_BE\n    res/values-nl_CW\n    res/values-nl_NL\n    res/values-nl_SX\n    res/values-nmg\n    res/values-nmg_CM\n    res/values-nn\n    res/values-nn_NO\n    res/values-nn-rNO\n    res/values-nus\n    res/values-nus_SD\n    res/values-nyn\n    res/values-nyn_UG\n    res/values-om\n    res/values-om_ET\n    res/values-om_KE\n    res/values-or\n    res/values-or_IN\n    res/values-pa\n    res/values-pa_Arab\n    res/values-pa_Arab_PK\n    res/values-pa_Guru\n    res/values-pa_Guru_IN\n    res/values-pl\n    res/values-pl_PL\n    res/values-ps\n    res/values-ps_AF\n    res/values-pt\n    res/values-pt_AO\n    res/values-pt_BR\n    res/values-pt_GW\n    res/values-pt_MZ\n    res/values-pt_PT\n    res/values-pt_ST\n    res/values-rm\n    res/values-rm_CH\n    res/values-rn\n    res/values-rn_BI\n    res/values-ro\n    res/values-ro_MD\n    res/values-ro_RO\n    res/values-rof\n    res/values-rof_TZ\n    res/values-rw\n    res/values-rw_RW\n    res/values-rwk\n    res/values-rwk_TZ\n    res/values-saq\n    res/values-saq_KE\n    res/values-sbp\n    res/values-sbp_TZ\n    res/values-seh\n    res/values-seh_MZ\n    res/values-ses\n    res/values-ses_ML\n    res/values-sg\n    res/values-sg_CF\n    res/values-shi\n    res/values-shi_Latn\n    res/values-shi_Latn_MA\n    res/values-shi_Tfng\n    res/values-shi_Tfng_MA\n    res/values-si\n    res/values-si_LK\n    res/values-sk\n    res/values-sk_SK\n    res/values-sl\n    res/values-sl_SI\n    res/values-sn\n    res/values-sn_ZW\n    res/values-so\n    res/values-so_DJ\n    res/values-so_ET\n    res/values-so_KE\n    res/values-so_SO\n    res/values-son\n    res/values-sq\n    res/values-sq_AL\n    res/values-sr\n    res/values-sr_Cyrl\n    res/values-sr_Cyrl_BA\n    res/values-sr_Cyrl_ME\n    res/values-sr_Cyrl_RS\n    res/values-sr_Latn\n    res/values-sr_Latn_BA\n    res/values-sr_Latn_ME\n    res/values-sr_Latn_RS\n    res/values-sv\n    res/values-sv_FI\n    res/values-sv_SE\n    res/values-sw\n    res/values-sw_KE\n    res/values-sw_TZ\n    res/values-swc\n    res/values-swc_CD\n    res/values-ta\n    res/values-ta_IN\n    res/values-ta_LK\n    res/values-te\n    res/values-te_IN\n    res/values-teo\n    res/values-teo_KE\n    res/values-teo_UG\n    res/values-th\n    res/values-th_TH\n    res/values-ti\n    res/values-ti_ER\n    res/values-ti_ET\n    res/values-to\n    res/values-to_TO\n    res/values-tr\n    res/values-tr_TR\n    res/values-twq\n    res/values-twq_NE\n    res/values-tzm\n    res/values-tzm_Latn\n    res/values-tzm_Latn_MA\n    res/values-ur\n    res/values-ur_IN\n    res/values-ur_PK\n    res/values-uz\n    res/values-uz_Arab\n    res/values-uz_Arab_AF\n    res/values-uz_Cyrl\n    res/values-uz_Cyrl_UZ\n    res/values-uz_Latn\n    res/values-uz_Latn_UZ\n    res/values-vai\n    res/values-vai_Latn\n    res/values-vai_Latn_LR\n    res/values-vai_Vaii\n    res/values-vai_Vaii_LR\n    res/values-vi\n    res/values-vi_VN\n    res/values-vun\n    res/values-vun_TZ\n    res/values-wo\n    res/values-xh\n    res/values-xog\n    res/values-xog_UG\n    res/values-yav\n    res/values-yav_CM\n    res/values-yo\n    res/values-yo_NG\n    res/values-zam\n    res/values-zh\n    res/values-zh_Hans\n    res/values-zh_Hans_CN\n    res/values-zh_Hans_HK\n    res/values-zh_Hans_MO\n    res/values-zh_Hans_SG\n    res/values-zh_Hant\n    res/values-zh_Hant_HK\n    res/values-zh_Hant_MO\n    res/values-zh_Hant_TW\n    res/values-zu\n    res/values-zu_ZA\n        res/values-af-watch\n    res/values-af\n    res/values-am-rET\n    res/values-am-watch\n    res/values-am\n    res/values-ar-rEG\n    res/values-ar-rIL\n    res/values-ar-watch\n    res/values-ar\n    res/values-az-rAZ-watch\n    res/values-az-rAZ\n    res/values-b+sr+Latn-watch\n    res/values-b+sr+Latn\n    res/values-bg-rBG\n    res/values-bg-watch\n    res/values-bg\n    res/values-bn-rBD-watch\n    res/values-bn-rBD\n    res/values-bs-rBA\n    res/values-ca-rES\n    res/values-ca-watch\n    res/values-ca\n    res/values-cs-rCZ\n    res/values-cs-watch\n    res/values-cs\n    res/values-da-rDK\n    res/values-da-watch\n    res/values-da\n    res/values-de-rAT\n    res/values-de-rCH\n    res/values-de-rDE\n    res/values-de-rLI\n    res/values-de-watch\n    res/values-de\n    res/values-el-rGR\n    res/values-el-watch\n    res/values-el\n    res/values-en-rAU-watch\n    res/values-en-rAU\n    res/values-en-rCA\n    res/values-en-rGB-watch\n    res/values-en-rGB\n    res/values-en-rIE\n    res/values-en-rIN-watch\n    res/values-en-rIN\n    res/values-en-rNZ\n    res/values-en-rSG\n    res/values-en-rUS\n    res/values-en-rZA\n    res/values-es-rES\n    res/values-es-rUS-watch\n    res/values-es-rUS\n    res/values-es-watch\n    res/values-es\n    res/values-et-rEE-watch\n    res/values-et-rEE\n    res/values-eu-rES-watch\n    res/values-eu-rES\n    res/values-fa-rIR\n    res/values-fa-watch\n    res/values-fa\n    res/values-fi-rFI\n    res/values-fi-watch\n    res/values-fi\n    res/values-fr-rBE\n    res/values-fr-rCA-watch\n    res/values-fr-rCA\n    res/values-fr-rCH\n    res/values-fr-rFR\n    res/values-fr-watch\n    res/values-fr\n    res/values-gl-rES-watch\n    res/values-gl-rES\n    res/values-gu-rIN-watch\n    res/values-gu-rIN\n    res/values-hi-rIN\n    res/values-hi-watch\n    res/values-hi\n    res/values-hr-rHR\n    res/values-hr-watch\n    res/values-hr\n    res/values-hu-rHU\n    res/values-hu-watch\n    res/values-hu\n    res/values-hy-rAM-watch\n    res/values-hy-rAM\n    res/values-in-rID\n    res/values-in-watch\n    res/values-in\n    res/values-is-rIS-watch\n    res/values-is-rIS\n    res/values-it-rCH\n    res/values-it-rIT\n    res/values-it-watch\n    res/values-it\n    res/values-iw-rIL\n    res/values-iw-watch\n    res/values-iw\n    res/values-ja-rJP\n    res/values-ja-watch\n    res/values-ja\n    res/values-ka-rGE-watch\n    res/values-ka-rGE\n    res/values-kk-rKZ-watch\n    res/values-kk-rKZ\n    res/values-km-rKH-watch\n    res/values-km-rKH\n    res/values-kn-rIN-watch\n    res/values-kn-rIN\n    res/values-ko-rKR\n    res/values-ko-watch\n    res/values-ko\n    res/values-ky-rKG-watch\n    res/values-ky-rKG\n    res/values-land\n    res/values-large\n    res/values-ldrtl-television\n    res/values-ldrtl\n    res/values-lo-rLA-watch\n    res/values-lo-rLA\n    res/values-lt-rLT\n    res/values-lt-watch\n    res/values-lt\n    res/values-lv-rLV\n    res/values-lv-watch\n    res/values-lv\n    res/values-mk-rMK-watch\n    res/values-mk-rMK\n    res/values-ml-rIN-watch\n    res/values-ml-rIN\n    res/values-mn-rMN-watch\n    res/values-mn-rMN\n    res/values-mr-rIN-watch\n    res/values-mr-rIN\n    res/values-ms-rMY-watch\n    res/values-ms-rMY\n    res/values-my-rMM-watch\n    res/values-my-rMM\n    res/values-nb-rNO\n    res/values-nb-watch\n    res/values-nb\n    res/values-ne-rNP-watch\n    res/values-ne-rNP\n    res/values-nl-rBE\n    res/values-nl-rNL\n    res/values-nl-watch\n    res/values-nl\n    res/values-pa-rIN-watch\n    res/values-pa-rIN\n    res/values-pl-rPL\n    res/values-pl-watch\n    res/values-pl\n    res/values-port-mdpi\n    res/values-port\n    res/values-pt-rBR-watch\n    res/values-pt-rBR\n    res/values-pt-rPT-watch\n    res/values-pt-rPT\n    res/values-pt-watch\n    res/values-pt\n    res/values-rm-rCH\n    res/values-ro-rRO\n    res/values-ro-watch\n    res/values-ro\n    res/values-round-watch\n    res/values-si-rLK-watch\n    res/values-si-rLK\n    res/values-sk-rSK\n    res/values-sk-watch\n    res/values-sk\n    res/values-sl-rSI\n    res/values-sl-watch\n    res/values-sl\n    res/values-sq-rAL-watch\n    res/values-sq-rAL\n    res/values-sr-rRS\n    res/values-sr-watch\n    res/values-sr\n    res/values-sv-rSE\n    res/values-sv-watch\n    res/values-sv\n    res/values-sw-rTZ\n    res/values-sw-watch\n    res/values-sw\n    res/values-ta-rIN-watch\n    res/values-ta-rIN\n    res/values-te-rIN-watch\n    res/values-te-rIN\n    res/values-television\n    res/values-th-rTH\n    res/values-th-watch\n    res/values-th\n    res/values-tl-rPH\n    res/values-tl-watch\n    res/values-tl\n    res/values-tr-rTR\n    res/values-tr-watch\n    res/values-tr\n    res/values-ur-rPK-watch\n    res/values-ur-rPK\n    res/values-uz-rUZ-watch\n    res/values-uz-rUZ\n    res/values-vi-rVN\n    res/values-vi-watch\n    res/values-vi\n    res/values-zh-rCN-watch\n    res/values-zh-rCN\n    res/values-zh-rHK-watch\n    res/values-zh-rHK\n    res/values-zh-rTW-watch\n    res/values-zh-rTW\n    res/values-zu-rZA\n    res/values-zu-watch\n    res/values-zu"
+      ],
+      "issues": [],
+      "parse_error": null
+    },
+    {
+      "name": "patch_remove_translation",
+      "path": "patch_remove_translation.zip",
+      "size": 2741,
+      "sha256": "3d2add5d86b866c9c57f97c758dcad9d2c62eedeec456499de58e5565e845b94",
+      "dupe_id": null,
+      "tag": "Tiện-ích",
+      "engine_ver": "1",
+      "author": "HTC_600",
+      "package": "*",
+      "sections": {
+        "MIN_ENGINE_VER": 1,
+        "AUTHOR": 1,
+        "PACKAGE": 1,
+        "REMOVE_FILES": 1
+      },
+      "assets": [],
+      "targets": [
+        "res/values-tt\n    res/values-mn\n    res/values-be-rBY\n    res/values-lo\n    res/values-ky\n    res/values-af\n    res/values-af_NA\n    res/values-af_ZA\n    res/values-agq\n    res/values-agq_CM\n    res/values-ak\n    res/values-ak_GH\n    res/values-am\n    res/values-am_ET\n    res/values-ar\n    res/values-ar_001\n    res/values-ar_AE\n    res/values-ar_BH\n    res/values-ar_DZ\n    res/values-ar_EG\n    res/values-ar_IQ\n    res/values-ar_JO\n    res/values-ar_KW\n    res/values-ar_LB\n    res/values-ar_LY\n    res/values-ar_MA\n    res/values-ar_OM\n    res/values-ar_QA\n    res/values-ar_SA\n    res/values-ar_SD\n    res/values-ar_SY\n    res/values-ar_TN\n    res/values-ar_YE\n    res/values-as\n    res/values-as_IN\n    res/values-asa\n    res/values-asa_TZ\n    res/values-az\n    res/values-az_Cyrl\n    res/values-az_Cyrl_AZ\n    res/values-az_Latn\n    res/values-az_Latn_AZ\n    res/values-bas\n    res/values-bas_CM\n    res/values-be\n    res/values-be_BY\n    res/values-bem\n    res/values-bem_ZM\n    res/values-bez\n    res/values-bez_TZ\n    res/values-bg\n    res/values-bg_BG\n    res/values-bm\n    res/values-bm_ML\n    res/values-bn\n    res/values-bn_BD\n    res/values-bn_IN\n    res/values-bo\n    res/values-bo_CN\n    res/values-bo_IN\n    res/values-br\n    res/values-br_FR\n    res/values-brx\n    res/values-brx_IN\n    res/values-bs\n    res/values-bs_BA\n    res/values-ca\n    res/values-ca_ES\n    res/values-cgg\n    res/values-cgg_UG\n    res/values-chr\n    res/values-chr_US\n    res/values-cs\n    res/values-cs_CZ\n    res/values-cy\n    res/values-cy_GB\n    res/values-da\n    res/values-da_DK\n    res/values-dav\n    res/values-dav_KE\n    res/values-de\n    res/values-de_AT\n    res/values-de_BE\n    res/values-de_CH\n    res/values-de_DE\n    res/values-de_LI\n    res/values-de_LU\n    res/values-dje\n    res/values-dje_NE\n    res/values-dua\n    res/values-dua_CM\n    res/values-dyo\n    res/values-dyo_SN\n    res/values-ebu\n    res/values-ebu_KE\n    res/values-ee\n    res/values-ee_GH\n    res/values-ee_TG\n    res/values-el\n    res/values-el_CY\n    res/values-el_GR\n    res/values-en\n    res/values-en_AS\n    res/values-en_AU\n    res/values-en_BB\n    res/values-en_BE\n    res/values-en_BM\n    res/values-en_BW\n    res/values-en_BZ\n    res/values-en_CA\n    res/values-en_GB\n    res/values-en_GU\n    res/values-en_GY\n    res/values-en_HK\n    res/values-en_IE\n    res/values-en_IN\n    res/values-en_JM\n    res/values-en_MH\n    res/values-en_MP\n    res/values-en_MT\n    res/values-en_MU\n    res/values-en_NA\n    res/values-en_NZ\n    res/values-en_PH\n    res/values-en_PK\n    res/values-en_SG\n    res/values-en_TT\n    res/values-en_UM\n    res/values-en_US\n    res/values-en_US_POSIX\n    res/values-en_VI\n    res/values-en_ZA\n    res/values-en_ZW\n    res/values-eo\n    res/values-es\n    res/values-es_419\n    res/values-es_AR\n    res/values-es_BO\n    res/values-es_CL\n    res/values-es_CO\n    res/values-es_CR\n    res/values-es_DO\n    res/values-es_EC\n    res/values-es_ES\n    res/values-es_GQ\n    res/values-es_GT\n    res/values-es_HN\n    res/values-es_MX\n    res/values-es_NI\n    res/values-es_PA\n    res/values-es_PE\n    res/values-es_PR\n    res/values-es_PY\n    res/values-es_SV\n    res/values-es_US\n    res/values-es_UY\n    res/values-es_VE\n    res/values-et\n    res/values-et_EE\n    res/values-eu\n    res/values-eu_ES\n    res/values-ewo\n    res/values-ewo_CM\n    res/values-fa\n    res/values-fa_AF\n    res/values-fa_IR\n    res/values-ff\n    res/values-ff_SN\n    res/values-fi\n    res/values-fi_FI\n    res/values-fil\n    res/values-fil_PH\n    res/values-fo\n    res/values-fo_FO\n    res/values-fr\n    res/values-fr_BE\n    res/values-fr_BF\n    res/values-fr_BI\n    res/values-fr_BJ\n    res/values-fr_BL\n    res/values-fr_CA\n    res/values-fr_CD\n    res/values-fr_CF\n    res/values-fr_CG\n    res/values-fr_CH\n    res/values-fr_CI\n    res/values-fr_CM\n    res/values-fr_DJ\n    res/values-fr_FR\n    res/values-fr_GA\n    res/values-fr_GF\n    res/values-fr_GN\n    res/values-fr_GP\n    res/values-fr_GQ\n    res/values-fr_KM\n    res/values-fr_LU\n    res/values-fr_MC\n    res/values-fr_MF\n    res/values-fr_MG\n    res/values-fr_ML\n    res/values-fr_MQ\n    res/values-fr_NE\n    res/values-fr_RE\n    res/values-fr_RW\n    res/values-fr_SN\n    res/values-fr_TD\n    res/values-fr_TG\n    res/values-fr_YT\n    res/values-ga\n    res/values-ga_IE\n    res/values-gl\n    res/values-gl_ES\n    res/values-gsw\n    res/values-gsw_CH\n    res/values-gu\n    res/values-gu_IN\n    res/values-guz\n    res/values-guz_KE\n    res/values-gv\n    res/values-gv_GB\n    res/values-ha\n    res/values-ha_Latn\n    res/values-ha_Latn_GH\n    res/values-ha_Latn_NE\n    res/values-ha_Latn_NG\n    res/values-haw\n    res/values-haw_US\n    res/values-he\n    res/values-he_IL\n    res/values-hi\n    res/values-hi_IN\n    res/values-hr\n    res/values-hr_HR\n    res/values-hu\n    res/values-hu_HU\n    res/values-hy\n    res/values-hy_AM\n    res/values-id\n    res/values-id_ID\n    res/values-ig\n    res/values-ig_NG\n    res/values-ii\n    res/values-ii_CN\n    res/values-is\n    res/values-is_IS\n    res/values-it\n    res/values-it_CH\n    res/values-it_IT\n    res/values-ja\n    res/values-ja_JP\n    res/values-jmc\n    res/values-jmc_TZ\n    res/values-ka\n    res/values-ka_GE\n    res/values-kab\n    res/values-kab_DZ\n    res/values-kam\n    res/values-kam_KE\n    res/values-kde\n    res/values-kde_TZ\n    res/values-kea\n    res/values-kea_CV\n    res/values-khq\n    res/values-khq_ML\n    res/values-ki\n    res/values-ki_KE\n    res/values-kk\n    res/values-kk_Cyrl\n    res/values-kk_Cyrl_KZ\n    res/values-kl\n    res/values-kl_GL\n    res/values-kln\n    res/values-kln_KE\n    res/values-km\n    res/values-km_KH\n    res/values-kn\n    res/values-kn_IN\n    res/values-ko\n    res/values-ko_KR\n    res/values-kok\n    res/values-kok_IN\n    res/values-ksb\n    res/values-ksb_TZ\n    res/values-ksf\n    res/values-ksf_CM\n    res/values-kw\n    res/values-kw_GB\n    res/values-lag\n    res/values-lag_TZ\n    res/values-lg\n    res/values-lg_UG\n    res/values-ln\n    res/values-ln_CD\n    res/values-ln_CG\n    res/values-lt\n    res/values-lt_LT\n    res/values-lu\n    res/values-lu_CD\n    res/values-luo\n    res/values-luo_KE\n    res/values-luy\n    res/values-luy_KE\n    res/values-lv\n    res/values-lv_LV\n    res/values-mas\n    res/values-mas_KE\n    res/values-mas_TZ\n    res/values-mer\n    res/values-mer_KE\n    res/values-mfe\n    res/values-mfe_MU\n    res/values-mg\n    res/values-mg_MG\n    res/values-mgh\n    res/values-mgh_MZ\n    res/values-mk\n    res/values-mk_MK\n    res/values-ml\n    res/values-ml_IN\n    res/values-mr\n    res/values-mr_IN\n    res/values-ms\n    res/values-ms_BN\n    res/values-ms_MY\n    res/values-mt\n    res/values-mt_MT\n    res/values-mua\n    res/values-mua_CM\n    res/values-my\n    res/values-my_MM\n    res/values-naq\n    res/values-naq_NA\n    res/values-nb\n    res/values-nb_NO\n    res/values-nd\n    res/values-nd_ZW\n    res/values-ne\n    res/values-ne_IN\n    res/values-ne_NP\n    res/values-nl\n    res/values-nl_AW\n    res/values-nl_BE\n    res/values-nl_CW\n    res/values-nl_NL\n    res/values-nl_SX\n    res/values-nmg\n    res/values-nmg_CM\n    res/values-nn\n    res/values-nn_NO\n    res/values-nus\n    res/values-nus_SD\n    res/values-nyn\n    res/values-nyn_UG\n    res/values-om\n    res/values-om_ET\n    res/values-om_KE\n    res/values-or\n    res/values-or_IN\n    res/values-pa\n    res/values-pa_Arab\n    res/values-pa_Arab_PK\n    res/values-pa_Guru\n    res/values-pa_Guru_IN\n    res/values-pl\n    res/values-pl_PL\n    res/values-ps\n    res/values-ps_AF\n    res/values-pt\n    res/values-pt_AO\n    res/values-pt_BR\n    res/values-pt_GW\n    res/values-pt_MZ\n    res/values-pt_PT\n    res/values-pt_ST\n    res/values-rm\n    res/values-rm_CH\n    res/values-rn\n    res/values-rn_BI\n    res/values-ro\n    res/values-ro_MD\n    res/values-ro_RO\n    res/values-rof\n    res/values-rof_TZ\n    res/values-rw\n    res/values-rw_RW\n    res/values-rwk\n    res/values-rwk_TZ\n    res/values-saq\n    res/values-saq_KE\n    res/values-sbp\n    res/values-sbp_TZ\n    res/values-seh\n    res/values-seh_MZ\n    res/values-ses\n    res/values-ses_ML\n    res/values-sg\n    res/values-sg_CF\n    res/values-shi\n    res/values-shi_Latn\n    res/values-shi_Latn_MA\n    res/values-shi_Tfng\n    res/values-shi_Tfng_MA\n    res/values-si\n    res/values-si_LK\n    res/values-sk\n    res/values-sk_SK\n    res/values-sl\n    res/values-sl_SI\n    res/values-sn\n    res/values-sn_ZW\n    res/values-so\n    res/values-so_DJ\n    res/values-so_ET\n    res/values-so_KE\n    res/values-so_SO\n    res/values-sq\n    res/values-sq_AL\n    res/values-sr\n    res/values-sr_Cyrl\n    res/values-sr_Cyrl_BA\n    res/values-sr_Cyrl_ME\n    res/values-sr_Cyrl_RS\n    res/values-sr_Latn\n    res/values-sr_Latn_BA\n    res/values-sr_Latn_ME\n    res/values-sr_Latn_RS\n    res/values-sv\n    res/values-sv_FI\n    res/values-sv_SE\n    res/values-sw\n    res/values-sw_KE\n    res/values-sw_TZ\n    res/values-swc\n    res/values-swc_CD\n    res/values-ta\n    res/values-ta_IN\n    res/values-ta_LK\n    res/values-te\n    res/values-te_IN\n    res/values-teo\n    res/values-teo_KE\n    res/values-teo_UG\n    res/values-th\n    res/values-th_TH\n    res/values-ti\n    res/values-ti_ER\n    res/values-ti_ET\n    res/values-to\n    res/values-to_TO\n    res/values-tr\n    res/values-tr_TR\n    res/values-twq\n    res/values-twq_NE\n    res/values-tzm\n    res/values-tzm_Latn\n    res/values-tzm_Latn_MA\n    res/values-ur\n    res/values-ur_IN\n    res/values-ur_PK\n    res/values-uz\n    res/values-uz_Arab\n    res/values-uz_Arab_AF\n    res/values-uz_Cyrl\n    res/values-uz_Cyrl_UZ\n    res/values-uz_Latn\n    res/values-uz_Latn_UZ\n    res/values-vai\n    res/values-vai_Latn\n    res/values-vai_Latn_LR\n    res/values-vai_Vaii\n    res/values-vai_Vaii_LR\n    res/values-vi\n    res/values-vi_VN\n    res/values-vun\n    res/values-vun_TZ\n    res/values-xog\n    res/values-xog_UG\n    res/values-yav\n    res/values-yav_CM\n    res/values-yo\n    res/values-yo_NG\n    res/values-zh\n    res/values-zh_Hans\n    res/values-zh_Hans_CN\n    res/values-zh_Hans_HK\n    res/values-zh_Hans_MO\n    res/values-zh_Hans_SG\n    res/values-zh_Hant\n    res/values-zh_Hant_HK\n    res/values-zh_Hant_MO\n    res/values-zh_Hant_TW\n    res/values-zu\n    res/values-zu_ZA\n        res/values-af-watch\n    res/values-af\n    res/values-am-rET\n    res/values-am-watch\n    res/values-am\n    res/values-ar-rEG\n    res/values-ar-rIL\n    res/values-ar-watch\n    res/values-ar\n    res/values-az-rAZ-watch\n    res/values-az-rAZ\n    res/values-b+sr+Latn-watch\n    res/values-b+sr+Latn\n    res/values-bg-rBG\n    res/values-bg-watch\n    res/values-bg\n    res/values-bn-rBD-watch\n    res/values-bn-rBD\n    res/values-bs-rBA\n    res/values-ca-rES\n    res/values-ca-watch\n    res/values-ca\n    res/values-cs-rCZ\n    res/values-cs-watch\n    res/values-cs\n    res/values-da-rDK\n    res/values-da-watch\n    res/values-da\n    res/values-de-rAT\n    res/values-de-rCH\n    res/values-de-rDE\n    res/values-de-rLI\n    res/values-de-watch\n    res/values-de\n    res/values-el-rGR\n    res/values-el-watch\n    res/values-el\n    res/values-en-rAU-watch\n    res/values-en-rAU\n    res/values-en-rCA\n    res/values-en-rGB-watch\n    res/values-en-rGB\n    res/values-en-rIE\n    res/values-en-rIN-watch\n    res/values-en-rIN\n    res/values-en-rNZ\n    res/values-en-rSG\n    res/values-en-rUS\n    res/values-en-rZA\n    res/values-es-rES\n    res/values-es-rUS-watch\n    res/values-es-rUS\n    res/values-es-watch\n    res/values-es\n    res/values-et-rEE-watch\n    res/values-et-rEE\n    res/values-eu-rES-watch\n    res/values-eu-rES\n    res/values-fa-rIR\n    res/values-fa-watch\n    res/values-fa\n    res/values-fi-rFI\n    res/values-fi-watch\n    res/values-fi\n    res/values-fr-rBE\n    res/values-fr-rCA-watch\n    res/values-fr-rCA\n    res/values-fr-rCH\n    res/values-fr-rFR\n    res/values-fr-watch\n    res/values-fr\n    res/values-gl-rES-watch\n    res/values-gl-rES\n    res/values-gu-rIN-watch\n    res/values-gu-rIN\n    res/values-hi-rIN\n    res/values-hi-watch\n    res/values-hi\n    res/values-hr-rHR\n    res/values-hr-watch\n    res/values-hr\n    res/values-hu-rHU\n    res/values-hu-watch\n    res/values-hu\n    res/values-hy-rAM-watch\n    res/values-hy-rAM\n    res/values-in-rID\n    res/values-in-watch\n    res/values-in\n    res/values-is-rIS-watch\n    res/values-is-rIS\n    res/values-it-rCH\n    res/values-it-rIT\n    res/values-it-watch\n    res/values-it\n    res/values-iw-rIL\n    res/values-iw-watch\n    res/values-iw\n    res/values-ja-rJP\n    res/values-ja-watch\n    res/values-ja\n    res/values-ka-rGE-watch\n    res/values-ka-rGE\n    res/values-kk-rKZ-watch\n    res/values-kk-rKZ\n    res/values-km-rKH-watch\n    res/values-km-rKH\n    res/values-kn-rIN-watch\n    res/values-kn-rIN\n    res/values-ko-rKR\n    res/values-ko-watch\n    res/values-ko\n    res/values-ky-rKG-watch\n    res/values-ky-rKG\n    res/values-land\n    res/values-large\n    res/values-ldrtl-television\n    res/values-ldrtl\n    res/values-lo-rLA-watch\n    res/values-lo-rLA\n    res/values-lt-rLT\n    res/values-lt-watch\n    res/values-lt\n    res/values-lv-rLV\n    res/values-lv-watch\n    res/values-lv\n    res/values-mk-rMK-watch\n    res/values-mk-rMK\n    res/values-ml-rIN-watch\n    res/values-ml-rIN\n    res/values-mn-rMN-watch\n    res/values-mn-rMN\n    res/values-mr-rIN-watch\n    res/values-mr-rIN\n    res/values-ms-rMY-watch\n    res/values-ms-rMY\n    res/values-my-rMM-watch\n    res/values-my-rMM\n    res/values-nb-rNO\n    res/values-nb-watch\n    res/values-nb\n    res/values-ne-rNP-watch\n    res/values-ne-rNP\n    res/values-nl-rBE\n    res/values-nl-rNL\n    res/values-nl-watch\n    res/values-nl\n    res/values-pa-rIN-watch\n    res/values-pa-rIN\n    res/values-pl-rPL\n    res/values-pl-watch\n    res/values-pl\n    res/values-port-mdpi\n    res/values-port\n    res/values-pt-rBR-watch\n    res/values-pt-rBR\n    res/values-pt-rPT-watch\n    res/values-pt-rPT\n    res/values-pt-watch\n    res/values-pt\n    res/values-rm-rCH\n    res/values-ro-rRO\n    res/values-ro-watch\n    res/values-ro\n    res/values-round-watch\n    res/values-si-rLK-watch\n    res/values-si-rLK\n    res/values-sk-rSK\n    res/values-sk-watch\n    res/values-sk\n    res/values-sl-rSI\n    res/values-sl-watch\n    res/values-sl\n    res/values-sq-rAL-watch\n    res/values-sq-rAL\n    res/values-sr-rRS\n    res/values-sr-watch\n    res/values-sr\n    res/values-sv-rSE\n    res/values-sv-watch\n    res/values-sv\n    res/values-sw-rTZ\n    res/values-sw-watch\n    res/values-sw\n    res/values-ta-rIN-watch\n    res/values-ta-rIN\n    res/values-te-rIN-watch\n    res/values-te-rIN\n    res/values-television\n    res/values-th-rTH\n    res/values-th-watch\n    res/values-th\n    res/values-tl-rPH\n    res/values-tl-watch\n    res/values-tl\n    res/values-tr-rTR\n    res/values-tr-watch\n    res/values-tr\n    res/values-ur-rPK-watch\n    res/values-ur-rPK\n    res/values-uz-rUZ-watch\n    res/values-uz-rUZ\n    res/values-vi-rVN\n    res/values-vi-watch\n    res/values-vi\n    res/values-zh-rCN-watch\n    res/values-zh-rCN\n    res/values-zh-rHK-watch\n    res/values-zh-rHK\n    res/values-zh-rTW-watch\n    res/values-zh-rTW\n    res/values-zu-rZA\n    res/values-zu-watch\n    res/values-zu"
+      ],
+      "issues": [],
+      "parse_error": null
+    },
+    {
+      "name": "permission_memory",
+      "path": "permission_memory.zip",
+      "size": 832,
+      "sha256": "177a9a0b8cdbf8b08ed9cb2b169a80fe59f3588747610c161d9cf869b0ef2e30",
+      "dupe_id": null,
+      "tag": "Khác",
+      "engine_ver": "3",
+      "author": "HTC_600",
+      "package": "*",
+      "sections": {
+        "MIN_ENGINE_VER": 1,
+        "AUTHOR": 1,
+        "PACKAGE": 1,
+        "MATCH_REPLACE": 3,
+        "MATCH_ASSIGN": 1
+      },
+      "assets": [],
+      "targets": [
+        "[APPLICATION]"
+      ],
+      "issues": [],
+      "parse_error": null
+    },
+    {
+      "name": "res_raw_TRANSLATIONxx",
+      "path": "res_raw_TRANSLATIONxx.zip",
+      "size": 362,
+      "sha256": "5a0ea2c2f12ca71c69acb624d820dd05dfc8e130caf7dd7001159e8ea120d87c",
+      "dupe_id": null,
+      "tag": "Khác",
+      "engine_ver": "1",
+      "author": "HTC_600",
+      "package": "*",
+      "sections": {
+        "MIN_ENGINE_VER": 1,
+        "AUTHOR": 1,
+        "PACKAGE": 1,
+        "REMOVE_FILES": 1
+      },
+      "assets": [],
+      "targets": [
+        "res/raw-ar\n    res/raw-bg\n    res/raw-ca\n    res/raw-cs\n    res/raw-da\n    res/raw-de\n    res/raw-el\n    res/raw-en-rGB\n    res/raw-es-rUS\n    res/raw-es\n    res/raw-fa\n    res/raw-fi\n    res/raw-fr\n    res/raw-hi\n    res/raw-hr\n    res/raw-hu\n    res/raw-id\n    res/raw-it\n    res/raw-iw\n    res/raw-ja\n    res/raw-ko\n    res/raw-lt\n    res/raw-lv\n    res/raw-nb\n    res/raw-nl\n    res/raw-pl\n    res/raw-pt-rBR\n    res/raw-pt-rPT\n    res/raw-pt\n    res/raw-rm\n    res/raw-ro\n    res/raw-sk\n    res/raw-sl\n    res/raw-sr\n    res/raw-sv\n    res/raw-th\n    res/raw-tl\n    res/raw-tr\n    res/raw-vi\n    res/raw-zh-rCN\n    res/raw-zh-rTW"
+      ],
+      "issues": [],
+      "parse_error": null
+    },
+    {
+      "name": "translate_debugger",
+      "path": "translate_debugger.zip",
+      "size": 344,
+      "sha256": "48abd18d2d172bcc656c0b04f0781e7783595a49dbfa7b7651ae3d38d79372ad",
+      "dupe_id": null,
+      "tag": "Khác",
+      "engine_ver": "2",
+      "author": "eramz",
+      "package": "translate debugger",
+      "sections": {
+        "MIN_ENGINE_VER": 1,
+        "AUTHOR": 1,
+        "PACKAGE": 1,
+        "MATCH_REPLACE": 6
+      },
+      "assets": [],
+      "targets": [
+        "res/values-ru/strings.xml"
+      ],
+      "issues": [],
+      "parse_error": null
+    },
+    {
+      "name": "translate_obfuscation",
+      "path": "translate_obfuscation.zip",
+      "size": 464,
+      "sha256": "b104c94f4edde33ececd5cd13a742884751684356fad1f6a6009bd639bbec18a",
+      "dupe_id": null,
+      "tag": "Khác",
+      "engine_ver": "2",
+      "author": "e.ramz",
+      "package": "translate obfuscation",
+      "sections": {
+        "MIN_ENGINE_VER": 1,
+        "AUTHOR": 1,
+        "PACKAGE": 1,
+        "MATCH_REPLACE": 4,
+        "MATCH_GOTO": 1,
+        "DUMMY": 1
+      },
+      "assets": [],
+      "targets": [
+        "AndroidManifest.xml",
+        "res/*",
+        "res/values*/strings.xml",
+        "res/values/public.xml"
+      ],
+      "issues": [],
+      "parse_error": null
+    },
+    {
+      "name": "yandex_metrica by Vergil777",
+      "path": "yandex_metrica by Vergil777.zip",
+      "size": 430,
+      "sha256": "07d7d816f5807783262594d41362e3cd9149cde7c092255f8948e8fbf831544f",
+      "dupe_id": null,
+      "tag": "Khác",
+      "engine_ver": null,
+      "author": "VERGIL777",
+      "package": null,
+      "sections": {
+        "AUTHOR": 1,
+        "MATCH_REPLACE": 11
+      },
+      "assets": [],
+      "targets": [
+        "AndroidManifest.xml",
+        "smali*/*.smali"
+      ],
+      "issues": [],
+      "parse_error": null
+    }
+  ]
+}
